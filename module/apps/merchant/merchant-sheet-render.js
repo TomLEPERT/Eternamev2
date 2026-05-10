@@ -19,6 +19,7 @@ export function bindMerchantSheetRender(root) {
   this._bindMerchantElements(root, { selector: 'input[name], select[name], textarea[name]', datasetKey: 'boundMerchantFieldChange', eventName: 'change', handlerName: '_onMerchantFieldChange' });
   this._bindMerchantElements(root, { selector: 'textarea[name]', datasetKey: 'boundMerchantFieldBlur', eventName: 'blur', handlerName: '_onMerchantFieldBlur' });
   this._bindMerchantElements(root, { selector: '[data-action="merchant-buy"]', datasetKey: 'boundMerchantBuy', eventName: 'click', handlerName: '_onMerchantBuy' });
+  this._bindMerchantElements(root, { selector: '[data-merchant-trade-actor]', datasetKey: 'boundMerchantTradeActor', eventName: 'change', handlerName: '_onMerchantTradeActorChange' });
   this._bindMerchantElements(root, { selector: '[data-action="merchant-set-discount"]', datasetKey: 'boundMerchantDiscount', eventName: 'click', handlerName: '_onMerchantSetDiscount' });
   this._bindMerchantElements(root, { selector: '[data-action="merchant-reset-discount"]', datasetKey: 'boundMerchantDiscountReset', eventName: 'click', handlerName: '_onMerchantResetDiscount' });
   this._bindMerchantElements(root, { selector: '[data-action="merchant-edit-price"]', datasetKey: 'boundMerchantEditPrice', eventName: 'click', handlerName: '_onMerchantStockEditPrice' });

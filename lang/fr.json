@@ -1736,6 +1736,8 @@
       "LEGALITY_POLICY": "Politique de légalité",
       "ACCEPTS_LEGAL": "Achète les objets légaux",
       "ACCEPTS_ILLEGAL": "Achète les objets illégaux",
+      "TRADE_ACTOR": "Personnage qui commerce",
+      "TRADE_ACTOR_PLACEHOLDER": "Choisis un personnage",
       "WARNING_PERMISSION_LIMIT": "Cet utilisateur peut voir le marchand, mais ne peut pas modifier son stock sans droit propriétaire ou relais MJ.",
       "STOCK": {
         "TITLE": "Stock",
@@ -1771,11 +1773,10 @@
         "PRICE_TITLE": "Définir le prix de l'objet",
         "SELL_TITLE": "Choisir le prix de vente",
         "SAVE_PRICE": "Enregistrer le prix",
-        "ITEM": "Objet",
-        "CURRENT_PRICE": "Prix actuel"
+        "ITEM": "Objet"
       },
       "ERROR_PERMISSION": "Tu as besoin des droits propriétaire sur ce marchand pour finaliser les transactions. Pour un accès observateur seul, il faudra plus tard un relais MJ.",
-      "ERROR_NO_CHARACTER": "Assigne un personnage joueur à cet utilisateur, ou contrôle-en un, avant de commercer.",
+      "ERROR_NO_CHARACTER": "Sélectionne un personnage joueur possédé par cet utilisateur, assigne-lui un personnage, ou contrôle son token avant de commercer.",
       "ERROR_NOT_ENOUGH_MONEY": "Pas assez d'argent pour acheter cet objet.",
       "ERROR_MERCHANT_NOT_ENOUGH_MONEY": "Le marchand n'a pas assez d'argent pour acheter cet objet.",
       "ERROR_ITEM_NOT_ACCEPTED": "Ce marchand refuse ce type d'objet ou cette légalité.",

@@ -13,7 +13,7 @@
 .eternamev2-merchant-sheet .merchant-card-head--split { justify-content: space-between; gap: var(--etern-space-lg); }
 .eternamev2-merchant-sheet .merchant-card-head h2,.eternamev2-merchant-sheet .merchant-fieldset h3 { margin: 0; }
 .eternamev2-merchant-sheet .merchant-fieldset + .merchant-fieldset { margin-top: 14px; }
-.eternamev2-merchant-sheet input[type="text"],.eternamev2-merchant-sheet input[type="number"],.eternamev2-merchant-sheet textarea,.merchant-price-dialog input[type="text"],.merchant-price-dialog input[type="number"] { width: 100%; min-height: 42px; background: rgba(255,255,255,0.92); color: #111; border-radius: var(--etern-radius-lg); border: 1px solid rgba(255,255,255,0.18); padding: var(--etern-space-md) 12px; }
+.eternamev2-merchant-sheet input[type="text"],.eternamev2-merchant-sheet input[type="number"],.eternamev2-merchant-sheet select,.eternamev2-merchant-sheet textarea,.merchant-price-dialog input[type="text"],.merchant-price-dialog input[type="number"] { width: 100%; min-height: 42px; background: rgba(255,255,255,0.92); color: #111; border-radius: var(--etern-radius-lg); border: 1px solid rgba(255,255,255,0.18); padding: var(--etern-space-md) 12px; }
 .eternamev2-merchant-sheet textarea { min-height: 120px; resize: vertical; }
 .eternamev2-merchant-sheet .merchant-money-grid,.merchant-price-dialog .merchant-money-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--etern-space-md); }
 .merchant-price-dialog .merchant-money-grid { margin-top: 10px; }
@@ -21,6 +21,7 @@
 .eternamev2-merchant-sheet .merchant-check-grid--single { grid-template-columns: 1fr; }
 .eternamev2-merchant-sheet .merchant-check { display: inline-flex; align-items: center; gap: var(--etern-space-sm); }
 .eternamev2-merchant-sheet .merchant-negotiation-row { display: grid; grid-template-columns: 100px 1fr 1fr; gap: var(--etern-space-sm); align-items: center; }
+.eternamev2-merchant-sheet .merchant-trade-actor-picker { display: grid; grid-template-columns: 180px minmax(180px, 320px); gap: var(--etern-space-sm); align-items: center; margin-top: 10px; }
 .eternamev2-merchant-sheet .merchant-action-button,.eternamev2-merchant-sheet .merchant-inline-button { min-height: 38px; border-radius: var(--etern-radius-lg); border: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.09); color: inherit; padding: var(--etern-space-sm) 12px; cursor: pointer; white-space: nowrap; }
 .eternamev2-merchant-sheet .merchant-action-button--secondary { background: rgba(255,255,255,0.04); }
 .eternamev2-merchant-sheet .merchant-discount-pill,.eternamev2-merchant-sheet .merchant-drop-hint,.eternamev2-merchant-sheet .merchant-warning { margin-top: 10px; padding: var(--etern-space-sm) 10px; border-radius: var(--etern-radius-pill); background: rgba(255,255,255,0.08); display: inline-flex; align-self: flex-start; }
@@ -47,7 +48,8 @@
   .eternamev2-merchant-sheet .merchant-topbar { grid-template-columns: 1fr; }
   .eternamev2-merchant-sheet .merchant-negotiation-row,
   .eternamev2-merchant-sheet .merchant-money-grid,
-  .eternamev2-merchant-sheet .merchant-check-grid { grid-template-columns: 1fr; }
+  .eternamev2-merchant-sheet .merchant-check-grid,
+  .eternamev2-merchant-sheet .merchant-trade-actor-picker { grid-template-columns: 1fr; }
   .eternamev2-merchant-sheet .merchant-stock-row,
   .eternamev2-merchant-sheet .merchant-stock-row--head { grid-template-columns: 1fr; }
   .eternamev2-merchant-sheet .merchant-stock-row--head { display: none; }

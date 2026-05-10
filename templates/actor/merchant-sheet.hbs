@@ -44,6 +44,17 @@
       <section class="merchant-card merchant-sell-card" data-merchant-dropzone="sell">
         <header class="merchant-card-head"><h2>{{localize 'ETERN.MERCHANT.SELL_ZONE.TITLE'}}</h2></header>
         <p class="merchant-muted">{{localize 'ETERN.MERCHANT.SELL_ZONE.HELP'}}</p>
+        {{#if hasTradeActorChoices}}
+          <div class="merchant-trade-actor-picker">
+            <label>{{localize 'ETERN.MERCHANT.TRADE_ACTOR'}}</label>
+            <select data-merchant-trade-actor>
+              <option value="" {{#unless selectedTradeActorId}}selected{{/unless}} disabled>{{localize 'ETERN.MERCHANT.TRADE_ACTOR_PLACEHOLDER'}}</option>
+              {{#each tradeActorChoices as |choice|}}
+                <option value="{{choice.id}}" {{#if choice.selected}}selected{{/if}}>{{choice.name}}</option>
+              {{/each}}
+            </select>
+          </div>
+        {{/if}}
         {{#if canTrade}}
           <p class="merchant-drop-hint">{{localize 'ETERN.MERCHANT.SELL_ZONE.DROP_HINT' actor=tradeActorName}}</p>
         {{else}}

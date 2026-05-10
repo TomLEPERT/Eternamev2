@@ -1736,6 +1736,8 @@
       "LEGALITY_POLICY": "Legality policy",
       "ACCEPTS_LEGAL": "Buys legal items",
       "ACCEPTS_ILLEGAL": "Buys illegal items",
+      "TRADE_ACTOR": "Trading character",
+      "TRADE_ACTOR_PLACEHOLDER": "Choose a character",
       "WARNING_PERMISSION_LIMIT": "This user can view the merchant but cannot modify its stock without owner rights or a GM relay.",
       "STOCK": {
         "TITLE": "Stock",
@@ -1771,11 +1773,10 @@
         "PRICE_TITLE": "Set item price",
         "SELL_TITLE": "Choose the selling price",
         "SAVE_PRICE": "Save price",
-        "ITEM": "Item",
-        "CURRENT_PRICE": "Current price"
+        "ITEM": "Item"
       },
       "ERROR_PERMISSION": "You need owner permission on this merchant to complete transactions. For observer-only access, a GM relay will be needed later.",
-      "ERROR_NO_CHARACTER": "Assign a player character to this user, or control one, before trading.",
+      "ERROR_NO_CHARACTER": "Select a player character owned by this user, assign a character, or control its token before trading.",
       "ERROR_NOT_ENOUGH_MONEY": "Not enough money to buy this item.",
       "ERROR_MERCHANT_NOT_ENOUGH_MONEY": "The merchant does not have enough money to buy this item.",
       "ERROR_ITEM_NOT_ACCEPTED": "This merchant refuses this item type or legality.",

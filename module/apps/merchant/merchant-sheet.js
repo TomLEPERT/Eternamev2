@@ -39,6 +39,7 @@ export class MerchantSheet extends Base {
   constructor(options = {}) {
     super(options);
     this._sessionDiscountPercent = 0;
+    this._tradeActorId = "";
     this._activeTab = "stock";
     this._pendingFieldSaves = new Map();
   }
@@ -60,6 +61,7 @@ export class MerchantSheet extends Base {
 
   async close(options = {}) {
     this._sessionDiscountPercent = 0;
+    this._tradeActorId = "";
     this._activeTab = "stock";
     return super.close(options);
   }

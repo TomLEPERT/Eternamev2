@@ -12,6 +12,7 @@
 import { openMerchantPriceDialog } from "../dialogs/merchant-dialogs.js";
 import { addWealthValues, canAffordWealth, discountWealthByPercent, formatWealth, increaseWealthByPercent, normalizeWealth, subtractWealthValues } from "../../system/trade/wealth.js";
 import { resolveDroppedItem } from "../../system/drag-drop.js";
+import { resolveTradeActor, resolveTradeActorFromItem } from "../../system/trade/trade-actor-resolver.js";
 
 const MERCHANT_ITEM_TYPES = ["weapon", "armor", "shield", "gear", "object", "tool", "material", "consumable", "bag"];
 
@@ -19,10 +20,8 @@ function getStockItem(sheet, itemId) {
   return sheet.document.items.get(String(itemId)) ?? null;
 }
 
-function getBuyerActor() {
-  if (game.user?.character?.type === "character") return game.user.character;
-  const controlled = canvas?.tokens?.controlled?.find((token) => token.actor?.type === "character")?.actor;
-  return controlled ?? null;
+function getBuyerActor(sheet) {
+  return resolveTradeActor({ actorId: sheet?._tradeActorId });
 }
 
 function createBuyerItemData(item, quantity = 1) {
@@ -47,11 +46,18 @@ function buildPriceUpdate(price = {}) {
   return Object.fromEntries(Object.entries(normalized).map(([key, value]) => [`system.price.${key}`, value]));
 }
 
-function getTradeWarning(sheet) {
+function getMerchantPermissionWarning(sheet) {
   if (!sheet.document.canUserModify(game.user, "update")) {
     return game.i18n.localize("ETERN.MERCHANT.ERROR_PERMISSION");
   }
-  const buyerActor = getBuyerActor();
+  return null;
+}
+
+function getTradeWarning(sheet) {
+  const permissionWarning = getMerchantPermissionWarning(sheet);
+  if (permissionWarning) return permissionWarning;
+
+  const buyerActor = getBuyerActor(sheet);
   if (!buyerActor?.isOwner) {
     return game.i18n.localize("ETERN.MERCHANT.ERROR_NO_CHARACTER");
   }
@@ -76,24 +82,24 @@ export function registerMerchantSheetTrade(MerchantSheetClass) {
 
     const button = event.currentTarget;
     const item = getStockItem(this, button?.dataset?.itemId);
-    const buyerActor = getBuyerActor();
+    const buyerActor = getBuyerActor(this);
     if (!item || !buyerActor) return;
 
     const price = discountWealthByPercent(item.system?.price ?? {}, this._sessionDiscountPercent ?? 0);
     const buyerWealth = normalizeWealth(buyerActor.system?.wealth ?? {});
-    if (!canAffordWealth(buyerWealth, price)) {
+    const nextBuyerWealth = subtractWealthValues(buyerWealth, price);
+    if (!nextBuyerWealth) {
       return ui.notifications.warn(game.i18n.localize("ETERN.MERCHANT.ERROR_NOT_ENOUGH_MONEY"));
     }
 
-    const nextBuyerWealth = subtractWealthValues(buyerWealth, price);
     const nextMerchantWealth = addWealthValues(this.document.system?.wealth ?? {}, price);
     const buyerItemData = createBuyerItemData(item, 1);
 
+    // Achat : le personnage paie exactement les monnaies du prix, et le marchand les reçoit.
+    // Aucune conversion automatique n’est faite pendant la transaction.
+    await buyerActor.update({ "system.wealth": nextBuyerWealth }, { render: false });
     await buyerActor.createEmbeddedDocuments("Item", [buyerItemData], { render: false });
-    await Promise.all([
-      buyerActor.update({ "system.wealth": nextBuyerWealth }, { render: false }),
-      this.document.update({ "system.wealth": nextMerchantWealth }, { render: false })
-    ]);
+    await this.document.update({ "system.wealth": nextMerchantWealth }, { render: false });
     await decrementOrDeleteItem(item);
 
     ui.notifications.info(game.i18n.format("ETERN.MERCHANT.INFO_PURCHASED", {
@@ -101,6 +107,12 @@ export function registerMerchantSheetTrade(MerchantSheetClass) {
       price: formatWealth(price),
       actor: buyerActor.name
     }));
+    this.render(false);
+  };
+
+  MerchantSheetClass.prototype._onMerchantTradeActorChange = function(event) {
+    event.preventDefault();
+    this._tradeActorId = String(event.currentTarget?.value ?? "");
     this.render(false);
   };
 
@@ -191,12 +203,16 @@ export function registerMerchantSheetTrade(MerchantSheetClass) {
   MerchantSheetClass.prototype._onMerchantSellDrop = async function(event) {
     event.preventDefault();
     event.stopPropagation();
-    const warning = getTradeWarning(this);
-    if (warning) return ui.notifications.warn(warning);
+    const permissionWarning = getMerchantPermissionWarning(this);
+    if (permissionWarning) return ui.notifications.warn(permissionWarning);
 
     const itemDoc = await resolveDroppedItem(event);
-    const buyerActor = getBuyerActor();
-    if (!itemDoc || !buyerActor) return;
+    const itemOwnerActor = resolveTradeActorFromItem(itemDoc);
+    const buyerActor = itemOwnerActor ?? getBuyerActor(this);
+    if (!itemDoc) return;
+    if (!buyerActor?.isOwner) {
+      return ui.notifications.warn(game.i18n.localize("ETERN.MERCHANT.ERROR_NO_CHARACTER"));
+    }
     if (itemDoc.parent?.id !== buyerActor.id) {
       return ui.notifications.warn(game.i18n.localize("ETERN.MERCHANT.ERROR_SELL_SOURCE"));
     }
@@ -220,17 +236,22 @@ export function registerMerchantSheetTrade(MerchantSheetClass) {
     }
 
     const nextMerchantWealth = subtractWealthValues(merchantWealth, price);
-    const nextBuyerWealth = addWealthValues(buyerActor.system?.wealth ?? {}, price);
-    const resalePrice = increaseWealthByPercent(price, 50);
+    if (!nextMerchantWealth) {
+      return ui.notifications.warn(game.i18n.localize("ETERN.MERCHANT.ERROR_MERCHANT_NOT_ENOUGH_MONEY"));
+    }
+
+    const buyerWealth = normalizeWealth(buyerActor.system?.wealth ?? {});
+    const nextBuyerWealth = addWealthValues(buyerWealth, price);
+    const resalePrice = increaseWealthByPercent(price, 100);
     const merchantItemData = createBuyerItemData(itemDoc, 1);
     merchantItemData.system.location = "stock";
     merchantItemData.system.price = normalizeWealth(resalePrice);
 
+    // Vente : le marchand paie exactement les monnaies du prix, et le personnage les reçoit.
+    // Aucune conversion automatique n’est faite pendant la transaction.
+    await buyerActor.update({ "system.wealth": nextBuyerWealth }, { render: false });
     await this.document.createEmbeddedDocuments("Item", [merchantItemData], { render: false });
-    await Promise.all([
-      this.document.update({ "system.wealth": nextMerchantWealth }, { render: false }),
-      buyerActor.update({ "system.wealth": nextBuyerWealth }, { render: false })
-    ]);
+    await this.document.update({ "system.wealth": nextMerchantWealth }, { render: false });
     await decrementOrDeleteItem(itemDoc);
 
     ui.notifications.info(game.i18n.format("ETERN.MERCHANT.INFO_SOLD", {

@@ -5,8 +5,9 @@
  * - définir la valeur de chaque monnaie dans une unité de base ;
  * - normaliser les objets de richesse ;
  * - convertir une richesse en valeur totale ;
- * - reconvertir une valeur totale en monnaies détaillées ;
- * - additionner, soustraire, augmenter ou réduire une richesse ;
+ * - reconvertir une valeur totale en monnaies détaillées pour les prix calculés ;
+ * - additionner et soustraire une richesse sans conversion automatique ;
+ * - augmenter ou réduire une richesse pour les remises et coefficients de prix ;
  * - formater une richesse pour l’affichage utilisateur.
  *
  * Ce fichier doit rester indépendant de l’interface.
@@ -14,7 +15,7 @@
  * sans y ajouter leur logique directement.
  */
 
-import { toPositiveInteger } from '../../utils/numbers.js';
+import { toPositiveInteger } from "../../utils/numbers.js";
 /**
  * Valeur de chaque monnaie exprimée en unité de base.
  *
@@ -32,10 +33,11 @@ export const CURRENCY_VALUES = Object.freeze({
 });
 
 /**
- * Ordre d’affichage et de conversion des monnaies.
+ * Ordre d’affichage des monnaies.
  *
- * L’ordre va de la monnaie la plus forte à la monnaie la plus faible,
- * ce qui permet à `baseValueToWealth` de convertir proprement une valeur totale.
+ * L’ordre va de la monnaie la plus forte à la monnaie la plus faible.
+ * Les transactions directes n’utilisent pas cet ordre pour convertir la monnaie;
+ * elles ajoutent ou retirent chaque devise séparément.
  *
  * @type {Readonly<string[]>}
  */
@@ -106,87 +108,108 @@ export function baseValueToWealth(baseValue = 0) {
 }
 
 /**
- * Vérifie si une richesse permet de payer un coût donné.
+ * Vérifie si une richesse permet de payer un coût donné sans conversion automatique.
  *
- * Les deux valeurs sont converties en unité de base avant comparaison.
+ * Chaque monnaie est comparée avec sa propre valeur.
+ * Exemple : un acteur qui possède 1 po ne peut pas payer directement 100 pa.
+ * Il doit convertir sa monnaie ailleurs avant la transaction.
  *
  * @param {object} [wealth={}] - Richesse disponible.
  * @param {object} [cost={}] - Coût à payer.
- * @returns {boolean} `true` si la richesse est suffisante.
+ * @returns {boolean} `true` si chaque pile de monnaie est suffisante.
  */
 export function canAffordWealth(wealth = {}, cost = {}) {
-  return wealthToBaseValue(wealth) >= wealthToBaseValue(cost);
+  const normalizedWealth = normalizeWealth(wealth);
+  const normalizedCost = normalizeWealth(cost);
+
+  return CURRENCY_ORDER.every((key) => normalizedWealth[key] >= normalizedCost[key]);
 }
 
 /**
- * Ajoute un gain à une richesse existante.
+ * Ajoute un gain à une richesse existante sans reconvertir les monnaies.
+ *
+ * La transaction garde exactement les devises saisies :
+ * +2 po ajoute 2 po, sans transformer le résultat en rc, pp ou autre monnaie.
  *
  * @param {object} [wealth={}] - Richesse actuelle.
  * @param {object} [gain={}] - Gain à ajouter.
- * @returns {Record<string, number>} Nouvelle richesse après ajout.
+ * @returns {Record<string, number>} Nouvelle richesse après ajout direct.
  */
 export function addWealthValues(wealth = {}, gain = {}) {
-  const total = wealthToBaseValue(wealth) + wealthToBaseValue(gain);
+  const normalizedWealth = normalizeWealth(wealth);
+  const normalizedGain = normalizeWealth(gain);
 
-  return baseValueToWealth(total);
+  return Object.fromEntries(
+    CURRENCY_ORDER.map((key) => [key, normalizedWealth[key] + normalizedGain[key]])
+  );
 }
 
 /**
- * Soustrait un coût d’une richesse existante.
+ * Soustrait un coût d’une richesse existante sans reconvertir les monnaies.
  *
- * La fonction renvoie `null` si la richesse est insuffisante.
- * Cela permet à l’appelant de distinguer un paiement impossible
- * d’un paiement réussi qui laisserait simplement zéro monnaie.
+ * La fonction renvoie `null` si une monnaie donnée est insuffisante.
+ * Exemple : 1 po ne permet pas de payer directement 100 pa.
+ * Cela évite les conversions automatiques invisibles pendant le commerce.
  *
  * @param {object} [wealth={}] - Richesse actuelle.
  * @param {object} [cost={}] - Coût à soustraire.
  * @returns {Record<string, number>|null} Nouvelle richesse, ou `null` si paiement impossible.
  */
 export function subtractWealthValues(wealth = {}, cost = {}) {
-  const total = wealthToBaseValue(wealth);
-  const amount = wealthToBaseValue(cost);
+  const normalizedWealth = normalizeWealth(wealth);
+  const normalizedCost = normalizeWealth(cost);
 
-  if (amount > total) return null;
+  if (!canAffordWealth(normalizedWealth, normalizedCost)) return null;
 
-  return baseValueToWealth(total - amount);
+  return Object.fromEntries(
+    CURRENCY_ORDER.map((key) => [key, normalizedWealth[key] - normalizedCost[key]])
+  );
 }
 
 /**
- * Augmente une richesse selon un pourcentage.
+ * Augmente une richesse selon un pourcentage sans reconvertir les monnaies.
  *
- * Le pourcentage est borné à un minimum de 0.
- * Le résultat est arrondi vers le haut afin de ne pas perdre de valeur
- * lors d’une augmentation.
+ * Chaque devise est multipliée séparément.
+ * Exemple : 3 po avec +100 % devient 6 po, pas une monnaie plus forte.
  *
  * @param {object} [wealth={}] - Richesse de départ.
  * @param {number} [percent=0] - Pourcentage d’augmentation.
  * @returns {Record<string, number>} Richesse augmentée.
  */
 export function increaseWealthByPercent(wealth = {}, percent = 0) {
+  const normalizedWealth = normalizeWealth(wealth);
   const safePercent = Math.max(0, Number(percent) || 0);
   const multiplier = 1 + (safePercent / 100);
-  const increasedValue = Math.ceil(wealthToBaseValue(wealth) * multiplier);
 
-  return baseValueToWealth(increasedValue);
+  return Object.fromEntries(
+    CURRENCY_ORDER.map((key) => [key, Math.ceil(normalizedWealth[key] * multiplier)])
+  );
 }
 
 /**
- * Applique une remise à une richesse selon un pourcentage.
+ * Applique une remise à une richesse selon un pourcentage sans reconvertir les monnaies.
  *
  * Le pourcentage est borné entre 0 et 100.
- * Le résultat est arrondi vers le bas afin d’obtenir un coût final entier.
+ * Chaque devise est réduite séparément afin de respecter le prix saisi.
+ * Exemple : 2 po avec 50 % de remise devient 1 po, jamais une autre devise.
+ * Les montants positifs sont arrondis vers le haut pour éviter qu’une petite devise devienne gratuite.
  *
  * @param {object} [wealth={}] - Coût ou richesse de départ.
  * @param {number} [percent=0] - Pourcentage de remise.
  * @returns {Record<string, number>} Richesse après remise.
  */
 export function discountWealthByPercent(wealth = {}, percent = 0) {
+  const normalizedWealth = normalizeWealth(wealth);
   const boundedPercent = Math.max(0, Math.min(100, Number(percent) || 0));
-  const discountedValue = Math.floor(
-    wealthToBaseValue(wealth) * (100 - boundedPercent) / 100
-  );
+  const multiplier = (100 - boundedPercent) / 100;
 
-  return baseValueToWealth(discountedValue);
+  return Object.fromEntries(
+    CURRENCY_ORDER.map((key) => {
+      const value = normalizedWealth[key];
+      if (value <= 0 || multiplier <= 0) return [key, 0];
+      return [key, Math.ceil(value * multiplier)];
+    })
+  );
 }
 
 /**

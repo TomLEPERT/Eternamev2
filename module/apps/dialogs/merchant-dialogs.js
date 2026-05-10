@@ -9,7 +9,7 @@
  * Ce fichier doit rester limité au cycle de vie et aux événements du dialogue.
  */
 
-import { CURRENCY_ORDER, formatWealth, normalizeWealth } from "../../system/trade/wealth.js";
+import { CURRENCY_ORDER, normalizeWealth } from "../../system/trade/wealth.js";
 
 const { renderTemplate } = foundry.applications.handlebars;
 
@@ -53,8 +53,7 @@ function readPriceForm(event, button, dialog) {
 export async function openMerchantPriceDialog({ title, itemName, price = {} } = {}) {
   const content = await renderTemplate("systems/eternamev2/templates/dialogs/merchant-price-dialog.hbs", {
     itemName: String(itemName ?? ""),
-    priceRows: buildCurrencyRows(price),
-    currentPriceLabel: formatWealth(price)
+    priceRows: buildCurrencyRows(price)
   });
 
   const result = await foundry.applications.api.DialogV2.wait({

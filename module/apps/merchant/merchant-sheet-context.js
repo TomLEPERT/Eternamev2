@@ -10,6 +10,7 @@
  */
 
 import { CURRENCY_ORDER, discountWealthByPercent, formatWealth, normalizeWealth } from "../../system/trade/wealth.js";
+import { getOwnedTradeActors, resolveTradeActor } from "../../system/trade/trade-actor-resolver.js";
 
 const MERCHANT_ITEM_TYPES = ["weapon", "armor", "shield", "gear", "object", "tool", "material", "consumable", "bag"];
 
@@ -22,14 +23,10 @@ function buildAcceptedTypeChoices(trade = {}) {
   }));
 }
 
-function resolveTradeActor() {
-  if (game.user?.character?.type === "character") return game.user.character;
-  const controlled = canvas?.tokens?.controlled?.find((token) => token.actor?.type === "character")?.actor;
-  return controlled ?? null;
-}
-
 export function prepareMerchantSheetContext(context, options = {}) {
-  const tradeActor = resolveTradeActor();
+  const tradeActorChoices = getOwnedTradeActors();
+  const tradeActor = resolveTradeActor({ actorId: this._tradeActorId });
+  if (tradeActor) this._tradeActorId = tradeActor.id;
   const discountPercent = Math.max(0, Math.min(100, Number(this._sessionDiscountPercent ?? 0) || 0));
   const trade = this.document.system?.trade ?? {};
   const wealth = normalizeWealth(this.document.system?.wealth ?? {});
@@ -62,6 +59,13 @@ export function prepareMerchantSheetContext(context, options = {}) {
   context.stock = stock;
   context.tradeActor = tradeActor;
   context.tradeActorName = tradeActor?.name ?? "";
+  context.tradeActorChoices = tradeActorChoices.map((actor) => ({
+    id: actor.id,
+    name: actor.name,
+    selected: actor.id === tradeActor?.id
+  }));
+  context.hasTradeActorChoices = tradeActorChoices.length > 0;
+  context.selectedTradeActorId = tradeActor?.id ?? "";
   context.canTrade = Boolean(tradeActor?.isOwner);
   context.merchantCanUpdate = this.document.canUserModify(game.user, "update");
   context.discountPercent = discountPercent;
