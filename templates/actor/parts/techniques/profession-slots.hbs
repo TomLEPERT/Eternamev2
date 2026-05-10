@@ -1,0 +1,47 @@
+    <section class="techniques-panel">
+      <header class="techniques-panel-header">
+        <h2>{{localize 'ETERN.TECHNIQUE.PROFESSION_SLOT.TITLE'}}</h2>
+        {{#if isOwner}}
+          <div class="techniques-actions">
+            <button type="button" data-action="create-profession-item">{{localize 'ETERN.TECHNIQUE.ACTION.CREATE_PROFESSION'}}</button>
+          </div>
+        {{/if}}
+      </header>
+      <div class="techniques-panel-body">
+        <div class="techniques-slot-grid">
+          <article class="techniques-slot-card">
+            <label for="technique-slot-first">{{localize 'ETERN.TECHNIQUE.PROFESSION_SLOT.FIRST'}}</label>
+            <select id="technique-slot-first" name="system.techniques.professionSlots.first">
+              {{#each techniques.professionSlots.first}}
+                <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+              {{/each}}
+            </select>
+            <div class="techniques-slot-summary">
+              {{#if techniques.selectedProfessionSummaries.first}}
+                <strong>{{techniques.selectedProfessionSummaries.first.name}}</strong>
+                <div>{{techniques.selectedProfessionSummaries.first.passiveCount}} {{localize 'ETERN.PROFESSION.SECTION.PASSIVES'}}</div>
+              {{else}}
+                {{localize 'ETERN.TECHNIQUE.PROFESSION_SLOT.EMPTY_HELP'}}
+              {{/if}}
+            </div>
+          </article>
+
+          <article class="techniques-slot-card">
+            <label for="technique-slot-second">{{localize 'ETERN.TECHNIQUE.PROFESSION_SLOT.SECOND'}}</label>
+            <select id="technique-slot-second" name="system.techniques.professionSlots.second">
+              {{#each techniques.professionSlots.second}}
+                <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+              {{/each}}
+            </select>
+            <div class="techniques-slot-summary">
+              {{#if techniques.selectedProfessionSummaries.second}}
+                <strong>{{techniques.selectedProfessionSummaries.second.name}}</strong>
+                <div>{{techniques.selectedProfessionSummaries.second.passiveCount}} {{localize 'ETERN.PROFESSION.SECTION.PASSIVES'}}</div>
+              {{else}}
+                {{localize 'ETERN.TECHNIQUE.PROFESSION_SLOT.EMPTY_HELP'}}
+              {{/if}}
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>

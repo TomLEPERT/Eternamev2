@@ -1,0 +1,52 @@
+      <section class="techniques-panel">
+        <header class="techniques-panel-header">
+          <h2>{{localize 'ETERN.INVOCATION.ACTOR.SUMMARY_TITLE'}}</h2>
+        </header>
+        <div class="techniques-panel-body">
+          <div class="techniques-slot-grid techniques-slot-grid--single">
+            <article class="techniques-slot-card">
+              <div class="techniques-row-meta techniques-row-meta--stacked">
+                <span><strong>{{localize 'ETERN.INVOCATION.ACTOR.SOURCE_ACTOR'}}:</strong> {{#if invocationActorSummary.hasSourceActor}}{{invocationActorSummary.sourceActorName}}{{else}}—{{/if}}</span>
+                <span><strong>{{localize 'ETERN.INVOCATION.ACTOR.SOURCE_PROFILE'}}:</strong> {{#if invocationActorSummary.hasSourceProfile}}{{invocationActorSummary.sourceProfileName}}{{else}}—{{/if}}</span>
+                <span><strong>{{localize 'ETERN.INVOCATION.LINKED_TECHNIQUE'}}:</strong> {{#if invocationActorSummary.hasSourceTechnique}}{{invocationActorSummary.sourceTechniqueName}}{{else}}{{localize 'ETERN.INVOCATION.NO_LINKED_TECHNIQUE'}}{{/if}}</span>
+                <span><strong>{{localize 'ETERN.INVOCATION.SIZE_LABEL'}}:</strong> {{invocationActorSummary.sizeLabel}}</span>
+                <span><strong>{{localize 'ETERN.TECHNIQUE.POWER.LEVEL'}}:</strong> {{invocationActorSummary.sourceTechniquePower}}</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="techniques-invocation-summary-grid">
+            <article class="techniques-slot-card">
+              <h3 class="techniques-panel-subtitle">{{localize 'ETERN.INVOCATION.ACTOR.ACTIVE_BONUSES'}}</h3>
+              {{#if invocationActorSummary.hasActiveBonuses}}
+                <div class="techniques-list techniques-list--compact">
+                  {{#each invocationActorSummary.activeBonuses as |bonus|}}
+                    <article class="techniques-summary-chip">
+                      <strong>{{bonus.label}}</strong>
+                      {{#if bonus.notes}}<span>{{bonus.notes}}</span>{{/if}}
+                    </article>
+                  {{/each}}
+                </div>
+              {{else}}
+                <p class="techniques-empty techniques-empty--left">{{localize 'ETERN.INVOCATION.ACTOR.NO_ACTIVE_BONUSES'}}</p>
+              {{/if}}
+            </article>
+
+            <article class="techniques-slot-card">
+              <h3 class="techniques-panel-subtitle">{{localize 'ETERN.INVOCATION.ACTOR.GRANTED_TECHNIQUES'}}</h3>
+              {{#if invocationActorSummary.hasGrantedTechniques}}
+                <div class="techniques-list techniques-list--compact">
+                  {{#each invocationActorSummary.grantedTechniques as |technique|}}
+                    <article class="techniques-summary-chip">
+                      <strong>{{technique.name}}</strong>
+                      <span>{{localize 'ETERN.TECHNIQUE.POWER.LEVEL'}} {{technique.power}}{{#if technique.mainStatisticLabel}} · {{technique.mainStatisticLabel}}: {{technique.mainStatisticValue}}{{/if}}</span>
+                    </article>
+                  {{/each}}
+                </div>
+              {{else}}
+                <p class="techniques-empty techniques-empty--left">{{localize 'ETERN.INVOCATION.ACTOR.NO_GRANTED_TECHNIQUES'}}</p>
+              {{/if}}
+            </article>
+          </div>
+        </div>
+      </section>

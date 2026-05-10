@@ -1,0 +1,59 @@
+<article class="etername-technique-chat etername-technique-chat--{{validationState}}" data-item-id="{{itemId}}">
+  <header class="etername-technique-chat__header">
+    <img src="{{img}}" alt="{{name}}" width="42" height="42"/>
+    <div>
+      <h3>{{name}}</h3>
+      <p>{{actorName}}</p>
+    </div>
+    <span class="etername-technique-chat__badge">{{validationLabel}}</span>
+  </header>
+
+  {{#if headline}}
+    <p class="etername-technique-chat__headline">{{headline}}</p>
+  {{/if}}
+
+  <div class="etername-technique-chat__stats">
+    <span><strong>{{localize 'ETERN.TECHNIQUE.USAGE.TYPE_LABEL'}}:</strong> {{usageTypeLabel}}</span>
+    <span><strong>{{localize 'ETERN.TECHNIQUE.POWER.LEVEL'}}:</strong> {{power}}</span>
+    <span><strong>{{localize 'ETERN.TECHNIQUE.XP_TOTAL'}}:</strong> {{totalXp}}</span>
+    {{#if mainStatisticLabel}}
+      <span><strong>{{mainStatisticLabel}}:</strong> {{mainStatisticValue}}</span>
+    {{/if}}
+  </div>
+
+  {{#if linkedAttributeLabel}}
+    <p class="etername-technique-chat__meta"><strong>{{localize 'ETERN.TECHNIQUE.USAGE.LINKED_ATTRIBUTE'}}:</strong> {{linkedAttributeLabel}}</p>
+  {{/if}}
+
+  {{#if linkedProfessions.length}}
+    <p class="etername-technique-chat__meta"><strong>{{localize 'ETERN.TECHNIQUE.PROFESSION_SOURCE'}}:</strong>
+      {{#each linkedProfessions as |professionName|}}
+        {{professionName}}{{#unless @last}}, {{/unless}}
+      {{/each}}
+    </p>
+  {{/if}}
+
+  {{#if statistics.length}}
+    <ul class="etername-technique-chat__stat-list">
+      {{#each statistics as |entry|}}
+        <li><strong>{{entry.label}}:</strong> {{entry.value}}</li>
+      {{/each}}
+    </ul>
+  {{/if}}
+
+  {{#if components.length}}
+    <div class="etername-technique-chat__components">
+      {{#each components as |section|}}
+        <p><strong>{{section.label}}:</strong>
+          {{#each section.entries as |entry|}}
+            {{entry.name}}{{#unless @last}}, {{/unless}}
+          {{/each}}
+        </p>
+      {{/each}}
+    </div>
+  {{/if}}
+
+  {{#if description}}
+    <p class="etername-technique-chat__description">{{description}}</p>
+  {{/if}}
+</article>

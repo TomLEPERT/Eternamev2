@@ -1,0 +1,232 @@
+<header class="sheet-header item-sheet-header-card">
+  <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="72" width="72"/>
+  <div class="header-fields item-header-fields">
+    <div class="item-title-row">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'ETERN.INVOCATION.NAME'}}"/></h1>
+    </div>
+    {{#if sheetHeader.badges.length}}
+      <div class="sheet-badge-row">
+        {{#each sheetHeader.badges as |badge|}}
+          <span class="sheet-badge">{{badge}}</span>
+        {{/each}}
+      </div>
+    {{/if}}
+    {{#if sheetHeader.statBadges.length}}
+      <div class="sheet-stat-row">
+        {{#each sheetHeader.statBadges as |badge|}}
+          <div class="sheet-stat-pill"><span>{{badge.label}}</span><strong>{{badge.value}}</strong></div>
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
+</header>
+
+<nav class="sheet-tabs tabs item-sheet-tabs" data-group="primary">
+  <a class="item" data-tab="general">{{localize 'ETERN.TECHNIQUE.TABS.GENERAL'}}</a>
+  <a class="item" data-tab="attributes">{{localize 'ETERN.INVOCATION.TABS.ATTRIBUTES'}}</a>
+  <a class="item" data-tab="progression">{{localize 'ETERN.INVOCATION.TABS.PROGRESSION'}}</a>
+  <a class="item" data-tab="description">{{localize 'ETERN.TECHNIQUE.TABS.DESCRIPTION'}}</a>
+</nav>
+
+<section class="sheet-body">
+  <section class="tab" data-group="primary" data-tab="general">
+    <section class="sheet-card">
+      <div class="sheet-card-head"><h3>{{localize 'ETERN.INVOCATION.CONFIGURATION'}}</h3></div>
+      <div class="sheet-fields-grid sheet-fields-grid--two">
+        <div class="form-group">
+          <label>{{localize 'ETERN.INVOCATION.SIZE_LABEL'}}</label>
+          <select name="system.size">
+            {{#each invocationSizeChoices}}
+              <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="form-group">
+          <label>{{localize 'ETERN.INVOCATION.BASE_CREATION_XP'}}</label>
+          <input type="number" name="system.baseCreationXp" value="{{system.baseCreationXp}}" min="0" step="1"/>
+        </div>
+        <div class="form-group form-group--full">
+          <label>{{localize 'ETERN.INVOCATION.LINKED_TECHNIQUE'}}</label>
+          <select name="system.techniqueId">
+            {{#each invocationTechniqueChoices}}
+              <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="sheet-card">
+      <div class="sheet-card-head"><h3>{{localize 'ETERN.INVOCATION.SUMMARY.TITLE'}}</h3></div>
+      <div class="builder-summary-grid builder-summary-grid--power">
+        <div class="builder-summary-card">
+          <strong>{{localize 'ETERN.INVOCATION.POINTS'}}</strong>
+          <span>{{invocationSummary.totalAllocated}} / {{invocationSummary.sizeDefinition.pointBudget}}</span>
+        </div>
+        <div class="builder-summary-card">
+          <strong>{{localize 'ETERN.INVOCATION.MAX_ATTRIBUTE'}}</strong>
+          <span>{{invocationSummary.sizeDefinition.maxAttribute}}</span>
+        </div>
+        <div class="builder-summary-card">
+          <strong>{{localize 'ETERN.INVOCATION.XP_MULTIPLIER'}}</strong>
+          <span>x{{invocationSummary.sizeDefinition.xpMultiplier}}</span>
+        </div>
+        <div class="builder-summary-card">
+          <strong>{{localize 'ETERN.INVOCATION.SCALED_CREATION_XP'}}</strong>
+          <span>{{invocationSummary.scaledCreationXp}}</span>
+        </div>
+      </div>
+      {{#if invocationSummary.linkedTechnique}}
+        <p class="sheet-muted-copy">{{localize 'ETERN.INVOCATION.LINKED_TECHNIQUE'}}: <strong>{{invocationSummary.linkedTechnique.name}}</strong> — {{localize 'ETERN.TECHNIQUE.POWER.LEVEL'}} {{invocationSummary.linkedTechniquePower}}</p>
+      {{/if}}
+    </section>
+
+    <section class="sheet-card">
+      <div class="sheet-card-head"><h3>{{localize 'ETERN.INVOCATION.ACTOR.TITLE'}}</h3></div>
+      {{#if invocationLinkedActor}}
+        <p class="sheet-muted-copy">{{localize 'ETERN.INVOCATION.ACTOR.LINKED'}}: <strong>{{invocationLinkedActor.name}}</strong></p>
+        <div class="sheet-inline-actions">
+          <button type="button" class="sheet-action-button" data-action="invocation-open-actor">{{localize 'ETERN.INVOCATION.ACTOR.OPEN'}}</button>
+          <button type="button" class="sheet-action-button" data-action="invocation-sync-actor">{{localize 'ETERN.INVOCATION.ACTOR.SYNC'}}</button>
+        </div>
+      {{else}}
+        <p class="sheet-muted-copy">{{localize 'ETERN.INVOCATION.ACTOR.NO_LINKED'}}</p>
+        <div class="sheet-inline-actions">
+          <button type="button" class="sheet-action-button" data-action="invocation-create-actor">{{localize 'ETERN.INVOCATION.ACTOR.CREATE'}}</button>
+        </div>
+      {{/if}}
+    </section>
+
+    <section class="sheet-card">
+      <div class="sheet-card-head"><h3>{{localize 'ETERN.TECHNIQUE.BUILDER_STATUS'}}</h3></div>
+      {{#if invocationValidation.errors.length}}
+        <div class="builder-validation-panel builder-validation-panel--error">
+          <strong>{{localize 'ETERN.TECHNIQUE.VALIDATION.ERROR_TITLE'}}</strong>
+          <ul class="builder-validation-list">
+            {{#each invocationValidation.errors as |message|}}
+              <li>{{message}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
+      {{#if invocationValidation.warnings.length}}
+        <div class="builder-validation-panel builder-validation-panel--warning">
+          <strong>{{localize 'ETERN.TECHNIQUE.VALIDATION.WARNING_TITLE'}}</strong>
+          <ul class="builder-validation-list">
+            {{#each invocationValidation.warnings as |message|}}
+              <li>{{message}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
+      {{#unless invocationValidation.hasMessages}}
+        <div class="builder-validation-panel builder-validation-panel--success">
+          <strong>{{localize 'ETERN.TECHNIQUE.VALIDATION.SUCCESS_TITLE'}}</strong>
+        </div>
+      {{/unless}}
+    </section>
+  </section>
+
+  <section class="tab" data-group="primary" data-tab="attributes">
+    <section class="sheet-card">
+      <div class="sheet-card-head"><h3>{{localize 'ETERN.INVOCATION.ATTRIBUTES'}}</h3></div>
+      <div class="invocation-attribute-grid">
+        {{#each invocationSummary.attributeRows as |attribute|}}
+          <label class="invocation-attribute-card {{#if attribute.exceedsCap}}invocation-attribute-card--error{{/if}}">
+            <span class="invocation-attribute-card__abbr">{{attribute.abbr}}</span>
+            <span class="invocation-attribute-card__label">{{attribute.label}}</span>
+            <input type="number" name="system.attributes.{{attribute.key}}" value="{{attribute.value}}" min="0" max="18" step="1"/>
+          </label>
+        {{/each}}
+      </div>
+    </section>
+  </section>
+
+  <section class="tab" data-group="primary" data-tab="progression">
+    <section class="sheet-card">
+      <div class="sheet-card-head">
+        <h3>{{localize 'ETERN.INVOCATION.POWER_BONUS.TITLE'}}</h3>
+        <button type="button" class="sheet-action-button" data-action="invocation-add-power-boon">{{localize 'ETERN.UI.ADD'}}</button>
+      </div>
+      <p class="sheet-muted-copy">{{localize 'ETERN.INVOCATION.POWER_BONUS.HELP'}}</p>
+      <div class="builder-list">
+        {{#each invocationSummary.powerBoons as |entry|}}
+          <article class="builder-row">
+            <div class="builder-row-fields builder-row-fields--three">
+              <div class="form-group">
+                <label>{{localize 'ETERN.INVOCATION.POWER_BONUS.TYPE'}}</label>
+                <select data-invocation-power-boon-field data-entry-index="{{entry.index}}" data-entry-field="type">
+                  {{#each ../invocationPowerBonusChoices as |choice|}}
+                    <option value="{{choice.value}}" {{#if (eq choice.value entry.type)}}selected{{/if}}>{{choice.label}}</option>
+                  {{/each}}
+                </select>
+              </div>
+              {{#if entry.hasTarget}}
+                <div class="form-group">
+                  <label>{{localize 'ETERN.UI.TARGET'}}</label>
+                  <select data-invocation-power-boon-field data-entry-index="{{entry.index}}" data-entry-field="target">
+                    {{#each entry.targetChoices as |choice|}}
+                      <option value="{{choice.value}}" {{#if choice.selected}}selected{{/if}}>{{choice.label}}</option>
+                    {{/each}}
+                  </select>
+                </div>
+              {{/if}}
+              <div class="form-group {{#unless entry.hasTarget}}form-group--full{{/unless}}">
+                <label>{{localize 'ETERN.UI.NOTES'}}</label>
+                <input type="text" value="{{entry.notes}}" data-invocation-power-boon-field data-entry-index="{{entry.index}}" data-entry-field="notes"/>
+              </div>
+            </div>
+            <div class="builder-row-actions">
+              {{#if entry.isApplied}}<span class="builder-inline-badge">{{localize 'ETERN.INVOCATION.POWER_BONUS.APPLIED'}}</span>{{/if}}
+              <button type="button" class="builder-icon-button builder-icon-button--danger" data-action="invocation-remove-power-boon" data-entry-index="{{entry.index}}">×</button>
+            </div>
+          </article>
+        {{else}}
+          <p class="sheet-muted-copy">{{localize 'ETERN.INVOCATION.POWER_BONUS.EMPTY'}}</p>
+        {{/each}}
+      </div>
+    </section>
+
+    <section class="sheet-card">
+      <div class="sheet-card-head"><h3>{{localize 'ETERN.INVOCATION.THRESHOLDS.TITLE'}}</h3></div>
+      <p class="sheet-muted-copy">{{localize 'ETERN.INVOCATION.THRESHOLDS.HELP'}}</p>
+      <div class="builder-list">
+        {{#each invocationThresholdRows as |entry|}}
+          <article class="builder-row">
+            <div class="builder-row-header">
+              <strong>{{localize 'ETERN.TECHNIQUE.POWER.LEVEL'}} {{entry.threshold}}</strong>
+              {{#if entry.unlocked}}
+                <span class="builder-inline-badge">{{localize 'ETERN.INVOCATION.THRESHOLD_UNLOCKED'}}</span>
+              {{/if}}
+            </div>
+            <div class="builder-row-fields builder-row-fields--three">
+              <div class="form-group form-group--full">
+                <label>{{localize 'ETERN.INVOCATION.THRESHOLD_TECHNIQUE'}}</label>
+                <select name="system.thresholds.{{entry.key}}.techniqueId">
+                  {{#each entry.choices}}
+                    <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+                  {{/each}}
+                </select>
+              </div>
+              <div class="form-group form-group--full">
+                <label>{{localize 'ETERN.UI.NOTES'}}</label>
+                <textarea name="system.thresholds.{{entry.key}}.notes">{{entry.notes}}</textarea>
+              </div>
+            </div>
+          </article>
+        {{/each}}
+      </div>
+    </section>
+  </section>
+
+  <section class="tab" data-group="primary" data-tab="description">
+    <section class="sheet-card">
+      <div class="sheet-card-head"><h3>{{localize 'ETERN.UI.DESCRIPTION'}}</h3></div>
+      <textarea name="system.description" rows="8">{{system.description}}</textarea>
+    </section>
+    <section class="sheet-card">
+      <div class="sheet-card-head"><h3>{{localize 'ETERN.UI.NOTES'}}</h3></div>
+      <textarea name="system.notes" rows="8">{{system.notes}}</textarea>
+    </section>
+  </section>
+</section>

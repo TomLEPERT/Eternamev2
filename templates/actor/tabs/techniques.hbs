@@ -1,0 +1,24 @@
+<section class="techniques-layout">
+  <div class="techniques-column">
+    {{#if isInvocationActor}}
+      {{> "systems/eternamev2/templates/actor/parts/techniques/invocation-actor-summary.hbs"}}
+    {{else}}
+      {{> "systems/eternamev2/templates/actor/parts/techniques/profession-slots.hbs"}}
+      {{> "systems/eternamev2/templates/actor/parts/techniques/profession-list.hbs"}}
+      {{> "systems/eternamev2/templates/actor/parts/techniques/heritage-list.hbs"}}
+    {{/if}}
+  </div>
+
+  <div class="techniques-column">
+    {{#unless isInvocationActor}}
+      {{> "systems/eternamev2/templates/actor/parts/techniques/profession-quick-access.hbs"}}
+    {{/unless}}
+
+    {{> "systems/eternamev2/templates/actor/parts/techniques/prepared-techniques.hbs"}}
+    {{> "systems/eternamev2/templates/actor/parts/techniques/known-techniques.hbs"}}
+
+    {{#unless isInvocationActor}}
+      {{> "systems/eternamev2/templates/actor/parts/techniques/invocation-list.hbs"}}
+    {{/unless}}
+  </div>
+</section>

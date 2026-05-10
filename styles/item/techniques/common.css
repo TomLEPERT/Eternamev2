@@ -1,0 +1,175 @@
+
+.eternamev2-item-sheet .builder-row-actions--stacked {
+  flex-direction: column;
+}
+
+.eternamev2-item-sheet .builder-inline-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: var(--etern-radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 0.8rem;
+}
+
+.eternamev2-item-sheet .builder-row-note {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.eternamev2-item-sheet .builder-validation-panel {
+  padding: var(--etern-space-md) 12px;
+  border-radius: var(--etern-radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.eternamev2-item-sheet .builder-validation-panel--error {
+  background: rgba(128, 15, 15, 0.18);
+}
+
+.eternamev2-item-sheet .builder-validation-panel--warning {
+  background: rgba(128, 96, 15, 0.18);
+  margin-top: 10px;
+}
+
+.eternamev2-item-sheet .builder-validation-panel--success {
+  background: rgba(18, 96, 42, 0.18);
+}
+
+.eternamev2-item-sheet .builder-validation-list {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.eternamev2-item-sheet .builder-source-section {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.eternamev2-item-sheet .builder-source-section h4 {
+  margin: 0 0 10px;
+}
+
+.eternamev2-item-sheet .builder-summary-copy {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.eternamev2-item-sheet .builder-row-note--spaced {
+  margin-bottom: 10px;
+}
+
+.eternamev2-item-sheet .builder-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--etern-space-md);
+}
+
+.eternamev2-item-sheet .builder-summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--etern-space-sm);
+  min-width: 0;
+  padding: var(--etern-space-md) 12px;
+  border-radius: var(--etern-radius-xl);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.eternamev2-item-sheet .builder-summary-card strong {
+  font-size: 0.9rem;
+}
+
+.eternamev2-item-sheet .builder-summary-card .sheet-muted-copy {
+  margin: 0;
+}
+
+.eternamev2-item-sheet .builder-step-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+  gap: var(--etern-space-sm);
+  margin-top: 12px;
+}
+
+.eternamev2-item-sheet .builder-step-pill {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--etern-space-sm) 10px;
+  border-radius: var(--etern-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.eternamev2-item-sheet .builder-step-pill--active {
+  background: rgba(208, 124, 43, 0.14);
+  border-color: rgba(208, 124, 43, 0.35);
+}
+
+.eternamev2-item-sheet .builder-grid--stat-entry-expanded {
+  grid-template-columns: minmax(0, 2fr) repeat(4, minmax(110px, 1fr));
+}
+
+@media (max-width: 980px) {
+  .eternamev2-item-sheet .builder-grid--stat-entry-expanded {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+.eternamev2-item-sheet .builder-inline-badge--warning {
+  background: rgba(128, 96, 15, 0.24);
+  border-color: rgba(208, 154, 43, 0.35);
+}
+
+.eternamev2-item-sheet .builder-inline-badge--success {
+  background: rgba(18, 96, 42, 0.24);
+  border-color: rgba(62, 155, 86, 0.35);
+}
+
+.eternamev2-item-sheet .builder-inline-badge--muted {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.eternamev2-item-sheet .builder-action-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--etern-space-sm);
+}
+
+.eternamev2-item-sheet .builder-row--draggable {
+  cursor: grab;
+}
+
+.eternamev2-item-sheet .builder-row--dragging {
+  opacity: 0.55;
+}
+
+.eternamev2-item-sheet .builder-inline-badge--drag {
+  background: rgba(86, 108, 164, 0.18);
+  border-color: rgba(86, 108, 164, 0.35);
+}
+
+.eternamev2-item-sheet .technique-drop-zone {
+  transition: border-color 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.eternamev2-item-sheet .technique-drop-zone--active {
+  border-color: rgba(86, 108, 164, 0.45);
+  box-shadow: 0 0 0 2px rgba(86, 108, 164, 0.12);
+  background: rgba(86, 108, 164, 0.05);
+}
+
+.eternamev2-item-sheet .technique-drop-zone--invalid {
+  border-color: rgba(160, 39, 39, 0.42);
+  box-shadow: 0 0 0 2px rgba(160, 39, 39, 0.1);
+}
+
+.eternamev2-item-sheet .technique-drop-hint {
+  margin: 4px 0 0;
+}

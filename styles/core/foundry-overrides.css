@@ -1,0 +1,11 @@
+body .etername-sheet {
+  --color-light-2: #0b0a13;
+  --color-light-3: #9f8475;
+  --color-text-primary: #0b0a13;
+}
+
+.sidebar-tab[data-tab="chat"],
+#chat,
+#chat-log {
+  overflow-y: auto !important;
+}

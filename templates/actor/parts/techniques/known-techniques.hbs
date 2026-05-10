@@ -1,0 +1,99 @@
+    <section class="techniques-panel">
+      <header class="techniques-panel-header">
+        <h2>{{localize 'ETERN.TECHNIQUE.LIST_TITLE'}}</h2>
+        {{#if isOwner}}
+          <div class="techniques-actions">
+            {{#unless isInvocationActor}}
+              <button type="button" data-action="create-technique-item">{{localize 'ETERN.TECHNIQUE.ACTION.CREATE_TECHNIQUE'}}</button>
+            {{/unless}}
+          </div>
+        {{/if}}
+      </header>
+      <div class="techniques-panel-body">
+        <div class="techniques-toolbar">
+          <label class="techniques-search">
+            <span>{{localize 'ETERN.TECHNIQUE.ACTOR.SEARCH'}}</span>
+            <input type="search" data-technique-search placeholder="{{localize 'ETERN.TECHNIQUE.ACTOR.SEARCH_PLACEHOLDER'}}"/>
+          </label>
+          <label class="techniques-sort">
+            <span>{{localize 'ETERN.TECHNIQUE.ACTOR.SORT'}}</span>
+            <select data-technique-sort>
+              <option value="nameAsc">{{localize 'ETERN.TECHNIQUE.ACTOR.SORT_NAME_ASC'}}</option>
+              <option value="nameDesc">{{localize 'ETERN.TECHNIQUE.ACTOR.SORT_NAME_DESC'}}</option>
+              <option value="powerDesc">{{localize 'ETERN.TECHNIQUE.ACTOR.SORT_POWER_DESC'}}</option>
+              <option value="xpDesc">{{localize 'ETERN.TECHNIQUE.ACTOR.SORT_XP_DESC'}}</option>
+              <option value="status">{{localize 'ETERN.TECHNIQUE.ACTOR.SORT_STATUS'}}</option>
+            </select>
+          </label>
+          <label class="sheet-inline-toggle techniques-filter-toggle">
+            <input type="checkbox" data-technique-filter="prepared"/>
+            <span>{{localize 'ETERN.TECHNIQUE.ACTOR.SHOW_PREPARED_ONLY'}}</span>
+          </label>
+        </div>
+
+        <div class="techniques-list" data-technique-list>
+          {{#each techniques.techniques as |technique|}}
+            <article class="techniques-row" data-technique-entry data-technique-prepared="{{#if technique.isPrepared}}1{{else}}0{{/if}}" data-technique-search="{{technique.searchText}}" data-technique-name="{{technique.name}}" data-technique-power="{{technique.power}}" data-technique-xp="{{technique.totalXp}}" data-technique-validation="{{technique.validationState}}">
+              <div class="techniques-row-main">
+                <div class="techniques-row-title">
+                  <button type="button" data-action="open-technique-item" data-item-id="{{technique.id}}">{{technique.name}}</button>
+                  <span class="techniques-row-badge">{{localize 'ETERN.ITEM.TYPES.TECHNIQUE'}}</span>
+                  <span class="techniques-row-badge techniques-row-badge--{{technique.validationState}}">{{technique.validationLabel}}</span>
+                  {{#if technique.isInvocationGranted}}
+                    <span class="techniques-row-badge techniques-row-badge--invocation">{{localize 'ETERN.INVOCATION.ACTOR.GRANTED_BADGE'}}</span>
+                  {{/if}}
+                  {{#if technique.isPrepared}}
+                    <span class="techniques-row-badge techniques-row-badge--prepared">{{localize 'ETERN.TECHNIQUE.ACTOR.PREPARED'}}</span>
+                  {{/if}}
+                </div>
+                <p class="techniques-row-subtitle">{{#if technique.description}}{{technique.description}}{{else}}{{localize 'ETERN.TECHNIQUE.EMPTY_DESCRIPTION'}}{{/if}}</p>
+                {{#if technique.headline}}
+                  <p class="techniques-row-subtitle techniques-row-subtitle--summary">{{technique.headline}}</p>
+                {{else if technique.shortText}}
+                  <p class="techniques-row-subtitle techniques-row-subtitle--summary">{{technique.shortText}}</p>
+                {{/if}}
+                <div class="techniques-row-meta">
+                  <span>{{localize 'ETERN.TECHNIQUE.POWER.LEVEL'}}: {{technique.power}}</span>
+                  <span>{{localize 'ETERN.TECHNIQUE.XP_TOTAL'}}: {{technique.totalXp}}</span>
+                  {{#if technique.mainStatisticLabel}}
+                    <span>{{technique.mainStatisticLabel}}: {{technique.mainStatisticValue}}</span>
+                  {{/if}}
+                  {{#if technique.linkedProfessions.length}}
+                    <span>{{localize 'ETERN.TECHNIQUE.PROFESSION_SOURCE'}}:
+                      {{#each technique.linkedProfessions as |professionName|}}
+                        {{professionName}}{{#unless @last}}, {{/unless}}
+                      {{/each}}
+                    </span>
+                  {{/if}}
+                </div>
+                {{#if technique.componentBadges.length}}
+                  <div class="techniques-row-tags">
+                    {{#each technique.componentBadges as |badge|}}
+                      <span class="techniques-row-tag">{{badge}}</span>
+                    {{/each}}
+                  </div>
+                {{/if}}
+                {{#if technique.slotSourceBadges.length}}
+                  <div class="techniques-row-tags">
+                    {{#each technique.slotSourceBadges as |badge|}}
+                      <span class="techniques-row-tag techniques-row-tag--accent">{{badge}}</span>
+                    {{/each}}
+                  </div>
+                {{/if}}
+              </div>
+              <div class="techniques-row-actions techniques-row-actions--stacked">
+                <button type="button" data-action="use-technique-item" data-item-id="{{technique.id}}">{{localize 'ETERN.TECHNIQUE.ACTION.USE'}}</button>
+                {{#if ../isOwner}}
+                  <button type="button" data-action="toggle-technique-prepared" data-item-id="{{technique.id}}">{{#if technique.isPrepared}}{{localize 'ETERN.TECHNIQUE.ACTION.UNPREPARE'}}{{else}}{{localize 'ETERN.TECHNIQUE.ACTION.PREPARE'}}{{/if}}</button>
+                  <button type="button" data-action="duplicate-technique-item" data-item-id="{{technique.id}}">{{localize 'ETERN.UI.DUPLICATE'}}</button>
+                  <button type="button" data-action="delete-owned-item" data-item-id="{{technique.id}}">{{localize 'ETERN.UI.DELETE'}}</button>
+                {{/if}}
+              </div>
+            </article>
+          {{else}}
+            <p class="techniques-empty">{{localize 'ETERN.TECHNIQUE.NO_TECHNIQUE_ON_ACTOR'}}</p>
+          {{/each}}
+          <p class="techniques-empty" data-technique-empty-filtered hidden>{{localize 'ETERN.TECHNIQUE.ACTOR.NO_MATCH'}}</p>
+        </div>
+      </div>
+    </section>

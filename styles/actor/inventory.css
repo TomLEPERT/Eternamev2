@@ -1,0 +1,275 @@
+.inventory-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--etern-space-xl);
+  align-items: start;
+  padding: var(--etern-space-lg) 16px 16px;
+}
+
+.inv-col,
+.inv-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--etern-space-xl);
+  min-width: 0;
+}
+
+.inv-panel,
+.wealth {
+  border: 2px solid rgba(208, 124, 43, 0.95);
+  border-radius: var(--etern-radius-2xl);
+  background: rgba(255,255,255,0.8);
+  overflow: hidden;
+}
+
+.inv-storage-panel {
+  padding: 0;
+}
+
+.inv-header,
+.wealth-header,
+.inv-side-panel > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--etern-space-md);
+  margin: 0;
+  padding: var(--etern-space-md) 12px;
+  background: linear-gradient(180deg, rgba(222, 145, 52, 1) 0%, rgba(208, 124, 43, 1) 100%);
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.inv-header h2,
+.wealth-header h2,
+.inv-side-panel > h2 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--etern-color-white);
+}
+
+.inv-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--etern-space-sm);
+}
+
+.inv-cap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 84px;
+  padding: 4px 8px;
+  border-radius: var(--etern-radius-md);
+  border: 2px solid rgba(239,153,53,1);
+  background: rgba(255,255,255,0.98);
+  color: #462d14;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.inv-add,
+.wealth-convert-btn,
+.inv-qty button,
+.inv-actions button {
+  border-radius: var(--etern-radius-md);
+  border: 1px solid rgba(208,124,43,0.7);
+  background: rgba(255,255,255,0.96);
+  cursor: pointer;
+}
+
+.inv-add {
+  width: 28px;
+  height: 28px;
+  font-weight: 900;
+}
+
+.inv-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 14px;
+  padding: var(--etern-space-md) 12px;
+  border: 2px solid rgba(208,124,43,0.6);
+  border-radius: var(--etern-radius-2xl);
+  background: rgba(255,255,255,0.92);
+  min-height: 120px;
+}
+
+.inv-row,
+.inv-row-head {
+  display: grid;
+  grid-template-columns: 1fr 94px 72px 80px;
+  gap: var(--etern-space-md);
+  align-items: center;
+}
+
+.inv-row-head {
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(70,45,20,0.9);
+}
+
+.inv-row {
+  padding: var(--etern-space-sm) 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.inv-row:last-child {
+  border-bottom: none;
+}
+
+.inv-name {
+  min-width: 0;
+}
+
+.inv-name-button {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.inv-qty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.inv-qty button {
+  width: 24px;
+  height: 24px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.inv-qty span,
+.inv-weight {
+  text-align: center;
+  font-weight: 700;
+}
+
+.inv-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.inv-actions button {
+  width: 32px;
+  height: 26px;
+}
+
+.inv-empty {
+  padding: 18px 0 8px;
+  text-align: center;
+  color: rgba(70,45,20,0.75);
+  font-weight: 600;
+}
+
+.wealth-header {
+  color: #111;
+}
+
+.wealth-convert-btn {
+  border: 2px solid #111;
+  border-radius: var(--etern-radius-pill);
+  padding: 6px 12px;
+  font-weight: 700;
+}
+
+.wealth-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--etern-space-lg);
+  padding: var(--etern-space-lg);
+}
+
+.wealth-col {
+  display: grid;
+  gap: 6px;
+  padding: var(--etern-space-md);
+  border: 2px solid rgba(208,124,43,0.95);
+  border-radius: var(--etern-radius-xl);
+}
+
+.wealth-col--full {
+  grid-column: 1 / span 1;
+}
+
+.wealth-col label,
+.wealth-lifestyle label,
+.inv-side-panel label {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.wealth-col input,
+.wealth-lifestyle input,
+.inv-side-panel input,
+.inventory-notes-wrap textarea,
+.inventory-dialog-field input,
+.inventory-dialog-field select,
+.inventory-dialog-field textarea {
+  width: 100%;
+  border: 2px solid var(--input-border-color);
+  border-radius: var(--etern-radius-lg);
+  padding: 6px 8px;
+  box-sizing: border-box;
+  background: var(--input-background-color);
+}
+
+.wealth-lifestyle,
+.inventory-notes-wrap {
+  padding: var(--etern-space-lg) 12px;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--etern-space-lg);
+  padding: var(--etern-space-lg);
+}
+
+.two-col-full {
+  grid-column: 1 / -1;
+}
+
+.inventory-notes-wrap textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.inventory-dialog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--etern-space-lg);
+}
+
+.inventory-dialog-field {
+  display: grid;
+  gap: 6px;
+}
+
+.inventory-dialog-field--full {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 980px) {
+  .inventory-layout {
+    grid-template-columns: 1fr;
+  }
+}

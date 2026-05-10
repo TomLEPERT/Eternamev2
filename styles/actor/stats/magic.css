@@ -1,0 +1,124 @@
+.misc-card-magic {
+  gap: var(--etern-gap-sm);
+}
+
+.magic-add-button,
+.magic-delete-button,
+.magic-adjust-button {
+  border: 1px solid var(--etern-button-border);
+  border-radius: var(--etern-radius-md);
+  background: var(--etern-soft-bg-strong);
+  cursor: pointer;
+}
+
+.magic-add-button {
+  height: 32px;
+  padding: 0 12px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.magic-adjust-button,
+.magic-delete-button {
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.magic-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--etern-gap-sm);
+}
+
+.magic-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) auto 32px;
+  gap: var(--etern-gap-sm);
+  align-items: center;
+}
+
+.magic-pool-row {
+  grid-template-columns: minmax(0, 1fr) auto 32px;
+}
+
+.magic-name-input,
+.magic-value-input,
+.magic-max-input {
+  width: 100%;
+}
+
+.magic-name-input {
+  min-width: 0;
+}
+
+.magic-value-input,
+.magic-max-input {
+  width: 56px;
+  text-align: center;
+}
+
+.magic-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border-radius: var(--etern-radius-lg);
+  background: var(--etern-soft-bg);
+}
+
+.magic-separator {
+  font-weight: 900;
+  opacity: 0.6;
+}
+
+.magic-empty {
+  margin: 0;
+  color: var(--etern-text-muted);
+  font-style: italic;
+}
+
+.magic-add-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--etern-gap-sm);
+  flex-wrap: nowrap;
+}
+
+.magic-type-select {
+  min-width: 170px;
+  height: 32px;
+}
+
+.magic-type-label {
+  font-weight: 800;
+  color: #2f2a26;
+}
+
+.magic-derived-max {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 900;
+}
+
+.magic-fascination-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.magic-fascination-block .magic-counter {
+  width: 100%;
+}
+
+.magic-recovery-line {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4a443d;
+  padding-left: 2px;
+}

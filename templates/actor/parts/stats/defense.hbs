@@ -1,0 +1,161 @@
+<section class="stats-section stats-defense">
+  <header class="stats-section-title stats-section-title-defense">
+    {{localize "ETERN.STATS.DEFENSE"}}
+  </header>
+
+  <div class="defense-panel">
+    <div class="defense-summary">
+      <article class="defense-total-card">
+        <div class="defense-total-value" data-derived="defense-total">{{system.derived.defense.total}}</div>
+        <div class="defense-total-label">{{localize "ETERN.STATS.DEFENSE_SHORT"}}</div>
+      </article>
+
+      <article class="defense-stat-card">
+        <div class="defense-stat-value" data-derived="defense-base">{{system.derived.defense.base}}</div>
+        <div class="defense-stat-label">{{localize "ETERN.STATS.DEFENSE_BASE"}}</div>
+      </article>
+
+      <article class="defense-stat-card">
+        <div class="defense-stat-value">{{system.defense.armor}}</div>
+        <div class="defense-stat-label">{{localize "ETERN.STATS.DEFENSE_ARMOR"}}</div>
+      </article>
+
+      <article class="defense-stat-card">
+        <div class="defense-stat-value">{{system.defense.shield}}</div>
+        <div class="defense-stat-label">{{localize "ETERN.STATS.DEFENSE_SHIELD"}}</div>
+      </article>
+
+      <article class="defense-stat-card">
+        <input
+          class="defense-stat-input"
+          type="number"
+          name="system.defense.bonus"
+          value="{{system.defense.bonus}}"
+        >
+        <div class="defense-stat-label">{{localize "ETERN.STATS.DEFENSE_BONUS"}}</div>
+      </article>
+    </div>
+
+    <div class="defense-formula">
+      {{localize "ETERN.STATS.DEFENSE_FORMULA"}}
+    </div>
+
+    <div class="defense-training-card">
+      <div class="defense-training-head">
+        <h3>{{localize "ETERN.STATS.ARMOR_TRAINING"}}</h3>
+      </div>
+
+      <div class="defense-training-grid">
+        <label class="defense-training-option">
+          <input type="checkbox" name="system.armorTraining.light" {{checked system.armorTraining.light}}>
+          <span>{{localize "ETERN.ITEM.ARMOR_TYPE.LIGHT"}}</span>
+        </label>
+
+        <label class="defense-training-option">
+          <input type="checkbox" name="system.armorTraining.medium" {{checked system.armorTraining.medium}}>
+          <span>{{localize "ETERN.ITEM.ARMOR_TYPE.MEDIUM"}}</span>
+        </label>
+
+        <label class="defense-training-option">
+          <input type="checkbox" name="system.armorTraining.heavy" {{checked system.armorTraining.heavy}}>
+          <span>{{localize "ETERN.ITEM.ARMOR_TYPE.HEAVY"}}</span>
+        </label>
+      </div>
+
+      <div class="defense-training-feedback">
+        <div>
+          <strong>{{localize "ETERN.STATS.ARMOR_TRAINING_STATUS"}}</strong>
+          <span data-derived="armor-training-status">
+            {{#if system.derived.armorTraining.trained}}
+              {{localize "ETERN.STATS.ARMOR_TRAINING_OK"}}
+            {{else}}
+              {{localize "ETERN.STATS.ARMOR_TRAINING_MISSING"}}
+            {{/if}}
+          </span>
+        </div>
+
+        <div>
+          <strong>{{localize "ETERN.STATS.ARMOR_TRAINING_PENALTY"}}</strong>
+          <span data-derived="armor-training-penalty">
+            {{#if system.derived.armorTraining.agilityDisadvantage}}
+              {{localize "ETERN.STATS.ARMOR_TRAINING_PENALTY_DISADV"}}
+            {{else if system.derived.armorTraining.speedPenalty}}
+              {{localize "ETERN.STATS.ARMOR_TRAINING_PENALTY_SPEED_LABEL"}} -{{system.derived.armorTraining.speedPenalty}}
+            {{else}}
+              {{localize "ETERN.STATS.ARMOR_TRAINING_PENALTY_NONE"}}
+            {{/if}}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="defense-equipment-grid">
+      <section class="defense-items-card">
+        <div class="defense-items-card-head">
+          <h3>{{localize "ETERN.ITEM.ARMORS"}}</h3>
+          <button type="button" class="defense-create-button" data-action="create-defense-item" data-item-type="armor">
+            {{localize "ETERN.ITEM.ADD_ARMOR"}}
+          </button>
+        </div>
+
+        <div class="defense-items-list">
+          {{#if defenseItems.armors.length}}
+            {{#each defenseItems.armors as |item|}}
+              <article class="defense-item-row">
+                <label class="defense-item-equip">
+                  <input type="checkbox" data-action="toggle-owned-item" data-item-id="{{item.id}}" {{checked item.equipped}}>
+                </label>
+
+                <div class="defense-item-name">{{item.name}}</div>
+                <div class="defense-item-type">{{item.armorTypeLabel}}</div>
+                <div class="defense-item-defense">{{item.armorDefLabel}}</div>
+
+                <button type="button" class="defense-item-delete" data-action="inventory-edit" data-item-id="{{item.id}}">✎</button>
+                <button type="button" class="defense-item-delete" data-action="delete-owned-item" data-item-id="{{item.id}}">×</button>
+              </article>
+            {{/each}}
+          {{else}}
+            <p class="defense-empty">{{localize "ETERN.ITEM.NO_ARMOR"}}</p>
+          {{/if}}
+        </div>
+      </section>
+
+      <section class="defense-items-card">
+        <div class="defense-items-card-head">
+          <h3>{{localize "ETERN.ITEM.SHIELDS"}}</h3>
+          <button type="button" class="defense-create-button" data-action="create-defense-item" data-item-type="shield">
+            {{localize "ETERN.ITEM.ADD_SHIELD"}}
+          </button>
+        </div>
+
+        <div class="defense-items-list">
+          {{#if defenseItems.shields.length}}
+            {{#each defenseItems.shields as |item|}}
+              <article class="defense-item-row defense-item-row-shield">
+                <label class="defense-item-equip">
+                  <input type="checkbox" data-action="toggle-owned-item" data-item-id="{{item.id}}" {{checked item.equipped}}>
+                </label>
+
+                <div class="defense-item-name">{{item.name}}</div>
+
+                <input
+                  class="defense-item-defense"
+                  type="number"
+                  min="0"
+                  value="{{item.defense}}"
+                  data-item-id="{{item.id}}"
+                  data-item-path="system.defense"
+                >
+
+                <button type="button" class="defense-item-delete" data-action="inventory-edit" data-item-id="{{item.id}}">✎</button>
+                <button type="button" class="defense-item-delete" data-action="delete-owned-item" data-item-id="{{item.id}}">×</button>
+              </article>
+            {{/each}}
+          {{else}}
+            <p class="defense-empty">{{localize "ETERN.ITEM.NO_SHIELD"}}</p>
+          {{/if}}
+        </div>
+      </section>
+    </div>
+  </div>
+</section>

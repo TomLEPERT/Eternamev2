@@ -1,0 +1,25 @@
+<section class="stats-section stats-progression">
+  <header class="stats-section-title">{{localize "ETERN.PROGRESSION.TITLE"}}</header>
+
+  <div class="progression-panel-v2">
+    <button type="button" class="progress-add-button-v2" data-action="create-progress-track">{{localize "ETERN.PROGRESSION.ADD"}}</button>
+
+    {{#if progressTracks.length}}
+      {{#each progressTracks as |track|}}
+        <div class="progress-track-v2" data-track-index="{{track.index}}">
+          <div class="progress-track-head-v2">
+            <input type="text" value="{{track.name}}" placeholder="{{localize 'ETERN.PROGRESSION.NAME'}}" data-track-index="{{track.index}}" data-track-field="name">
+            <input type="text" value="{{track.objectivesText}}" placeholder="{{localize 'ETERN.PROGRESSION.OBJECTIVES_PLACEHOLDER'}}" data-track-index="{{track.index}}" data-track-field="objectivesText">
+            <button type="button" class="progress-delete-button-v2" data-action="delete-progress-track" data-track-index="{{track.index}}">🗑</button>
+          </div>
+
+          <div class="progress-track-boxes-v2">
+            {{#each track.slots as |slot|}}
+              <button type="button" class="progress-track-box{{#if slot.checked}} active{{/if}}{{#if slot.isObjective}} objective{{/if}}" data-track-index="{{slot.trackIndex}}" data-box-index="{{slot.index}}" aria-pressed="{{#if slot.checked}}true{{else}}false{{/if}}"></button>
+            {{/each}}
+          </div>
+        </div>
+      {{/each}}
+    {{/if}}
+  </div>
+</section>

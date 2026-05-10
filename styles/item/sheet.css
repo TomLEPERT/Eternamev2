@@ -1,0 +1,107 @@
+.window-content:has(.eternamev2-item-sheet) {
+  overflow: hidden;
+}
+
+.eternamev2-item-sheet {
+  color: var(--color-text-light-primary);
+  padding: var(--etern-space-md);
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+}
+
+.eternamev2-item-sheet .sheet-header {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: var(--etern-space-2xl);
+  align-items: start;
+}
+
+.eternamev2-item-sheet .item-sheet-header-card {
+  padding: var(--etern-space-lg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--etern-radius-3xl);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.eternamev2-item-sheet .profile-img {
+  border-radius: var(--etern-radius-2xl);
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.eternamev2-item-sheet .item-header-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--etern-space-md);
+}
+
+.eternamev2-item-sheet .item-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--etern-space-lg);
+  align-items: stretch;
+}
+
+.eternamev2-item-sheet .charname {
+  flex: 1 1 320px;
+  min-width: 0;
+  margin: 0;
+}
+
+.eternamev2-item-sheet .charname input {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: var(--etern-space-md) 12px;
+}
+
+.eternamev2-item-sheet .sheet-badge-row,
+.eternamev2-item-sheet .sheet-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--etern-space-sm);
+}
+
+.eternamev2-item-sheet .sheet-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 10px;
+  border-radius: var(--etern-radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.85rem;
+}
+
+.eternamev2-item-sheet .sheet-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--etern-space-sm);
+  padding: 6px 10px;
+  border-radius: var(--etern-radius-xl);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.eternamev2-item-sheet .sheet-stat-pill span {
+  opacity: 0.8;
+  font-size: 0.85rem;
+}
+
+.eternamev2-item-sheet .sheet-stat-pill strong {
+  font-size: 0.95rem;
+}
+
+.eternamev2-item-sheet .sheet-action-button {
+  flex: 0 0 auto;
+  min-height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--etern-radius-lg);
+  padding: var(--etern-space-sm) 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}

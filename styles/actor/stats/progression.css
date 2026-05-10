@@ -1,0 +1,95 @@
+.stats-progression {
+  margin-top: var(--etern-gap-lg);
+}
+
+.progression-panel-v2 {
+  border-top: 1px solid rgba(145, 34, 34, 0.5);
+  padding-top: 12px;
+}
+
+.progress-add-button-v2 {
+  width: 100%;
+  border-radius: var(--etern-radius-xl);
+  border: 2px dashed var(--etern-button-border);
+  background: var(--etern-soft-bg-strong);
+  min-height: 48px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.progress-track-v2 {
+  border: 2px solid rgba(0,0,0,0.1);
+  border-radius: var(--etern-radius-3xl);
+  background: rgba(255,255,255,0.24);
+  padding: var(--etern-space-lg);
+  margin-top: 12px;
+}
+
+.progress-track-head-v2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) 40px;
+  gap: var(--etern-space-lg);
+  margin-bottom: 10px;
+}
+
+.progress-track-head-v2 input {
+  min-width: 0;
+  height: 30px;
+  border-radius: var(--etern-radius-lg);
+  border: 2px solid var(--input-border-color);
+  background: var(--input-background-color);
+  padding: 0 10px;
+  font-weight: 700;
+}
+
+.progress-delete-button-v2 {
+  width: 40px;
+  min-width: 40px;
+  height: 32px;
+  border-radius: var(--etern-radius-xl);
+  border: 1px solid var(--etern-button-border);
+  background: var(--etern-soft-bg-strong);
+}
+
+.progress-track-boxes-v2 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--etern-space-md);
+}
+
+.progress-track-box {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(0,0,0,0.55);
+  border-radius: 4px;
+  background: rgba(255,255,255,0.65);
+}
+
+.progress-track-box.active {
+  background: rgba(0,0,0,0.8);
+  border-color: rgba(0,0,0,0.8);
+}
+
+.progress-track-box.objective {
+  border-color: rgba(178, 36, 36, 0.95);
+  box-shadow: 0 0 0 2px rgba(178,36,36,0.18);
+  background: rgba(255,236,236,0.9);
+}
+
+.progress-track-box.objective::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 2px;
+  border: 1px dashed rgba(178,36,36,0.95);
+}
+
+.progress-track-box.objective.active {
+  background: rgba(178,36,36,0.95);
+  border-color: rgba(178,36,36,0.95);
+}
+
+.progress-track-box.objective.active::after {
+  border-color: rgba(255,255,255,0.95);
+}

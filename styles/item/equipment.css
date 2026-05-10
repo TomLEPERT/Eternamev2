@@ -1,0 +1,134 @@
+.eternamev2-item-sheet .weapon-tag-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--etern-space-sm);
+}
+
+.eternamev2-item-sheet .weapon-tag-choice {
+  display: flex;
+  align-items: center;
+  gap: var(--etern-space-sm);
+  padding: var(--etern-space-sm) 10px;
+  border-radius: var(--etern-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.eternamev2-item-sheet .weapon-skills-list {
+  display: grid;
+  gap: var(--etern-space-lg);
+}
+
+.eternamev2-item-sheet .defense-items-list {
+  display: grid;
+  gap: var(--etern-space-sm);
+}
+
+.eternamev2-item-sheet .defense-item-row {
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr auto;
+  gap: var(--etern-space-sm);
+  align-items: center;
+}
+
+.eternamev2-item-sheet .defense-item-delete {
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: var(--etern-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: inherit;
+}
+
+.eternamev2-item-sheet .defense-empty {
+  margin: 0;
+  opacity: 0.8;
+}
+
+@media (min-width: 780px) {
+  .eternamev2-item-sheet .sheet-two-column {
+    grid-template-columns: 1.3fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .eternamev2-item-sheet {
+    padding: 6px;
+  }
+
+  .eternamev2-item-sheet .sheet-header {
+    grid-template-columns: 1fr;
+  }
+
+  .eternamev2-item-sheet .profile-img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .eternamev2-item-sheet .item-title-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .eternamev2-item-sheet .sheet-fields-grid--two,
+  .eternamev2-item-sheet .sheet-fields-grid--three,
+  .eternamev2-item-sheet .defense-item-row,
+  .eternamev2-item-sheet .weapon-tag-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.eternamev2-item-sheet .defense-item-row select,
+.eternamev2-item-sheet .defense-item-row input[type="number"] {
+  min-height: 46px;
+}
+
+@media (max-width: 720px) {
+  .eternamev2-item-sheet .sheet-header {
+    grid-template-columns: 1fr;
+  }
+
+  .eternamev2-item-sheet .item-title-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .eternamev2-item-sheet .sheet-fields-grid--two,
+  .eternamev2-item-sheet .sheet-fields-grid--three,
+  .eternamev2-item-sheet .defense-item-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.eternamev2-item-sheet .inv-list {
+  color: #462d14;
+}
+
+.eternamev2-item-sheet .inv-row,
+.eternamev2-item-sheet .inv-row-head,
+.eternamev2-item-sheet .inv-name,
+.eternamev2-item-sheet .inv-qty,
+.eternamev2-item-sheet .inv-weight,
+.eternamev2-item-sheet .inv-empty {
+  color: #462d14;
+}
+
+.eternamev2-item-sheet .inv-row,
+.eternamev2-item-sheet .inv-row-head {
+  grid-template-columns: 1fr 94px 72px 120px;
+}
+
+.eternamev2-item-sheet .inv-actions button {
+  width: auto;
+  min-width: 92px;
+  height: 32px;
+  padding: 6px 12px;
+  color: #462d14;
+  font-weight: 700;
+}
+
+.eternamev2-item-sheet .sheet-muted-copy {
+  margin: 0;
+  opacity: 0.78;
+}

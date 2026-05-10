@@ -1,0 +1,35 @@
+    <section class="techniques-panel">
+      <header class="techniques-panel-header">
+        <h2>{{localize 'ETERN.TECHNIQUE.PROFESSION_LIST_TITLE'}}</h2>
+      </header>
+      <div class="techniques-panel-body">
+        <div class="techniques-list">
+          {{#each techniques.professions as |profession|}}
+            <article class="techniques-row">
+              <div class="techniques-row-main">
+                <div class="techniques-row-title">
+                  <button type="button" data-action="open-technique-item" data-item-id="{{profession.id}}">{{profession.name}}</button>
+                  <span class="techniques-row-badge">{{localize 'ETERN.ITEM.TYPES.PROFESSION'}}</span>
+                </div>
+                <p class="techniques-row-subtitle">{{#if profession.description}}{{profession.description}}{{else}}{{localize 'ETERN.TECHNIQUE.PROFESSION_EMPTY_DESCRIPTION'}}{{/if}}</p>
+                <div class="techniques-row-meta">
+                  <span>{{profession.passiveCount}} {{localize 'ETERN.PROFESSION.SECTION.PASSIVES'}}</span>
+                  <span>{{profession.keyCount}} {{localize 'ETERN.PROFESSION.SECTION.KEYS'}}</span>
+                  <span>{{profession.conditionCount}} {{localize 'ETERN.PROFESSION.SECTION.CONDITIONS'}}</span>
+                  <span>{{profession.mechanicCount}} {{localize 'ETERN.PROFESSION.SECTION.MECHANICS'}}</span>
+                  <span>{{profession.stateCount}} {{localize 'ETERN.PROFESSION.SECTION.STATES'}}</span>
+                </div>
+              </div>
+              <div class="techniques-row-actions techniques-row-actions--stacked">
+                {{#if ../isOwner}}
+                  <button type="button" data-action="create-technique-from-profession" data-item-id="{{profession.id}}">{{localize 'ETERN.TECHNIQUE.ACTION.CREATE_FROM_PROFESSION'}}</button>
+                  <button type="button" data-action="delete-owned-item" data-item-id="{{profession.id}}">{{localize 'ETERN.UI.DELETE'}}</button>
+                {{/if}}
+              </div>
+            </article>
+          {{else}}
+            <p class="techniques-empty">{{localize 'ETERN.TECHNIQUE.NO_PROFESSION_ON_ACTOR'}}</p>
+          {{/each}}
+        </div>
+      </div>
+    </section>

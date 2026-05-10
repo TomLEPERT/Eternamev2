@@ -1,0 +1,157 @@
+.attributes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--etern-gap-md);
+}
+
+.attribute-card {
+  min-height: 170px;
+  padding: var(--etern-space-md);
+  border: 2px solid var(--attr-color);
+  border-radius: 18px;
+  background: var(--etern-panel-bg);
+  position: relative;
+}
+
+.attribute-head {
+  display: flex;
+  align-items: center;
+  gap: var(--etern-space-sm);
+  margin-top: -22px;
+}
+
+.attribute-icon {
+  width: 42px;
+  height: 42px;
+  border: 2px solid var(--attr-color);
+  border-radius: 50%;
+  background: #f4f0e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.attribute-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.attribute-pill {
+  padding: 4px 12px;
+  border-radius: var(--etern-radius-pill);
+  background: var(--attr-color);
+  color: var(--etern-color-white);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.attribute-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 128px;
+}
+
+.attribute-summary {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  text-align: center;
+}
+
+.attribute-summary-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+}
+
+.attribute-summary-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: #222;
+}
+
+.attribute-summary-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4a4640;
+}
+
+.attribute-summary-row-final .attribute-summary-value {
+  font-size: 16px;
+}
+
+.attribute-roll {
+  position: absolute;
+  top: 54px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border: 2px solid #222;
+  border-radius: var(--etern-radius-lg);
+  background: #f7f5f2;
+  cursor: pointer;
+}
+
+.attribute-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: var(--etern-space-sm);
+}
+
+.attribute-ticks {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.attribute-tick {
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 2px solid var(--attr-color);
+  border-radius: 0.25rem;
+  background: transparent;
+  cursor: pointer;
+}
+
+.attribute-tick.active {
+  background: var(--attr-color);
+}
+
+.attribute-value {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--attr-color);
+  border-radius: 50%;
+  background: #f8f6f2;
+}
+
+.attribute-value-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #4b4741;
+}
+
+.attribute-value input {
+  width: 36px;
+  text-align: center;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 800;
+  color: #222;
+  box-shadow: none;
+}
+
+.attribute-value input:focus {
+  outline: none;
+  box-shadow: none;
+}

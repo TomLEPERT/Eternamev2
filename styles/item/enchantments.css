@@ -1,0 +1,330 @@
+.eternamev2-item-sheet .enchantment-entry-list {
+  display: grid;
+  gap: var(--etern-space-xl);
+}
+
+.eternamev2-item-sheet .enchantment-help-copy,
+.eternamev2-item-sheet .enchantment-section-copy,
+.eternamev2-item-sheet .enchantment-entry-copy {
+  margin: 0;
+}
+
+.eternamev2-item-sheet .enchantment-section-empty {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.eternamev2-item-sheet .enchantment-entry-card {
+  display: grid;
+  gap: var(--etern-space-2xl);
+  padding: var(--etern-space-xl);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.eternamev2-item-sheet .enchantment-entry-headline {
+  display: grid;
+  gap: var(--etern-space-md);
+  min-width: 0;
+}
+
+.eternamev2-item-sheet .enchantment-entry-grid {
+  align-items: start;
+}
+
+.eternamev2-item-sheet .enchantment-bonus-panel {
+  display: grid;
+  gap: var(--etern-space-md);
+  padding: var(--etern-space-lg);
+  border-radius: var(--etern-radius-2xl);
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.eternamev2-item-sheet .enchantment-bonus-rows {
+  display: grid;
+  gap: var(--etern-space-sm);
+}
+
+.eternamev2-item-sheet .enchantment-bonus-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) 110px minmax(0, 1fr) 40px;
+  gap: var(--etern-space-sm);
+  align-items: center;
+}
+
+.eternamev2-item-sheet .sheet-icon-button {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: var(--etern-radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  color: inherit;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.eternamev2-item-sheet .sheet-icon-button--danger,
+.eternamev2-item-sheet .sheet-action-button--danger {
+  border-color: rgba(255, 110, 110, 0.45);
+}
+
+@media (max-width: 900px) {
+  .eternamev2-item-sheet .enchantment-bonus-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.enchantment-dialog-app .window-content {
+  overflow: auto;
+}
+
+.etername-enchantment-dialog {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+  min-width: 760px;
+  padding: 18px;
+  color: #f4eadb;
+}
+
+.etername-enchantment-dialog__main {
+  border: 1px solid rgba(229, 202, 166, 0.22);
+  border-radius: 18px;
+  background: rgba(18, 16, 22, 0.58);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.etername-enchantment-dialog__main {
+  display: grid;
+  gap: var(--etern-space-xl);
+  padding: 18px;
+}
+
+.etername-enchantment-dialog__header {
+  display: grid;
+  gap: 4px;
+}
+
+.etername-enchantment-dialog__header h2,
+.etername-enchantment-dialog__header p,
+.etername-enchantment-dialog__eyebrow {
+  margin: 0;
+}
+
+.etername-enchantment-dialog__header h2 {
+  font-family: var(--etern-font-title, serif);
+  letter-spacing: 0.02em;
+  color: var(--etern-color-warm-white);
+}
+
+.etername-enchantment-dialog__eyebrow {
+  color: #d69a45;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.etername-enchantment-dialog__header p,
+.etername-enchantment-dialog__preview {
+  color: rgba(244, 234, 219, 0.72);
+}
+
+.etername-enchantment-dialog__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--etern-space-lg);
+  align-items: end;
+}
+
+.etername-enchantment-dialog__field,
+.etername-enchantment-dialog__check {
+  display: grid;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.etername-enchantment-dialog__field--full,
+.etername-enchantment-dialog__field--wide {
+  grid-column: 1 / -1;
+}
+
+.etername-enchantment-dialog__field span,
+.etername-enchantment-dialog__check span {
+  color: #f0dfc8;
+  font-size: 0.88rem;
+}
+
+.etername-enchantment-dialog select,
+.etername-enchantment-dialog input[type="text"],
+.etername-enchantment-dialog input[type="number"] {
+  min-height: 38px;
+  border: 1px solid rgba(229, 202, 166, 0.22);
+  border-radius: var(--etern-radius-lg);
+  background: rgba(255, 255, 255, 0.9);
+  color: #241a18;
+  font-weight: 700;
+}
+
+.etername-enchantment-dialog select:disabled,
+.etername-enchantment-dialog input:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
+.etername-enchantment-dialog__check {
+  min-height: 38px;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  align-self: end;
+  padding: var(--etern-space-md) 12px;
+  border-radius: var(--etern-radius-xl);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+
+.etername-enchantment-dialog__preview {
+  min-height: 20px;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+
+
+
+
+
+@media (max-width: 900px) {
+  .etername-enchantment-dialog {
+    grid-template-columns: 1fr;
+    min-width: 0;
+  }
+
+  .etername-enchantment-dialog__grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.etername-enchantment-dialog__base-field {
+  align-self: stretch;
+}
+
+.etername-enchantment-dialog__catalyst-options {
+  display: grid;
+  gap: var(--etern-space-md);
+  max-height: 300px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.etername-enchantment-dialog__catalyst-option {
+  display: block;
+  cursor: pointer;
+}
+
+.etername-enchantment-dialog__catalyst-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.etername-enchantment-dialog__catalyst-option-body {
+  display: grid;
+  gap: 6px;
+  padding: var(--etern-space-md) 12px;
+  border: 1px solid rgba(229, 202, 166, 0.22);
+  border-radius: var(--etern-radius-xl);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f4eadb;
+  transition: border-color 120ms ease, background 120ms ease, box-shadow 120ms ease;
+}
+
+.etername-enchantment-dialog__catalyst-option input[type="radio"]:checked + .etername-enchantment-dialog__catalyst-option-body {
+  border-color: rgba(214, 154, 69, 0.85);
+  background: rgba(214, 154, 69, 0.12);
+  box-shadow: 0 0 0 1px rgba(214, 154, 69, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.etername-enchantment-dialog__catalyst-option input[type="radio"]:focus-visible + .etername-enchantment-dialog__catalyst-option-body {
+  outline: 2px solid rgba(214, 154, 69, 0.7);
+  outline-offset: 2px;
+}
+
+.etername-enchantment-dialog__catalyst-option-head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--etern-space-md);
+  align-items: center;
+}
+
+.etername-enchantment-dialog__catalyst-option-head strong {
+  color: var(--etern-color-warm-white);
+  font-size: 0.98rem;
+}
+
+.etername-enchantment-dialog__catalyst-option-head em {
+  flex: none;
+  padding: 3px 8px;
+  border-radius: var(--etern-radius-pill);
+  background: rgba(214, 154, 69, 0.16);
+  color: #f1c17a;
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.etername-enchantment-dialog__catalyst-option-description,
+.etername-enchantment-dialog__catalyst-option-details {
+  display: none;
+}
+
+.etername-enchantment-dialog__catalyst-option input[type="radio"]:checked + .etername-enchantment-dialog__catalyst-option-body .etername-enchantment-dialog__catalyst-option-description {
+  display: block;
+  color: rgba(244, 234, 219, 0.78);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.etername-enchantment-dialog__catalyst-option input[type="radio"]:checked + .etername-enchantment-dialog__catalyst-option-body .etername-enchantment-dialog__catalyst-option-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.etername-enchantment-dialog__catalyst-option-details span {
+  width: fit-content;
+  padding: 3px 8px;
+  border-radius: var(--etern-radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  color: #f4d39f;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+
+.enchantment-tag-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.enchantment-tag-pills--preview {
+  opacity: 0.92;
+}
+
+.enchantment-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 4px 9px;
+  border: 1px solid rgba(214, 154, 69, 0.35);
+  border-radius: var(--etern-radius-pill);
+  background: rgba(214, 154, 69, 0.13);
+  color: #f3d29a;
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1;
+}

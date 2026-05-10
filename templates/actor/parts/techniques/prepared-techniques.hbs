@@ -1,0 +1,57 @@
+    <section class="techniques-panel">
+      <header class="techniques-panel-header">
+        <h2>{{localize 'ETERN.TECHNIQUE.PREPARED_TITLE'}}</h2>
+        <div class="techniques-actions">
+          <span class="techniques-counter">{{techniques.counts.prepared}} / {{techniques.counts.total}}</span>
+        </div>
+      </header>
+      <div class="techniques-panel-body">
+        <div class="techniques-prepared-grid">
+          {{#each techniques.prepared as |technique|}}
+            <article class="techniques-prepared-card">
+              <img class="techniques-prepared-card__img" src="{{technique.img}}" alt="{{technique.name}}"/>
+              <div class="techniques-prepared-card__body">
+                <div class="techniques-row-title techniques-row-title--compact">
+                  <button type="button" data-action="open-technique-item" data-item-id="{{technique.id}}">{{technique.name}}</button>
+                  <span class="techniques-row-badge techniques-row-badge--{{technique.validationState}}">{{technique.validationLabel}}</span>
+                  {{#if technique.isInvocationGranted}}
+                    <span class="techniques-row-badge techniques-row-badge--invocation">{{localize 'ETERN.INVOCATION.ACTOR.GRANTED_BADGE'}}</span>
+                  {{/if}}
+                </div>
+                {{#if technique.headline}}
+                  <p class="techniques-row-subtitle techniques-row-subtitle--summary">{{technique.headline}}</p>
+                {{/if}}
+                <div class="techniques-row-meta">
+                  <span>{{localize 'ETERN.TECHNIQUE.POWER.LEVEL'}}: {{technique.power}}</span>
+                  {{#if technique.mainStatisticLabel}}
+                    <span>{{technique.mainStatisticLabel}}: {{technique.mainStatisticValue}}</span>
+                  {{/if}}
+                </div>
+                {{#if technique.componentBadges.length}}
+                  <div class="techniques-row-tags">
+                    {{#each technique.componentBadges as |badge|}}
+                      <span class="techniques-row-tag">{{badge}}</span>
+                    {{/each}}
+                  </div>
+                {{/if}}
+                {{#if technique.slotSourceBadges.length}}
+                  <div class="techniques-row-tags">
+                    {{#each technique.slotSourceBadges as |badge|}}
+                      <span class="techniques-row-tag techniques-row-tag--accent">{{badge}}</span>
+                    {{/each}}
+                  </div>
+                {{/if}}
+              </div>
+              <div class="techniques-row-actions techniques-row-actions--stacked">
+                <button type="button" data-action="use-technique-item" data-item-id="{{technique.id}}">{{localize 'ETERN.TECHNIQUE.ACTION.USE'}}</button>
+                {{#if ../isOwner}}
+                  <button type="button" data-action="toggle-technique-prepared" data-item-id="{{technique.id}}">{{localize 'ETERN.TECHNIQUE.ACTION.UNPREPARE'}}</button>
+                {{/if}}
+              </div>
+            </article>
+          {{else}}
+            <p class="techniques-empty">{{localize 'ETERN.TECHNIQUE.NO_PREPARED_ON_ACTOR'}}</p>
+          {{/each}}
+        </div>
+      </div>
+    </section>

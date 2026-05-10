@@ -1,0 +1,26 @@
+<div class="etername-roll-card etername-roll-card--attribute">
+  <header class="etername-roll-card__header">
+    <div>
+      <div class="etername-roll-card__eyebrow">{{localize "ETERN.ATTACKS.ROLL"}}</div>
+      <h3 class="etername-roll-card__title">{{attackName}} — {{attribute.label}} ({{attribute.abbr}})</h3>
+    </div>
+    <div class="etername-roll-card__target">{{targetLabel}}</div>
+  </header>
+
+  <div class="etername-roll-card__meta">
+    <span>{{localize "ETERN.ROLL.CHAT.FORMULA"}} : <strong>{{formulaLabel}}</strong></span>
+    <span>{{localize "ETERN.ROLL.CHAT.MODE"}} : <strong>{{modeLabel}}</strong></span>
+    <span>{{localize "ETERN.ATTACKS.ROLL_DIALOG.DEFENSE"}} : <strong>{{defenseLabel}}</strong></span>
+    {{#if hasPrecision}}<span>{{localize "ETERN.ATTACKS.ROLL_DIALOG.PRECISION"}} : <strong>{{precision.label}}</strong></span>{{/if}}
+    {{#if hasBaseShift}}<span>{{localize "ETERN.ROLL.CHAT.BASE_TARGET"}} : <strong>{{baseTargetLabel}}</strong></span>{{/if}}
+    {{#if hasDefenseShift}}<span>{{localize "ETERN.ATTACKS.ROLL_DIALOG.INTERMEDIATE"}} : <strong>{{adjustedTargetLabel}}</strong></span>{{/if}}
+  </div>
+
+  <div class="etername-roll-card__dice">
+    {{#each dice}}
+      <span class="etername-roll-die {{#if this.success}}is-success{{else}}is-failure{{/if}}">{{this.value}}</span>
+    {{/each}}
+  </div>
+
+  <div class="etername-roll-card__result">{{localize "ETERN.ROLL.CHAT.SUCCESS_COUNT" count=successes}} <strong>{{successes}}</strong></div>
+</div>

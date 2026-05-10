@@ -1,0 +1,43 @@
+<form class="eternamev2-item-sheet {{sheetCssClass}}" autocomplete="off" data-scrollable="true">
+  {{#if (eq sheetVariant "weapon")}}
+    {{> "systems/eternamev2/templates/item/partials/weapon-sheet-content.hbs"}}
+  {{else}}
+    {{#if (eq sheetVariant "armor")}}
+      {{> "systems/eternamev2/templates/item/partials/armor-sheet-content.hbs"}}
+    {{else}}
+      {{#if (eq sheetVariant "shield")}}
+        {{> "systems/eternamev2/templates/item/partials/shield-sheet-content.hbs"}}
+      {{else}}
+        {{#if (eq sheetVariant "material")}}
+          {{> "systems/eternamev2/templates/item/partials/material-sheet-content.hbs"}}
+        {{else}}
+          {{#if (eq sheetVariant "consumable")}}
+            {{> "systems/eternamev2/templates/item/partials/consumable-sheet-content.hbs"}}
+          {{else}}
+            {{#if (eq sheetVariant "bag")}}
+              {{> "systems/eternamev2/templates/item/partials/bag-sheet-content.hbs"}}
+            {{else}}
+              {{#if (eq sheetVariant "profession")}}
+                {{> "systems/eternamev2/templates/item/partials/profession-sheet-content.hbs"}}
+              {{else}}
+                {{#if (eq sheetVariant "technique")}}
+                  {{> "systems/eternamev2/templates/item/partials/technique-sheet-content.hbs"}}
+                {{else}}
+                  {{#if (eq sheetVariant "invocation")}}
+                    {{> "systems/eternamev2/templates/item/partials/invocation-sheet-content.hbs"}}
+                  {{else}}
+                    {{#if (eq sheetVariant "heritage")}}
+                      {{> "systems/eternamev2/templates/item/partials/heritage-sheet-content.hbs"}}
+                    {{else}}
+                      {{> "systems/eternamev2/templates/item/partials/item-sheet-content.hbs"}}
+                    {{/if}}
+                  {{/if}}
+                {{/if}}
+              {{/if}}
+            {{/if}}
+          {{/if}}
+        {{/if}}
+      {{/if}}
+    {{/if}}
+  {{/if}}
+</form>

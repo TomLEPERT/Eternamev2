@@ -1,0 +1,26 @@
+<section class="stats-section stats-saves">
+  <header class="stats-section-title stats-section-title-saves">
+    {{localize "ETERN.SAVES.TITLE"}}
+  </header>
+
+  <div class="saves-panel-v2">
+    {{#each system.derived.saves as |save key|}}
+      <div class="save-line-v2 save-{{key}}">
+        <div class="save-name-v2">{{localize (lookup ../saveLabelKeys key)}}</div>
+
+        <div class="save-track-v2">
+          {{#each save.slots as |slot|}}
+            <button
+              type="button"
+              class="save-track-box{{#if slot.checked}} active{{/if}}{{#if slot.disabled}} is-disabled{{/if}}"
+              data-save-key="{{slot.saveKey}}"
+              data-box-index="{{slot.index}}"
+              aria-pressed="{{#if slot.checked}}true{{else}}false{{/if}}"
+              {{#if slot.disabled}}disabled{{/if}}
+            ></button>
+          {{/each}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</section>

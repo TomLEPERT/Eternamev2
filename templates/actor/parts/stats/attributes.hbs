@@ -1,0 +1,59 @@
+<section class="stats-section stats-attributes">
+  <header class="stats-section-title stats-section-title-dark">
+    {{localize "ETERN.STATS.ATTRIBUTES"}}
+  </header>
+
+  <div class="attributes-grid">
+    {{#each stats.attributes}}
+      <article class="attribute-card" style="--attr-color: {{this.color}};">
+        <div class="attribute-head">
+            <div class="attribute-icon">
+                <img src="{{this.icon}}" alt="{{this.abbr}}">
+            </div>
+          <div class="attribute-pill">{{this.abbr}}</div>
+        </div>
+
+        <div class="attribute-body">
+          <div class="attribute-summary">
+            <div class="attribute-summary-row attribute-summary-row-index">
+              <div class="attribute-summary-value"><span data-attr-index-value="{{this.key}}">{{this.index}}</span></div>
+              <div class="attribute-summary-label">{{localize "ETERN.STATS.INDEX"}}</div>
+            </div>
+            <div class="attribute-summary-row attribute-summary-row-final">
+              <div class="attribute-summary-value"><span data-attr-final-value="{{this.key}}">{{this.total}}</span></div>
+              <div class="attribute-summary-label">{{localize "ETERN.STATS.FINAL_VALUE"}}</div>
+            </div>
+          </div>
+
+          <button type="button" class="attribute-roll" data-attr="{{this.key}}">
+            🎲
+          </button>
+
+          <div class="attribute-footer">
+            <div class="attribute-ticks">
+              {{#each this.ticks}}
+                <button
+                  type="button"
+                  class="attribute-tick {{#if this.active}}active{{/if}}"
+                  data-attr="{{../key}}"
+                  data-index="{{this.index}}"
+                ></button>
+              {{/each}}
+            </div>
+
+            <div class="attribute-value">
+              <span class="attribute-value-label">{{localize "ETERN.STATS.VALUE"}}</span>
+              <input
+                type="number"
+                name="system.attributes.{{this.key}}.value"
+                value="{{this.baseValue}}"
+                min="0"
+                max="18"
+              >
+            </div>
+          </div>
+        </div>
+      </article>
+    {{/each}}
+  </div>
+</section>

@@ -1,0 +1,116 @@
+    <section class="techniques-panel">
+      <header class="techniques-panel-header">
+        <h2>{{localize 'ETERN.TECHNIQUE.PROFESSION_QUICK_ACCESS_TITLE'}}</h2>
+        <div class="techniques-actions">
+          <span class="techniques-counter">{{techniques.counts.quickAccess}}</span>
+        </div>
+      </header>
+      <div class="techniques-panel-body">
+        <div class="techniques-list techniques-list--compact">
+          {{#each techniques.quickAccess as |entry|}}
+            <article class="techniques-summary-chip techniques-summary-chip--quick-access">
+              <div class="profession-quick-header">
+                <div class="profession-quick-title">
+                  <strong>{{entry.name}}</strong>
+                  <span>{{entry.professionName}} · {{entry.sectionLabel}}{{#if entry.hasXpCost}} · {{entry.xpCost}} XP{{/if}}</span>
+                </div>
+                {{#if entry.canToggleActive}}
+                  {{#if ../isOwner}}
+                    <button
+                      type="button"
+                      class="profession-quick-active-toggle {{#if entry.isActive}}is-active{{/if}}"
+                      data-action="toggle-profession-passive-active"
+                      data-item-id="{{entry.professionId}}"
+                      data-array-key="{{entry.sectionKey}}"
+                      data-entry-id="{{entry.entryId}}"
+                      data-entry-index="{{entry.entryIndex}}"
+                    >
+                      {{entry.activeLabel}}
+                    </button>
+                  {{else}}
+                    <span class="techniques-row-badge {{#if entry.isActive}}techniques-row-badge--prepared{{/if}}">{{entry.activeLabel}}</span>
+                  {{/if}}
+                {{/if}}
+              </div>
+              {{#if entry.description}}<span>{{entry.description}}</span>{{/if}}
+              <div class="techniques-row-meta">
+                {{#if entry.isUniversal}}<span class="techniques-row-badge">{{localize 'ETERN.PROFESSION.UNIVERSAL'}}</span>{{/if}}
+              </div>
+              {{#if entry.counter.enabled}}
+                <div class="profession-quick-counter">
+                  <div class="profession-quick-counter__text">
+                    <span>{{entry.counter.label}}</span>
+                    <strong>{{entry.counter.valueLabel}}</strong>
+                    {{#if entry.counter.resetNote}}<small>{{entry.counter.resetNote}}</small>{{/if}}
+                  </div>
+                  {{#if ../isOwner}}
+                    <div class="profession-quick-counter__controls">
+                      <button
+                        type="button"
+                        data-action="adjust-profession-counter"
+                        data-item-id="{{entry.professionId}}"
+                        data-array-key="{{entry.sectionKey}}"
+                        data-entry-id="{{entry.entryId}}"
+                        data-entry-index="{{entry.entryIndex}}"
+                        data-delta="-1"
+                        {{#unless entry.counter.canDecrease}}disabled{{/unless}}
+                      >−</button>
+                      <button
+                        type="button"
+                        data-action="adjust-profession-counter"
+                        data-item-id="{{entry.professionId}}"
+                        data-array-key="{{entry.sectionKey}}"
+                        data-entry-id="{{entry.entryId}}"
+                        data-entry-index="{{entry.entryIndex}}"
+                        data-delta="1"
+                        {{#unless entry.counter.canIncrease}}disabled{{/unless}}
+                      >+</button>
+                    </div>
+                  {{/if}}
+                </div>
+              {{/if}}
+              {{#if entry.progressTrack.enabled}}
+                <div class="profession-quick-progress">
+                  <div class="profession-quick-progress__head">
+                    <div class="profession-quick-progress__title">
+                      <span>{{entry.progressTrack.label}}</span>
+                      <small>{{localize 'ETERN.TECHNIQUE.MODULES.PROGRESS_TRACK_COMPLETED_OBJECTIVES'}}: {{entry.progressTrack.completedObjectivesLabel}}</small>
+                    </div>
+                    <strong>{{entry.progressTrack.valueLabel}}</strong>
+                  </div>
+                  {{#if entry.progressTrack.canRollTest}}
+                    <div class="profession-quick-progress__actions">
+                      <button
+                        type="button"
+                        data-action="roll-profession-progress-test"
+                        data-attribute-key="{{entry.progressTrack.testAttributeKey}}"
+                      >{{entry.progressTrack.rollTestLabel}}</button>
+                    </div>
+                  {{/if}}
+                  <div class="profession-quick-progress__boxes">
+                    {{#each entry.progressTrack.slots as |slot|}}
+                      <button
+                        type="button"
+                        class="progress-track-box{{#if slot.checked}} active{{/if}}{{#if slot.isObjective}} objective{{/if}}{{#if slot.isReachedObjective}} reached-objective{{/if}}"
+                        data-action="toggle-profession-progress-box"
+                        data-item-id="{{../professionId}}"
+                        data-array-key="{{../sectionKey}}"
+                        data-entry-id="{{../entryId}}"
+                        data-entry-index="{{../entryIndex}}"
+                        data-box-index="{{slot.index}}"
+                        aria-label="{{slot.value}}"
+                        aria-pressed="{{#if slot.checked}}true{{else}}false{{/if}}"
+                        {{#unless ../../isOwner}}disabled{{/unless}}
+                      ></button>
+                    {{/each}}
+                  </div>
+                  {{#if entry.progressTrack.notes}}<small>{{entry.progressTrack.notes}}</small>{{/if}}
+                </div>
+              {{/if}}
+            </article>
+          {{else}}
+            <p class="techniques-empty techniques-empty--left">{{localize 'ETERN.TECHNIQUE.NO_PROFESSION_QUICK_ACCESS'}}</p>
+          {{/each}}
+        </div>
+      </div>
+    </section>

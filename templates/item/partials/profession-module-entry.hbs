@@ -1,0 +1,260 @@
+<article class="builder-row builder-row--profession-module {{#unless section.withActive}}builder-row--draggable{{/unless}}" {{#unless section.withActive}}data-technique-source-draggable="1" data-profession-id="{{item.id}}" data-array-key="{{section.key}}" data-source-entry-id="{{entry.id}}"{{/unless}}>
+  <div class="builder-grid builder-grid--profession-module">
+    {{#unless section.withActive}}
+      <div class="builder-row-note builder-grid-full">
+        <span class="builder-inline-badge builder-inline-badge--drag">{{localize 'ETERN.TECHNIQUE.DRAG_HINT'}}</span>
+        {{#if entry.slotSummaryLabel}}<span class="builder-inline-badge">{{entry.slotSummaryLabel}}</span>{{/if}}
+      </div>
+    {{/unless}}
+
+    <div class="form-group builder-name-field">
+      <label>{{localize 'ETERN.UI.NAME'}}</label>
+      <input type="text" value="{{entry.name}}" data-builder-field="1" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-entry-field="name"/>
+    </div>
+    <div class="form-group builder-xp-field">
+      <label>{{localize 'ETERN.TECHNIQUE.XP_COST'}}</label>
+      <input type="number" value="{{entry.xpCost}}" step="1" data-builder-field="1" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-entry-field="xpCost"/>
+    </div>
+    <div class="form-group builder-reference-field">
+      <label>{{localize 'ETERN.PROFESSION.REFERENCE_KEY'}}</label>
+      <input type="text" value="{{entry.referenceKey}}" data-builder-field="1" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-entry-field="referenceKey"/>
+      <div class="builder-row-note">
+        <span class="builder-inline-badge {{entry.referenceStatusClass}}">{{entry.referenceStatusLabel}}</span>
+        <span class="builder-inline-badge builder-inline-badge--muted">{{entry.referencePreviewLabel}}</span>
+      </div>
+      <button type="button" class="sheet-action-button" data-profession-reference-action="regenerate" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}">{{localize 'ETERN.PROFESSION.REFERENCE_AUTO'}}</button>
+    </div>
+
+    <div class="profession-module-switches builder-grid-full">
+      {{#if section.withActive}}
+        <label class="sheet-inline-toggle builder-inline-toggle">
+          <input type="checkbox" data-builder-field="1" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-entry-field="isActive" {{#if entry.isActive}}checked{{/if}}/>
+          <span>{{localize 'ETERN.PROFESSION.PASSIVE_ACTIVE'}}</span>
+        </label>
+      {{/if}}
+      {{#if section.withUniversal}}
+        <label class="sheet-inline-toggle builder-inline-toggle">
+          <input type="checkbox" data-builder-field="1" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-entry-field="isUniversal" {{#if entry.isUniversal}}checked{{/if}}/>
+          <span>{{localize 'ETERN.PROFESSION.UNIVERSAL'}}</span>
+        </label>
+      {{/if}}
+      <label class="sheet-inline-toggle builder-inline-toggle">
+        <input type="checkbox" data-builder-path="isQuickAccess" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" {{#if entry.isQuickAccess}}checked{{/if}}/>
+        <span>{{localize 'ETERN.TECHNIQUE.MODULES.QUICK_ACCESS'}}</span>
+      </label>
+    </div>
+
+    {{#if section.withStateReference}}
+      <div class="form-group builder-grid-full">
+        <label>{{localize 'ETERN.TECHNIQUE.MODULES.STATE_LABEL'}}</label>
+        <select data-builder-state-id="1" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}">
+          {{#each entry.stateChoices as |choice|}}
+            <option value="{{choice.value}}" {{#if choice.selected}}selected{{/if}}>{{choice.label}}</option>
+          {{/each}}
+        </select>
+        {{#if entry.stateId}}
+          <div class="builder-row-note">
+            <span class="builder-inline-badge builder-inline-badge--success">{{localize 'ETERN.TECHNIQUE.MODULES.REFERENCE_STATUS.BUILTIN_STATE'}}</span>
+          </div>
+          <button type="button" class="sheet-action-button" data-profession-state-action="sync" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}">{{localize 'ETERN.PROFESSION.STATE_SYNC'}}</button>
+        {{/if}}
+      </div>
+    {{/if}}
+
+    <div class="form-group form-group-stacked builder-grid-full builder-description-field">
+      <label>{{localize 'ETERN.ITEM.DESCRIPTION'}}</label>
+      <textarea rows="3" data-builder-field="1" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-entry-field="description">{{entry.description}}</textarea>
+    </div>
+
+    <div class="builder-grid-full profession-module-capabilities">
+      <label class="sheet-checkbox-card"><span>{{localize 'ETERN.TECHNIQUE.MODULES.STAT_SLOTS'}}</span><input type="checkbox" data-builder-path="hasStatisticSlots" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" {{#if entry.hasStatisticSlots}}checked{{/if}}/></label>
+      <label class="sheet-checkbox-card"><span>{{localize 'ETERN.TECHNIQUE.MODULES.EMBEDDED_STATISTICS'}}</span><input type="checkbox" data-builder-path="hasStatistics" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" {{#if entry.hasStatistics}}checked{{/if}}/></label>
+      <label class="sheet-checkbox-card"><span>{{localize 'ETERN.TECHNIQUE.MODULES.COUNTER'}}</span><input type="checkbox" data-builder-path="counter.enabled" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" {{#if entry.counter.enabled}}checked{{/if}}/></label>
+      <label class="sheet-checkbox-card"><span>{{localize 'ETERN.TECHNIQUE.MODULES.IMPROVEMENTS'}}</span><input type="checkbox" data-builder-path="hasImprovements" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" {{#if entry.hasImprovements}}checked{{/if}}/></label>
+      <label class="sheet-checkbox-card"><span>{{localize 'ETERN.TECHNIQUE.MODULES.ACTOR_BONUSES'}}</span><input type="checkbox" data-builder-path="hasActorBonuses" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" {{#if entry.hasActorBonuses}}checked{{/if}}/></label>
+      <label class="sheet-checkbox-card"><span>{{localize 'ETERN.TECHNIQUE.MODULES.PROGRESS_TRACK_LABEL'}}</span><input type="checkbox" data-builder-path="hasProgressTrack" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" {{#if entry.hasProgressTrack}}checked{{/if}}/></label>
+      <label class="sheet-checkbox-card"><span>{{localize 'ETERN.TECHNIQUE.MODULES.PROGRESS_REWARDS_LABEL'}}</span><input type="checkbox" data-builder-path="hasProgressRewards" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" {{#if entry.hasProgressRewards}}checked{{/if}}/></label>
+    </div>
+
+    {{#if entry.hasStatisticSlots}}
+      <details class="builder-module-block builder-grid-full" open>
+        <summary>{{localize 'ETERN.TECHNIQUE.MODULES.STAT_SLOTS'}}{{#if entry.statisticSlotSummary}} · {{entry.statisticSlotSummary}}{{/if}}</summary>
+        <div class="builder-stack">
+          {{#each entry.statisticSlots as |slot|}}
+            <div class="builder-inline-grid">
+              <div class="form-group">
+                <label>{{localize 'ETERN.TECHNIQUE.MODULES.SLOT_TYPE.LABEL'}}</label>
+                <select data-builder-path="statisticSlots.{{slot.index}}.slotType" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}">
+                  {{#each slot.slotChoices as |choice|}}<option value="{{choice.value}}" {{#if choice.selected}}selected{{/if}}>{{choice.label}}</option>{{/each}}
+                </select>
+              </div>
+              <div class="form-group builder-xp-field">
+                <label>{{localize 'ETERN.UI.QUANTITY'}}</label>
+                <input type="number" min="1" step="1" value="{{slot.count}}" data-builder-path="statisticSlots.{{slot.index}}.count" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}"/>
+              </div>
+              <button type="button" class="sheet-action-button" data-profession-array-action="remove" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}" data-collection-path="statisticSlots" data-collection-index="{{slot.index}}">{{localize 'ETERN.UI.DELETE'}}</button>
+            </div>
+          {{/each}}
+          <button type="button" class="sheet-action-button" data-profession-array-action="add" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-collection-path="statisticSlots" data-collection-type="slot">{{localize 'ETERN.UI.ADD'}}</button>
+        </div>
+      </details>
+    {{/if}}
+
+    {{#if entry.hasStatistics}}
+      <details class="builder-module-block builder-grid-full" open>
+        <summary>{{localize 'ETERN.TECHNIQUE.MODULES.EMBEDDED_STATISTICS'}}</summary>
+        <div class="builder-stack">
+          {{#each entry.statistics as |stat|}}
+            <div class="builder-inline-grid">
+              <div class="form-group builder-grid-grow">
+                <label>{{localize 'ETERN.TECHNIQUE.STATISTICS'}}</label>
+                <select data-builder-path="statistics.{{stat.index}}.statId" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}">
+                  {{#each stat.statChoices as |choice|}}<option value="{{choice.value}}" {{#if choice.selected}}selected{{/if}}>{{choice.label}} · {{choice.baseValue}} · {{choice.xpCost}} XP</option>{{/each}}
+                </select>
+              </div>
+              <button type="button" class="sheet-action-button" data-profession-array-action="remove" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}" data-collection-path="statistics" data-collection-index="{{stat.index}}">{{localize 'ETERN.UI.DELETE'}}</button>
+            </div>
+          {{/each}}
+          <button type="button" class="sheet-action-button" data-profession-array-action="add" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-collection-path="statistics" data-collection-type="statistic">{{localize 'ETERN.UI.ADD'}}</button>
+        </div>
+      </details>
+    {{/if}}
+
+    {{#if entry.counter.enabled}}
+      <details class="builder-module-block builder-grid-full" open>
+        <summary>{{localize 'ETERN.TECHNIQUE.MODULES.COUNTER'}}</summary>
+        <div class="sheet-fields-grid sheet-fields-grid--three">
+          <div class="form-group"><label>{{localize 'ETERN.UI.NAME'}}</label><input type="text" value="{{entry.counter.label}}" data-builder-path="counter.label" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}"/></div>
+          <div class="form-group"><label>{{localize 'ETERN.TECHNIQUE.MODULES.COUNTER_CURRENT'}}</label><input type="number" min="0" step="1" value="{{entry.counter.current}}" data-builder-path="counter.current" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}"/></div>
+          <div class="form-group"><label>{{localize 'ETERN.TECHNIQUE.MODULES.COUNTER_MAX'}}</label><input type="number" min="0" step="1" value="{{entry.counter.max}}" data-builder-path="counter.max" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}"/></div>
+        </div>
+        <div class="form-group builder-grid-full"><label>{{localize 'ETERN.TECHNIQUE.MODULES.COUNTER_RESET'}}</label><input type="text" value="{{entry.counter.resetNote}}" data-builder-path="counter.resetNote" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}"/></div>
+      </details>
+    {{/if}}
+
+    {{#if entry.hasImprovements}}
+      <details class="builder-module-block builder-grid-full" open>
+        <summary>{{localize 'ETERN.TECHNIQUE.MODULES.IMPROVEMENTS'}}</summary>
+        <div class="builder-stack">
+          {{#each entry.improvements as |improvement|}}
+            <div class="builder-module-row">
+              <div class="sheet-fields-grid sheet-fields-grid--three">
+                <div class="form-group"><label>{{localize 'ETERN.UI.NAME'}}</label><input type="text" value="{{improvement.label}}" data-builder-path="improvements.{{improvement.index}}.label" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}"/></div>
+                <div class="form-group"><label>{{localize 'ETERN.TECHNIQUE.MODULES.IMPROVEMENT_STEP_XP'}}</label><input type="number" min="1" step="1" value="{{improvement.xpStep}}" data-builder-path="improvements.{{improvement.index}}.xpStep" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}"/></div>
+                <div class="form-group"><label>{{localize 'ETERN.TECHNIQUE.MODULES.IMPROVEMENT_RANK'}}</label><input type="number" min="0" step="1" value="{{improvement.rank}}" data-builder-path="improvements.{{improvement.index}}.rank" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}"/></div>
+              </div>
+              <div class="builder-row-note">
+                <span class="builder-inline-badge">{{localize 'ETERN.TECHNIQUE.MODULES.IMPROVEMENT_CUMULATIVE'}} {{improvement.cumulativeXp}} XP</span>
+                <span class="builder-inline-badge">{{localize 'ETERN.TECHNIQUE.MODULES.IMPROVEMENT_NEXT'}} {{improvement.nextXp}} XP</span>
+              </div>
+              <div class="form-group"><label>{{localize 'ETERN.ITEM.DESCRIPTION'}}</label><input type="text" value="{{improvement.notes}}" data-builder-path="improvements.{{improvement.index}}.notes" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}"/></div>
+              <div class="builder-action-group">
+                <button type="button" class="sheet-action-button" data-profession-improvement-rank="1" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}" data-improvement-index="{{improvement.index}}" data-delta="-1">-</button>
+                <button type="button" class="sheet-action-button" data-profession-improvement-rank="1" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}" data-improvement-index="{{improvement.index}}" data-delta="1">+</button>
+                <button type="button" class="sheet-action-button" data-profession-array-action="remove" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}" data-collection-path="improvements" data-collection-index="{{improvement.index}}">{{localize 'ETERN.UI.DELETE'}}</button>
+              </div>
+            </div>
+          {{/each}}
+          <button type="button" class="sheet-action-button" data-profession-array-action="add" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-collection-path="improvements" data-collection-type="improvement">{{localize 'ETERN.UI.ADD'}}</button>
+        </div>
+      </details>
+    {{/if}}
+
+    {{#if entry.hasActorBonuses}}
+      <details class="builder-module-block builder-grid-full" open>
+        <summary>{{localize 'ETERN.TECHNIQUE.MODULES.ACTOR_BONUSES'}}</summary>
+        <div class="builder-stack">
+          {{#each entry.actorBonuses as |bonus|}}
+            <div class="builder-inline-grid">
+              <div class="form-group builder-grid-grow"><label>{{localize 'ETERN.TECHNIQUE.MODULES.BONUS_TARGET.LABEL'}}</label><select data-builder-path="actorBonuses.{{bonus.index}}.targetKey" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}">{{#each bonus.targetChoices as |choice|}}<option value="{{choice.value}}" {{#if choice.selected}}selected{{/if}}>{{choice.label}}</option>{{/each}}</select></div>
+              <div class="form-group builder-xp-field"><label>{{localize 'ETERN.TECHNIQUE.MODULES.BONUS_VALUE'}}</label><input type="number" step="1" value="{{bonus.value}}" data-builder-path="actorBonuses.{{bonus.index}}.value" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}"/></div>
+              <div class="form-group builder-grid-grow"><label>{{localize 'ETERN.ITEM.DESCRIPTION'}}</label><input type="text" value="{{bonus.notes}}" data-builder-path="actorBonuses.{{bonus.index}}.notes" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}"/></div>
+              <button type="button" class="sheet-action-button" data-profession-array-action="remove" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}" data-collection-path="actorBonuses" data-collection-index="{{bonus.index}}">{{localize 'ETERN.UI.DELETE'}}</button>
+            </div>
+          {{/each}}
+          <button type="button" class="sheet-action-button" data-profession-array-action="add" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-collection-path="actorBonuses" data-collection-type="actor-bonus">{{localize 'ETERN.UI.ADD'}}</button>
+        </div>
+      </details>
+    {{/if}}
+
+    {{#if entry.hasProgressTrack}}
+      <details class="builder-module-block builder-grid-full" open>
+        <summary>{{localize 'ETERN.TECHNIQUE.MODULES.PROGRESS_TRACK_LABEL'}} · {{entry.progressTrack.valueLabel}}</summary>
+        <div class="sheet-fields-grid sheet-fields-grid--three profession-progress-config-grid">
+          <div class="form-group"><label>{{localize 'ETERN.UI.NAME'}}</label><input type="text" value="{{entry.progressTrack.label}}" data-builder-path="progressTrack.label" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}"/></div>
+          <div class="form-group profession-progress-current-field">
+            <label>{{localize 'ETERN.TECHNIQUE.MODULES.PROGRESS_TRACK_CURRENT'}}</label>
+            <div class="profession-progress-indicator" aria-live="polite">
+              <strong>{{entry.progressTrack.current}}</strong>
+              <span>/ {{entry.progressTrack.max}}</span>
+            </div>
+            <div class="builder-row-note">
+              <span class="builder-inline-badge">{{localize 'ETERN.TECHNIQUE.MODULES.PROGRESS_TRACK_COMPLETED_OBJECTIVES'}}: {{entry.progressTrack.completedObjectivesLabel}}</span>
+            </div>
+          </div>
+          <div class="form-group"><label>{{localize 'ETERN.TECHNIQUE.MODULES.PROGRESS_TRACK_ATTRIBUTE'}}</label><select data-builder-path="progressTrack.testAttributeKey" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}">{{#each entry.progressTrack.attributeChoices as |choice|}}<option value="{{choice.value}}" {{#if choice.selected}}selected{{/if}}>{{choice.label}}</option>{{/each}}</select></div>
+        </div>
+        <div class="form-group">
+          <label>{{localize 'ETERN.TECHNIQUE.MODULES.PROGRESS_TRACK_OBJECTIVES'}}</label>
+          <input type="text" value="{{entry.progressTrack.objectivesText}}" placeholder="{{localize 'ETERN.PROGRESSION.OBJECTIVES_PLACEHOLDER'}}" data-builder-path="progressTrack.objectivesText" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}"/>
+        </div>
+        <div class="form-group"><label>{{localize 'ETERN.ITEM.DESCRIPTION'}}</label><input type="text" value="{{entry.progressTrack.notes}}" data-builder-path="progressTrack.notes" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}"/></div>
+        <div class="profession-progress-preview" aria-label="{{localize 'ETERN.TECHNIQUE.MODULES.PROGRESS_TRACK_LABEL'}}">
+          {{#each entry.progressTrack.slots as |slot|}}
+            <button
+              type="button"
+              class="progress-track-box{{#if slot.checked}} active{{/if}}{{#if slot.isObjective}} objective{{/if}}{{#if slot.isReachedObjective}} reached-objective{{/if}}"
+              data-profession-progress-box="1"
+              data-array-key="{{../section.key}}"
+              data-entry-index="{{../entry.index}}"
+              data-box-index="{{slot.index}}"
+              aria-label="{{slot.value}}"
+              aria-pressed="{{#if slot.checked}}true{{else}}false{{/if}}"
+            ></button>
+          {{/each}}
+        </div>
+      </details>
+    {{/if}}
+
+    {{#if entry.hasProgressRewards}}
+      <details class="builder-module-block builder-grid-full" open>
+        <summary>{{localize 'ETERN.TECHNIQUE.MODULES.PROGRESS_REWARDS_LABEL'}}</summary>
+        <p class="builder-help-text">{{localize 'ETERN.TECHNIQUE.MODULES.PROGRESS_REWARDS_HELP'}}</p>
+        <div class="builder-stack">
+          {{#each entry.progressRewards as |reward|}}
+            <div class="profession-progress-reward-row">
+              <div class="form-group profession-progress-reward-objective">
+                <label>{{localize 'ETERN.TECHNIQUE.MODULES.PROGRESS_TRACK_THRESHOLD'}}</label>
+                <input type="number" min="1" max="12" step="1" value="{{reward.threshold}}" data-builder-path="progressRewards.{{reward.index}}.threshold" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}"/>
+                <span class="profession-progress-reward-status {{#if reward.isReached}}is-reached{{/if}}">{{reward.reachedLabel}}</span>
+              </div>
+              <div class="form-group profession-progress-reward-target">
+                <label>{{localize 'ETERN.TECHNIQUE.MODULES.BONUS_TARGET.LABEL'}}</label>
+                <select data-builder-path="progressRewards.{{reward.index}}.targetKey" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}">{{#each reward.targetChoices as |choice|}}<option value="{{choice.value}}" {{#if choice.selected}}selected{{/if}}>{{choice.label}}</option>{{/each}}</select>
+              </div>
+              <div class="form-group profession-progress-reward-value">
+                <label>{{localize 'ETERN.TECHNIQUE.MODULES.BONUS_VALUE'}}</label>
+                <input type="number" step="1" value="{{reward.value}}" data-builder-path="progressRewards.{{reward.index}}.value" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}"/>
+              </div>
+              <div class="form-group profession-progress-reward-description">
+                <label>{{localize 'ETERN.ITEM.DESCRIPTION'}}</label>
+                <input type="text" value="{{reward.notes}}" data-builder-path="progressRewards.{{reward.index}}.notes" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}"/>
+              </div>
+              <button type="button" class="sheet-action-button profession-progress-reward-delete" data-profession-array-action="remove" data-array-key="{{../section.key}}" data-entry-index="{{../entry.index}}" data-collection-path="progressRewards" data-collection-index="{{reward.index}}">{{localize 'ETERN.UI.DELETE'}}</button>
+            </div>
+          {{/each}}
+          <button type="button" class="sheet-action-button" data-profession-array-action="add" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-collection-path="progressRewards" data-collection-type="progress-reward">{{localize 'ETERN.UI.ADD'}}</button>
+        </div>
+      </details>
+    {{/if}}
+  </div>
+
+  {{#if owner}}
+    <div class="builder-row-actions builder-row-actions--stacked">
+      {{#if entry.canMoveUp}}<button type="button" class="sheet-action-button" data-action="builder-move-entry" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-direction="-1">{{localize 'ETERN.UI.MOVE_UP'}}</button>{{/if}}
+      {{#if entry.canMoveDown}}<button type="button" class="sheet-action-button" data-action="builder-move-entry" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-direction="1">{{localize 'ETERN.UI.MOVE_DOWN'}}</button>{{/if}}
+      <button type="button" class="sheet-action-button" data-action="builder-duplicate-entry" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}">{{localize 'ETERN.UI.DUPLICATE'}}</button>
+      <button type="button" class="sheet-action-button" data-action="builder-remove-entry" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}">{{localize 'ETERN.UI.DELETE'}}</button>
+    </div>
+  {{/if}}
+</article>

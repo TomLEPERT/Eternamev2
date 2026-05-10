@@ -1,0 +1,126 @@
+<section class="bonus-tab">
+  <div class="bonus-layout">
+    <article class="bonus-card bonus-states-card">
+      <header class="bonus-card-header">
+        <div>
+          <h2>{{localize "ETERN.STATES.TITLE"}}</h2>
+          <p>{{localize "ETERN.STATES.SUBTITLE"}}</p>
+        </div>
+      </header>
+
+      <div class="bonus-table-wrapper">
+        <table class="bonus-table">
+          <thead>
+            <tr>
+              <th>{{localize "ETERN.STATES.CATEGORY"}}</th>
+              <th>{{localize "ETERN.STATES.NAME"}}</th>
+              <th>{{localize "ETERN.STATES.ACTIVE"}}</th>
+              <th>{{localize "ETERN.STATES.VALUE_DURATION"}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each stateList as |state|}}
+              <tr>
+                <td><span class="state-category-pill">{{state.category}}</span></td>
+                <td>
+                  <div class="state-name-cell">
+                    <strong>{{state.name}}</strong>
+                    <span>{{state.description}}</span>
+                  </div>
+                </td>
+                <td class="bonus-table-checkbox-cell">
+                  <input type="checkbox" name="system.states.{{state.id}}.active" {{#if state.active}}checked{{/if}}>
+                </td>
+                <td>
+                  <input type="number" name="system.states.{{state.id}}.value" value="{{state.value}}" step="1">
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <article class="bonus-card bonus-values-card">
+      <header class="bonus-card-header">
+        <div>
+          <h2>{{localize "ETERN.BONUSES.TITLE"}}</h2>
+          <p>{{localize "ETERN.BONUSES.SUBTITLE"}}</p>
+        </div>
+      </header>
+
+      <div class="bonus-section">
+        <h3>{{localize "ETERN.BONUSES.ATTRIBUTES_TITLE"}}</h3>
+        <table class="bonus-table">
+          <thead>
+            <tr>
+              <th>{{localize "ETERN.BONUSES.ATTRIBUTE"}}</th>
+              <th>{{localize "ETERN.BONUSES.VALUE_BONUS"}}</th>
+              <th>{{localize "ETERN.BONUSES.INDEX_BONUS"}}</th>
+              <th>{{localize "ETERN.BONUSES.DICE_BONUS"}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each system.attributes as |attr key|}}
+              <tr>
+                <td>
+                  <div class="state-name-cell">
+                    <strong>{{attr.abbr}}</strong>
+                    <span>{{localize attr.label}}</span>
+                  </div>
+                </td>
+                <td><input type="number" name="system.bonuses.attributesValue.{{key}}" value="{{lookup ../system.bonuses.attributesValue key}}" step="1"></td>
+                <td><input type="number" name="system.bonuses.attributesIndex.{{key}}" value="{{lookup ../system.bonuses.attributesIndex key}}" step="1"></td>
+                <td><input type="number" min="0" max="4" name="system.bonuses.attributesDice.{{key}}" value="{{lookup ../system.bonuses.attributesDice key}}" step="1"></td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bonus-section bonus-grid-section">
+        <h3>{{localize "ETERN.BONUSES.GENERAL_TITLE"}}</h3>
+        <div class="bonus-grid">
+          <label><span>{{localize "ETERN.BONUSES.HP_MAX"}}</span><input type="number" name="system.bonuses.hpMax" value="{{system.bonuses.hpMax}}" step="1"></label>
+          <label><span>{{localize "ETERN.BONUSES.INITIATIVE"}}</span><input type="number" name="system.bonuses.initiative" value="{{system.bonuses.initiative}}" step="1"></label>
+          <label><span>{{localize "ETERN.BONUSES.DESTINY_DICE"}}</span><input type="number" name="system.bonuses.destinyDice" value="{{system.bonuses.destinyDice}}" step="1"></label>
+          <label><span>{{localize "ETERN.BONUSES.FATIGUE_MAX"}}</span><input type="number" name="system.bonuses.fatigueMax" value="{{system.bonuses.fatigueMax}}" step="1"></label>
+          <label><span>{{localize "ETERN.BONUSES.EXPLORATION"}}</span><input type="number" name="system.bonuses.explorationPassive" value="{{system.bonuses.explorationPassive}}" step="1"></label>
+          <label><span>{{localize "ETERN.BONUSES.SPELL_SLOTS_MAX"}}</span><input type="number" name="system.bonuses.spellSlotsMax" value="{{system.bonuses.spellSlotsMax}}" step="1"></label>
+          <label><span>{{localize "ETERN.BONUSES.PS_MAX"}}</span><input type="number" name="system.bonuses.psMax" value="{{system.bonuses.psMax}}" step="1"></label>
+          <label><span>{{localize "ETERN.BONUSES.POWER"}}</span><input type="number" name="system.bonuses.power" value="{{system.bonuses.power}}" step="1"></label>
+        </div>
+      </div>
+
+      <div class="bonus-section bonus-grid-section">
+        <h3>{{localize "ETERN.BONUSES.COMBAT_TITLE"}}</h3>
+        <div class="bonus-grid">
+          <label><span>PRC</span><input type="number" name="system.bonuses.combat.prc" value="{{system.bonuses.combat.prc}}" step="1"></label>
+          <label><span>PRD</span><input type="number" name="system.bonuses.combat.prd" value="{{system.bonuses.combat.prd}}" step="1"></label>
+          <label><span>PRM</span><input type="number" name="system.bonuses.combat.prm" value="{{system.bonuses.combat.prm}}" step="1"></label>
+          <label><span>DEF</span><input type="number" name="system.bonuses.combat.def" value="{{system.bonuses.combat.def}}" step="1"></label>
+        </div>
+      </div>
+
+      <div class="bonus-section">
+        <h3>{{localize "ETERN.BONUSES.SAVES_TITLE"}}</h3>
+        <table class="bonus-table">
+          <thead>
+            <tr>
+              <th>{{localize "ETERN.SAVES.TITLE"}}</th>
+              <th>{{localize "ETERN.BONUSES.VALUE_BONUS"}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each system.saves as |save key|}}
+              <tr>
+                <td>{{localize (lookup ../saveLabelKeys key)}}</td>
+                <td><input type="number" name="system.bonuses.saves.{{key}}" value="{{lookup ../system.bonuses.saves key}}" step="1"></td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </div>
+</section>

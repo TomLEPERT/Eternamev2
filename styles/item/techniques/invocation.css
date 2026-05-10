@@ -1,0 +1,34 @@
+.eternamev2-item-sheet .invocation-attribute-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--etern-space-md);
+}
+
+.eternamev2-item-sheet .invocation-attribute-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--etern-space-md);
+  align-items: center;
+  padding: var(--etern-space-md) 12px;
+  border-radius: var(--etern-radius-xl);
+  border: 1px solid rgba(67, 56, 44, 0.16);
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.eternamev2-item-sheet .invocation-attribute-card--error {
+  border-color: rgba(148, 35, 35, 0.28);
+  background: rgba(148, 35, 35, 0.08);
+}
+
+.eternamev2-item-sheet .invocation-attribute-card__abbr {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.eternamev2-item-sheet .invocation-attribute-card__label {
+  min-width: 0;
+}
+
+.eternamev2-item-sheet .invocation-attribute-card input {
+  width: 76px;
+}

@@ -1,0 +1,98 @@
+<section class="stats-section stats-attacks">
+  <header class="stats-section-title stats-section-title-attacks">
+    {{localize "ETERN.ATTACKS.TITLE"}}
+  </header>
+
+  <div class="attacks-panel-v2">
+    <div class="attacks-top-v2">
+      <div class="attacks-top-label-v2">{{localize "ETERN.ATTACKS.VALUES"}}</div>
+      <div class="attacks-top-stats-v2">
+        <div class="attack-summary-entry">PRC : <strong data-derived="attack-prc">{{system.derived.attacks.prc}}</strong></div>
+        <div class="attack-summary-entry">PRD : <strong data-derived="attack-prd">{{system.derived.attacks.prd}}</strong></div>
+        <div class="attack-summary-entry">PRM : <strong data-derived="attack-prm">{{system.derived.attacks.prm}}</strong></div>
+      </div>
+    </div>
+
+    <div class="attacks-table-v2">
+      <div class="attacks-head-v2">
+        <div>{{localize "ETERN.ATTACKS.NAME"}}</div>
+        <div>{{localize "ETERN.ATTACKS.RANGE"}}</div>
+        <div>{{localize "ETERN.ATTACKS.DAMAGE"}}</div>
+        <div>{{localize "ETERN.ATTACKS.TYPE"}}</div>
+        <div>{{localize "ETERN.ATTACKS.ACTIONS"}}</div>
+      </div>
+
+      {{#if attackRows.length}}
+        {{#each attackRows as |attack index|}}
+          <div class="attack-row-v2" data-attack-id="{{attack.id}}" {{#if attack.isWeapon}}data-item-id="{{attack.itemId}}"{{else}}data-attack-index="{{attack.attackIndex}}"{{/if}}>
+            <input
+              type="text"
+              class="attack-name-input"
+              value="{{attack.name}}"
+              data-attack-index="{{attack.attackIndex}}"
+              data-attack-field="name"
+              {{#unless attack.editable}}disabled{{/unless}}
+            >
+
+            <input
+              type="text"
+              class="attack-range-input"
+              value="{{attack.range}}"
+              data-attack-index="{{attack.attackIndex}}"
+              data-attack-field="range"
+              {{#unless attack.editable}}disabled{{/unless}}
+            >
+
+            <input
+              type="text"
+              class="attack-damage-input"
+              value="{{attack.damage}}"
+              data-attack-index="{{attack.attackIndex}}"
+              data-attack-field="damage"
+              {{#unless attack.editable}}disabled{{/unless}}
+            >
+
+            <input
+              type="text"
+              class="attack-type-input"
+              value="{{attack.type}}"
+              data-attack-index="{{attack.attackIndex}}"
+              data-attack-field="type"
+              {{#unless attack.editable}}disabled{{/unless}}
+            >
+
+            <div class="attack-actions-v2">
+              <button
+                type="button"
+                class="attack-action-button attack-roll-button-v2"
+                data-action="roll-attack"
+                {{#if attack.isWeapon}}data-item-id="{{attack.itemId}}"{{else}}data-attack-index="{{attack.attackIndex}}"{{/if}}
+                title="{{localize "ETERN.ATTACKS.ROLL"}}"
+              >🎲</button>
+
+              {{#if attack.isManual}}<button
+                type="button"
+                class="attack-action-button attack-delete-button-v2"
+                data-action="delete-attack"
+                data-attack-index="{{attack.attackIndex}}"
+                title="{{localize "ETERN.ATTACKS.DELETE"}}"
+              >🗑</button>{{else}}<button
+                type="button"
+                class="attack-action-button attack-edit-button-v2"
+                data-action="edit-weapon-attack"
+                data-item-id="{{attack.itemId}}"
+                title="{{localize "ETERN.INVENTORY.ACTIONS.EDIT"}}"
+              >✎</button>{{/if}}
+            </div>
+          </div>
+        {{/each}}
+      {{else}}
+        <p class="attacks-empty-v2">{{localize "ETERN.ATTACKS.EMPTY"}}</p>
+      {{/if}}
+    </div>
+
+    <button type="button" class="attacks-add-button-v2" data-action="create-attack">
+      {{localize "ETERN.ATTACKS.ADD"}}
+    </button>
+  </div>
+</section>

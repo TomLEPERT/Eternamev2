@@ -1,0 +1,64 @@
+.stats-section-title-saves {
+  color: var(--etern-color-white);
+  background: linear-gradient(90deg, #35904f, #2e8d4b);
+}
+
+.saves-panel-v2 {
+  padding: 14px;
+  border: 2px solid #35904f;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: var(--etern-space-md);
+}
+
+.save-line-v2 {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: var(--etern-space-md);
+  align-items: center;
+}
+
+.save-name-v2 {
+  font-weight: 800;
+  color: #322d28;
+}
+
+.save-track-v2 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.save-track-box {
+  appearance: none;
+  border: 1px solid #8e867a;
+  background: var(--etern-soft-bg);
+  border-radius: var(--etern-radius-sm);
+  height: 22px;
+  min-width: 0;
+  padding: 0;
+  cursor: pointer;
+  transition:
+    transform 120ms ease,
+    background 120ms ease,
+    border-color 120ms ease,
+    opacity 120ms ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.save-track-box:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.save-track-box.active {
+  background: linear-gradient(180deg, #8f8f8f, #5c5c5c);
+  border-color: #505050;
+}
+
+.save-track-box.is-disabled {
+  opacity: 0.38;
+  border-style: dashed;
+  cursor: default;
+}

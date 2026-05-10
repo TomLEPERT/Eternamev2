@@ -1,0 +1,37 @@
+<article class="techniques-row heritage-row" data-heritage-entry data-heritage-kind="{{heritage.heritageType}}" data-heritage-feature="{{heritage.featureType}}" data-heritage-search="{{heritage.searchText}}">
+  <div class="techniques-row-main">
+    <div class="techniques-row-title">
+      <button type="button" data-action="open-technique-item" data-item-id="{{heritage.id}}">{{heritage.name}}</button>
+      <span class="techniques-row-badge techniques-row-badge--heritage">{{heritage.typeLabel}}</span>
+      <span class="techniques-row-badge techniques-row-badge--heritage-feature">{{heritage.featureTypeLabel}}</span>
+      <span class="techniques-row-badge {{#if heritage.isTechnique}}techniques-row-badge--prepared{{/if}}">{{heritage.stateLabel}}</span>
+      {{#if heritage.isTechnique}}
+        <span class="techniques-row-badge techniques-row-badge--power">{{localize 'ETERN.TECHNIQUE.POWER.LEVEL'}} {{heritage.power}}</span>
+        <span class="techniques-row-badge {{#if (eq heritage.validationState 'error')}}techniques-row-badge--error{{/if}}{{#if (eq heritage.validationState 'warning')}}techniques-row-badge--warning{{/if}}">{{heritage.validationLabel}}</span>
+      {{/if}}
+    </div>
+    {{#if heritage.isTechnique}}
+      <p class="techniques-row-subtitle">{{#if heritage.headline}}{{heritage.headline}}{{else}}{{#if heritage.description}}{{heritage.description}}{{else}}{{localize 'ETERN.HERITAGE.EMPTY_DESCRIPTION'}}{{/if}}{{/if}}</p>
+      {{#if heritage.mainStatisticLabel}}
+        <p class="techniques-row-meta">{{heritage.mainStatisticLabel}} : {{heritage.mainStatisticValue}} · XP {{heritage.totalXp}}</p>
+      {{/if}}
+    {{else}}
+      <p class="techniques-row-subtitle">{{#if heritage.description}}{{heritage.description}}{{else}}{{localize 'ETERN.HERITAGE.EMPTY_DESCRIPTION'}}{{/if}}</p>
+    {{/if}}
+  </div>
+  <div class="techniques-row-actions techniques-row-actions--stacked">
+    {{#if heritage.isTechnique}}
+      <button type="button" data-action="use-heritage-item" data-item-id="{{heritage.id}}">{{localize 'ETERN.HERITAGE.ACTION.USE'}}</button>
+    {{/if}}
+    {{#if owner}}
+      {{#if heritage.isPassive}}
+        <button type="button" data-action="toggle-heritage-active" data-item-id="{{heritage.id}}">{{#if heritage.isActive}}{{localize 'ETERN.HERITAGE.ACTION.DEACTIVATE'}}{{else}}{{localize 'ETERN.HERITAGE.ACTION.ACTIVATE'}}{{/if}}</button>
+      {{/if}}
+      {{#if heritage.isTechnique}}
+        <button type="button" data-action="toggle-heritage-prepared" data-item-id="{{heritage.id}}">{{#if heritage.isPrepared}}{{localize 'ETERN.HERITAGE.ACTION.UNPREPARE'}}{{else}}{{localize 'ETERN.HERITAGE.ACTION.PREPARE'}}{{/if}}</button>
+      {{/if}}
+      <button type="button" data-action="duplicate-heritage-item" data-item-id="{{heritage.id}}">{{localize 'ETERN.UI.DUPLICATE'}}</button>
+      <button type="button" data-action="delete-owned-item" data-item-id="{{heritage.id}}">{{localize 'ETERN.UI.DELETE'}}</button>
+    {{/if}}
+  </div>
+</article>

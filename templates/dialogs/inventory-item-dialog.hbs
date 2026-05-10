@@ -1,0 +1,54 @@
+<form class="inventory-item-dialog">
+  <div class="inventory-dialog-grid">
+    <div class="inventory-dialog-field inventory-dialog-field--full">
+      <label>{{localize "ETERN.INVENTORY.COLUMNS.NAME"}}</label>
+      <input type="text" name="name" value="{{item.name}}">
+    </div>
+
+
+    <div class="inventory-dialog-field">
+      <label>{{localize "ETERN.INVENTORY.DIALOG.ITEM_TYPE"}}</label>
+      <select name="type" {{#unless canChangeType}}disabled{{/unless}}>
+        {{#each typeChoices}}
+          <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="inventory-dialog-field">
+      <label>{{localize "ETERN.INVENTORY.COLUMNS.QUANTITY"}}</label>
+      <input type="number" name="quantity" value="{{item.quantity}}" min="1" step="1">
+    </div>
+
+    <div class="inventory-dialog-field">
+      <label>{{localize "ETERN.INVENTORY.COLUMNS.WEIGHT"}}</label>
+      <select name="weight">
+        {{#each weightOptions}}
+          <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="inventory-dialog-field">
+      <label>{{localize "ETERN.INVENTORY.DIALOG.LOCATION"}}</label>
+      <select name="location">
+        <option value="backpack" {{#if isBackpack}}selected{{/if}}>{{localize "ETERN.INVENTORY.BACKPACK.TITLE"}}</option>
+        <option value="belt" {{#if isBelt}}selected{{/if}}>{{localize "ETERN.INVENTORY.BELT.TITLE"}}</option>
+      </select>
+    </div>
+
+    <div class="inventory-dialog-field">
+      <label>{{localize "ETERN.ITEM.LEGALITY.LABEL"}}</label>
+      <select name="legality">
+        {{#each legalityChoices}}
+          <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="inventory-dialog-field inventory-dialog-field--full">
+      <label>{{localize "ETERN.INVENTORY.DIALOG.DESCRIPTION"}}</label>
+      <textarea name="description" rows="6">{{item.description}}</textarea>
+    </div>
+  </div>
+</form>

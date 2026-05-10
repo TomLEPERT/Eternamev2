@@ -1,0 +1,74 @@
+<section class="sheet-card sheet-card-spacious enchantment-overview-card">
+  <div class="sheet-card-head sheet-card-head--split">
+    <div>
+      <h3>{{localize 'ETERN.ENCHANTING.OVERVIEW'}}</h3>
+      <p class="sheet-muted-copy enchantment-help-copy">{{localize 'ETERN.ENCHANTING.HELP_SIMPLE'}}</p>
+    </div>
+    <div class="sheet-action-row">
+      {{#if editable}}
+        <button type="button" class="sheet-action-button sheet-action-button--primary" data-action="enchantment-open-dialog">{{localize 'ETERN.ENCHANTING.USE_CATALYST'}}</button>
+      {{/if}}
+      <div class="sheet-stat-row sheet-stat-row--wrap">
+        <div class="sheet-stat-pill"><span>{{localize 'ETERN.ENCHANTING.SUMMARY.PREFIXES'}}</span><strong>{{enchantingSummary.prefixUsed}} / {{enchantingSummary.prefixMax}}</strong></div>
+        <div class="sheet-stat-pill"><span>{{localize 'ETERN.ENCHANTING.SUMMARY.SUFFIXES'}}</span><strong>{{enchantingSummary.suffixUsed}} / {{enchantingSummary.suffixMax}}</strong></div>
+        <div class="sheet-stat-pill"><span>{{localize 'ETERN.ENCHANTING.CURSES'}}</span><strong>{{enchantingSummary.curseCount}}</strong></div>
+        <div class="sheet-stat-pill"><span>{{localize 'ETERN.ENCHANTING.SUMMARY.WEIGHT'}}</span><strong>{{enchantingSummary.totalMagicWeight}}</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet-fields-grid sheet-fields-grid--three">
+    <div class="form-group">
+      <label>{{localize 'ETERN.ENCHANTING.BASE_QUALITY.LABEL'}}</label>
+      <select name="system.enchanting.baseQuality">
+        {{#each enchantingBaseQualityChoices}}
+          <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+        {{/each}}
+      </select>
+    </div>
+    {{#if enchantingUsesCustomCapacity}}
+      <div class="form-group">
+        <label>{{localize 'ETERN.ENCHANTING.CUSTOM_PREFIX_MAX'}}</label>
+        <input type="number" name="system.enchanting.customPrefixMax" value="{{system.enchanting.customPrefixMax}}" min="0" step="1"/>
+      </div>
+      <div class="form-group">
+        <label>{{localize 'ETERN.ENCHANTING.CUSTOM_SUFFIX_MAX'}}</label>
+        <input type="number" name="system.enchanting.customSuffixMax" value="{{system.enchanting.customSuffixMax}}" min="0" step="1"/>
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="form-group form-group-stacked">
+    <label>{{localize 'ETERN.ENCHANTING.NOTES'}}</label>
+    <textarea name="system.enchanting.notes" rows="4">{{system.enchanting.notes}}</textarea>
+  </div>
+
+  {{#if enchantingDerivedSummary.extraPills.length}}
+    <div class="sheet-stat-row sheet-stat-row--wrap enchantment-derived-pills">
+      {{#each enchantingDerivedSummary.extraPills as |pill|}}
+        <div class="sheet-stat-pill"><span>{{pill.label}}</span><strong>{{pill.value}}</strong></div>
+      {{/each}}
+    </div>
+  {{/if}}
+</section>
+
+{{#each enchantingSections as |section|}}
+  <section class="sheet-card sheet-card-spacious">
+    <div class="sheet-card-head sheet-card-head--split">
+      <div>
+        <h3>{{section.label}}</h3>
+        <p class="sheet-muted-copy enchantment-section-copy">{{section.emptyLabel}}</p>
+      </div>
+      {{#if ../editable}}
+        <button type="button" class="sheet-action-button" data-action="enchantment-add-entry" data-entry-family="{{section.family}}" {{#if section.side}}data-entry-side="{{section.side}}"{{/if}}>{{section.addLabel}}</button>
+      {{/if}}
+    </div>
+    {{#if section.entries.length}}
+      <div class="enchantment-entry-list">
+        {{#each section.entries as |entry|}}
+          {{> "systems/eternamev2/templates/item/partials/enchantment-entry-editor.hbs" entry=entry editable=../../editable}}
+        {{/each}}
+      </div>
+    {{/if}}
+  </section>
+{{/each}}

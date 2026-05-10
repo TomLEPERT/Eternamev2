@@ -1,0 +1,29 @@
+<header class="sheet-header item-sheet-header-card">
+  <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="72" width="72"/>
+  <div class="header-fields item-header-fields">
+    <div class="item-title-row">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'ETERN.TECHNIQUE.NAME'}}"/></h1>
+    </div>
+    {{#if sheetHeader.badges.length}}
+      <div class="sheet-badge-row">
+        {{#each sheetHeader.badges as |badge|}}
+          <span class="sheet-badge">{{badge}}</span>
+        {{/each}}
+      </div>
+    {{/if}}
+    {{#if sheetHeader.statBadges.length}}
+      <div class="sheet-stat-row">
+        {{#each sheetHeader.statBadges as |badge|}}
+          <div class="sheet-stat-pill"><span>{{badge.label}}</span><strong>{{badge.value}}</strong></div>
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
+</header>
+
+<nav class="sheet-tabs tabs item-sheet-tabs" data-group="primary">
+  <a class="item" data-tab="general">{{localize 'ETERN.TECHNIQUE.TABS.GENERAL'}}</a>
+  <a class="item" data-tab="power">{{localize 'ETERN.TECHNIQUE.TABS.POWER'}}</a>
+  <a class="item" data-tab="components">{{localize 'ETERN.TECHNIQUE.TABS.COMPONENTS'}}</a>
+  <a class="item" data-tab="description">{{localize 'ETERN.TECHNIQUE.TABS.DESCRIPTION'}}</a>
+</nav>

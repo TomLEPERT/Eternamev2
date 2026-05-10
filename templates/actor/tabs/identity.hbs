@@ -1,0 +1,59 @@
+<section class="identity-tab">
+  <div class="identity-grid">
+
+    <article class="identity-card">
+      <header class="identity-card-header">
+        <span class="identity-card-title">{{localize "ETERN.IDENTITY.DESCRIPTION"}}</span>
+      </header>
+
+      <div class="identity-card-body">
+        <textarea
+          name="system.identity.description"
+          rows="8"
+        >{{system.identity.description}}</textarea>
+      </div>
+    </article>
+
+    <article class="identity-card">
+      <header class="identity-card-header">
+        <span class="identity-card-title">{{localize "ETERN.IDENTITY.PERSONALITY"}}</span>
+      </header>
+
+      <div class="identity-card-body">
+        <textarea
+          name="system.identity.personality"
+          rows="8"
+        >{{system.identity.personality}}</textarea>
+      </div>
+    </article>
+
+    <article class="identity-card identity-card-full">
+      <header class="identity-card-header">
+        <span class="identity-card-title">{{localize "ETERN.IDENTITY.HISTORY"}}</span>
+      </header>
+
+      <div class="identity-card-body">
+        <textarea
+          name="system.identity.history"
+          rows="12"
+        >{{system.identity.history}}</textarea>
+      </div>
+    </article>
+
+    {{#if isGM}}
+      <article class="identity-card identity-card-full identity-card-gm">
+        <header class="identity-card-header">
+          <span class="identity-card-title">{{localize "ETERN.IDENTITY.GM_NOTES"}}</span>
+        </header>
+
+        <div class="identity-card-body">
+          <textarea
+            name="system.identity.gmNotes"
+            rows="10"
+          >{{system.identity.gmNotes}}</textarea>
+        </div>
+      </article>
+    {{/if}}
+
+  </div>
+</section>

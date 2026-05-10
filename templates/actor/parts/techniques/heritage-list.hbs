@@ -1,0 +1,44 @@
+<section class="techniques-panel techniques-panel--heritages">
+  <header class="techniques-panel-header">
+    <h2>{{localize 'ETERN.HERITAGE.ACTOR.TITLE'}}</h2>
+  </header>
+  <div class="techniques-panel-body">
+    <section class="heritage-section">
+      <div class="techniques-panel-subhead techniques-panel-subhead--split">
+        <h3 class="techniques-panel-subtitle">{{localize 'ETERN.HERITAGE.ACTOR.ANCESTRAL_TITLE'}}</h3>
+        {{#if isOwner}}
+          <div class="techniques-actions">
+            <button type="button" data-action="create-heritage-item" data-heritage-type="ancestral" data-feature-type="passive">{{localize 'ETERN.HERITAGE.ACTION.CREATE_ANCESTRAL_PASSIVE'}}</button>
+            <button type="button" data-action="create-heritage-item" data-heritage-type="ancestral" data-feature-type="technique">{{localize 'ETERN.HERITAGE.ACTION.CREATE_ANCESTRAL_TECHNIQUE'}}</button>
+          </div>
+        {{/if}}
+      </div>
+      <div class="techniques-list techniques-list--compact">
+        {{#each techniques.ancestralHeritages as |heritage|}}
+          {{> "systems/eternamev2/templates/actor/parts/techniques/heritage-row.hbs" heritage=heritage owner=../isOwner}}
+        {{else}}
+          <p class="techniques-empty techniques-empty--left">{{localize 'ETERN.HERITAGE.ACTOR.NO_ANCESTRAL'}}</p>
+        {{/each}}
+      </div>
+    </section>
+
+    <section class="heritage-section">
+      <div class="techniques-panel-subhead techniques-panel-subhead--split">
+        <h3 class="techniques-panel-subtitle">{{localize 'ETERN.HERITAGE.ACTOR.CULTURAL_TITLE'}}</h3>
+        {{#if isOwner}}
+          <div class="techniques-actions">
+            <button type="button" data-action="create-heritage-item" data-heritage-type="cultural" data-feature-type="passive">{{localize 'ETERN.HERITAGE.ACTION.CREATE_CULTURAL_PASSIVE'}}</button>
+            <button type="button" data-action="create-heritage-item" data-heritage-type="cultural" data-feature-type="technique">{{localize 'ETERN.HERITAGE.ACTION.CREATE_CULTURAL_TECHNIQUE'}}</button>
+          </div>
+        {{/if}}
+      </div>
+      <div class="techniques-list techniques-list--compact">
+        {{#each techniques.culturalHeritages as |heritage|}}
+          {{> "systems/eternamev2/templates/actor/parts/techniques/heritage-row.hbs" heritage=heritage owner=../isOwner}}
+        {{else}}
+          <p class="techniques-empty techniques-empty--left">{{localize 'ETERN.HERITAGE.ACTOR.NO_CULTURAL'}}</p>
+        {{/each}}
+      </div>
+    </section>
+  </div>
+</section>

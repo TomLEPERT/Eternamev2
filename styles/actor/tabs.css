@@ -1,0 +1,39 @@
+.sheet-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  margin: 0 16px;
+  border-top: 1px solid #c8c0b1;
+  border-bottom: 1px solid #c8c0b1;
+  background: transparent;
+}
+
+.sheet-tabs .item {
+  padding: var(--etern-space-sm) 6px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: #3d3934;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: color 120ms ease;
+}
+
+.sheet-tabs .item:hover {
+  color: #6c4a42;
+}
+
+.sheet-tabs .item.active {
+  color: var(--etern-color-accent-dark);
+  font-weight: 700;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}

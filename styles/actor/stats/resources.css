@@ -1,0 +1,159 @@
+.misc-card-hp,
+.misc-card-accustomance {
+  gap: var(--etern-gap-sm);
+}
+
+.misc-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--etern-gap-sm);
+}
+
+.hp-track,
+.accustomance-track {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.hp-track-box,
+.accustomance-track-box {
+  appearance: none;
+  border: 1px solid #8e867a;
+  background: var(--etern-soft-bg);
+  border-radius: var(--etern-radius-sm);
+  height: 22px;
+  min-width: 0;
+  padding: 0;
+  cursor: pointer;
+  transition:
+    transform 120ms ease,
+    background 120ms ease,
+    border-color 120ms ease,
+    opacity 120ms ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.hp-track-box:hover:not(:disabled),
+.accustomance-track-box:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.hp-track-box.is-disabled,
+.accustomance-track-box.is-disabled {
+  cursor: default;
+}
+
+.hp-track-box.active {
+  background: linear-gradient(180deg, #dd5c5c, #b82323);
+  border-color: #8b1c1c;
+}
+
+.hp-track-box.is-disabled {
+  opacity: 0.55;
+}
+
+.hp-track-box.is-max-disabled {
+  background: rgba(255, 255, 255, 0.22);
+  border-style: dashed;
+}
+
+.hp-track-box.is-wound-disabled {
+  background: rgba(114, 0, 0, 0.18);
+  border-color: #8b1c1c;
+  border-style: solid;
+}
+
+.hp-grave-wounds {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--etern-space-lg);
+}
+
+.hp-grave-wounds-label {
+  font-weight: 800;
+  color: #3a342e;
+}
+
+.hp-grave-wounds-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--etern-space-sm);
+}
+
+.hp-adjust-button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--etern-button-border);
+  border-radius: var(--etern-radius-md);
+  background: var(--etern-soft-bg-strong);
+  font-weight: 900;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.hp-adjust-button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.hp-grave-wounds-value {
+  min-width: 26px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.accustomance-track-box.active {
+  background: linear-gradient(180deg, #8f73df, #5d41b8);
+  border-color: #4e37a3;
+}
+
+.accustomance-track-box.is-disabled {
+  opacity: 0.45;
+  border-style: dashed;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.accustomance-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--etern-space-lg);
+}
+
+.accustomance-controls-label {
+  font-weight: 800;
+  color: #3a342e;
+}
+
+.accustomance-controls-buttons {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--etern-space-sm);
+}
+
+.accustomance-adjust-button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--etern-button-border);
+  border-radius: var(--etern-radius-md);
+  background: var(--etern-soft-bg-strong);
+  font-weight: 900;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.accustomance-adjust-button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.accustomance-disabled-value {
+  min-width: 26px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 18px;
+}

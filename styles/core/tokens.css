@@ -1,0 +1,72 @@
+:root {
+  /* Color palette */
+  --etern-color-ink: #2d2925;
+  --etern-color-ink-strong: #2f2b27;
+  --etern-color-ink-soft: #3a352f;
+  --etern-color-muted: #5d554c;
+  --etern-color-muted-warm: #5d564f;
+  --etern-color-surface: rgba(255, 255, 255, 0.35);
+  --etern-color-surface-soft: rgba(255, 255, 255, 0.52);
+  --etern-color-surface-strong: rgba(255, 255, 255, 0.72);
+  --etern-color-panel: rgba(255, 255, 255, 0.48);
+  --etern-color-panel-strong: rgba(248, 246, 240, 0.96);
+  --etern-color-border: #a9a295;
+  --etern-color-border-strong: #2f2b27;
+  --etern-color-border-soft: rgba(45, 41, 37, 0.14);
+  --etern-color-accent: #d07c2b;
+  --etern-color-accent-strong: #d58a2f;
+  --etern-color-accent-dark: #7a3c33;
+  --etern-color-danger: #b22424;
+  --etern-color-success: #12602a;
+  --etern-color-warning: #80600f;
+  --etern-color-info: #566ca4;
+  --etern-color-white: #fff;
+  --etern-color-warm-white: #fff6e7;
+
+  /* Semantic aliases used across existing sheets */
+  --etern-text-dark: var(--etern-color-ink);
+  --etern-text-muted: var(--etern-color-muted-warm);
+  --etern-panel-border-color: var(--etern-color-border);
+  --etern-panel-border: 2px solid var(--etern-panel-border-color);
+  --etern-panel-bg: var(--etern-color-surface);
+  --etern-button-border: #9d9587;
+  --etern-soft-bg: var(--etern-color-surface-soft);
+  --etern-soft-bg-strong: var(--etern-color-surface-strong);
+  --etern-accent: var(--etern-color-accent-strong);
+
+  /* Spacing */
+  --etern-space-2xs: 2px;
+  --etern-space-xs: 4px;
+  --etern-space-sm: 8px;
+  --etern-space-md: 10px;
+  --etern-space-lg: 12px;
+  --etern-space-xl: 16px;
+  --etern-space-2xl: 18px;
+  --etern-space-3xl: 24px;
+  --etern-gap-sm: var(--etern-space-md);
+  --etern-gap-md: var(--etern-space-xl);
+  --etern-gap-lg: var(--etern-space-2xl);
+
+  /* Radius */
+  --etern-radius-sm: 6px;
+  --etern-radius-md: 8px;
+  --etern-radius-lg: 10px;
+  --etern-radius-xl: 12px;
+  --etern-radius-2xl: 14px;
+  --etern-radius-3xl: 16px;
+  --etern-radius-pill: 999px;
+  --etern-panel-radius: var(--etern-radius-3xl);
+
+  /* Effects */
+  --etern-shadow-soft: 0 6px 18px rgba(45, 41, 37, 0.08);
+  --etern-shadow-window: 0 8px 24px rgba(0, 0, 0, 0.18);
+  --etern-inset-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+
+  /* Typography */
+  --etern-font-title: "Modesto Condensed", "Palatino Linotype", serif;
+  --etern-font-body: var(--font-primary, sans-serif);
+  --etern-font-size-xs: 0.8rem;
+  --etern-font-size-sm: 0.85rem;
+  --etern-font-size-md: 0.95rem;
+  --etern-font-size-lg: 1.35rem;
+}

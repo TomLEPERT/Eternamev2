@@ -1,0 +1,104 @@
+<header class="sheet-header item-sheet-header-card">
+  <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="72" width="72"/>
+  <div class="header-fields item-header-fields">
+    <div class="item-title-row">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'ETERN.MATERIAL.NAME'}}"/></h1>
+    </div>
+    {{#if sheetHeader.badges.length}}
+      <div class="sheet-badge-row">
+        {{#each sheetHeader.badges as |badge|}}
+          <span class="sheet-badge">{{badge}}</span>
+        {{/each}}
+      </div>
+    {{/if}}
+    {{#if sheetHeader.statBadges.length}}
+      <div class="sheet-stat-row">
+        {{#each sheetHeader.statBadges as |badge|}}
+          <div class="sheet-stat-pill"><span>{{badge.label}}</span><strong>{{badge.value}}</strong></div>
+        {{/each}}
+      </div>
+    {{/if}}
+    <div class="sheet-fields-grid sheet-fields-grid--three">
+      <div class="form-group">
+        <label>{{localize 'ETERN.MATERIAL.CATEGORY.LABEL'}}</label>
+        <select name="system.category">
+          {{#each materialCategories}}
+            <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label>{{localize 'ETERN.MATERIAL.WEIGHT'}}</label>
+        <input type="number" name="system.weight" value="{{system.weight}}" min="0" step="0.1"/>
+      </div>
+      <div class="form-group">
+        <label>{{localize 'ETERN.MATERIAL.DIFFICULTY'}}</label>
+        <input type="number" name="system.difficulty" value="{{system.difficulty}}" min="0" step="1"/>
+      </div>
+      <div class="form-group">
+        <label>{{localize 'ETERN.ITEM.LEGALITY.LABEL'}}</label>
+        <select name="system.legality">
+          {{#each legalityChoices}}
+            <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="sheet-tabs tabs item-sheet-tabs" data-group="primary">
+  <a class="item" data-tab="general">{{localize 'ETERN.MATERIAL.TABS.GENERAL'}}</a>
+  <a class="item" data-tab="description">{{localize 'ETERN.MATERIAL.TABS.DESCRIPTION'}}</a>
+</nav>
+
+<section class="sheet-body">
+  <section class="tab" data-group="primary" data-tab="general">
+    <section class="sheet-card">
+      <div class="sheet-card-head"><h3>{{localize 'ETERN.UI.CORE_STATS'}}</h3></div>
+
+      {{#if isAlchemicalMaterial}}
+        <div class="sheet-fields-grid sheet-fields-grid--two">
+          <div class="form-group">
+            <label>{{localize 'ETERN.MATERIAL.ALCHEMICAL.TAG'}}</label>
+            <select name="system.tag">
+              {{#each alchemicalTagChoices}}
+                <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+              {{/each}}
+            </select>
+          </div>
+          <div class="form-group">
+            <label>{{localize 'ETERN.MATERIAL.ALCHEMICAL.USAGE'}}</label>
+            <input type="text" value="{{alchemicalProfile.usageLabel}}" disabled/>
+          </div>
+          <div class="form-group">
+            <label>{{localize 'ETERN.MATERIAL.ALCHEMICAL.ALIGNED'}}</label>
+            <input type="text" value="{{alchemicalProfile.alignedLabel}}" disabled/>
+          </div>
+          <div class="form-group">
+            <label>{{localize 'ETERN.MATERIAL.ALCHEMICAL.OPPOSED'}}</label>
+            <input type="text" value="{{alchemicalProfile.opposedLabel}}" disabled/>
+          </div>
+        </div>
+      {{/if}}
+
+      {{#if isForgingMaterial}}
+        <div class="sheet-fields-grid">
+          <div class="form-group">
+            <label>{{localize 'ETERN.MATERIAL.FORGING_PROPERTY'}}</label>
+            <input type="text" name="system.forgingProperty" value="{{system.forgingProperty}}"/>
+          </div>
+        </div>
+      {{/if}}
+    </section>
+  </section>
+
+  <section class="tab" data-group="primary" data-tab="description">
+    <section class="sheet-card sheet-card-spacious">
+      <div class="sheet-card-head"><h3>{{localize 'ETERN.MATERIAL.DESCRIPTION'}}</h3></div>
+      <div class="form-group form-group-stacked">
+        <textarea name="system.description" rows="12">{{system.description}}</textarea>
+      </div>
+    </section>
+  </section>
+</section>

@@ -1,0 +1,162 @@
+.eternamev2-item-sheet .item-sheet-tabs {
+  display: flex;
+  gap: var(--etern-space-sm);
+  margin: 12px 0;
+  border: none;
+}
+
+.eternamev2-item-sheet .item-sheet-tabs .item {
+  flex: 0 0 auto;
+  padding: var(--etern-space-sm) 12px;
+  border-radius: var(--etern-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.eternamev2-item-sheet .item-sheet-tabs .item.active {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.eternamev2-item-sheet .sheet-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--etern-space-lg);
+}
+
+.eternamev2-item-sheet .item-sheet-single-column,
+.eternamev2-item-sheet .sheet-two-column {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--etern-space-lg);
+}
+
+.eternamev2-item-sheet .sheet-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--etern-radius-3xl);
+  background: rgba(255, 255, 255, 0.04);
+  padding: var(--etern-space-lg);
+}
+
+.eternamev2-item-sheet .sheet-card-spacious {
+  padding: 14px;
+}
+
+.eternamev2-item-sheet .sheet-card-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.eternamev2-item-sheet .sheet-card-head--split {
+  justify-content: space-between;
+  gap: var(--etern-space-lg);
+}
+
+.eternamev2-item-sheet .sheet-card-head h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.eternamev2-item-sheet .sheet-fields-grid {
+  display: grid;
+  gap: var(--etern-space-lg);
+}
+
+.eternamev2-item-sheet .sheet-fields-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.eternamev2-item-sheet .sheet-fields-grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.eternamev2-item-sheet .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 0;
+}
+
+.eternamev2-item-sheet .form-group-stacked {
+  margin-top: 0;
+}
+
+.eternamev2-item-sheet label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.eternamev2-item-sheet input[type="text"],
+.eternamev2-item-sheet input[type="number"],
+.eternamev2-item-sheet select,
+.eternamev2-item-sheet textarea {
+  width: 100%;
+  min-height: 42px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--etern-radius-lg);
+  padding: var(--etern-space-md) 12px;
+}
+
+.eternamev2-item-sheet textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.eternamev2-item-sheet .sheet-checkbox-card,
+.eternamev2-item-sheet .sheet-inline-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--etern-space-sm);
+}
+
+.eternamev2-item-sheet .sheet-checkbox-card {
+  justify-content: space-between;
+  min-height: 41px;
+  padding: var(--etern-space-sm) 10px;
+  border-radius: var(--etern-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+
+/* Clearer item sheet tab navigation */
+.eternamev2-item-sheet .item-sheet-tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: var(--etern-space-md);
+  margin: 16px 0 18px;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--etern-radius-2xl);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.eternamev2-item-sheet .item-sheet-tabs .item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 9px 14px;
+  border-radius: var(--etern-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.eternamev2-item-sheet .item-sheet-tabs .item:hover {
+  background: rgba(255, 255, 255, 0.13);
+  color: var(--etern-color-white);
+}
+
+.eternamev2-item-sheet .item-sheet-tabs .item.active {
+  border-color: var(--color-border-highlight, #ff9f2a);
+  background: rgba(255, 159, 42, 0.24);
+  color: var(--etern-color-white);
+  box-shadow: inset 0 0 0 1px rgba(255, 159, 42, 0.38), 0 0 12px rgba(255, 159, 42, 0.18);
+}

@@ -1,0 +1,2458 @@
+{
+  "ETERN": {
+    "NAME": "Name",
+    "SPECIES": {
+      "LABEL": "Species",
+      "HUMAN": "Human",
+      "AFFLICTED": "Afflicted",
+      "ANIMA": "Anima",
+      "FOLJESJAGGERKIN": "Följesjaggerkin",
+      "ETERNAL": "Eternal",
+      "SILVINDARI": "Silvindari",
+      "ROHRK": "Rohrk",
+      "NEXIAN": "Nexian",
+      "LX": "LX",
+      "GOBLIN": "Goblin"
+    },
+    "PROFILE": {
+      "LABEL": "Profile",
+      "WARRIOR": "Warrior",
+      "SUPPORT": "Support",
+      "ELEMENTALIST": "Elementalist",
+      "MAGE": "Mage",
+      "DISCIPLE": "Disciple",
+      "ENGINEER": "Engineer",
+      "ROGUE": "Rogue",
+      "RANGER": "Ranger",
+      "MONK": "Monk"
+    },
+    "XP": "XP",
+    "XP_USED": "XP used",
+    "USED": "Used",
+    "NOT_USED": "Not used",
+    "GENDER": "Gender",
+    "KNOWLEDGE": {
+      "LABEL": "Knowledge",
+      "COMMON": "Common",
+      "EDUCATED": "Educated",
+      "ERUDITE": "Erudite",
+      "HIDDEN": "Hidden"
+    },
+    "SIZE": {
+      "LABEL": "Size",
+      "VERY_SMALL": "Very small",
+      "SMALL": "Small",
+      "MEDIUM": "Medium",
+      "LARGE": "Large",
+      "VERY_LARGE": "Very large",
+      "COLOSSAL": "Colossal"
+    },
+    "PORTRAIT_EDIT": "Change character image",
+    "TAB": {
+      "IDENTITY": "Identity",
+      "STATS": "Statistics",
+      "INVENTORY": "Inventory",
+      "TECHNIQUES": "Techniques",
+      "BONUS": "Bonuses & States"
+    },
+    "PLACEHOLDER": {
+      "INVENTORY": "Inventory content (coming soon).",
+      "TECHNIQUES": "Techniques content (coming soon).",
+      "BONUS": "Bonuses & States content (coming soon)."
+    },
+    "IDENTITY": {
+      "DESCRIPTION": "Description",
+      "PERSONALITY": "Personality",
+      "HISTORY": "History",
+      "GM_NOTES": "GM Notes"
+    },
+    "ATTR": {
+      "STRENGTH": "Strength",
+      "ROBUSTNESS": "Robustness",
+      "HABILITY": "Hability",
+      "AGILITY": "Agility",
+      "PERCEPTION": "Perception",
+      "INSTINCT": "Instinct",
+      "REASONING": "Reasoning",
+      "KNOWLEDGE": "Knowledge",
+      "AURA": "Aura",
+      "BAGOU": "Bagou",
+      "MAGIC": "Magic",
+      "CHANCE": "Chance"
+    },
+    "STATS": {
+      "ATTRIBUTES": "Attributes",
+      "MISC": "Misc",
+      "INDEX": "Index",
+      "VALUE": "Value",
+      "HP": "Hit Points",
+      "DIVERS_BLOCK": "Misc",
+      "INITIATIVE": "Initiative",
+      "DESTINY_BASE": "Destiny Dice (base)",
+      "DESTINY_CURRENT": "Destiny Dice (current)",
+      "FATIGUE_MAX": "Fatigue (max)",
+      "FATIGUE_CURRENT": "Fatigue (current)",
+      "EXPLORATION": "Passive Exploration",
+      "ROLL_READY": "Roll ready",
+      "COMING_SOON": "Coming soon",
+      "DEFENSE_TOTAL": "Total Defense",
+      "DEFENSE_BASE": "Base DEF",
+      "DEFENSE_ARMOR": "Armor",
+      "DEFENSE_SHIELD": "Shield",
+      "DEFENSE_BONUS": "Bonus",
+      "DEFENSE": "Defense",
+      "DEFENSE_SHORT": "DEF",
+      "DEFENSE_FORMULA": "Base = 1 + AGI/2. If an equipped armor exists, it overrides the base. Total = Base + Shield + Bonus.",
+      "ARMOR_TRAINING": "Armor training",
+      "ARMOR_TRAINING_STATUS": "Required mastery",
+      "ARMOR_TRAINING_PENALTY": "Penalty",
+      "ARMOR_TRAINING_OK": "Training acquired",
+      "ARMOR_TRAINING_MISSING": "Missing training",
+      "ARMOR_TRAINING_PENALTY_NONE": "None",
+      "ARMOR_TRAINING_PENALTY_DISADV": "Disadvantage on AGI tests",
+      "ARMOR_TRAINING_PENALTY_SPEED": "-{value} speed",
+      "ARMOR_TRAINING_PENALTY_SPEED_LABEL": "Speed",
+      "GRAVE_WOUNDS": "Grave wounds",
+      "ACTIVE_STATES": "Active states",
+      "BELT_CONSUMABLES": {
+        "TITLE": "Belt consumables",
+        "EMPTY": "No consumables in the belt.",
+        "USED": "{name} used."
+      },
+      "FINAL_VALUE": "Final value"
+    },
+    "ITEM": {
+      "ARMORS": "Armors",
+      "SHIELDS": "Shields",
+      "ADD_ARMOR": "+ Armor",
+      "ADD_SHIELD": "+ Shield",
+      "NO_ARMOR": "No armor in inventory.",
+      "NO_SHIELD": "No shield in inventory.",
+      "EQUIPPED": "equipped",
+      "INVENTORY_EQUIPMENT": "Defensive equipment",
+      "DEFAULT_ARMOR_NAME": "Armor",
+      "DEFAULT_SHIELD_NAME": "Shield",
+      "ARMOR_TYPE": {
+        "LIGHT": "Light",
+        "MEDIUM": "Medium",
+        "HEAVY": "Heavy"
+      },
+      "DEFAULT_WEAPON_NAME": "Weapon",
+      "TYPES": {
+        "ARMOR": "Armor",
+        "GEAR": "Gear",
+        "SHIELD": "Shield",
+        "WEAPON": "Weapon",
+        "OBJECT": "Object",
+        "TOOL": "Tool",
+        "MATERIAL": "Material",
+        "CONSUMABLE": "Consumable",
+        "BAG": "Bag",
+        "PROFESSION": "Profession",
+        "TECHNIQUE": "Technique",
+        "INVOCATION": "Invocation",
+        "HERITAGE": "Heritage"
+      },
+      "DESCRIPTION": "Description",
+      "WEIGHT": "Weight",
+      "DEFAULT_MATERIAL_NAME": "Material",
+      "LEGALITY": {
+        "LABEL": "Legality",
+        "LEGAL": "Legal",
+        "ILLEGAL": "Illegal"
+      },
+      "DEFAULT_CONSUMABLE_NAME": "Consumable",
+      "DEFAULT_CONCOCTION_NAME": "Concoction",
+      "DEFAULT_BAG_NAME": "Bag",
+      "DEFAULT_PROFESSION_NAME": "New profession",
+      "DEFAULT_TECHNIQUE_NAME": "New technique",
+      "DEFAULT_INVOCATION_NAME": "New invocation",
+      "DEFAULT_ITEM_NAME": "Item",
+      "DEFAULT_ANCESTRAL_HERITAGE_NAME": "New ancestral heritage",
+      "DEFAULT_CULTURAL_HERITAGE_NAME": "New cultural heritage",
+      "DEFAULT_ANCESTRAL_PASSIVE_HERITAGE_NAME": "New ancestral passive",
+      "DEFAULT_ANCESTRAL_TECHNIQUE_HERITAGE_NAME": "New ancestral technique",
+      "DEFAULT_CULTURAL_PASSIVE_HERITAGE_NAME": "New cultural passive",
+      "DEFAULT_CULTURAL_TECHNIQUE_HERITAGE_NAME": "New cultural technique"
+    },
+    "MAGIC": {
+      "TITLE": "Magic",
+      "ADD": "+ Add",
+      "EMPTY": "No magic type added.",
+      "NO_MORE_TYPES": "All types are already added",
+      "RECOVERY_PER_ACTION": "Recovery/action:",
+      "TYPE": {
+        "CANALISATION": "Channeling",
+        "FASCINATION": "Fascination",
+        "SERMENT": "Oath"
+      }
+    },
+    "MOVEMENT": {
+      "TITLE": "Speed",
+      "ADD": "Add",
+      "WALK": "Walk",
+      "SIZE_BASE": "Size base:",
+      "ARMOR_PENALTY": "Armor penalty:",
+      "EMPTY": "No additional speed.",
+      "DEFAULT_NAME": "New speed",
+      "NAME_PLACEHOLDER": "Speed name"
+    },
+    "OVERDOSE": {
+      "TITLE": "Overdose",
+      "ROLL": "Roll",
+      "ROLL_READY": "roll ready",
+      "SUCCESS": "Success",
+      "FAIL": "Failure",
+      "REQUIRED": "Required successes: <strong>{value}</strong>",
+      "REQUIRED_LABEL": "Required successes",
+      "OUTCOME_LABEL": "Outcome"
+    },
+    "ACCUSTOMANCE": {
+      "TITLE": "Accustomance",
+      "DISABLED": "Disabled boxes",
+      "UNLOCKED": "Unlocked boxes"
+    },
+    "ROLL": {
+      "MODE": {
+        "NORMAL": "None",
+        "ADVANTAGE": "Advantage",
+        "DISADVANTAGE": "Disadvantage"
+      },
+      "DIALOG": {
+        "TITLE": "Attribute Roll — {attribute}",
+        "ATTRIBUTE": "Attribute",
+        "DICE": "Dice rolled",
+        "TICKS": "Ticks",
+        "BASE_TARGET": "Base success target",
+        "MODE": "Situation",
+        "HINT": "Advantage improves the success threshold by 1. Disadvantage worsens it by 1.",
+        "ROLL": "Roll",
+        "CANCEL": "Cancel"
+      },
+      "CHAT": {
+        "ATTRIBUTE_TEST": "Attribute test",
+        "FORMULA": "Roll",
+        "TICKS": "Ticks",
+        "MODE": "Situation",
+        "BASE_TARGET": "Base target",
+        "SUCCESS_COUNT": "Successes:"
+      }
+    },
+    "ATTACKS": {
+      "TITLE": "Attacks",
+      "VALUES": "Values",
+      "NAME": "Name",
+      "RANGE": "Range",
+      "DAMAGE": "Damage",
+      "TYPE": "Type",
+      "ACTIONS": "Actions",
+      "ADD": "+ Add attack",
+      "EMPTY": "No attack recorded.",
+      "DEFAULT_NAME": "New attack",
+      "ROLL": "Roll attack",
+      "DELETE": "Delete attack",
+      "ROLL_READY": "Attack roll to wire later",
+      "ROLL_DIALOG": {
+        "TITLE": "Attack roll",
+        "ATTACK": "Attack",
+        "ATTRIBUTE": "Attribute",
+        "DICE": "Dice rolled",
+        "DEFENSE": "Target DEF",
+        "INTERMEDIATE": "Threshold after situation",
+        "PRECISION": "Precision"
+      },
+      "DEF": {
+        "HIGHER": "Higher",
+        "EQUAL": "Equal",
+        "LOWER": "Lower"
+      }
+    },
+    "SAVES": {
+      "TITLE": "Saves"
+    },
+    "PROGRESSION": {
+      "TITLE": "Progress tracks",
+      "ADD": "+ Add a track",
+      "NAME": "Track name",
+      "OBJECTIVES_PLACEHOLDER": "Objectives (e.g. 2,4,6,8)"
+    },
+    "INVENTORY": {
+      "BACKPACK": {
+        "TITLE": "Backpack"
+      },
+      "BELT": {
+        "TITLE": "Belt"
+      },
+      "COLUMNS": {
+        "NAME": "Name",
+        "QUANTITY": "Qty",
+        "WEIGHT": "Weight"
+      },
+      "ACTIONS": {
+        "MOVE": "Move",
+        "DELETE": "Delete",
+        "EDIT": "Edit",
+        "USE": "Use"
+      },
+      "EMPTY": "Drop an item here or add one.",
+      "DEFAULT_ITEM_NAME": "New item",
+      "DIALOG": {
+        "CREATE_TITLE": "Add item",
+        "EDIT_TITLE": "Edit item",
+        "CREATE": "Create",
+        "SAVE": "Save",
+        "CANCEL": "Cancel",
+        "LOCATION": "Location",
+        "DESCRIPTION": "Description",
+        "ITEM_TYPE": "Item type"
+      },
+      "WEIGHT": {
+        "SMALL": "0.3 · Small item",
+        "STANDARD": "1 · Standard item",
+        "BULKY": "2 · Bulky item"
+      },
+      "CURRENCY": {
+        "PP": "Platinum (PP)",
+        "RC": "Ruby exchange (RC)",
+        "PO": "Gold (PO)",
+        "PA": "Silver (PA)",
+        "PC": "Copper (PC)"
+      },
+      "WEALTH": {
+        "TITLE": "Wealth",
+        "CONVERT": "Convert",
+        "LIFESTYLE": "Lifestyle",
+        "LIFESTYLE_PLACEHOLDER": "e.g. Modest, Wealthy, Survival...",
+        "CONVERT_RESULT": "{fromAmount} {fromLabel} → {toAmount} {toLabel}",
+        "ERROR_SAME_CURRENCY": "Choose two different currencies.",
+        "ERROR_INVALID_AMOUNT": "Invalid amount.",
+        "ERROR_ZERO_RESULT": "This conversion yields nothing with that amount.",
+        "DIALOG": {
+          "TITLE": "Convert wealth",
+          "GIVE": "I give",
+          "AMOUNT": "Amount",
+          "RECEIVE": "I receive"
+        }
+      },
+      "RENOWN": {
+        "TITLE": "Renown",
+        "POSITIVE": "Positive",
+        "NEGATIVE": "Negative",
+        "SCOPE": "Range (positive + negative)"
+      },
+      "NOTES": {
+        "TITLE": "Inventory notes"
+      },
+      "ERROR_INVALID_DROP_TYPE": "Item type is not allowed here."
+    },
+    "STATES": {
+      "TITLE": "States",
+      "SUBTITLE": "Toggle tracked character states and trigger their actions.",
+      "ACTIVE_TITLE": "Active states",
+      "ACTIVE_EMPTY": "No active states right now.",
+      "RESISTANCE_ATTRIBUTE": "Resistance attribute",
+      "CATEGORY": "Category",
+      "NAME": "State",
+      "ACTIVE": "Active",
+      "VALUE_DURATION": "Value / duration",
+      "ACTIONS": "Actions",
+      "BURN": "Burn",
+      "BURN_SUCCESS": "Burn: state remains active.",
+      "BURN_FAIL": "Burn: the state ends.",
+      "BURN_TICK_END": "the burn ends.",
+      "BURN_TICK_3": "the character suffers 3 fire damage.",
+      "BURN_TICK_6": "the character suffers 6 fire damage.",
+      "FROZEN_SUCCESS": "Frozen: +1 frost value.",
+      "FROZEN_FAIL": "Frozen: failed test.",
+      "MANA_LEAK": "Mana leak",
+      "MANA_LEAK_MESSAGE": "loses <strong>{value}</strong> MP or gains 1 spell slot.",
+      "MADNESS": "Madness",
+      "MADNESS_1_2": "random movement.",
+      "MADNESS_3_4": "remains motionless.",
+      "MADNESS_5_6": "attacks the nearest creature.",
+      "RESISTANCE_ROLL": "Resistance test",
+      "CATEGORY_GENERAL": "General",
+      "CATEGORY_PHYSICAL": "Physical",
+      "CATEGORY_MAGICAL": "Magical",
+      "BUTTONS": {
+        "DURATION_1D6": "Duration 1d6",
+        "TEST_5_PLUS": "Test 5+",
+        "TURN_1D6": "Turn 1d6",
+        "LOSS_1D6": "Loss 1d6",
+        "ACTION_1D6": "Action 1d6"
+      },
+      "LIST": {
+        "SURPRISED": {
+          "NAME": "Surprised",
+          "DESCRIPTION": "At the start of combat, a creature may ambush another. If the creature is surprised, it cannot act during the first round of combat."
+        },
+        "STUNNED": {
+          "NAME": "Stunned",
+          "DESCRIPTION": "A stunned creature may be unconscious, dazed, or disoriented. In all cases, it is unable to act and becomes an easier target; its enemies gain Advantage on their attack tests."
+        },
+        "DESTABILIZED": {
+          "NAME": "Destabilized",
+          "DESCRIPTION": "A destabilized creature suffers Disadvantage on its attack tests."
+        },
+        "SLOWED": {
+          "NAME": "Slowed",
+          "DESCRIPTION": "A slowed creature loses half of its movement speed, but its maximum stays the same. For example, if you have 12 m of movement speed, you lose 6 m. This also means it still costs you 6 m to stand up if you are prone, not 3 m."
+        },
+        "PRONE": {
+          "NAME": "Prone",
+          "DESCRIPTION": "A prone creature suffers a -3 penalty to precision and -3 DEF until it stands up."
+        },
+        "WEAKENED": {
+          "NAME": "Weakened",
+          "DESCRIPTION": "A weakened creature suffers Disadvantage on all its tests."
+        },
+        "FEAR": {
+          "NAME": "Frightened",
+          "DESCRIPTION": "The creature’s first action is to move away from the source of fear. In addition, it must succeed on an INS attribute test with complex difficulty if it wishes to attack the source of fear."
+        },
+        "BLINDED": {
+          "NAME": "Blinded",
+          "DESCRIPTION": "A blinded creature suffers Disadvantage on PER attribute tests, a -3 penalty to DEF, and follows the attacking blind rule for its attack tests."
+        },
+        "DEAF": {
+          "NAME": "Deafened",
+          "DESCRIPTION": "A deaf creature can no longer hear or make PER tests related to hearing."
+        },
+        "BLEEDING": {
+          "NAME": "Bleeding",
+          "DESCRIPTION": "The creature bleeds for 1d6 rounds. At the start of its turn, it suffers 2 DM."
+        },
+        "PAIN": {
+          "NAME": "Pain",
+          "DESCRIPTION": "A creature in pain may either move or use its action on its turn."
+        },
+        "IMMOBILIZED": {
+          "NAME": "Immobilized",
+          "DESCRIPTION": "An immobilized creature has its movement speed reduced to 0."
+        },
+        "GRAVE_WOUND": {
+          "NAME": "Grave Wound",
+          "DESCRIPTION": "A creature suffering a grave wound has its maximum HP reduced by 3, starting from 12. Example: with 1 grave wound, the maximum possible HP is 9. This state can stack and does not disappear at the end of combat; it can only be healed by a SAV attribute test or by a skill that specifically mentions this state."
+        },
+        "NECROSIS": {
+          "NAME": "Necrosis",
+          "DESCRIPTION": "Skills that would heal the creature are reduced by half."
+        },
+        "BURN": {
+          "NAME": "Burn",
+          "DESCRIPTION": "A creature suffering the burn state rolls 1d6; on 5+, it catches fire, then rolls 1d6 at the start of each turn. 1–2: the burn ends. 3–5: the creature suffers 3 fire DM. 6: the creature suffers 6 fire DM."
+        },
+        "FROZEN": {
+          "NAME": "Frozen",
+          "DESCRIPTION": "A creature suffering the frozen state rolls 1d6; on 5+, it gains 1 frost value. A creature with at least 1 frost value is unable to act except to try to break free. As an action, it makes a STR attribute test and loses 1 frost value for each success."
+        },
+        "SHOCK": {
+          "NAME": "Shock",
+          "DESCRIPTION": "A creature in shock has all its saves worsened by 1."
+        },
+        "POISONED": {
+          "NAME": "Poisoned",
+          "DESCRIPTION": "A poisoned creature suffers 1d6 acid DM at the start of its turn for as long as the effect lasts. This effect is stackable."
+        },
+        "MANA_LEAK": {
+          "NAME": "Mana Leak",
+          "DESCRIPTION": "A creature in the mana leak state loses 1d6 MP or gains 1 spell slot at the start of its turn."
+        },
+        "SILENCED": {
+          "NAME": "Silenced",
+          "DESCRIPTION": "A silenced creature can no longer speak or cast spells."
+        },
+        "MADNESS": {
+          "NAME": "Madness",
+          "DESCRIPTION": "A creature in the madness state rolls 1d6 to determine its first action of the turn. 1 or 2: the creature moves randomly. 3 or 4: the creature remains still and skips its turn. 5 or 6: the creature attacks the nearest creature."
+        },
+        "CHARMED": {
+          "NAME": "Charmed",
+          "DESCRIPTION": "A charmed creature acts as best it can to please the caster. In combat, it prioritizes defending the caster against any creature that attacks them."
+        }
+      }
+    },
+    "BONUSES": {
+      "TITLE": "Bonuses",
+      "SUBTITLE": "Manual bonuses that stack with future item bonuses.",
+      "ATTRIBUTES_TITLE": "Attributes",
+      "ATTRIBUTE": "Attribute",
+      "VALUE_BONUS": "Value bonus",
+      "INDEX_BONUS": "Index bonus",
+      "DICE_BONUS": "Dice bonus",
+      "GENERAL_TITLE": "General bonuses",
+      "HP_MAX": "Max HP",
+      "INITIATIVE": "Initiative",
+      "DESTINY_DICE": "Destiny dice",
+      "FATIGUE_MAX": "Max fatigue",
+      "EXPLORATION": "Passive exploration",
+      "MAGIC_MAX": "Max magic",
+      "POWER": "Power",
+      "COMBAT_TITLE": "Combat",
+      "SAVES_TITLE": "Saves",
+      "SPELL_SLOTS_MAX": "Max spell slots",
+      "PS_MAX": "Max SP"
+    },
+    "WEAPON": {
+      "TITLE": "Weapon",
+      "NAME": "Name",
+      "BASE": "Base",
+      "RANGE": "Range",
+      "DAMAGE": "Damage (DM)",
+      "DAMAGE_TYPE": "Damage type",
+      "PRECISION_BASE": "Base precision",
+      "PRECISION_BONUS": "Precision bonus",
+      "WEIGHT": "Weight",
+      "EQUIPPED": "Equipped",
+      "DESCRIPTION": "Description",
+      "TABS": {
+        "GENERAL": "General",
+        "SKILLS": "Skills",
+        "ENCHANTMENT": "Enchantment"
+      },
+      "CATEGORY": {
+        "LABEL": "Category",
+        "NATURELLE": "Natural",
+        "POIGNET": "Martial",
+        "BOIS": "Wooden",
+        "MECANIQUE": "Mechanical",
+        "NATURAL": "Natural",
+        "SIDEARM": "Sidearm",
+        "WOODEN": "Wooden",
+        "MECHANICAL": "Mechanical"
+      },
+      "SKILL": {
+        "LEARNED": "Learned",
+        "NAME": "Name",
+        "DESCRIPTION": "Description"
+      },
+      "ENCHANTMENT": {
+        "LABEL": "Enchantment",
+        "PLACEHOLDER": "Coming soon..."
+      },
+      "TAGS": {
+        "LABEL": "Tags",
+        "ONE_HAND": "1 hand",
+        "TWO_HANDS": "2 hands",
+        "VERSATILE": "Versatile",
+        "FINESSE": "Finesse",
+        "LIGHT": "Light",
+        "HEAVY": "Heavy",
+        "SHORT": "Short",
+        "REACH": "Reach",
+        "THROW": "Throw",
+        "POWERFUL": "Powerful",
+        "RANGE": "Range",
+        "AMMO": "Ammo",
+        "POWDER": "Powder",
+        "TEMPORARY": "Temporary",
+        "MOUNT": "Mount",
+        "BOOMERANG": "Boomerang",
+        "RELOAD": "Reload",
+        "CONCEALED": "Concealed"
+      },
+      "PRESETS": {
+        "unarmed": {
+          "NAME": "Unarmed",
+          "DESCRIPTION": "Unarmed strikes gain the finesse tag.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Finesse",
+              "DESCRIPTION": "Unarmed strikes gain the finesse tag."
+            },
+            "2": {
+              "NAME": "Self-Defense",
+              "DESCRIPTION": "You gain a +2 DEF bonus while fighting unarmed."
+            },
+            "3": {
+              "NAME": "Overwhelming",
+              "DESCRIPTION": "You now deal STR/2 d6 DM with unarmed strikes."
+            }
+          }
+        },
+        "fang": {
+          "NAME": "Fang",
+          "DESCRIPTION": "When you make a melee attack with your fangs and deal at least half the target's ROB in DM, the creature must make a Resistance check (ROB) or suffer bleeding.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Deadly",
+              "DESCRIPTION": "When you make a melee attack with your fangs and deal at least half the target's ROB in DM, the creature must make a Resistance check (ROB) or suffer bleeding."
+            },
+            "2": {
+              "NAME": "Grapple",
+              "DESCRIPTION": "This skill uses a progress track with a difficulty equal to the DM dealt by the attack. When you make a melee attack with your fangs and deal at least 2 DM, you may choose to lock the target in your jaws and inflict the immobilized state. On its turn, the creature may use an action to make a STR check to free itself. If it reaches the track objective, it breaks free."
+            },
+            "3": {
+              "NAME": "Natural Attack",
+              "DESCRIPTION": "When you make a melee attack with another weapon, you may use your reaction to make a bite attack."
+            }
+          }
+        },
+        "claw_or_talon": {
+          "NAME": "Claw or Talon",
+          "DESCRIPTION": "You gain a +2 DEF bonus while fighting with claws or talons.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Self-Defense",
+              "DESCRIPTION": "You gain a +2 DEF bonus while fighting with claws or talons."
+            },
+            "2": {
+              "NAME": "Sharp",
+              "DESCRIPTION": "When you make a melee attack with claws or talons against an unarmored flesh creature, you gain +1 to attack and +1d6 DM."
+            },
+            "3": {
+              "NAME": "Deadly",
+              "DESCRIPTION": "When you make a melee attack with claws or talons and deal at least half the target's ROB in DM, the creature must make a Resistance check (ROB) or suffer bleeding."
+            }
+          }
+        },
+        "horn": {
+          "NAME": "Horn",
+          "DESCRIPTION": "If you make a melee attack that lets you move, you may make a melee attack with your horns as a free action before resolving that attack. The target must make a Resistance check (STR) or suffer the prone state.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Charging Attack",
+              "DESCRIPTION": "If you make a melee attack that lets you move, you may make a melee attack with your horns as a free action before resolving that attack. The target must make a Resistance check (STR) or suffer the prone state."
+            },
+            "2": {
+              "NAME": "Pain",
+              "DESCRIPTION": "When you make a melee attack with your horns and deal at least half the target's ROB in DM, the creature must make a Resistance check (ROB) or suffer the pain state."
+            },
+            "3": {
+              "NAME": "Precise",
+              "DESCRIPTION": "You gain a +2 bonus to melee attacks with horns."
+            }
+          }
+        },
+        "tail": {
+          "NAME": "Tail",
+          "DESCRIPTION": "Your control zone increases by 1.5 m while fighting with your tail.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Reach",
+              "DESCRIPTION": "Your control zone increases by 1.5 m while fighting with your tail."
+            },
+            "2": {
+              "NAME": "Finesse",
+              "DESCRIPTION": "Tails gain the finesse tag."
+            },
+            "3": {
+              "NAME": "Counterattack",
+              "DESCRIPTION": "When a creature attacks you, you may use your reaction to make an opportunity attack with your tail against it."
+            }
+          }
+        },
+        "stinger": {
+          "NAME": "Stinger",
+          "DESCRIPTION": "You gain a +1 DEF bonus with a stinger.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Self-Defense",
+              "DESCRIPTION": "You gain a +1 DEF bonus with a stinger."
+            },
+            "2": {
+              "NAME": "Counterattack",
+              "DESCRIPTION": "When a creature gets a major failure on an attack against you, you may use your reaction to make an opportunity attack with a stinger against it."
+            },
+            "3": {
+              "NAME": "Puncture",
+              "DESCRIPTION": "When you attack with your stinger and deal at least half the target's ROB in DM, the target must make a Resistance check (ROB) or suffer a cumulative -1 DEF penalty, up to 3 times."
+            }
+          }
+        },
+        "tentacle": {
+          "NAME": "Tentacle",
+          "DESCRIPTION": "You gain a +2 DEF bonus while fighting with tentacles.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Self-Defense",
+              "DESCRIPTION": "You gain a +2 DEF bonus while fighting with tentacles."
+            },
+            "2": {
+              "NAME": "Finesse",
+              "DESCRIPTION": "Tentacles gain the finesse tag."
+            },
+            "3": {
+              "NAME": "Grapple",
+              "DESCRIPTION": "This skill uses a progress track with a difficulty equal to the DM dealt by the attack. When you make a melee attack with your tentacles and deal at least 2 DM, you may choose to hold the target and inflict the immobilized state. On its turn, the creature may use an action to make a STR check to free itself. If it reaches the track objective, it breaks free."
+            }
+          }
+        },
+        "dagger": {
+          "NAME": "Dagger",
+          "DESCRIPTION": "Your parry save is improved by 1 while you wield a dagger.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Parry",
+              "DESCRIPTION": "Your parry save is improved by 1 while you wield a dagger."
+            },
+            "2": {
+              "NAME": "Reach",
+              "DESCRIPTION": "Daggers lose the Short tag."
+            },
+            "3": {
+              "NAME": "Sneaky",
+              "DESCRIPTION": "When you make a surprise attack with a dagger, the DM become Unlimited."
+            }
+          }
+        },
+        "short_sword": {
+          "NAME": "Short Sword",
+          "DESCRIPTION": "You gain a +2 attack bonus with a shortsword if you are equipped with a shield.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Shield",
+              "DESCRIPTION": "You gain a +2 attack bonus with a shortsword if you are equipped with a shield."
+            },
+            "2": {
+              "NAME": "Ambidextrous",
+              "DESCRIPTION": "You no longer take a penalty for making an off-hand attack with a shortsword."
+            },
+            "3": {
+              "NAME": "Finesse",
+              "DESCRIPTION": "Shortswords gain the Finesse tag."
+            }
+          }
+        },
+        "longsword": {
+          "NAME": "Longsword",
+          "DESCRIPTION": "When you make a melee attack with a longsword against an unarmored flesh creature, you gain +1 to attack and +1d6 DM.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Sharp",
+              "DESCRIPTION": "When you make a melee attack with a longsword against an unarmored flesh creature, you gain +1 to attack and +1d6 DM."
+            },
+            "2": {
+              "NAME": "Thrust",
+              "DESCRIPTION": "You gain a +3 bonus to melee attacks with a longsword."
+            },
+            "3": {
+              "NAME": "Guidance",
+              "DESCRIPTION": "When you make a melee attack with a longsword, you may use your reaction after seeing the result to reroll 2 dice."
+            }
+          }
+        },
+        "bastard_sword": {
+          "NAME": "Bastard Sword",
+          "DESCRIPTION": "You gain +1d6 DM with a bastard sword if you are equipped with a shield.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Shield",
+              "DESCRIPTION": "You gain +1d6 DM with a bastard sword if you are equipped with a shield."
+            },
+            "2": {
+              "NAME": "Powerful",
+              "DESCRIPTION": "Bastard swords gain the Powerful tag."
+            },
+            "3": {
+              "NAME": "Penetration",
+              "DESCRIPTION": "You gain +1d6 DM when making a two-handed melee attack against an armored creature."
+            }
+          }
+        },
+        "claymore": {
+          "NAME": "Claymore",
+          "DESCRIPTION": "With a claymore, you may make a melee attack with disadvantage to strike an additional creature in your control zone.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Multi-Strike",
+              "DESCRIPTION": "With a claymore, you may make a melee attack with disadvantage to strike an additional creature in your control zone."
+            },
+            "2": {
+              "NAME": "Penetration",
+              "DESCRIPTION": "You gain +1d6 DM when you make a melee attack against an armored creature with a claymore."
+            },
+            "3": {
+              "NAME": "Overwhelming",
+              "DESCRIPTION": "You now deal STR d6 DM with a claymore."
+            }
+          }
+        },
+        "mace": {
+          "NAME": "Mace",
+          "DESCRIPTION": "Maces gain the Temporary tag.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Temporary",
+              "DESCRIPTION": "Maces gain the Temporary tag."
+            },
+            "2": {
+              "NAME": "Break",
+              "DESCRIPTION": "When you make a melee attack against an armored creature with a mace and deal at least half the armor's DEF value in DM, the creature suffers a non-stacking -2 DEF penalty until the end of the fight."
+            },
+            "3": {
+              "NAME": "Grievous Wound",
+              "DESCRIPTION": "When you make a melee attack against an unarmored creature with a mace and deal at least half its ROB in DM, the creature must make a Resistance check (ROB) or suffer the grievous wound state."
+            }
+          }
+        },
+        "battle_axe": {
+          "NAME": "Battle Axe",
+          "DESCRIPTION": "You can throw a battleaxe as a ranged attack up to 6 m.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Throw",
+              "DESCRIPTION": "You can throw a battleaxe as a ranged attack up to 6 m."
+            },
+            "2": {
+              "NAME": "Light",
+              "DESCRIPTION": "Battleaxes lose the Heavy tag and gain the Light tag instead."
+            },
+            "3": {
+              "NAME": "Sharp",
+              "DESCRIPTION": "When you make a melee attack with a battleaxe against an unarmored flesh creature, you gain +1 to attack and +1d6 DM."
+            }
+          }
+        },
+        "warhammer": {
+          "NAME": "Warhammer",
+          "DESCRIPTION": "When you make a melee attack against an armored creature with a warhammer and deal at least half the armor's DEF value in DM, the creature suffers a non-stacking -3 DEF penalty until the end of the fight.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Break",
+              "DESCRIPTION": "When you make a melee attack against an armored creature with a warhammer and deal at least half the armor's DEF value in DM, the creature suffers a non-stacking -3 DEF penalty until the end of the fight."
+            },
+            "2": {
+              "NAME": "Overwhelming",
+              "DESCRIPTION": "You now deal STR d6 DM with a warhammer."
+            },
+            "3": {
+              "NAME": "Grievous Wound",
+              "DESCRIPTION": "When you make a melee attack against an unarmored creature with a warhammer and deal at least half its ROB in DM, the creature must make a Resistance check (ROB) or suffer the grievous wound state."
+            }
+          }
+        },
+        "rapier": {
+          "NAME": "Rapier",
+          "DESCRIPTION": "You deal an extra 2d6 DM with a rapier.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Precise",
+              "DESCRIPTION": "You deal an extra 2d6 DM with a rapier."
+            },
+            "2": {
+              "NAME": "Keen",
+              "DESCRIPTION": "When you make a melee attack with a rapier, 6s deal 2 DM instead of 1."
+            },
+            "3": {
+              "NAME": "Dueling Weapon",
+              "DESCRIPTION": "You gain a +2 DEF bonus against melee attacks while equipped with a rapier."
+            }
+          }
+        },
+        "great_axe": {
+          "NAME": "Great Axe",
+          "DESCRIPTION": "When you make a melee attack with a war axe against an unarmored flesh creature, you gain +1 to attack and +1d6 DM.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Sharp",
+              "DESCRIPTION": "When you make a melee attack with a war axe against an unarmored flesh creature, you gain +1 to attack and +1d6 DM."
+            },
+            "2": {
+              "NAME": "Deadly",
+              "DESCRIPTION": "When you make a melee attack with a war axe and deal at least half the target's ROB in DM, the creature must make a Resistance check (ROB) or suffer bleeding."
+            },
+            "3": {
+              "NAME": "Overwhelming",
+              "DESCRIPTION": "You now deal STR d6 DM with a war axe."
+            }
+          }
+        },
+        "spear": {
+          "NAME": "Spear",
+          "DESCRIPTION": "Spears gain the Mount tag.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Mount",
+              "DESCRIPTION": "Spears gain the Mount tag."
+            },
+            "2": {
+              "NAME": "Thrown",
+              "DESCRIPTION": "You can throw a spear as a ranged attack up to 18 m."
+            },
+            "3": {
+              "NAME": "Spearwall",
+              "DESCRIPTION": "The spears you wield gain the Versatile (2d6) tag."
+            }
+          }
+        },
+        "whip": {
+          "NAME": "Whip",
+          "DESCRIPTION": "When you make a melee attack with a whip and deal at least half the target's HAB in DM, you may make an opposed check (STR vs STR) to disarm your target. If you do, you deal no DM.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Disarm",
+              "DESCRIPTION": "When you make a melee attack with a whip and deal at least half the target's HAB in DM, you may make an opposed check (STR vs STR) to disarm your target. If you do, you deal no DM."
+            },
+            "2": {
+              "NAME": "Finesse",
+              "DESCRIPTION": "Whips gain the finesse tag."
+            },
+            "3": {
+              "NAME": "Pain",
+              "DESCRIPTION": "When you make a melee attack with a whip and deal at least half the target's ROB in DM, the creature must make a Resistance check (ROB) or suffer the pain state."
+            }
+          }
+        },
+        "katana": {
+          "NAME": "Katana",
+          "DESCRIPTION": "Katanas gain the finesse tag.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Finesse",
+              "DESCRIPTION": "Katanas gain the finesse tag."
+            },
+            "2": {
+              "NAME": "Overwhelming",
+              "DESCRIPTION": "You gain a STR/2 DM bonus with a katana."
+            },
+            "3": {
+              "NAME": "Keen",
+              "DESCRIPTION": "When you make a melee attack with a katana and score a critical success, you add 2 successes to the DM."
+            }
+          }
+        },
+        "chakram": {
+          "NAME": "Chakram",
+          "DESCRIPTION": "Chakrams gain the boomerang tag.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Boomerang",
+              "DESCRIPTION": "Chakrams gain the boomerang tag."
+            },
+            "2": {
+              "NAME": "Ricochet",
+              "DESCRIPTION": "When you make a ranged attack with a chakram, the weapon may ricochet to another creature within 3 m of the target."
+            },
+            "3": {
+              "NAME": "Deadly",
+              "DESCRIPTION": "When you make a melee or ranged attack with a chakram and deal at least half the target's ROB in DM, the creature must make a Resistance check (ROB) or suffer bleeding."
+            }
+          }
+        },
+        "halberd": {
+          "NAME": "Halberd",
+          "DESCRIPTION": "While wielding a halberd, your control zone increases by 1.5 m.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Reach",
+              "DESCRIPTION": "While wielding a halberd, your control zone increases by 1.5 m."
+            },
+            "2": {
+              "NAME": "Anti-Cavalry",
+              "DESCRIPTION": "When you make a melee attack, mounted creatures must make a Resistance check (ROB) or suffer the prone state."
+            },
+            "3": {
+              "NAME": "Overwhelming",
+              "DESCRIPTION": "You now deal STR d6 DM with a halberd."
+            }
+          }
+        },
+        "scythe": {
+          "NAME": "Scythe",
+          "DESCRIPTION": "You may make a melee attack with disadvantage to strike an additional creature in your control zone.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Multi-Strike",
+              "DESCRIPTION": "You may make a melee attack with disadvantage to strike an additional creature in your control zone."
+            },
+            "2": {
+              "NAME": "Mount",
+              "DESCRIPTION": "Scythes gain the mount tag."
+            },
+            "3": {
+              "NAME": "Return",
+              "DESCRIPTION": "When you make a melee attack with a scythe, you may reroll up to 3 dice."
+            }
+          }
+        },
+        "throwing_knife": {
+          "NAME": "Throwing Knife",
+          "DESCRIPTION": "Throwing knives now deal DEX/2 DM.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Precise",
+              "DESCRIPTION": "Throwing knives now deal DEX/2 DM."
+            },
+            "2": {
+              "NAME": "Long Throw",
+              "DESCRIPTION": "Throwing range becomes 12 m."
+            },
+            "3": {
+              "NAME": "Surgical Precision",
+              "DESCRIPTION": "When you make a ranged attack with throwing knives, you gain a +2 bonus to ranged attacks."
+            }
+          }
+        },
+        "needles": {
+          "NAME": "Needles",
+          "DESCRIPTION": "If the needle is poisoned, the target suffers disadvantage to resist the poison.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Injection",
+              "DESCRIPTION": "If the needle is poisoned, the target suffers disadvantage to resist the poison."
+            },
+            "2": {
+              "NAME": "Sneaky",
+              "DESCRIPTION": "When you make a surprise attack with a needle, the DM become Unlimited."
+            },
+            "3": {
+              "NAME": "Surgical Precision",
+              "DESCRIPTION": "When you make a ranged attack with needles, you gain a +6 bonus to ranged attacks."
+            }
+          }
+        },
+        "chain_sickle": {
+          "NAME": "Chain Sickle",
+          "DESCRIPTION": "When you make a melee attack with the blade and deal at least half the target's ROB in DM, the creature must make a Resistance check (ROB) or suffer bleeding.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Deadly",
+              "DESCRIPTION": "When you make a melee attack with the blade and deal at least half the target's ROB in DM, the creature must make a Resistance check (ROB) or suffer bleeding."
+            },
+            "2": {
+              "NAME": "Grip",
+              "DESCRIPTION": "Instead of attacking, you may make an opposed check (DEX vs STR). On a success, you may pull the target into contact with you and/or knock it prone or disarm it."
+            },
+            "3": {
+              "NAME": "Parrying Weapon",
+              "DESCRIPTION": "Your parry save is improved by 2 while you wield this weapon."
+            }
+          }
+        },
+        "scepter": {
+          "NAME": "Scepter",
+          "DESCRIPTION": "You gain 1 extra die when you make a non-lethal strike with a scepter.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Stunner",
+              "DESCRIPTION": "You gain 1 extra die when you make a non-lethal strike with a scepter."
+            },
+            "2": {
+              "NAME": "Catalyst",
+              "DESCRIPTION": "You gain 1 power when casting a spell with a scepter."
+            },
+            "3": {
+              "NAME": "Blessing",
+              "DESCRIPTION": "Increase your magical healing value by 1 while using a scepter."
+            }
+          }
+        },
+        "staff": {
+          "NAME": "Staff",
+          "DESCRIPTION": "The staves you wield gain the Versatile (2d6) tag.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Versatile",
+              "DESCRIPTION": "The staves you wield gain the Versatile (2d6) tag."
+            },
+            "2": {
+              "NAME": "Defensive Stance",
+              "DESCRIPTION": "While wielding a staff and in Defensive Stance (C), you gain an additional +2 DEF bonus."
+            },
+            "3": {
+              "NAME": "Reactive Weapon",
+              "DESCRIPTION": "While wielding a staff, your parry save is improved by 2."
+            }
+          }
+        },
+        "mage_staff": {
+          "NAME": "Mage Staff",
+          "DESCRIPTION": "You gain a +3 DEF bonus while fighting with a mage staff.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Self-Defense",
+              "DESCRIPTION": "You gain a +3 DEF bonus while fighting with a mage staff."
+            },
+            "2": {
+              "NAME": "Mage Weapon",
+              "DESCRIPTION": "Your spells deal an extra 2d6 DM with a wand."
+            },
+            "3": {
+              "NAME": "Reactive Weapon",
+              "DESCRIPTION": "While wielding a staff, your parry save is improved by 2."
+            }
+          }
+        },
+        "javelin": {
+          "NAME": "Javelin",
+          "DESCRIPTION": "When you make a melee or ranged attack with a javelin, you add 1d6 per 2 HAB to the DM.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Skilled",
+              "DESCRIPTION": "When you make a melee or ranged attack with a javelin, you add 1d6 per 2 HAB to the DM."
+            },
+            "2": {
+              "NAME": "Long Throw",
+              "DESCRIPTION": "Throwing range becomes 36 m."
+            },
+            "3": {
+              "NAME": "Exposed",
+              "DESCRIPTION": "When you make a melee attack with a javelin, you cancel the target's shield DEF bonus."
+            }
+          }
+        },
+        "shortbow": {
+          "NAME": "Shortbow",
+          "DESCRIPTION": "When you make a ranged attack with a shortbow, you gain a +1 attack bonus.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Precision",
+              "DESCRIPTION": "When you make a ranged attack with a shortbow, you gain a +1 attack bonus."
+            },
+            "2": {
+              "NAME": "Short Range",
+              "DESCRIPTION": "When you make a ranged attack with a shortbow against a creature within half its maximum range, you gain +2d6 DM."
+            },
+            "3": {
+              "NAME": "Bullseye",
+              "DESCRIPTION": "You are not affected by the penalty for making a ranged attack in melee when using a shortbow."
+            }
+          }
+        },
+        "longbow": {
+          "NAME": "Longbow",
+          "DESCRIPTION": "When you make a ranged attack with a longbow, you gain a +3 attack bonus.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Precision",
+              "DESCRIPTION": "When you make a ranged attack with a longbow, you gain a +3 attack bonus."
+            },
+            "2": {
+              "NAME": "Long Shot",
+              "DESCRIPTION": "You are not affected by the penalty when taking a Long Shot action with a longbow."
+            },
+            "3": {
+              "NAME": "Critical Shot",
+              "DESCRIPTION": "When you make a ranged attack with a longbow, 6s deal 2 DM instead of 1."
+            }
+          }
+        },
+        "war_bow": {
+          "NAME": "War Bow",
+          "DESCRIPTION": "When you make a ranged attack with a war bow against a flying creature, you gain +1d6 DM, and if you deal at least half its ROB in DM, the creature must make a Resistance check (ROB) and loses its flying speed until the end of its turn.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Anti-Air",
+              "DESCRIPTION": "When you make a ranged attack with a war bow against a flying creature, you gain +1d6 DM, and if you deal at least half its ROB in DM, the creature must make a Resistance check (ROB) and loses its flying speed until the end of its turn."
+            },
+            "2": {
+              "NAME": "Piercing",
+              "DESCRIPTION": "When you make a ranged attack with a war bow, worsen the creature's saves by 1 for that attack."
+            },
+            "3": {
+              "NAME": "Overwhelming",
+              "DESCRIPTION": "You now deal STR d6 DM with a war bow."
+            }
+          }
+        },
+        "wand": {
+          "NAME": "Wand",
+          "DESCRIPTION": "You gain a +3 PRM bonus with a wand.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Precision",
+              "DESCRIPTION": "You gain a +3 PRM bonus with a wand."
+            },
+            "2": {
+              "NAME": "Catalyst",
+              "DESCRIPTION": "You gain 1 power when casting a spell with a scepter."
+            },
+            "3": {
+              "NAME": "Mage Weapon",
+              "DESCRIPTION": "Your spells deal an extra 1d6 DM with a wand."
+            }
+          }
+        },
+        "blowgun": {
+          "NAME": "Blowgun",
+          "DESCRIPTION": "Range becomes 24 m.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Range",
+              "DESCRIPTION": "Range becomes 24 m."
+            },
+            "2": {
+              "NAME": "Short Range",
+              "DESCRIPTION": "When you make a ranged attack with a blowgun against a creature within half its maximum range, you gain +2d6 DM."
+            },
+            "3": {
+              "NAME": "Bullseye",
+              "DESCRIPTION": "You are not affected by the penalty for making a ranged attack in melee when using a blowgun."
+            }
+          }
+        },
+        "sling": {
+          "NAME": "Sling",
+          "DESCRIPTION": "You gain 1 extra die when you make a non-lethal strike with a sling.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Stunner",
+              "DESCRIPTION": "You gain 1 extra die when you make a non-lethal strike with a sling."
+            },
+            "2": {
+              "NAME": "Range",
+              "DESCRIPTION": "Range becomes 30 m."
+            },
+            "3": {
+              "NAME": "Curve",
+              "DESCRIPTION": "When you make a ranged attack with a sling, you may give your shot a curved trajectory."
+            }
+          }
+        },
+        "boomerang": {
+          "NAME": "Boomerang",
+          "DESCRIPTION": "You gain 1 extra die when you make a non-lethal strike with a boomerang.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Stunner",
+              "DESCRIPTION": "You gain 1 extra die when you make a non-lethal strike with a boomerang."
+            },
+            "2": {
+              "NAME": "Double Hit",
+              "DESCRIPTION": "When you make a ranged attack with a boomerang, you may hit a second target that lies in the boomerang's path."
+            },
+            "3": {
+              "NAME": "Return",
+              "DESCRIPTION": "When you make a ranged attack with a boomerang, you may reroll up to 2 dice."
+            }
+          }
+        },
+        "hand_crossbow": {
+          "NAME": "Hand Crossbow",
+          "DESCRIPTION": "You use a free action to reload a hand crossbow.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Quick Reload",
+              "DESCRIPTION": "You use a free action to reload a hand crossbow."
+            },
+            "2": {
+              "NAME": "Ambidextrous",
+              "DESCRIPTION": "You can make an off-hand attack with a hand crossbow without penalty."
+            },
+            "3": {
+              "NAME": "Counterattack",
+              "DESCRIPTION": "When you use a dodge save, you may make a ranged attack against the attacker as a free action."
+            }
+          }
+        },
+        "light_crossbow": {
+          "NAME": "Light Crossbow",
+          "DESCRIPTION": "You use an action or the Use an Object action to reload a light crossbow.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Quick Reload",
+              "DESCRIPTION": "You use an action or the Use an Object action to reload a light crossbow."
+            },
+            "2": {
+              "NAME": "Critical Shot",
+              "DESCRIPTION": "When you make a ranged attack with a light crossbow, 6s deal 2 DM instead of 1."
+            },
+            "3": {
+              "NAME": "Precision",
+              "DESCRIPTION": "You gain a +2 bonus to ranged attacks with a light crossbow."
+            }
+          }
+        },
+        "heavy_crossbow": {
+          "NAME": "Heavy Crossbow",
+          "DESCRIPTION": "You use an action or the Use an Object action to reload a heavy crossbow.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Quick Reload",
+              "DESCRIPTION": "You use an action or the Use an Object action to reload a heavy crossbow."
+            },
+            "2": {
+              "NAME": "Impact",
+              "DESCRIPTION": "When you make a ranged attack with a heavy crossbow and deal at least half the target's ROB in DM, the creature must make a Resistance check (ROB) or be pushed 3 m."
+            },
+            "3": {
+              "NAME": "Anti-Air",
+              "DESCRIPTION": "When you make a ranged attack with a heavy crossbow against a flying creature, you gain +3d6 DM, and if you deal at least half its ROB in DM, the creature must make a Resistance check (ROB) and loses its flying speed until the end of its turn."
+            }
+          }
+        },
+        "pistol": {
+          "NAME": "Pistol",
+          "DESCRIPTION": "You use the Use an Object action to reload a pistol. In addition, you no longer make a powder check to use this weapon.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Technical Mastery",
+              "DESCRIPTION": "You use the Use an Object action to reload a pistol. In addition, you no longer make a powder check to use this weapon."
+            },
+            "2": {
+              "NAME": "Ambidextrous",
+              "DESCRIPTION": "You can make an off-hand attack with a pistol without penalty."
+            },
+            "3": {
+              "NAME": "Point Blank",
+              "DESCRIPTION": "You no longer take a penalty for making a ranged attack in melee with a pistol."
+            }
+          }
+        },
+        "arquebus": {
+          "NAME": "Arquebus",
+          "DESCRIPTION": "You use an action to reload an arquebus. In addition, you no longer make a powder check to use this weapon.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Technical Mastery",
+              "DESCRIPTION": "You use an action to reload an arquebus. In addition, you no longer make a powder check to use this weapon."
+            },
+            "2": {
+              "NAME": "Long Shot",
+              "DESCRIPTION": "You are not affected by the Long Shot penalty when making a ranged attack with an arquebus."
+            },
+            "3": {
+              "NAME": "Piercing Shot",
+              "DESCRIPTION": "When you make a ranged attack with an arquebus, 6s ignore the target's armor and parry saves."
+            }
+          }
+        },
+        "culverin_c": {
+          "NAME": "Culverin (C)",
+          "DESCRIPTION": "You no longer make a powder check to use a culverin.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Technical Mastery",
+              "DESCRIPTION": "You no longer make a powder check to use a culverin."
+            },
+            "2": {
+              "NAME": "Mortar",
+              "DESCRIPTION": "When you make a ranged attack with a culverin against a structure, double the DM dealt."
+            },
+            "3": {
+              "NAME": "Impact",
+              "DESCRIPTION": "When you make a ranged attack with a culverin and deal at least half the target's ROB in DM, the creature must make a Resistance check (ROB) or be pushed 3 m and suffer the prone state."
+            }
+          }
+        }
+      }
+    },
+    "ARMOR": {
+      "TITLE": "Armor",
+      "NAME": "Name",
+      "BASE": "Base",
+      "WEIGHT": "Weight",
+      "DESCRIPTION": "Description",
+      "DEF_FORMULA": "DEF",
+      "DEF_BONUS": "DEF Bonus",
+      "EQUIPPED": "Equipped",
+      "CATEGORY": {
+        "LABEL": "Category",
+        "NATURELLE": "Natural",
+        "LEGERE": "Light",
+        "INTERMEDIAIRE": "Medium",
+        "LOURDE": "Heavy",
+        "NATURAL": "Natural",
+        "LIGHT": "Light",
+        "MEDIUM": "Medium",
+        "HEAVY": "Heavy"
+      },
+      "TABS": {
+        "GENERAL": "General",
+        "SAVES": "Saves",
+        "SKILL": "Skill",
+        "ENCHANTMENT": "Enchantment"
+      },
+      "SAVES": {
+        "LABEL": "Armor saves",
+        "EMPTY": "No armor saves."
+      },
+      "SAVE": {
+        "ARMOR": "Armor",
+        "DODGE": "Dodge",
+        "PARRY": "Parry",
+        "ICE": "Ice"
+      },
+      "SKILL": {
+        "NAME": "Name",
+        "DESCRIPTION": "Description",
+        "PRESETS": {
+          "light": {
+            "NAME": "Light Armor Mastery",
+            "DESCRIPTION": "While wearing light armor and using a dodge save, you may take a disengage action followed by a sprint using your reaction.\nIn addition, you are not affected by armor penalties when taking an action or casting a spell."
+          },
+          "medium": {
+            "NAME": "Medium Armor Mastery",
+            "DESCRIPTION": "While wearing medium armor, you are not affected by armor penalties when taking an action or casting a spell, and your movement speed is no longer reduced."
+          },
+          "heavy": {
+            "NAME": "Heavy Armor Mastery",
+            "DESCRIPTION": "While wearing heavy armor, you no longer suffer penalties when taking a Cast a Spell action."
+          },
+          "natural": {
+            "NAME": "",
+            "DESCRIPTION": ""
+          }
+        }
+      },
+      "ENCHANTMENT": {
+        "LABEL": "Enchantment",
+        "PLACEHOLDER": "Coming soon..."
+      },
+      "PRESETS": {
+        "padded_armor": {
+          "NAME": "Padded Armor",
+          "DESCRIPTION": ""
+        },
+        "leather_armor": {
+          "NAME": "Leather Armor",
+          "DESCRIPTION": ""
+        },
+        "studded_leather_armor": {
+          "NAME": "Studded Leather Armor",
+          "DESCRIPTION": ""
+        },
+        "feather_armor": {
+          "NAME": "Feather Armor",
+          "DESCRIPTION": ""
+        },
+        "hide_armor": {
+          "NAME": "Hide Armor",
+          "DESCRIPTION": "Gain 1 extra die on ROB attribute tests related to cold temperatures."
+        },
+        "mail_shirt": {
+          "NAME": "Mail Shirt",
+          "DESCRIPTION": ""
+        },
+        "scale_armor": {
+          "NAME": "Scale Armor",
+          "DESCRIPTION": "You can swim while wearing this armor.\nYou suffer no penalties in underwater combat."
+        },
+        "shell_armor": {
+          "NAME": "Shell Armor",
+          "DESCRIPTION": "Gain 1 extra die on AUR attribute tests."
+        },
+        "half_plate_armor": {
+          "NAME": "Half-Plate Armor",
+          "DESCRIPTION": ""
+        },
+        "furred_hauberk": {
+          "NAME": "Furred Hauberk",
+          "DESCRIPTION": "Gain 2 extra dice on ROB attribute tests related to cold temperatures."
+        },
+        "chainmail": {
+          "NAME": "Chainmail",
+          "DESCRIPTION": ""
+        },
+        "full_plate": {
+          "NAME": "Full Plate",
+          "DESCRIPTION": ""
+        },
+        "feathers": {
+          "NAME": "Feathers",
+          "DESCRIPTION": ""
+        },
+        "scales": {
+          "NAME": "Scales",
+          "DESCRIPTION": "Ignore all penalties related to underwater combat."
+        },
+        "hides_and_furs": {
+          "NAME": "Hides and Furs",
+          "DESCRIPTION": "Gain 1 extra die on ROB attribute tests related to cold temperatures."
+        },
+        "carapace": {
+          "NAME": "Carapace",
+          "DESCRIPTION": ""
+        }
+      }
+    },
+    "SHIELD": {
+      "TITLE": "Shield",
+      "NAME": "Name",
+      "BASE": "Base",
+      "WEIGHT": "Weight",
+      "DESCRIPTION": "Description",
+      "DEF_BONUS": "DEF bonus",
+      "EQUIPPED": "Equipped",
+      "CATEGORY": {
+        "LABEL": "Category",
+        "LEGERE": "Light",
+        "INTERMEDIAIRE": "Intermediate",
+        "LOURDE": "Heavy",
+        "LIGHT": "Light",
+        "MEDIUM": "Medium",
+        "HEAVY": "Heavy"
+      },
+      "TABS": {
+        "GENERAL": "General",
+        "SAVES": "Saves",
+        "SKILL": "Skill",
+        "ENCHANTMENT": "Enchantment"
+      },
+      "SAVES": {
+        "LABEL": "Shield saves",
+        "EMPTY": "No saves."
+      },
+      "SKILL": {
+        "NAME": "Name",
+        "DESCRIPTION": "Description"
+      },
+      "ENCHANTMENT": {
+        "LABEL": "Enchantment",
+        "PLACEHOLDER": "Coming soon..."
+      },
+      "PRESETS": {
+        "buckler": {
+          "NAME": "Buckler",
+          "DESCRIPTION": "If you equip the buckler with straps, you can wield a two-handed weapon and still benefit from its bonuses.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Light Armor Mastery",
+              "DESCRIPTION": "While wearing light armor and using a dodge save, you may take a disengage action followed by a sprint using your reaction.\nIn addition, you are not affected by armor penalties when taking an action or casting a spell."
+            }
+          }
+        },
+        "large_shield": {
+          "NAME": "Large Shield",
+          "DESCRIPTION": "You can strap your large shield to your back; in that case, you benefit from its DEF bonus only when attacked from behind.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Medium Armor Mastery",
+              "DESCRIPTION": "While wearing medium armor, you are not affected by armor penalties when taking an action or casting a spell, and your movement speed is no longer reduced."
+            }
+          }
+        },
+        "pavise": {
+          "NAME": "Pavise",
+          "DESCRIPTION": "If you are equipped with a pavise and are in a defensive stance, you gain medium cover against all attacks coming from the front.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Heavy Armor Mastery",
+              "DESCRIPTION": "While wearing heavy armor, you no longer suffer penalties when taking a Cast a Spell action."
+            }
+          }
+        }
+      }
+    },
+    "UI": {
+      "CORE_STATS": "Core stats",
+      "REAPPLY_PRESET": "Reapply preset",
+      "ADD_ROW": "Add row",
+      "ADD": "Add",
+      "DELETE": "Delete",
+      "NAME": "Name",
+      "DUPLICATE": "Duplicate",
+      "MOVE_UP": "Move up",
+      "MOVE_DOWN": "Move down",
+      "COPY_OF": "Copy of {name}",
+      "DESCRIPTION": "Description",
+      "NOTES": "Notes",
+      "OPEN": "Open",
+      "TARGET": "Target",
+      "ITEM": "Item",
+      "YES": "Yes",
+      "NO": "No",
+      "QUANTITY": "Quantity"
+    },
+    "COMMON": {
+      "RANGE": {
+        "MELEE": "Melee"
+      },
+      "DAMAGE_TYPE": {
+        "BLUDGEONING": "Bludgeoning",
+        "PIERCING": "Piercing",
+        "SLASHING": "Slashing",
+        "FIRE": "Fire",
+        "ICE": "Ice",
+        "LIGHTNING": "Lightning",
+        "EARTH": "Earth",
+        "WIND": "Wind",
+        "ACID": "Acid",
+        "MAGIC": "Magic",
+        "MENTAL": "Mental"
+      }
+    },
+    "SAVE": {
+      "DODGE": "Dodge",
+      "PARRY": "Parry",
+      "PAIN": "Pain resistance",
+      "COVER": "Cover",
+      "ARMOR": "Armor",
+      "FIRE": "Fire",
+      "ICE": "Ice",
+      "LIGHTNING": "Lightning",
+      "EARTH": "Earth",
+      "WIND": "Wind",
+      "MENTAL": "Mental",
+      "ACID": "Acid",
+      "MAGIC": "Magic"
+    },
+    "MATERIAL": {
+      "NAME": "Material",
+      "DESCRIPTION": "Description",
+      "WEIGHT": "Weight",
+      "DIFFICULTY": "Difficulty",
+      "FORGING_PROPERTY": "Forging property",
+      "TABS": {
+        "GENERAL": "General",
+        "DESCRIPTION": "Description"
+      },
+      "CATEGORY": {
+        "LABEL": "Category",
+        "ALCHEMICAL": "Alchemical material",
+        "FORGING": "Forging material"
+      },
+      "ALCHEMICAL": {
+        "TAG": "Tag",
+        "USAGE": "Use",
+        "ALIGNED": "Aligned",
+        "OPPOSED": "Opposed",
+        "TAGS": {
+          "BODY": "Body",
+          "EARTH": "Earth",
+          "ROOT": "Root",
+          "FIRE": "Fire",
+          "ICE": "Ice",
+          "LIGHTNING": "Lightning",
+          "WIND": "Wind",
+          "CHAOS": "Chaos",
+          "SPIRIT": "Spirit"
+        },
+        "USES": {
+          "BODY": "Vitality, flesh, healing, physical enhancement",
+          "EARTH": "Solidity, stability, protection, dense matter",
+          "ROOT": "Nature, growth, plants, regeneration",
+          "FIRE": "Heat, energy, impulse, destruction",
+          "ICE": "Cold, immobilization, preservation",
+          "LIGHTNING": "Raw power, shock, speed",
+          "WIND": "Agility, movement, lightness",
+          "CHAOS": "Unpredictability, mutation, instability",
+          "SPIRIT": "Perception, magic"
+        }
+      }
+    },
+    "CONSUMABLE": {
+      "NAME": "Consumable",
+      "DESCRIPTION": "Description",
+      "WEIGHT": "Weight",
+      "TABS": {
+        "GENERAL": "General",
+        "DESCRIPTION": "Description"
+      },
+      "CATEGORY": {
+        "LABEL": "Category",
+        "CONCOCTION": "Concoction",
+        "ENCHANTMENT_CATALYST": "Enchantment catalyst",
+        "MISC": "Other consumable"
+      },
+      "CONCOCTION": {
+        "TYPE": "Concoction type",
+        "TYPES": {
+          "HEALING_POTION": "Healing potion",
+          "ALTERATION_POTION": "Alteration potion"
+        }
+      },
+      "CATALYST": {
+        "BASE": "Catalyst",
+        "EFFECT": "Effect",
+        "ESSENCE_QUALITY": {
+          "LABEL": "Essence quality",
+          "NONE": "None",
+          "COMMON": "Common",
+          "SUPERIOR": "Superior",
+          "MAJOR": "Major",
+          "PERFECT": "Perfect"
+        },
+        "BASES": {
+          "BRUTAL_SHARD": {
+            "NAME": "Brutal shard",
+            "DESCRIPTION": "Adds a random prefix or suffix."
+          },
+          "OBLIVION_CRYSTAL": {
+            "NAME": "Oblivion crystal",
+            "DESCRIPTION": "Removes all enchantments."
+          },
+          "SHIFTING_STONE": {
+            "NAME": "Shifting stone",
+            "DESCRIPTION": "Removes a random enchantment and adds a new one with the same tag as the removed one."
+          },
+          "INFLEXIBLE_INKWELL": {
+            "NAME": "Inflexible inkwell",
+            "DESCRIPTION": "Locks a random enchantment. It can no longer be modified or removed."
+          },
+          "PRIMORDIAL_ORB": {
+            "NAME": "Primordial orb",
+            "DESCRIPTION": "Adds 1 prefix or 1 suffix from the bound essence tag."
+          },
+          "MASTER_FRAGMENT": {
+            "NAME": "Master fragment",
+            "DESCRIPTION": "Adds 1 prefix or 1 suffix from a tag similar to those already present on the item. Adds a curse if a 1 appears during the enchantment test."
+          },
+          "DARK_OATH": {
+            "NAME": "Dark oath",
+            "DESCRIPTION": "Adds 1 random prefix or suffix with a +2 successes bonus during the enchantment test. Adds a curse to the item."
+          },
+          "ETERNITY_ORB": {
+            "NAME": "Eternity orb",
+            "DESCRIPTION": "Improves 1 random prefix or 1 random suffix."
+          },
+          "UNSTABLE_POWDER": {
+            "NAME": "Unstable powder",
+            "DESCRIPTION": "Removes one random unlocked prefix or suffix."
+          }
+        }
+      },
+      "NO_TYPE_FOR_CATEGORY": "There is no consumable type for this category."
+    },
+    "BAG": {
+      "NAME": "Bag",
+      "DESCRIPTION": "Description",
+      "WEIGHT": "Weight",
+      "CAPACITY_WEIGHT": "Weight capacity",
+      "STORED_WEIGHT": "Stored weight",
+      "CONTENT_TITLE": "Bag contents",
+      "CONTENT_HELP": "Weight stored in the bag does not add to the main inventory encumbrance.",
+      "STATUS": "Status",
+      "OVER_CAPACITY": "Over capacity",
+      "WITHIN_CAPACITY": "Within capacity",
+      "STORED_ITEMS": "Stored items",
+      "AVAILABLE_ITEMS": "Available items",
+      "NO_STORED_ITEMS": "No items in this bag.",
+      "NO_AVAILABLE_ITEMS": "No available items to store.",
+      "STORE_IN_BAG": "Store",
+      "REMOVE_FROM_BAG": "Remove",
+      "LOAD_SHORT": "Load",
+      "TABS": {
+        "GENERAL": "General",
+        "DESCRIPTION": "Description"
+      },
+      "ERROR_OVER_CAPACITY": "The bag does not have enough capacity for this item."
+    },
+    "ACTOR": {
+      "TYPES": {
+        "CHARACTER": "Character",
+        "MERCHANT": "Merchant",
+        "INVOCATION": "Invocation"
+      }
+    },
+    "MERCHANT": {
+      "NAME": "Merchant",
+      "SUBTITLE": "Trade stock and transactions",
+      "DESCRIPTION": "Description",
+      "CONFIGURATION": "Configuration",
+      "MONEY_STOCK": "Money stock",
+      "ACCEPTED_ITEM_TYPES": "Accepted item types",
+      "LEGALITY_POLICY": "Legality policy",
+      "ACCEPTS_LEGAL": "Buys legal items",
+      "ACCEPTS_ILLEGAL": "Buys illegal items",
+      "WARNING_PERMISSION_LIMIT": "This user can view the merchant but cannot modify its stock without owner rights or a GM relay.",
+      "STOCK": {
+        "TITLE": "Stock",
+        "HELP": "Players can buy from this stock. The GM can drop items here to add them to the merchant.",
+        "DROP_HINT": "Drop an item here to add it to the merchant stock.",
+        "EMPTY": "No item in stock."
+      },
+      "SELL_ZONE": {
+        "TITLE": "Sell to the merchant",
+        "HELP": "Drop one item from your inventory here. You choose the selling price and the merchant adds it to its stock with a 50% markup.",
+        "DROP_HINT": "Drop an item from {actor} here."
+      },
+      "NEGOTIATION": {
+        "TITLE": "Negotiate",
+        "HELP": "Enter a temporary discount percentage applied only while this merchant sheet remains open.",
+        "APPLY": "Apply",
+        "RESET": "Reset",
+        "ACTIVE": "Active reduction"
+      },
+      "COLUMNS": {
+        "ITEM": "Item",
+        "TYPE": "Type",
+        "LEGALITY": "Legality",
+        "QUANTITY": "Qty",
+        "PRICE": "Price",
+        "ACTIONS": "Actions"
+      },
+      "ACTIONS": {
+        "BUY": "Buy",
+        "SET_PRICE": "Set price"
+      },
+      "DIALOG": {
+        "PRICE_TITLE": "Set item price",
+        "SELL_TITLE": "Choose the selling price",
+        "SAVE_PRICE": "Save price",
+        "ITEM": "Item",
+        "CURRENT_PRICE": "Current price"
+      },
+      "ERROR_PERMISSION": "You need owner permission on this merchant to complete transactions. For observer-only access, a GM relay will be needed later.",
+      "ERROR_NO_CHARACTER": "Assign a player character to this user, or control one, before trading.",
+      "ERROR_NOT_ENOUGH_MONEY": "Not enough money to buy this item.",
+      "ERROR_MERCHANT_NOT_ENOUGH_MONEY": "The merchant does not have enough money to buy this item.",
+      "ERROR_ITEM_NOT_ACCEPTED": "This merchant refuses this item type or legality.",
+      "ERROR_SELL_SOURCE": "You can only sell an item from your own character inventory.",
+      "ERROR_UNSUPPORTED_ITEM": "This item type cannot be traded here.",
+      "INFO_PURCHASED": "{actor} bought {item} for {price}.",
+      "INFO_SOLD": "{actor} sold {item} for {price}.",
+      "TABS": {
+        "STOCK": "Stock",
+        "CONFIGURATION": "Configuration"
+      },
+      "TRADE_RULES": "Trade rules"
+    },
+    "PROFESSION": {
+      "NAME": "Profession",
+      "DESCRIPTION": "Profession description",
+      "PASSIVE_ACTIVE": "Passive active",
+      "TABS": {
+        "GENERAL": "General",
+        "DESCRIPTION": "Description"
+      },
+      "SECTION": {
+        "PASSIVES": "Passives",
+        "KEYS": "Keys",
+        "CONDITIONS": "Conditions",
+        "MECHANICS": "Mechanics",
+        "STATES": "States"
+      },
+      "EMPTY": {
+        "PASSIVES": "No passives yet.",
+        "KEYS": "No keys yet.",
+        "CONDITIONS": "No conditions yet.",
+        "MECHANICS": "No mechanics yet.",
+        "STATES": "No states yet."
+      },
+      "UNIVERSAL": "Universal",
+      "REFERENCE_KEY": "Reference key",
+      "REFERENCE_AUTO": "Generate reference",
+      "STATE_SYNC": "Reapply built-in state",
+      "ACTIVE_ON": "Active",
+      "ACTIVE_OFF": "Inactive"
+    },
+    "TECHNIQUE": {
+      "NAME": "Technique",
+      "DESCRIPTION": "Technique description",
+      "LIST_TITLE": "Character techniques",
+      "PROFESSION_LIST_TITLE": "Known professions",
+      "PROFESSION_SOURCE": "Source professions",
+      "NO_PROFESSION_AVAILABLE": "No profession is available on this actor.",
+      "NO_PROFESSION_ON_ACTOR": "No profession created yet.",
+      "NO_TECHNIQUE_ON_ACTOR": "No technique created yet.",
+      "EMPTY_DESCRIPTION": "No description yet.",
+      "PROFESSION_EMPTY_DESCRIPTION": "No description yet.",
+      "ACTION": {
+        "CREATE_PROFESSION": "Create profession",
+        "CREATE_TECHNIQUE": "Create technique",
+        "ADD_FROM_PROFESSION": "Add from profession",
+        "ALREADY_ADDED": "Already added",
+        "SYNC_SOURCE": "Sync source",
+        "SYNC_SECTION": "Sync imports",
+        "CREATE_FROM_PROFESSION": "Create linked technique",
+        "PREPARE": "Prepare",
+        "UNPREPARE": "Remove from quick access",
+        "USE": "Use",
+        "ADD_BASE_COMPONENT": "Add this base"
+      },
+      "PROFESSION_SLOT": {
+        "TITLE": "Equipped professions",
+        "FIRST": "Profession 1",
+        "SECOND": "Profession 2",
+        "EMPTY": "No profession",
+        "EMPTY_HELP": "Select a profession created on this sheet."
+      },
+      "TABS": {
+        "GENERAL": "General",
+        "COMPONENTS": "Components",
+        "DESCRIPTION": "Description",
+        "PRINT": "Print",
+        "POWER": "Power & stats"
+      },
+      "SECTION": {
+        "KEYS": "Keys",
+        "CONDITIONS": "Conditions",
+        "MECHANICS": "Mechanics",
+        "STATES": "States"
+      },
+      "EMPTY": {
+        "KEYS": "No keys added yet.",
+        "CONDITIONS": "No conditions added yet.",
+        "MECHANICS": "No mechanics added yet.",
+        "STATES": "No states added yet."
+      },
+      "POWER": {
+        "TITLE": "Power",
+        "LEVEL": "Power",
+        "THRESHOLD_LABEL": "Threshold {threshold}",
+        "NO_BONUS_STATISTIC": "No bonus statistic",
+        "BONUS_SLOTS": "Unlocked bonus slots",
+        "REMAINING_SLOTS": "Remaining bonus slots",
+        "STEP": "Power {power}",
+        "MAIN_BADGE": "Main statistic",
+        "THRESHOLD_BONUS_BADGE": "+{ranks} threshold rank(s)",
+        "NO_DIRECT_SCALING": "No direct scaling"
+      },
+      "MAIN_STATISTIC": "Main statistic",
+      "MAIN_STATISTIC_EMPTY": "No main statistic",
+      "STATISTICS": "Statistics",
+      "XP_COST": "XP cost",
+      "XP_CREATION": "Creation XP",
+      "XP_POWER": "Power XP",
+      "XP_TOTAL": "Total XP",
+      "STAT": {
+        "CATALOG": "Statistic catalog",
+        "EMPTY": "No statistic selected yet.",
+        "BASE_VALUE": "Base value",
+        "DAMAGE": "Damage",
+        "HEALING": "Healing",
+        "PRC": "PRC",
+        "PRD": "PRD",
+        "PRM": "PRM",
+        "DEFENSE": "DEF",
+        "INITIATIVE": "Initiative",
+        "RANGE": "Range",
+        "SPEED": "Speed",
+        "DURATION": "Duration",
+        "DICE_BONUS": "Dice bonus",
+        "IMPROVE_INDEX": "Improve an index",
+        "APPLY_STATE": "Apply a state",
+        "ADD_WEIGHT": "Add weight",
+        "ADD_UNIT": "Add units",
+        "ADD_TARGET": "Add a target",
+        "ADD_VOLUME": "Add volume",
+        "GRANT_SAVE": "Grant a save",
+        "IMPROVE_SAVE_INDEX": "Improve a save",
+        "ZONE_CONTROL": "Control zone",
+        "ZONE_RADIUS": "Zone: radius",
+        "ZONE_LINE": "Zone: line",
+        "ZONE_CONE": "Zone: cone",
+        "FINAL_VALUE": "Final value",
+        "BONUS_RANKS": "Bonus ranks"
+      },
+      "PROFESSION_SOURCE_HELP": "Select up to two source professions. Their modules then appear in the Components tab.",
+      "PROFESSION_SOURCE_EQUIPPED": "Equipped",
+      "BUILDER_STATUS": "Build status",
+      "SOURCE_SECTION_TITLE": "Base modules and modules from selected professions",
+      "VALIDATION": {
+        "ERROR_TITLE": "Issues to fix",
+        "WARNING_TITLE": "Things to watch",
+        "SUCCESS_TITLE": "The technique structure currently looks coherent.",
+        "NO_SOURCE_PROFESSION": "No source profession selected.",
+        "MAX_SOURCE_PROFESSIONS": "A technique cannot have more than two source professions.",
+        "NO_KEY": "A technique should generally include at least one key.",
+        "MAX_CONDITIONS": "A technique cannot have more than two conditions.",
+        "MAX_MECHANICS": "A technique cannot have more than three mechanics.",
+        "DUPLICATE_MECHANICS": "Mechanics must all be different: {names}.",
+        "NO_STATISTICS": "No statistic selected.",
+        "MISSING_MAIN_STATISTIC": "Choose a main statistic to handle power.",
+        "MAX_STATE_APPLICATIONS": "A technique can apply only one state at a time.",
+        "EMPTY_UNLOCKED_THRESHOLD": "Power threshold {threshold} does not yet have a chosen bonus statistic.",
+        "SOURCE_NOT_EQUIPPED": "Some source professions are not equipped on the character: {names}.",
+        "INVALID_MAIN_STATISTIC": "The selected main statistic no longer exists on this technique.",
+        "INVALID_THRESHOLD_STATISTIC": "Threshold {threshold} points to a statistic that no longer exists.",
+        "LOCKED_THRESHOLD_SELECTED": "Threshold {threshold} has a selected statistic but is not unlocked yet.",
+        "NON_SCALING_MAIN_STATISTIC": "The chosen main statistic does not scale directly with power.",
+        "TOO_MANY_STATISTICS": "Too many selected statistics ({used}/{available}).",
+        "MISSING_IMPORTED_SOURCE": "The source for “{name}” could not be found.",
+        "OUTDATED_IMPORTED_SOURCE": "The source for “{name}” has changed.",
+        "SOURCE_NOT_SELECTED": "The source for “{name}” is no longer among the selected professions.",
+        "MISSING_LINKED_ATTRIBUTE": "A ritual must define a linked attribute.",
+        "STATISTICS_DO_NOT_FIT_SLOTS": "The chosen statistics do not fit within the available slots ({freeUsed}/{freeAvailable} free slot(s) used)."
+      },
+      "SUMMARY": {
+        "TITLE": "Quick summary"
+      },
+      "SLOTS": {
+        "TITLE": "Statistic slots",
+        "BASE": "Base slots",
+        "EXTRA": "Bonus slots",
+        "USED": "Used",
+        "REMAINING": "Remaining",
+        "RANGE_COUNT": "Range: {count}/{max}",
+        "DURATION_COUNT": "Duration: {count}/{max}",
+        "EFFECT_COUNT": "Effect: {count}",
+        "EXTRA_STATISTIC_SLOTS": "Extra statistic slots",
+        "EXTRA_SOURCE_BADGE": "+{count} slot(s)",
+        "PASSIVES": "Passives",
+        "BASE_PATTERN": "Base: 1 range slot, 1 duration slot, 1 free slot. These slots are optional.",
+        "FREE": "Free slots",
+        "FREE_COUNT": "Free: {used}/{available}",
+        "BREAKDOWN_TITLE": "Bonus slot sources",
+        "BREAKDOWN_EMPTY": "No bonus slots currently come from passives, conditions, or mechanics.",
+        "BADGE": {
+          "FREE": "{count} free",
+          "RANGE": "{count} range",
+          "DURATION": "{count} duration"
+        }
+      },
+      "SOURCE_STATUS": {
+        "CUSTOM": "Custom",
+        "LINKED": "Linked",
+        "OUTDATED": "Needs sync",
+        "MISSING": "Missing source"
+      },
+      "ACTOR": {
+        "SEARCH": "Search",
+        "SEARCH_PLACEHOLDER": "Search techniques…",
+        "SHOW_PREPARED_ONLY": "Prepared only",
+        "PREPARED": "Prepared",
+        "PREPARED_TITLE": "Quick access",
+        "PREPARED_HELP": "Keep this technique in the quick access block on the actor sheet.",
+        "READY": "Ready",
+        "WARNING": "Review",
+        "INVALID": "Invalid",
+        "NO_MATCH": "No technique matches the current filters.",
+        "SORT": "Sort",
+        "SORT_NAME_ASC": "Name A → Z",
+        "SORT_NAME_DESC": "Name Z → A",
+        "SORT_POWER_DESC": "Highest power",
+        "SORT_XP_DESC": "Highest XP",
+        "SORT_STATUS": "Validation status"
+      },
+      "PREPARED_TITLE": "Prepared techniques",
+      "NO_PREPARED_ON_ACTOR": "No technique prepared for quick access.",
+      "PRINT": {
+        "TITLE": "Printable summary",
+        "ACTION": "Print",
+        "ACTOR": "Actor",
+        "SOURCE": "Source",
+        "POPUP_BLOCKED": "The print window was blocked."
+      },
+      "DRAG_HINT": "Drag into a technique",
+      "DROP_HINT_SECTION": "Drop a matching profession module here.",
+      "DROP": {
+        "MAX_PROFESSIONS": "This technique already has two source professions."
+      },
+      "USAGE": {
+        "TITLE": "Gameplay use",
+        "TYPE_LABEL": "Use type",
+        "LINKED_ATTRIBUTE": "Linked attribute",
+        "LINKED_ATTRIBUTE_HELP": "The ritual will use this attribute when opening the roll dialog.",
+        "LINKED_ATTRIBUTE_ATTACK_HINT": "Not used for an attack technique.",
+        "TYPE": {
+          "ATTACK": "Attack",
+          "RITUAL": "Ritual"
+        }
+      },
+      "MODULES": {
+        "QUICK_ACCESS": "Quick access",
+        "STAT_SLOTS": "Statistic slots",
+        "EMBEDDED_STATISTICS": "Embedded statistics",
+        "COUNTER": "Counter",
+        "IMPROVEMENTS": "Upgrades",
+        "ACTOR_BONUSES": "Actor bonuses",
+        "PROGRESS_TRACK_LABEL": "Progress track",
+        "PROGRESS_REWARDS_LABEL": "Progress rewards",
+        "COUNTER_CURRENT": "Current",
+        "COUNTER_MAX": "Maximum",
+        "COUNTER_RESET": "Reset note",
+        "IMPROVEMENT_STEP_XP": "XP per rank",
+        "IMPROVEMENT_RANK": "Rank",
+        "IMPROVEMENT_CUMULATIVE": "Cumulative",
+        "IMPROVEMENT_NEXT": "Next rank",
+        "BONUS_VALUE": "Value",
+        "STATE_LABEL": "Reference state",
+        "SLOT_TYPE": {
+          "LABEL": "Slot type",
+          "FREE": "Free",
+          "RANGE": "Range",
+          "DURATION": "Duration"
+        },
+        "BONUS_TARGET": {
+          "LABEL": "Bonus",
+          "EMPTY": "No bonus",
+          "VALUE": "Value",
+          "INDEX": "Index",
+          "DICE": "Dice"
+        },
+        "PROGRESS_TRACK": {
+          "NO_TEST": "No linked test",
+          "CURRENT": "Current progress",
+          "ATTRIBUTE": "Linked attribute",
+          "THRESHOLD": "Threshold",
+          "ROLL_TEST": "Roll {attribute}"
+        },
+        "STATE": {
+          "EMPTY": "No state"
+        },
+        "PROGRESS_TRACK_CURRENT": "Current progress",
+        "PROGRESS_TRACK_ATTRIBUTE": "Linked attribute",
+        "PROGRESS_TRACK_THRESHOLD": "Threshold",
+        "REFERENCE_PREVIEW": "Resolved: {reference}",
+        "REFERENCE_STATUS": {
+          "MISSING": "Missing reference",
+          "CUSTOM": "Custom reference",
+          "AUTO": "Auto reference",
+          "DUPLICATE": "Duplicate reference",
+          "BUILTIN_STATE": "Built-in state"
+        },
+        "REFERENCE_EMPTY": "No reference",
+        "PROGRESS_TRACK_OBJECTIVES": "Objectives",
+        "PROGRESS_TRACK_COMPLETED_OBJECTIVES": "Completed objectives",
+        "PROGRESS_REWARDS_HELP": "Each row applies its bonus when the matching objective box is checked on the progress track.",
+        "PROGRESS_REWARD_REACHED": "Reached",
+        "PROGRESS_REWARD_LOCKED": "Not reached"
+      },
+      "PROFESSION_QUICK_ACCESS_TITLE": "Quick access",
+      "NO_PROFESSION_QUICK_ACCESS": "No module marked for quick access.",
+      "BASE_COMPONENTS": {
+        "SOURCE_LABEL": "Common base",
+        "KEYS": {
+          "REACTION": {
+            "NAME": "Reaction",
+            "DESCRIPTION": "A reaction is a technique triggered at any point during the round by spending a reaction action. It is added on top of another key."
+          },
+          "OPPOSITION": {
+            "NAME": "Opposition",
+            "DESCRIPTION": "An opposition replaces a classic test with a progress track opposing the characters. The first side to reach the objective wins the opposition. The objective may be fixed, such as difficulty 3, or duration-based, such as after 3 rounds the side with the most successes wins. This key is added on top of another key. If the opposition happens during an attack, after each test, the side that is furthest ahead on the progress track deals its DM to the other."
+          }
+        },
+        "CONDITIONS": {
+          "RECHARGE": {
+            "NAME": "Recharge",
+            "DESCRIPTION": "Recharge, 1 use. The technique can only be used once, then recharges only when the condition chosen and approved by the GM is fulfilled. The listed cost starts at -1 XP: adjust it between -1 and -4 XP depending on the approved restriction. Examples: short rest, eating or drinking, concentrating for 1 minute, end of any combat (-1); once per day, at night, sleeping at least 1 hour, after a suitable successful attribute test (-2); strong emotion, narrative trigger, defeating a significant opponent, risky action defined by the GM (-3); end of a story arc or chapter, after a serious wound, at a specific place, after a material or narrative sacrifice (-4)."
+          },
+          "CHANNELING": {
+            "NAME": "Channeling",
+            "DESCRIPTION": "A channeled technique uses a progress track with difficulty 5, 7, and 9. As long as you dedicate your actions to this technique, make the usual tests and fill the progress track according to your successes. Each objective reached increases the technique power by 2. After 3 rounds, or if you move or use a reaction for another purpose, the channeling ends."
+          }
+        }
+      }
+    },
+    "INVOCATION": {
+      "LIST_TITLE": "Invocations",
+      "EMPTY_LIST": "No invocation on this actor.",
+      "EMPTY_DESCRIPTION": "No invocation description.",
+      "ACTION": {
+        "CREATE": "Create invocation"
+      },
+      "NAME": "Invocation name",
+      "CONFIGURATION": "Configuration",
+      "SIZE_LABEL": "Size",
+      "BASE_CREATION_XP": "Base creation XP",
+      "LINKED_TECHNIQUE": "Linked technique",
+      "NO_LINKED_TECHNIQUE": "No linked technique",
+      "POINTS": "Attribute points",
+      "MAX_ATTRIBUTE": "Max per attribute",
+      "XP_MULTIPLIER": "Size multiplier",
+      "SCALED_CREATION_XP": "Scaled XP",
+      "ATTRIBUTES": "Attributes",
+      "TABS": {
+        "ATTRIBUTES": "Attributes",
+        "PROGRESSION": "Progression"
+      },
+      "SUMMARY": {
+        "TITLE": "Invocation summary"
+      },
+      "POWER_BONUS": {
+        "TITLE": "Power bonuses",
+        "HELP": "Each power rank can grant a bonus to the invocation.",
+        "TYPE": "Bonus type",
+        "EMPTY": "No power bonus added.",
+        "HP": "Increase HP by 1",
+        "ATTRIBUTE": "Increase one attribute by 1",
+        "DAMAGE": "+1d6 damage on all attacks",
+        "DEFENSE": "+1 DEF",
+        "ATTACK": "+1 to ATC, ATD or ATM",
+        "SAVE": "Improve one save by 1",
+        "MAGIC": "Can use magic",
+        "APPLIED": "Applied",
+        "TARGET": {
+          "ATTACK": {
+            "PRC": "PRC",
+            "PRD": "PRD",
+            "PRM": "PRM"
+          },
+          "MAGIC": {
+            "CANALISATION": "Canalisation",
+            "FASCINATION": "Fascination"
+          }
+        }
+      },
+      "THRESHOLDS": {
+        "TITLE": "Techniques at power 3 / 6 / 9 / 10",
+        "HELP": "At these thresholds, the invocation can gain a new technique paid for separately.",
+        "UNLOCKED": "Threshold unlocked"
+      },
+      "THRESHOLD_TECHNIQUE": "Granted technique",
+      "NO_THRESHOLD_TECHNIQUE": "No granted technique",
+      "SIZE": {
+        "TINY": "Very small",
+        "SMALL": "Small",
+        "MEDIUM": "Medium",
+        "LARGE": "Large",
+        "HUGE": "Very large",
+        "COLOSSAL": "Colossal"
+      },
+      "VALIDATION": {
+        "OVER_BUDGET": "Attribute allocation exceeded: {used} / {budget}.",
+        "OVER_CAP": "One attribute exceeds the maximum allowed ({max}).",
+        "MISSING_TECHNIQUE": "The linked technique cannot be found.",
+        "POWER_BONUS_TARGET_REQUIRED": "A power bonus of type {type} needs a target.",
+        "POWER_BONUS_OVERFLOW": "{count} power bonuses are defined, but only {applied} apply with the current power."
+      },
+      "ACTOR": {
+        "TITLE": "Generated actor",
+        "CREATE": "Generate actor",
+        "SYNC": "Sync actor",
+        "OPEN": "Open actor",
+        "LINKED": "Linked actor",
+        "NO_LINKED": "No generated actor is linked to this profile yet.",
+        "MISSING": "The linked actor could not be found.",
+        "SUMMARY_TITLE": "Active invocation summary",
+        "SOURCE_ACTOR": "Source summoner",
+        "SOURCE_PROFILE": "Invocation profile",
+        "ACTIVE_BONUSES": "Active bonuses",
+        "NO_ACTIVE_BONUSES": "No active bonus on this invocation.",
+        "GRANTED_TECHNIQUES": "Granted techniques",
+        "NO_GRANTED_TECHNIQUES": "No active granted technique.",
+        "GRANTED_BADGE": "Granted",
+        "BONUS_LABEL": {
+          "HP": "+1 max HP",
+          "ATTRIBUTE": "+1 {target}",
+          "DAMAGE": "+1d6 damage on all attacks",
+          "DEFENSE": "+1 DEF",
+          "ATTACK": "+1 {target}",
+          "SAVE": "+1 save {target}",
+          "MAGIC": "Magic: {target}"
+        }
+      },
+      "THRESHOLD_UNLOCKED": "Threshold unlocked"
+    },
+    "ENCHANTING": {
+      "OVERVIEW": "Enchanting foundation",
+      "BASE_QUALITY": {
+        "LABEL": "Enchanting base",
+        "BASE": "Base item",
+        "SILVER": "Silver item",
+        "GOLD": "Gold item",
+        "PLATINUM": "Platinum item",
+        "CUSTOM": "Custom"
+      },
+      "CUSTOM_PREFIX_MAX": "Max prefixes",
+      "CUSTOM_SUFFIX_MAX": "Max suffixes",
+      "NOTES": "Enchanting notes",
+      "EQUIPPED": "Equipped",
+      "PHASE1_HELP": "Phase 1: structure, slots, magic weight, and custom enchantments. Catalysts and random rolling come next.",
+      "PREFIXES": "Prefixes",
+      "SUFFIXES": "Suffixes",
+      "CURSES": "Curses",
+      "ADD_PREFIX": "Add prefix",
+      "ADD_SUFFIX": "Add suffix",
+      "ADD_CURSE": "Add curse",
+      "EMPTY_PREFIXES": "No custom prefixes yet.",
+      "EMPTY_SUFFIXES": "No custom suffixes yet.",
+      "EMPTY_CURSES": "No custom curses yet.",
+      "SUMMARY": {
+        "PREFIXES": "Prefixes",
+        "SUFFIXES": "Suffixes",
+        "WEIGHT": "Magic weight",
+        "DAMAGE_DICE_BONUS": "Damage bonus",
+        "RANGE_BONUS": "Range bonus",
+        "ZONE_RANGE_BONUS": "Area bonus",
+        "ADDED_TAGS": "Added tags",
+        "REQUIREMENT_REDUCTION": "Reduced requirements",
+        "CONSUMABLE_EFFECT_MULTIPLIER": "Consumable effect",
+        "CONSUMABLE_DURATION_MULTIPLIER": "Consumable duration",
+        "SPECIALS": "Special effects"
+      },
+      "ENTRY": {
+        "RANK": "Rank",
+        "MAGIC_WEIGHT": "Magic weight",
+        "LOCKED": "Locked",
+        "TAGS": "Tags",
+        "TAGS_PLACEHOLDER": "attack, fire, defense…",
+        "BADGE_PREFIX": "Prefix",
+        "BADGE_SUFFIX": "Suffix",
+        "BADGE_AFFIX": "Affix",
+        "BADGE_CURSE": "Curse",
+        "BADGE_CUSTOM": "Custom",
+        "BADGE_REGISTERED": "Registry",
+        "SOURCE": "Source",
+        "DESCRIPTIVE_ONLY": "This enchantment is descriptive only: no automatic numeric bonus is applied by the system for this entry.",
+        "NO_TAGS": "No tags."
+      },
+      "ACTOR_BONUSES": "Bonuses applied to the bearer",
+      "ITEM_BONUSES": "Bonuses applied to the item",
+      "ADD_ACTOR_BONUS": "Add bearer bonus",
+      "ADD_ITEM_BONUS": "Add item bonus",
+      "NO_ACTOR_BONUSES": "No bearer bonus.",
+      "NO_ITEM_BONUSES": "No item bonus.",
+      "ITEM_TARGET": {
+        "EMPTY": "No item bonus",
+        "WEIGHT": "Item weight",
+        "PRECISION_BONUS": "Precision bonus",
+        "DEF_BONUS": "Defense bonus",
+        "DAMAGE_DICE_BONUS": "Damage bonus in d6",
+        "RANGE_METERS": "Range bonus (m)",
+        "ZONE_RANGE_METERS": "Area bonus (m)",
+        "TAG_LIGHT": "Add Light tag",
+        "REQUIREMENT_REDUCTION": "Requirement reduction",
+        "CONSUMABLE_REPEAT": "Repeat effect next turn",
+        "CONSUMABLE_EFFECT_MULTIPLIER": "Effect multiplier",
+        "CONSUMABLE_DURATION_MULTIPLIER": "Duration multiplier",
+        "CONSUMABLE_CONTROL_ZONE": "Apply in control zone"
+      },
+      "USE_CATALYST": "Use catalyst",
+      "PHASE2_HELP": "Phase 3: the registry now includes common and specialized affixes (weapons, shields, armors, accessories). Complex effects can still be completed with custom bonus rows.",
+      "DIALOG": {
+        "TITLE": "Enchant {item}",
+        "APPLY": "Enchant",
+        "RESULT": "Enchantment applied with {catalyst} · rank {rank} · curse: {curse}",
+        "CATALYST_SOURCE": "Catalysts on bearer",
+        "CATALYST_ITEM": "Owned catalyst",
+        "NO_CATALYST_ITEM": "None, manual input",
+        "CATALYST_BASE": "Catalyst base",
+        "ESSENCE_QUALITY": "Essence quality",
+        "ESSENCE_TAG": "Essence tag",
+        "ESSENCE_TAG_PLACEHOLDER": "attack, fire, defense…",
+        "SUCCESS_COUNT": "Successes",
+        "FAILURE_MARGIN": "Failures above successes",
+        "PREFERRED_SIDE": "Target prefix / suffix",
+        "RANDOM_SIDE": "Random",
+        "NATURAL_ONE": "The test rolled a natural 1",
+        "HELP": "Choose a catalyst, an essence, and the test results before enchanting.",
+        "EXTRA_SUCCESSES": "Bonus successes",
+        "MINIMUM_ENTRIES": "Required enchantments",
+        "REQUIRES_ESSENCE_TAG": "Essence tag required",
+        "FORCED_CURSE": "Forced curse",
+        "CURSE_ON_NATURAL_ONE": "Curse on natural 1",
+        "OPERATION": {
+          "ADDRANDOMAFFIX": "Add a random affix",
+          "REMOVERANDOMAFFIX": "Remove a random affix",
+          "CLEARUNLOCKEDENTRIES": "Clear unlocked entries",
+          "REROLLSAMETAG": "Reroll an affix with the same tag",
+          "LOCKRANDOMENTRY": "Lock a random entry",
+          "ADDFORCEDTAGAFFIX": "Add an affix from the essence tag",
+          "ADDEXISTINGTAGAFFIX": "Add an affix from an existing tag",
+          "UPGRADERANDOMAFFIX": "Upgrade a random affix"
+        },
+        "SUCCESS_PREVIEW_NO_CHA": "Successes {successes} + quality {quality} + catalyst {catalyst} = {total} · rank {rank}"
+      },
+      "ERROR": {
+        "NO_FREE_SLOT": "No free slot is available for a new affix.",
+        "NO_PREFIX_SLOT": "No free prefix slot is available.",
+        "NO_SUFFIX_SLOT": "No free suffix slot is available.",
+        "NO_AFFIX_AVAILABLE": "No compatible affix is available.",
+        "NO_CURSE_AVAILABLE": "No compatible curse is available.",
+        "NO_REMOVABLE_AFFIX": "No removable affix is available.",
+        "NO_CLEARABLE_ENTRY": "There is no unlocked enchantment to wipe.",
+        "NO_REROLL_TARGET": "No compatible enchantment can be transformed.",
+        "NO_LOCK_TARGET": "No unlocked enchantment can be locked.",
+        "NO_MATCHING_TAG": "No existing tag can be reused on this item.",
+        "NO_UPGRADE_TARGET": "No affix can be upgraded.",
+        "ESSENCE_TAG_REQUIRED": "This catalyst requires an essence tag.",
+        "MINIMUM_ENTRIES": "The item needs at least {count} enchantments or curses.",
+        "UNSUPPORTED_CATALYST": "This catalyst is not supported.",
+        "NOT_ENCHANTABLE": "This item cannot be enchanted."
+      },
+      "PHASE4_HELP": "Phase 4 complex affixes now apply damage dice, range, area, and some item tag bonuses. More narrative effects remain described on the entry.",
+      "PHASE5_HELP": "Use catalysts to generate official enchantments. Automatic effects are intentionally limited to simple numeric bonuses for the wielder or the item.",
+      "ACTOR_TARGET": {
+        "COMBAT_PRC": "PRC",
+        "COMBAT_PRD": "PRD",
+        "COMBAT_PRM": "PRM",
+        "COMBAT_DEF": "DEF",
+        "SUMMON": {
+          "PREFIX": "Summon",
+          "HP_MAX": "Summon · HP",
+          "DAMAGE_DICE": "Summon · Bonus damage d6",
+          "PRC": "Summon · PRC",
+          "PRD": "Summon · PRD",
+          "PRM": "Summon · PRM",
+          "DEF": "Summon · DEF"
+        },
+        "SPECIAL": {
+          "INVISIBLE": "Special effect · Invisible",
+          "SILENT": "Special effect · Silent",
+          "UNDETECTABLE": "Special effect · Undetectable",
+          "EXTRA_ACTION": "Special effect · Extra action",
+          "EXTRA_REACTION": "Special effect · Extra reaction",
+          "LIFE_ON_HIT": "Special effect · Life on hit",
+          "SPELL_DAMAGE_DICE": "Special effect · Spell damage d6 bonus",
+          "UNLIMITED_DAMAGE": "Special effect · Unlimited damage",
+          "EXTRA_SAVE_BOX": "Special effect · Extra save box",
+          "BLEEDING_EXTRA": "Special effect · Extra bleeding",
+          "BURN_EXTRA": "Special effect · Extra burn",
+          "FROZEN_EXTRA": "Special effect · Extra frozen",
+          "POISON_EXTRA": "Special effect · Extra poison",
+          "CONVERT_FIRE": "Special effect · Convert Fire damage",
+          "CONVERT_LIGHTNING": "Special effect · Convert Lightning damage",
+          "CONVERT_EARTH": "Special effect · Convert Earth damage",
+          "CONVERT_ICE": "Special effect · Convert Ice damage",
+          "CONVERT_WIND": "Special effect · Convert Wind damage",
+          "CONVERT_ACID": "Special effect · Convert Acid damage",
+          "SUMMON_TRANSFER": "Special effect · Transfer to summon"
+        }
+      },
+      "HELP_SIMPLE": "Use catalysts to generate official enchantments. Automatic effects are intentionally limited to simple numeric bonuses for the wielder or the item.",
+      "TAGS": {
+        "ACID": "Acid",
+        "ATTACK": "Attack",
+        "ATTRIBUTE": "Attribute",
+        "COMBAT": "Combat",
+        "CONSUMABLE": "Consumable",
+        "DAMAGE": "Damage",
+        "DEFENSE": "Defense",
+        "EARTH": "Earth",
+        "ENEMY": "Enemy",
+        "ENVIRONMENT": "Environment",
+        "FIRE": "Fire",
+        "ICE": "Ice",
+        "LIFE": "Life",
+        "LIGHTNING": "Lightning",
+        "MAGIC": "Magic",
+        "META": "Meta",
+        "MOBILITY": "Mobility",
+        "SAVE": "Save",
+        "SEASON": "Season",
+        "SPELL": "Spell",
+        "STATE": "State",
+        "STEALTH": "Stealth",
+        "SUMMON": "Summon",
+        "WEATHER": "Weather",
+        "WIND": "Wind",
+        "ZONE": "Zone"
+      }
+    },
+    "IMAGE": "Image",
+    "HERITAGE": {
+      "NAME": "Heritage",
+      "IDENTITY": "Heritage identity",
+      "STATE": "State",
+      "STATE_HINT": "A passive heritage can be toggled active or inactive. A technique heritage can be marked as prepared.",
+      "DESCRIPTION": "Description",
+      "EMPTY_DESCRIPTION": "No description.",
+      "TYPE_LABEL": "Origin",
+      "FEATURE_TYPE_LABEL": "Form",
+      "ACTIVE": "Passive active",
+      "PREPARED": "Technique prepared",
+      "STATE_ACTIVE": "Active",
+      "STATE_INACTIVE": "Inactive",
+      "STATE_PREPARED": "Prepared",
+      "STATE_UNPREPARED": "Not prepared",
+      "TYPE": {
+        "ANCESTRAL": "Ancestral",
+        "CULTURAL": "Cultural"
+      },
+      "FEATURE_TYPE": {
+        "PASSIVE": "Passive",
+        "TECHNIQUE": "Technique"
+      },
+      "TABS": {
+        "GENERAL": "General",
+        "DESCRIPTION": "Description"
+      },
+      "ACTION": {
+        "CREATE_ANCESTRAL": "+ Ancestral",
+        "CREATE_CULTURAL": "+ Cultural",
+        "ACTIVATE": "Activate",
+        "DEACTIVATE": "Deactivate",
+        "PREPARE": "Prepare",
+        "UNPREPARE": "Unprepare",
+        "USE": "Use",
+        "CREATE_ANCESTRAL_PASSIVE": "+ Ancestral passive",
+        "CREATE_ANCESTRAL_TECHNIQUE": "+ Ancestral technique",
+        "CREATE_CULTURAL_PASSIVE": "+ Cultural passive",
+        "CREATE_CULTURAL_TECHNIQUE": "+ Cultural technique"
+      },
+      "ACTOR": {
+        "TITLE": "Ancestral and cultural heritages",
+        "ANCESTRAL_TITLE": "Ancestral heritages",
+        "CULTURAL_TITLE": "Cultural heritages",
+        "NO_ANCESTRAL": "No ancestral heritage.",
+        "NO_CULTURAL": "No cultural heritage."
+      }
+    }
+  },
+  "ETERN.HERITAGE.PASSIVE_EFFECTS": "Passive effects",
+  "ETERN.HERITAGE.EMPTY_PASSIVES": "No passive effect defined."
+}

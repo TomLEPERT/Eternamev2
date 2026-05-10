@@ -1,0 +1,53 @@
+    <section class="techniques-panel">
+      <header class="techniques-panel-header">
+        <h2>{{localize 'ETERN.INVOCATION.LIST_TITLE'}}</h2>
+        {{#if isOwner}}
+          <div class="techniques-actions">
+            <button type="button" data-action="create-invocation-item">{{localize 'ETERN.INVOCATION.ACTION.CREATE'}}</button>
+          </div>
+        {{/if}}
+      </header>
+      <div class="techniques-panel-body">
+        <div class="techniques-list">
+          {{#each techniques.invocations as |invocation|}}
+            <article class="techniques-row">
+              <div class="techniques-row-main">
+                <div class="techniques-row-title">
+                  <button type="button" data-action="open-technique-item" data-item-id="{{invocation.id}}">{{invocation.name}}</button>
+                  <span class="techniques-row-badge">{{localize 'ETERN.ITEM.TYPES.INVOCATION'}}</span>
+                  <span class="techniques-row-badge techniques-row-badge--{{invocation.validationState}}">{{invocation.validationLabel}}</span>
+                </div>
+                <p class="techniques-row-subtitle">{{#if invocation.description}}{{invocation.description}}{{else}}{{localize 'ETERN.INVOCATION.EMPTY_DESCRIPTION'}}{{/if}}</p>
+                <div class="techniques-row-meta">
+                  <span>{{invocation.sizeLabel}}</span>
+                  <span>{{invocation.pointsLabel}}</span>
+                  <span>{{localize 'ETERN.INVOCATION.SCALED_CREATION_XP'}}: {{invocation.scaledCreationXp}}</span>
+                  {{#if invocation.linkedTechniqueName}}
+                    <span>{{localize 'ETERN.INVOCATION.LINKED_TECHNIQUE'}}: {{invocation.linkedTechniqueName}}</span>
+                  {{/if}}
+                  {{#if invocation.hasLinkedActor}}
+                    <span>{{localize 'ETERN.INVOCATION.ACTOR.LINKED'}}: {{invocation.linkedActorName}}</span>
+                  {{/if}}
+                </div>
+              </div>
+              <div class="techniques-row-actions techniques-row-actions--stacked">
+                <button type="button" data-action="open-technique-item" data-item-id="{{invocation.id}}">{{localize 'ETERN.UI.OPEN'}}</button>
+                {{#if invocation.hasLinkedActor}}
+                  <button type="button" data-action="open-invocation-actor" data-item-id="{{invocation.id}}">{{localize 'ETERN.INVOCATION.ACTOR.OPEN'}}</button>
+                {{/if}}
+                {{#if ../isOwner}}
+                  {{#if invocation.hasLinkedActor}}
+                    <button type="button" data-action="sync-invocation-actor" data-item-id="{{invocation.id}}">{{localize 'ETERN.INVOCATION.ACTOR.SYNC'}}</button>
+                  {{else}}
+                    <button type="button" data-action="create-invocation-actor" data-item-id="{{invocation.id}}">{{localize 'ETERN.INVOCATION.ACTOR.CREATE'}}</button>
+                  {{/if}}
+                  <button type="button" data-action="delete-owned-item" data-item-id="{{invocation.id}}">{{localize 'ETERN.UI.DELETE'}}</button>
+                {{/if}}
+              </div>
+            </article>
+          {{else}}
+            <p class="techniques-empty">{{localize 'ETERN.INVOCATION.EMPTY_LIST'}}</p>
+          {{/each}}
+        </div>
+      </div>
+    </section>

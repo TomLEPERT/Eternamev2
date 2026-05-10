@@ -1,0 +1,48 @@
+<form class="attribute-roll-dialog">
+  <div class="attribute-roll-dialog__summary">
+    <div class="attribute-roll-dialog__line">
+      <span class="attribute-roll-dialog__label">{{localize "ETERN.ATTACKS.ROLL_DIALOG.ATTACK"}}</span>
+      <strong>{{attackName}}</strong>
+    </div>
+    <div class="attribute-roll-dialog__line">
+      <span class="attribute-roll-dialog__label">{{localize "ETERN.ATTACKS.DAMAGE"}}</span>
+      <strong>{{damageLabel}}</strong>
+    </div>
+    <div class="attribute-roll-dialog__line">
+      <span class="attribute-roll-dialog__label">{{localize "ETERN.ATTACKS.ROLL_DIALOG.PRECISION"}}</span>
+      <strong>{{#if precision.label}}{{precision.label}}{{else}}—{{/if}}</strong>
+    </div>
+  </div>
+
+  <div class="attribute-roll-dialog__field">
+    <label for="attack-roll-attribute">{{localize "ETERN.ATTACKS.ROLL_DIALOG.ATTRIBUTE"}}</label>
+    <select id="attack-roll-attribute" name="attributeKey">
+      {{#each attributeChoices}}
+        <option value="{{value}}" {{#if selected}}selected{{/if}}>{{abbr}} — {{label}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="attribute-roll-dialog__field">
+    <label for="attack-roll-dice">{{localize "ETERN.ATTACKS.ROLL_DIALOG.DICE"}}</label>
+    <input id="attack-roll-dice" type="number" name="diceCount" min="1" value="{{diceCount}}">
+  </div>
+
+  <div class="attribute-roll-dialog__field">
+    <label for="attack-roll-mode">{{localize "ETERN.ROLL.DIALOG.MODE"}}</label>
+    <select id="attack-roll-mode" name="mode">
+      {{#each modeChoices}}
+        <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="attribute-roll-dialog__field">
+    <label for="attack-roll-defense">{{localize "ETERN.ATTACKS.ROLL_DIALOG.DEFENSE"}}</label>
+    <select id="attack-roll-defense" name="vsDefense">
+      {{#each defenseChoices}}
+        <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+      {{/each}}
+    </select>
+  </div>
+</form>

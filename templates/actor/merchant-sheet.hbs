@@ -1,0 +1,167 @@
+<form class="eternamev2-merchant-sheet" autocomplete="off">
+  <section class="merchant-topbar merchant-card">
+    <div class="merchant-title-wrap">
+      <h1 class="merchant-title"><input type="text" name="name" value="{{document.name}}" placeholder="{{localize 'ETERN.MERCHANT.NAME'}}"></h1>
+      <p class="merchant-subtitle">{{localize 'ETERN.MERCHANT.SUBTITLE'}}</p>
+    </div>
+    <div class="merchant-portrait-wrap">
+      <img class="merchant-portrait" src="{{document.img}}" alt="{{document.name}}">
+    </div>
+  </section>
+
+  <nav class="sheet-tabs merchant-sheet-tabs" data-group="primary">
+    <a class="item" data-tab="stock">{{localize 'ETERN.MERCHANT.TABS.STOCK'}}</a>
+    <a class="item" data-tab="configuration">{{localize 'ETERN.MERCHANT.TABS.CONFIGURATION'}}</a>
+  </nav>
+
+  <section class="merchant-tab merchant-tab--stock" data-tab="stock">
+    <div class="merchant-main-stack">
+      <section class="merchant-card merchant-stock-head-card {{#if isGM}}merchant-stock-dropzone{{/if}}" {{#if isGM}}data-merchant-dropzone="stock"{{/if}}>
+        <header class="merchant-card-head merchant-card-head--split">
+          <div>
+            <h2>{{localize 'ETERN.MERCHANT.STOCK.TITLE'}}</h2>
+            <p class="merchant-muted">{{localize 'ETERN.MERCHANT.STOCK.HELP'}}</p>
+          </div>
+          {{#if isGM}}
+            <div class="merchant-drop-hint">{{localize 'ETERN.MERCHANT.STOCK.DROP_HINT'}}</div>
+          {{/if}}
+        </header>
+      </section>
+
+      <section class="merchant-card merchant-negotiation-card">
+        <header class="merchant-card-head"><h2>{{localize 'ETERN.MERCHANT.NEGOTIATION.TITLE'}}</h2></header>
+        <p class="merchant-muted">{{localize 'ETERN.MERCHANT.NEGOTIATION.HELP'}}</p>
+        <div class="merchant-negotiation-row">
+          <input type="number" min="0" max="100" step="1" value="{{discountPercent}}" data-merchant-discount-input>
+          <button type="button" class="merchant-action-button" data-action="merchant-set-discount">{{localize 'ETERN.MERCHANT.NEGOTIATION.APPLY'}}</button>
+          <button type="button" class="merchant-action-button merchant-action-button--secondary" data-action="merchant-reset-discount">{{localize 'ETERN.MERCHANT.NEGOTIATION.RESET'}}</button>
+        </div>
+        {{#if discountPercent}}
+          <div class="merchant-discount-pill">{{localize 'ETERN.MERCHANT.NEGOTIATION.ACTIVE'}}: -{{discountPercent}}%</div>
+        {{/if}}
+      </section>
+
+      <section class="merchant-card merchant-sell-card" data-merchant-dropzone="sell">
+        <header class="merchant-card-head"><h2>{{localize 'ETERN.MERCHANT.SELL_ZONE.TITLE'}}</h2></header>
+        <p class="merchant-muted">{{localize 'ETERN.MERCHANT.SELL_ZONE.HELP'}}</p>
+        {{#if canTrade}}
+          <p class="merchant-drop-hint">{{localize 'ETERN.MERCHANT.SELL_ZONE.DROP_HINT' actor=tradeActorName}}</p>
+        {{else}}
+          <p class="merchant-drop-hint">{{localize 'ETERN.MERCHANT.ERROR_NO_CHARACTER'}}</p>
+        {{/if}}
+        {{#unless merchantCanUpdate}}
+          <p class="merchant-warning">{{localize 'ETERN.MERCHANT.WARNING_PERMISSION_LIMIT'}}</p>
+        {{/unless}}
+      </section>
+
+      <section class="merchant-card merchant-stock-card">
+        <div class="merchant-stock-table">
+          <div class="merchant-stock-row merchant-stock-row--head">
+            <div>{{localize 'ETERN.MERCHANT.COLUMNS.ITEM'}}</div>
+            <div>{{localize 'ETERN.MERCHANT.COLUMNS.TYPE'}}</div>
+            <div>{{localize 'ETERN.MERCHANT.COLUMNS.LEGALITY'}}</div>
+            <div>{{localize 'ETERN.MERCHANT.COLUMNS.QUANTITY'}}</div>
+            <div>{{localize 'ETERN.MERCHANT.COLUMNS.PRICE'}}</div>
+            <div>{{localize 'ETERN.MERCHANT.COLUMNS.ACTIONS'}}</div>
+          </div>
+          {{#each stock as |item|}}
+            <div class="merchant-stock-row" data-item-id="{{item.id}}">
+              <div class="merchant-stock-item">
+                <img src="{{item.img}}" alt="{{item.name}}">
+                <div>
+                  <strong>{{item.name}}</strong>
+                  {{#if item.description}}<div class="merchant-stock-copy">{{item.description}}</div>{{/if}}
+                </div>
+              </div>
+              <div>{{item.typeLabel}}</div>
+              <div>{{item.legalityLabel}}</div>
+              <div class="merchant-qty-cell">
+                {{#if ../isGM}}
+                  <button type="button" class="merchant-inline-button" data-action="merchant-adjust-qty" data-item-id="{{item.id}}" data-delta="-1">-</button>
+                {{/if}}
+                <span>{{item.quantity}}</span>
+                {{#if ../isGM}}
+                  <button type="button" class="merchant-inline-button" data-action="merchant-adjust-qty" data-item-id="{{item.id}}" data-delta="1">+</button>
+                {{/if}}
+              </div>
+              <div>
+                {{#if item.hasDiscount}}
+                  <div class="merchant-price-old">{{item.basePriceLabel}}</div>
+                {{/if}}
+                <strong>{{item.discountedPriceLabel}}</strong>
+              </div>
+              <div class="merchant-actions-cell">
+                {{#if ../canTrade}}<button type="button" class="merchant-action-button" data-action="merchant-buy" data-item-id="{{item.id}}">{{localize 'ETERN.MERCHANT.ACTIONS.BUY'}}</button>{{/if}}
+                {{#if ../isGM}}<button type="button" class="merchant-action-button merchant-action-button--secondary" data-action="merchant-edit-price" data-item-id="{{item.id}}">{{localize 'ETERN.MERCHANT.ACTIONS.SET_PRICE'}}</button>{{/if}}
+                {{#if ../isGM}}<button type="button" class="merchant-action-button merchant-action-button--secondary" data-action="merchant-delete-stock" data-item-id="{{item.id}}">{{localize 'ETERN.INVENTORY.ACTIONS.DELETE'}}</button>{{/if}}
+              </div>
+            </div>
+          {{else}}
+            <div class="merchant-empty">{{localize 'ETERN.MERCHANT.STOCK.EMPTY'}}</div>
+          {{/each}}
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="merchant-tab merchant-tab--configuration" data-tab="configuration" hidden>
+    <div class="merchant-config-layout">
+      <section class="merchant-card merchant-config-card">
+        <header class="merchant-card-head"><h2>{{localize 'ETERN.MERCHANT.CONFIGURATION'}}</h2></header>
+        <div class="form-group form-group-stacked">
+          <label>{{localize 'ETERN.MERCHANT.DESCRIPTION'}}</label>
+          <textarea name="system.description" rows="8">{{system.description}}</textarea>
+        </div>
+      </section>
+
+      <section class="merchant-card merchant-wallet-card">
+        <header class="merchant-card-head"><h2>{{localize 'ETERN.MERCHANT.MONEY_STOCK'}}</h2></header>
+        {{#if isGM}}
+          <div class="merchant-money-grid">
+            {{#each wealth.currencies as |currency|}}
+              <div class="form-group">
+                <label>{{currency.label}}</label>
+                <input type="number" name="system.wealth.{{currency.key}}" value="{{currency.value}}" min="0" step="1">
+              </div>
+            {{/each}}
+          </div>
+        {{else}}
+          <div class="merchant-meta-copy"><strong>{{wealth.stockLabel}}</strong></div>
+        {{/if}}
+      </section>
+
+      <section class="merchant-card merchant-rules-card">
+        <header class="merchant-card-head"><h2>{{localize 'ETERN.MERCHANT.TRADE_RULES'}}</h2></header>
+        {{#if isGM}}
+          <div class="merchant-fieldset">
+            <h3>{{localize 'ETERN.MERCHANT.ACCEPTED_ITEM_TYPES'}}</h3>
+            <div class="merchant-check-grid">
+              {{#each acceptedTypeChoices as |choice|}}
+                <label class="merchant-check">
+                  <input type="checkbox" name="system.trade.acceptedTypes.{{choice.type}}" {{checked choice.checked}}>
+                  <span>{{choice.label}}</span>
+                </label>
+              {{/each}}
+            </div>
+          </div>
+
+          <div class="merchant-fieldset">
+            <h3>{{localize 'ETERN.MERCHANT.LEGALITY_POLICY'}}</h3>
+            <div class="merchant-check-grid merchant-check-grid--single">
+              <label class="merchant-check">
+                <input type="checkbox" name="system.trade.acceptsLegal" {{checked acceptsLegal}}>
+                <span>{{localize 'ETERN.MERCHANT.ACCEPTS_LEGAL'}}</span>
+              </label>
+              <label class="merchant-check">
+                <input type="checkbox" name="system.trade.acceptsIllegal" {{checked acceptsIllegal}}>
+                <span>{{localize 'ETERN.MERCHANT.ACCEPTS_ILLEGAL'}}</span>
+              </label>
+            </div>
+          </div>
+        {{else}}
+          <div class="merchant-meta-copy">{{localize 'ETERN.MERCHANT.LEGALITY_POLICY'}}: <strong>{{#if acceptsLegal}}{{localize 'ETERN.ITEM.LEGALITY.LEGAL'}}{{/if}}{{#if hasIllegalTrading}}{{#if acceptsLegal}} / {{/if}}{{localize 'ETERN.ITEM.LEGALITY.ILLEGAL'}}{{/if}}</strong></div>
+        {{/if}}
+      </section>
+    </div>
+  </section>
+</form>

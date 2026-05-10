@@ -1,0 +1,241 @@
+.stats-section-title-defense {
+  color: var(--etern-color-white);
+  background: linear-gradient(90deg, #4ab0ea, #46a7dd);
+}
+
+.stats-defense {
+  min-width: 0;
+}
+
+.defense-panel {
+  padding: 14px;
+  border: 2px solid #4ab0ea;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: var(--etern-space-lg);
+}
+
+.defense-summary {
+  display: grid;
+  grid-template-columns: 120px repeat(4, minmax(110px, 1fr));
+  gap: var(--etern-space-lg);
+  align-items: stretch;
+}
+
+.defense-total-card,
+.defense-stat-card {
+  border: 2px solid #8ccff3;
+  border-radius: var(--etern-radius-3xl);
+  background: rgba(255, 255, 255, 0.5);
+  padding: var(--etern-space-lg);
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.defense-total-card {
+  align-items: center;
+  text-align: center;
+}
+
+.defense-total-value {
+  font-size: 28px;
+  font-weight: 900;
+  color: #222;
+  line-height: 1;
+}
+
+.defense-total-label,
+.defense-stat-label {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #38342f;
+}
+
+.defense-stat-value {
+  font-size: 26px;
+  font-weight: 900;
+  color: #222;
+  line-height: 1;
+}
+
+.defense-stat-input {
+  width: 100%;
+  max-width: 72px;
+  border: none;
+  background: transparent;
+  font-size: 26px;
+  font-weight: 900;
+  color: #222;
+  box-shadow: none;
+  padding: 0;
+}
+
+.defense-stat-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.defense-formula {
+  border: 2px solid #b6def6;
+  border-radius: var(--etern-radius-2xl);
+  padding: var(--etern-space-md) 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #3d3a35;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.defense-equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--etern-space-2xl);
+}
+
+.defense-items-card {
+  border: 2px dashed #b6def6;
+  border-radius: var(--etern-radius-3xl);
+  padding: var(--etern-space-lg);
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.defense-items-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--etern-space-md);
+  margin-bottom: 10px;
+}
+
+.defense-items-card-head h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.defense-create-button,
+.defense-item-delete {
+  border: 1px solid #7ebfe6;
+  border-radius: var(--etern-radius-lg);
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.defense-create-button {
+  padding: 6px 10px;
+  font-weight: 700;
+}
+
+.defense-item-delete {
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.defense-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--etern-space-sm);
+}
+
+.defense-item-row {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) 140px 70px 32px;
+  gap: var(--etern-space-sm);
+  align-items: center;
+}
+
+.defense-item-row-shield {
+  grid-template-columns: 28px minmax(0, 1fr) 70px 32px;
+}
+
+.defense-item-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.defense-item-type,
+.defense-item-defense {
+  width: 100%;
+}
+
+.defense-item-defense {
+  text-align: center;
+}
+
+.defense-empty {
+  margin: 0;
+  color: var(--etern-color-muted-warm);
+  font-style: italic;
+}
+
+.defense-training-card {
+  border: 2px solid #b6def6;
+  border-radius: var(--etern-radius-3xl);
+  padding: var(--etern-space-lg);
+  background: rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--etern-gap-sm);
+}
+
+.defense-training-head h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.defense-training-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--etern-gap-sm);
+}
+
+.defense-training-option {
+  display: flex;
+  align-items: center;
+  gap: var(--etern-space-sm);
+  font-weight: 700;
+}
+
+.defense-training-feedback {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--etern-gap-sm);
+  font-size: 13px;
+}
+
+.defense-training-feedback strong {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.inventory-placeholder-card {
+  padding: 14px;
+  border: 2px solid #a9a295;
+  border-radius: var(--etern-radius-3xl);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.inventory-placeholder-card h2,
+.inventory-placeholder-card h3 {
+  margin: 0 0 10px;
+}
+
+.inventory-equipment-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--etern-gap-md);
+}
+
+.inventory-inline-list {
+  margin: 0;
+  padding-left: 18px;
+}

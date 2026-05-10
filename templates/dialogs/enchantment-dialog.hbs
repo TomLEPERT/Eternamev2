@@ -1,0 +1,120 @@
+<form class="etername-enchantment-dialog enchantment-dialog-form" data-item-uuid="{{itemUuid}}" onchange="globalThis.EternameEnchantmentDialog?.syncFromEvent?.(event)" oninput="globalThis.EternameEnchantmentDialog?.syncFromEvent?.(event)">
+  <section class="etername-enchantment-dialog__main">
+    <header class="etername-enchantment-dialog__header">
+      <p class="etername-enchantment-dialog__eyebrow">{{localize 'ETERN.ENCHANTING.USE_CATALYST'}}</p>
+      <h2>{{itemName}}</h2>
+      <p>{{localize 'ETERN.ENCHANTING.DIALOG.HELP'}}</p>
+    </header>
+
+    <div class="etername-enchantment-dialog__grid">
+      {{#if actorHasCatalysts}}
+        <label class="etername-enchantment-dialog__field etername-enchantment-dialog__field--full">
+          <span>{{localize 'ETERN.ENCHANTING.DIALOG.CATALYST_ITEM'}}</span>
+          <select name="catalystItemId" onchange="globalThis.EternameEnchantmentDialog?.syncFromEvent?.(event)">
+            {{#each catalystSourceChoices}}
+              <option
+                value="{{value}}"
+                data-catalyst-base="{{catalystBase}}"
+                data-essence-quality="{{essenceQuality}}"
+                data-essence-tag="{{essenceTag}}"
+                {{#if selected}}selected{{/if}}
+              >{{label}}</option>
+            {{/each}}
+          </select>
+        </label>
+      {{/if}}
+
+      <div class="etername-enchantment-dialog__field etername-enchantment-dialog__field--full etername-enchantment-dialog__base-field">
+        <span>{{localize 'ETERN.ENCHANTING.DIALOG.CATALYST_BASE'}}</span>
+        <div class="etername-enchantment-dialog__catalyst-options" role="radiogroup" aria-label="{{localize 'ETERN.ENCHANTING.DIALOG.CATALYST_BASE'}}">
+          {{#each catalystChoices}}
+            <label class="etername-enchantment-dialog__catalyst-option">
+              <input
+                type="radio"
+                name="catalystBase"
+                value="{{value}}"
+                data-manual-catalyst-field
+                data-preview-label="{{preview.label}}"
+                data-preview-description="{{preview.description}}"
+                data-preview-operation="{{preview.operation}}"
+                data-preview-extra-successes="{{preview.extraSuccesses}}"
+                data-preview-has-extra-successes="{{preview.hasExtraSuccesses}}"
+                data-preview-minimum-entries="{{preview.minimumEntries}}"
+                data-preview-has-minimum-entries="{{preview.hasMinimumEntries}}"
+                data-preview-requires-essence-tag="{{preview.requiresEssenceTag}}"
+                data-preview-forced-curse="{{preview.forcedCurse}}"
+                data-preview-curse-on-natural-one="{{preview.curseOnNaturalOne}}"
+                onchange="globalThis.EternameEnchantmentDialog?.syncFromEvent?.(event)"
+                {{#if selected}}checked{{/if}}
+              >
+              <span class="etername-enchantment-dialog__catalyst-option-body">
+                <span class="etername-enchantment-dialog__catalyst-option-head">
+                  <strong>{{preview.label}}</strong>
+                  <em>{{preview.operation}}</em>
+                </span>
+                <span class="etername-enchantment-dialog__catalyst-option-description">{{preview.description}}</span>
+                <span class="etername-enchantment-dialog__catalyst-option-details">
+                  {{#if preview.hasExtraSuccesses}}
+                    <span>{{localize 'ETERN.ENCHANTING.DIALOG.EXTRA_SUCCESSES'}} +{{preview.extraSuccesses}}</span>
+                  {{/if}}
+                  {{#if preview.hasMinimumEntries}}
+                    <span>{{localize 'ETERN.ENCHANTING.DIALOG.MINIMUM_ENTRIES'}} {{preview.minimumEntries}}</span>
+                  {{/if}}
+                  {{#if preview.requiresEssenceTag}}
+                    <span>{{localize 'ETERN.ENCHANTING.DIALOG.REQUIRES_ESSENCE_TAG'}}</span>
+                  {{/if}}
+                  {{#if preview.forcedCurse}}
+                    <span>{{localize 'ETERN.ENCHANTING.DIALOG.FORCED_CURSE'}}</span>
+                  {{/if}}
+                  {{#if preview.curseOnNaturalOne}}
+                    <span>{{localize 'ETERN.ENCHANTING.DIALOG.CURSE_ON_NATURAL_ONE'}}</span>
+                  {{/if}}
+                </span>
+              </span>
+            </label>
+          {{/each}}
+        </div>
+      </div>
+
+      <label class="etername-enchantment-dialog__field">
+        <span>{{localize 'ETERN.ENCHANTING.DIALOG.ESSENCE_QUALITY'}}</span>
+        <select name="essenceQuality" data-manual-catalyst-field onchange="globalThis.EternameEnchantmentDialog?.syncFromEvent?.(event)">
+          {{#each essenceQualityChoices}}
+            <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}{{#if bonus}} (+{{bonus}}){{/if}}</option>
+          {{/each}}
+        </select>
+      </label>
+
+      <label class="etername-enchantment-dialog__field">
+        <span>{{localize 'ETERN.ENCHANTING.DIALOG.ESSENCE_TAG'}}</span>
+        <input type="text" name="essenceTag" data-manual-catalyst-field placeholder="{{localize 'ETERN.ENCHANTING.DIALOG.ESSENCE_TAG_PLACEHOLDER'}}" />
+      </label>
+
+      <label class="etername-enchantment-dialog__field">
+        <span>{{localize 'ETERN.ENCHANTING.DIALOG.PREFERRED_SIDE'}}</span>
+        <select name="preferredSide" onchange="globalThis.EternameEnchantmentDialog?.syncFromEvent?.(event)">
+          {{#each sideChoices}}
+            <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+          {{/each}}
+        </select>
+      </label>
+
+      <label class="etername-enchantment-dialog__field">
+        <span>{{localize 'ETERN.ENCHANTING.DIALOG.SUCCESS_COUNT'}}</span>
+        <input type="number" min="0" max="7" step="1" name="successCount" value="0" />
+      </label>
+
+      <label class="etername-enchantment-dialog__field">
+        <span>{{localize 'ETERN.ENCHANTING.DIALOG.FAILURE_MARGIN'}}</span>
+        <input type="number" min="0" step="1" name="failureMargin" value="0" />
+      </label>
+
+      <label class="etername-enchantment-dialog__check etername-enchantment-dialog__field--full">
+        <input type="checkbox" name="naturalOne" />
+        <span>{{localize 'ETERN.ENCHANTING.DIALOG.NATURAL_ONE'}}</span>
+      </label>
+    </div>
+
+    <p class="etername-enchantment-dialog__preview" data-enchantment-success-preview></p>
+  </section>
+</form>

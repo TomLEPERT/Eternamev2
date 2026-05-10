@@ -1,0 +1,35 @@
+<div class="etername-roll-card etername-roll-card--attribute">
+  <header class="etername-roll-card__header">
+    <div>
+      <div class="etername-roll-card__eyebrow">{{#if eyebrow}}{{eyebrow}}{{else}}{{localize "ETERN.ROLL.CHAT.ATTRIBUTE_TEST"}}{{/if}}</div>
+      <h3 class="etername-roll-card__title">{{#if title}}{{title}}{{else}}{{attribute.label}} ({{attribute.abbr}}){{/if}}</h3>
+    </div>
+    <div class="etername-roll-card__target">{{targetLabel}}</div>
+  </header>
+
+  <div class="etername-roll-card__meta">
+    <span>{{localize "ETERN.ROLL.CHAT.FORMULA"}} : <strong>{{formulaLabel}}</strong></span>
+    {{#if ticksLabel}}<span>{{localize "ETERN.ROLL.CHAT.TICKS"}} : <strong>{{ticksLabel}}</strong></span>{{/if}}
+    {{#if modeLabel}}<span>{{localize "ETERN.ROLL.CHAT.MODE"}} : <strong>{{modeLabel}}</strong></span>{{/if}}
+    {{#if thresholdAdjusted}}
+      <span>{{localize "ETERN.ROLL.CHAT.BASE_TARGET"}} : <strong>{{baseTargetLabel}}</strong></span>
+    {{/if}}
+  </div>
+
+  <div class="etername-roll-card__dice">
+    {{#each dice}}
+      <span class="etername-roll-die {{#if this.success}}is-success{{else}}is-failure{{/if}}">{{this.value}}</span>
+    {{/each}}
+  </div>
+
+  <div class="etername-roll-card__result">
+    {{localize "ETERN.ROLL.CHAT.SUCCESS_COUNT" count=successes}} <strong>{{successes}}</strong>
+  </div>
+  {{#if extraLines.length}}
+    <div class="etername-roll-card__extra">
+      {{#each extraLines}}
+        <div class="etername-roll-card__extra-line"><span>{{this.label}}</span><strong>{{this.value}}</strong></div>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>

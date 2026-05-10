@@ -1,0 +1,314 @@
+<section class="stats-section stats-misc">
+  <header class="stats-section-title stats-section-title-dark">
+    {{localize "ETERN.STATS.MISC"}}
+  </header>
+
+  <div class="misc-stack">
+    <article class="misc-card misc-card-hp">
+      <div class="misc-card-header">
+        <h3>{{localize "ETERN.STATS.HP"}}</h3>
+      </div>
+
+      <div class="hp-track" role="group" aria-label="{{localize "ETERN.STATS.HP"}}">
+        {{#each system.derived.hp.slots as |slot|}}
+          <button
+            type="button"
+            class="hp-track-box{{#if slot.checked}} active{{/if}}{{#if slot.disabled}} is-disabled{{/if}}{{#if slot.disabledByWound}} is-wound-disabled{{else if slot.disabledByMax}} is-max-disabled{{/if}}"
+            data-action="hp-toggle-box"
+            data-index="{{slot.index}}"
+            aria-pressed="{{#if slot.checked}}true{{else}}false{{/if}}"
+            {{#if slot.disabled}}disabled{{/if}}
+          ></button>
+        {{/each}}
+      </div>
+
+      <div class="hp-grave-wounds">
+        <span class="hp-grave-wounds-label">{{localize "ETERN.STATS.GRAVE_WOUNDS"}}</span>
+        <div class="hp-grave-wounds-controls">
+          <button type="button" class="hp-adjust-button" data-action="hp-adjust-severe" data-delta="-1">−</button>
+          <span class="hp-grave-wounds-value" data-derived="hp-severe-wounds">{{system.derived.hp.severeWounds}}</span>
+          <button type="button" class="hp-adjust-button" data-action="hp-adjust-severe" data-delta="1">+</button>
+        </div>
+      </div>
+    </article>
+
+        <article class="misc-card misc-card-magic">
+      <div class="misc-card-header">
+        <h3>{{localize "ETERN.MAGIC.TITLE"}}</h3>
+        <div class="magic-add-inline">
+          <select class="magic-type-select" data-role="magic-type-select">
+            {{#if magicTypeChoices.length}}
+              {{#each magicTypeChoices as |choice|}}
+                <option value="{{choice.value}}">{{choice.label}}</option>
+              {{/each}}
+            {{else}}
+              <option value="">{{localize "ETERN.MAGIC.NO_MORE_TYPES"}}</option>
+            {{/if}}
+          </select>
+          <button type="button" class="magic-add-button" data-action="create-magic-pool" {{#unless magicTypeChoices.length}}disabled{{/unless}}>
+            {{localize "ETERN.MAGIC.ADD"}}
+          </button>
+        </div>
+      </div>
+
+      <div class="magic-panel">
+        {{#if magicPools.length}}
+          {{#each magicPools as |pool|}}
+            <div class="magic-row magic-pool-row">
+              <div class="magic-type-label">{{pool.label}}</div>
+
+              {{#if pool.hasMax}}
+                <div class="magic-counter">
+                  <button type="button" class="magic-adjust-button" data-action="adjust-magic-pool" data-magic-id="{{pool.id}}" data-delta="-1" {{#unless pool.canDecrease}}disabled{{/unless}}>−</button>
+                  <input
+                    type="number"
+                    class="magic-value-input"
+                    value="{{pool.current}}"
+                    min="0"
+                    data-magic-id="{{pool.id}}"
+                    data-magic-field="current"
+                  >
+                  <span class="magic-separator">/</span>
+                  <span class="magic-derived-max">{{pool.max}}</span>
+                  <button type="button" class="magic-adjust-button" data-action="adjust-magic-pool" data-magic-id="{{pool.id}}" data-delta="1" {{#unless pool.canIncrease}}disabled{{/unless}}>+</button>
+                </div>
+              {{else}}
+                <div class="magic-fascination-block">
+                  <div class="magic-counter">
+                    <button type="button" class="magic-adjust-button" data-action="adjust-magic-pool" data-magic-id="{{pool.id}}" data-delta="-1" {{#unless pool.canDecrease}}disabled{{/unless}}>−</button>
+                    <input
+                      type="number"
+                      class="magic-value-input"
+                      value="{{pool.current}}"
+                      min="0"
+                      data-magic-id="{{pool.id}}"
+                      data-magic-field="current"
+                    >
+                    <button type="button" class="magic-adjust-button" data-action="adjust-magic-pool" data-magic-id="{{pool.id}}" data-delta="1">+</button>
+                  </div>
+                  <div class="magic-recovery-line">
+                    {{localize "ETERN.MAGIC.RECOVERY_PER_ACTION"}} <strong>{{pool.recoveryPerAction}}</strong>
+                  </div>
+                </div>
+              {{/if}}
+
+              <button type="button" class="magic-delete-button" data-action="delete-magic-pool" data-magic-id="{{pool.id}}">×</button>
+            </div>
+          {{/each}}
+        {{else}}
+          <p class="magic-empty">{{localize "ETERN.MAGIC.EMPTY"}}</p>
+        {{/if}}
+      </div>
+    </article>
+
+<article class="misc-card">
+  <h3>{{localize "ETERN.STATS.DIVERS_BLOCK"}}</h3>
+  <div class="misc-list">
+    <div><span>{{localize "ETERN.STATS.INITIATIVE"}}</span><strong data-derived="initiative">{{system.derived.initiative}}</strong></div>
+    {{#unless isInvocationActor}}
+      <div><span>{{localize "ETERN.STATS.DESTINY_BASE"}}</span><strong data-derived="destiny-base">{{system.derived.destinyDiceBase}}</strong></div>
+      <div>
+        <span>{{localize "ETERN.STATS.DESTINY_CURRENT"}}</span>
+        <strong>
+          <input
+            type="number"
+            name="system.resources.destiny.value"
+            value="{{system.resources.destiny.value}}"
+            min="0"
+          >
+        </strong>
+      </div>
+      <div><span>{{localize "ETERN.STATS.FATIGUE_MAX"}}</span><strong data-derived="fatigue-max">{{system.derived.fatigueMax}}</strong></div>
+      <div>
+        <span>{{localize "ETERN.STATS.FATIGUE_CURRENT"}}</span>
+        <strong>
+          <input
+            type="number"
+            name="system.resources.fatigue.value"
+            value="{{system.resources.fatigue.value}}"
+            min="0"
+          >
+        </strong>
+      </div>
+    {{/unless}}
+    <div><span>{{localize "ETERN.STATS.EXPLORATION"}}</span><strong data-derived="exploration">{{system.derived.explorationPassive}}</strong></div>
+  </div>
+
+</article>
+
+<article class="misc-card misc-card-belt-consumables">
+  <div class="misc-card-header">
+    <h3>{{localize "ETERN.STATS.BELT_CONSUMABLES.TITLE"}}</h3>
+  </div>
+
+  {{#if beltConsumables.length}}
+    <div class="belt-consumables-list">
+      {{#each beltConsumables as |item|}}
+        <div class="belt-consumable-entry" title="{{item.description}}">
+          <button
+            type="button"
+            class="belt-consumable-main"
+            data-action="inventory-edit"
+            data-item-id="{{item.id}}"
+          >
+            <img class="belt-consumable-img" src="{{item.img}}" alt="{{item.name}}">
+            <span class="belt-consumable-name">{{item.name}}</span>
+            <span class="belt-consumable-qty">x{{item.quantity}}</span>
+          </button>
+          <button
+            type="button"
+            class="belt-consumable-use"
+            data-action="inventory-use"
+            data-item-id="{{item.id}}"
+          >
+            {{localize "ETERN.INVENTORY.ACTIONS.USE"}}
+          </button>
+        </div>
+      {{/each}}
+    </div>
+  {{else}}
+    <p class="belt-consumables-empty">{{localize "ETERN.STATS.BELT_CONSUMABLES.EMPTY"}}</p>
+  {{/if}}
+</article>
+
+<article class="misc-card misc-card-movement">
+  <div class="misc-card-header">
+    <h3>{{localize "ETERN.MOVEMENT.TITLE"}}</h3>
+    <button type="button" class="movement-add-button" data-action="create-movement-mode">
+      {{localize "ETERN.MOVEMENT.ADD"}}
+    </button>
+  </div>
+
+  <div class="movement-panel">
+    <div class="movement-walk-row">
+      <span class="movement-walk-label">{{localize "ETERN.MOVEMENT.WALK"}}</span>
+      <strong class="movement-walk-value" data-derived="movement-walk">{{system.derived.movement.base}}</strong>
+    </div>
+
+    <div class="movement-meta-row">
+      <span>{{localize "ETERN.MOVEMENT.SIZE_BASE"}} <strong data-derived="movement-size-base">{{system.derived.movement.baseWalk}}</strong></span>
+      <span>{{localize "ETERN.MOVEMENT.ARMOR_PENALTY"}} <strong>-<span data-derived="movement-armor-penalty">{{system.derived.movement.armorPenalty}}</span></strong></span>
+    </div>
+
+    {{#if movementModes.length}}
+      <div class="movement-list">
+        {{#each movementModes as |mode|}}
+          <div class="movement-mode-row">
+            <input
+              type="text"
+              class="movement-mode-name"
+              value="{{mode.name}}"
+              placeholder="{{localize "ETERN.MOVEMENT.NAME_PLACEHOLDER"}}"
+              data-mode-id="{{mode.id}}"
+              data-mode-field="name"
+            >
+            <input
+              type="number"
+              class="movement-mode-value"
+              value="{{mode.value}}"
+              min="0"
+              data-mode-id="{{mode.id}}"
+              data-mode-field="value"
+            >
+            <button type="button" class="movement-delete-button" data-action="delete-movement-mode" data-mode-id="{{mode.id}}">×</button>
+          </div>
+        {{/each}}
+      </div>
+    {{else}}
+      <p class="movement-empty">{{localize "ETERN.MOVEMENT.EMPTY"}}</p>
+    {{/if}}
+  </div>
+</article>
+
+<article class="misc-card misc-card-states">
+  <div class="misc-card-header">
+    <h3>{{localize "ETERN.STATES.ACTIVE_TITLE"}}</h3>
+  </div>
+  <div class="state-resistance-inline">
+    <label class="state-resistance-field-inline">
+      <span>{{localize "ETERN.STATES.RESISTANCE_ATTRIBUTE"}}</span>
+      <select name="system.stateResistance.attr">
+        {{#each stateResistanceChoices as |choice|}}
+          <option value="{{choice.value}}" {{#if choice.selected}}selected{{/if}}>{{choice.label}}</option>
+        {{/each}}
+      </select>
+    </label>
+    <button type="button" class="state-roll-button" data-action="roll-resistance">{{localize "ETERN.STATES.RESISTANCE_ROLL"}}</button>
+  </div>
+  <div class="active-states-list" data-active-states>
+    {{#if activeStates.length}}
+      {{#each activeStates as |state|}}
+        <article class="active-state-card" data-state-card="{{state.id}}">
+          <header class="active-state-card-header">
+            <div>
+              <h4>{{state.name}}</h4>
+              <span class="active-state-category">{{state.category}}</span>
+            </div>
+            <div class="active-state-value"><span>{{localize "ETERN.STATES.VALUE_DURATION"}}</span><strong>{{state.value}}</strong></div>
+          </header>
+          <p class="active-state-description">{{state.description}}</p>
+          {{#if state.hasActions}}
+            <div class="active-state-actions">
+              {{#each state.rollButtons as |button|}}
+                <button type="button" class="state-roll-button" data-state-id="{{../id}}" data-roll-id="{{button.id}}">{{button.label}}</button>
+              {{/each}}
+            </div>
+          {{/if}}
+        </article>
+      {{/each}}
+    {{else}}
+      <p class="active-states-empty">{{localize "ETERN.STATES.ACTIVE_EMPTY"}}</p>
+    {{/if}}
+  </div>
+</article>
+
+{{#unless isInvocationActor}}
+<article class="misc-card misc-card-overdose">
+  <div class="misc-card-header">
+        <h3>{{localize "ETERN.OVERDOSE.TITLE"}}</h3>
+      </div>
+
+  <div class="overdose-panel">
+        <input
+          type="number"
+          class="overdose-input"
+          name="system.overdose"
+          value="{{system.overdose}}"
+        >
+        <button type="button" class="overdose-roll-button" data-action="roll-overdose">
+          {{localize "ETERN.OVERDOSE.ROLL"}}
+        </button>
+      </div>
+</article>
+{{/unless}}
+
+{{#unless isInvocationActor}}
+<article class="misc-card misc-card-accustomance">
+  <div class="misc-card-header">
+    <h3>{{localize "ETERN.ACCUSTOMANCE.TITLE"}}</h3>
+  </div>
+
+  <div class="accustomance-track" role="group" aria-label="{{localize "ETERN.ACCUSTOMANCE.TITLE"}}">
+    {{#each system.derived.accustomance.slots as |slot|}}
+      <button
+        type="button"
+        class="accustomance-track-box{{#if slot.checked}} active{{/if}}{{#if slot.disabled}} is-disabled{{/if}}"
+        data-index="{{slot.index}}"
+        aria-pressed="{{#if slot.checked}}true{{else}}false{{/if}}"
+        {{#if slot.disabled}}disabled{{/if}}
+      ></button>
+    {{/each}}
+  </div>
+
+  <div class="accustomance-controls">
+    <span class="accustomance-controls-label">{{localize "ETERN.ACCUSTOMANCE.UNLOCKED"}}</span>
+    <div class="accustomance-controls-buttons">
+      <button type="button" class="accustomance-adjust-button" data-action="accustomance-adjust-disabled" data-delta="-1">−</button>
+      <span class="accustomance-disabled-value" data-derived="accustomance-unlocked">{{system.derived.accustomance.unlocked}}</span>
+      <button type="button" class="accustomance-adjust-button" data-action="accustomance-adjust-disabled" data-delta="1">+</button>
+    </div>
+  </div>
+</article>
+{{/unless}}
+  </div>
+</section>

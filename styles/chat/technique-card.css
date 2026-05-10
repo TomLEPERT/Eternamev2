@@ -1,0 +1,47 @@
+.etername-technique-chat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--etern-space-md);
+}
+
+.etername-technique-chat__header {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: var(--etern-space-md);
+  align-items: center;
+}
+
+.etername-technique-chat__header img {
+  border-radius: var(--etern-radius-md);
+  object-fit: cover;
+}
+
+.etername-technique-chat__header h3,
+.etername-technique-chat__header p,
+.etername-technique-chat__headline,
+.etername-technique-chat__meta,
+.etername-technique-chat__description,
+.etername-technique-chat__components p {
+  margin: 0;
+}
+
+.etername-technique-chat__badge {
+  padding: 3px 8px;
+  border-radius: var(--etern-radius-pill);
+  font-size: var(--etern-font-size-xs);
+  font-weight: 700;
+  background: rgba(208, 124, 43, 0.14);
+}
+
+.etername-technique-chat__stats,
+.etername-technique-chat__stat-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--etern-space-sm) var(--etern-space-lg);
+  padding: 0;
+  list-style: none;
+}
+
+.etername-technique-chat__headline {
+  font-weight: 700;
+}

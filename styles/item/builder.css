@@ -1,0 +1,105 @@
+.eternamev2-item-sheet .builder-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--etern-space-lg);
+}
+
+.eternamev2-item-sheet .builder-list--compact {
+  gap: var(--etern-space-sm);
+}
+
+.eternamev2-item-sheet .builder-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--etern-space-lg);
+  align-items: start;
+  padding: var(--etern-space-lg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--etern-radius-2xl);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.eternamev2-item-sheet .builder-row--compact {
+  padding: var(--etern-space-md) 12px;
+}
+
+.eternamev2-item-sheet .builder-row-actions {
+  display: flex;
+  align-items: start;
+  gap: var(--etern-space-sm);
+}
+
+.eternamev2-item-sheet .builder-grid {
+  display: grid;
+  gap: var(--etern-space-lg);
+  min-width: 0;
+}
+
+.eternamev2-item-sheet .builder-grid--profession-entry {
+  grid-template-columns: minmax(0, 1fr) 120px 160px 120px;
+}
+
+.eternamev2-item-sheet .builder-grid--stat-entry,
+.eternamev2-item-sheet .builder-grid--stat-catalog {
+  grid-template-columns: minmax(0, 1fr) 120px 120px;
+}
+
+.eternamev2-item-sheet .builder-grid--profession-passive {
+  grid-template-columns: auto minmax(0, 1fr) 120px;
+  align-items: start;
+}
+
+.eternamev2-item-sheet .builder-grid-full {
+  grid-column: 1 / -1;
+}
+
+.eternamev2-item-sheet .builder-inline-toggle {
+  padding-top: 26px;
+}
+
+.eternamev2-item-sheet .builder-xp-field,
+.eternamev2-item-sheet .builder-reference-field {
+  min-width: 0;
+}
+
+.eternamev2-item-sheet .builder-check-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--etern-space-md);
+}
+
+.eternamev2-item-sheet .builder-check-card {
+  min-height: 42px;
+  padding: var(--etern-space-md) 12px;
+  border-radius: var(--etern-radius-xl);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.eternamev2-item-sheet .builder-inline-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 240px);
+  gap: var(--etern-space-lg);
+  align-items: center;
+}
+
+.eternamev2-item-sheet .builder-summary-row {
+  margin-top: 12px;
+}
+
+@media (max-width: 900px) {
+  .eternamev2-item-sheet .sheet-fields-grid--three,
+  .eternamev2-item-sheet .sheet-fields-grid--two,
+  .eternamev2-item-sheet .builder-check-grid,
+  .eternamev2-item-sheet .builder-grid--profession-entry,
+  .eternamev2-item-sheet .builder-grid--profession-passive,
+  .eternamev2-item-sheet .builder-grid--stat-entry,
+  .eternamev2-item-sheet .builder-grid--stat-catalog,
+  .eternamev2-item-sheet .builder-inline-row,
+  .eternamev2-item-sheet .builder-row {
+    grid-template-columns: 1fr;
+  }
+
+  .eternamev2-item-sheet .builder-inline-toggle {
+    padding-top: 0;
+  }
+}

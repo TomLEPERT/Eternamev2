@@ -1,0 +1,91 @@
+.misc-card-movement {
+  gap: var(--etern-gap-sm);
+}
+
+.movement-add-button,
+.movement-delete-button {
+  border: 1px solid var(--etern-button-border);
+  border-radius: var(--etern-radius-md);
+  background: var(--etern-soft-bg-strong);
+  cursor: pointer;
+}
+
+.movement-add-button {
+  height: 32px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-weight: 800;
+}
+
+.movement-delete-button {
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.movement-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--etern-gap-sm);
+}
+
+.movement-walk-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--etern-gap-sm);
+  padding: 6px 10px;
+  border-radius: var(--etern-radius-lg);
+  background: var(--etern-soft-bg);
+}
+
+.movement-walk-label {
+  font-weight: 800;
+  color: #2f2a26;
+}
+
+.movement-walk-value {
+  font-size: 18px;
+}
+
+.movement-meta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--etern-gap-sm);
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #4a443d;
+  font-weight: 700;
+}
+
+.movement-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--etern-gap-sm);
+}
+
+.movement-mode-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 72px 32px;
+  gap: var(--etern-gap-sm);
+  align-items: center;
+}
+
+.movement-mode-name,
+.movement-mode-value {
+  width: 100%;
+}
+
+.movement-mode-value {
+  text-align: center;
+}
+
+.movement-empty {
+  margin: 0;
+  color: var(--etern-text-muted);
+  font-style: italic;
+}

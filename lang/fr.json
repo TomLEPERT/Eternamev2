@@ -1,0 +1,2458 @@
+{
+  "ETERN": {
+    "NAME": "Nom",
+    "SPECIES": {
+      "LABEL": "Espèce",
+      "HUMAN": "Humain",
+      "AFFLICTED": "Affligé",
+      "ANIMA": "Anima",
+      "FOLJESJAGGERKIN": "Följesjaggerkin",
+      "ETERNAL": "Éternel",
+      "SILVINDARI": "Silvindari",
+      "ROHRK": "Rohrk",
+      "NEXIAN": "Nexian",
+      "LX": "LX",
+      "GOBLIN": "Gobelin"
+    },
+    "PROFILE": {
+      "LABEL": "Profil",
+      "WARRIOR": "Guerrier",
+      "SUPPORT": "Appuis",
+      "ELEMENTALIST": "Élémentaliste",
+      "MAGE": "Magicien",
+      "DISCIPLE": "Disciple",
+      "ENGINEER": "Ingénieur",
+      "ROGUE": "Roublard",
+      "RANGER": "Rôdeur",
+      "MONK": "Moine"
+    },
+    "XP": "XP",
+    "XP_USED": "XP utilisés",
+    "USED": "Utilisé",
+    "NOT_USED": "Non utilisé",
+    "GENDER": "Genre",
+    "KNOWLEDGE": {
+      "LABEL": "Connaissance",
+      "COMMON": "Commun",
+      "EDUCATED": "Éduqué",
+      "ERUDITE": "Érudit",
+      "HIDDEN": "Caché"
+    },
+    "SIZE": {
+      "LABEL": "Taille",
+      "VERY_SMALL": "Très petit",
+      "SMALL": "Petit",
+      "MEDIUM": "Moyenne",
+      "LARGE": "Grand",
+      "VERY_LARGE": "Très grand",
+      "COLOSSAL": "Colossale"
+    },
+    "PORTRAIT_EDIT": "Changer l'image du personnage",
+    "TAB": {
+      "IDENTITY": "Identité",
+      "STATS": "Statistiques",
+      "INVENTORY": "Inventaire",
+      "TECHNIQUES": "Techniques",
+      "BONUS": "Bonus & États"
+    },
+    "PLACEHOLDER": {
+      "INVENTORY": "Contenu Inventaire (à venir).",
+      "TECHNIQUES": "Contenu Techniques (à venir).",
+      "BONUS": "Contenu Bonus & États (à venir)."
+    },
+    "IDENTITY": {
+      "DESCRIPTION": "Description",
+      "PERSONALITY": "Personnalité",
+      "HISTORY": "Histoire",
+      "GM_NOTES": "Note MJ"
+    },
+    "ATTR": {
+      "STRENGTH": "Force",
+      "ROBUSTNESS": "Robustesse",
+      "HABILITY": "Habilité",
+      "AGILITY": "Agilité",
+      "PERCEPTION": "Perception",
+      "INSTINCT": "Instinct",
+      "REASONING": "Raisonnement",
+      "KNOWLEDGE": "Savoir",
+      "AURA": "Aura",
+      "BAGOU": "Bagou",
+      "MAGIC": "Magie",
+      "CHANCE": "Chance"
+    },
+    "STATS": {
+      "ATTRIBUTES": "Caractéristiques",
+      "MISC": "Divers",
+      "INDEX": "Indice",
+      "VALUE": "Valeur",
+      "HP": "Point de vie",
+      "DIVERS_BLOCK": "Divers",
+      "INITIATIVE": "Initiative",
+      "DESTINY_BASE": "Dés de destin (base)",
+      "DESTINY_CURRENT": "Dés de destin (actuel)",
+      "FATIGUE_MAX": "Fatigue (max)",
+      "FATIGUE_CURRENT": "Fatigue (actuel)",
+      "EXPLORATION": "Exploration passive",
+      "ROLL_READY": "Jet prêt",
+      "COMING_SOON": "À brancher",
+      "DEFENSE_TOTAL": "Défense totale",
+      "DEFENSE_BASE": "Base DEF",
+      "DEFENSE_ARMOR": "Armure",
+      "DEFENSE_SHIELD": "Bouclier",
+      "DEFENSE_BONUS": "Bonus",
+      "DEFENSE": "Défense",
+      "DEFENSE_SHORT": "DEF",
+      "DEFENSE_FORMULA": "Base = 1 + AGI/2. Si une armure équipée existe, elle remplace la base. Total = Base + Bouclier + Bonus.",
+      "ARMOR_TRAINING": "Compétences d’armure",
+      "ARMOR_TRAINING_STATUS": "Maîtrise requise",
+      "ARMOR_TRAINING_PENALTY": "Pénalité",
+      "ARMOR_TRAINING_OK": "Compétence acquise",
+      "ARMOR_TRAINING_MISSING": "Compétence manquante",
+      "ARMOR_TRAINING_PENALTY_NONE": "Aucune",
+      "ARMOR_TRAINING_PENALTY_DISADV": "Désavantage aux tests d’AGI",
+      "ARMOR_TRAINING_PENALTY_SPEED": "-{value} vitesse",
+      "ARMOR_TRAINING_PENALTY_SPEED_LABEL": "Vitesse",
+      "GRAVE_WOUNDS": "Blessures graves",
+      "ACTIVE_STATES": "États actifs",
+      "BELT_CONSUMABLES": {
+        "TITLE": "Consommables de ceinture",
+        "EMPTY": "Aucun consommable dans la ceinture.",
+        "USED": "{name} consommé."
+      },
+      "FINAL_VALUE": "Valeur finale"
+    },
+    "ITEM": {
+      "ARMORS": "Armures",
+      "SHIELDS": "Boucliers",
+      "ADD_ARMOR": "+ Armure",
+      "ADD_SHIELD": "+ Bouclier",
+      "NO_ARMOR": "Aucune armure dans l'inventaire.",
+      "NO_SHIELD": "Aucun bouclier dans l'inventaire.",
+      "EQUIPPED": "équipé",
+      "INVENTORY_EQUIPMENT": "Équipement défensif",
+      "DEFAULT_ARMOR_NAME": "Armure",
+      "DEFAULT_SHIELD_NAME": "Bouclier",
+      "ARMOR_TYPE": {
+        "LIGHT": "Légère",
+        "MEDIUM": "Intermédiaire",
+        "HEAVY": "Lourde"
+      },
+      "DEFAULT_WEAPON_NAME": "Arme",
+      "TYPES": {
+        "ARMOR": "Armure",
+        "GEAR": "Équipement",
+        "SHIELD": "Bouclier",
+        "WEAPON": "Arme",
+        "OBJECT": "Objet",
+        "TOOL": "Outil",
+        "MATERIAL": "Matériau",
+        "CONSUMABLE": "Consommable",
+        "BAG": "Sac",
+        "PROFESSION": "Métier",
+        "TECHNIQUE": "Technique",
+        "INVOCATION": "Invocation",
+        "HERITAGE": "Héritage"
+      },
+      "DESCRIPTION": "Description",
+      "WEIGHT": "Poids",
+      "DEFAULT_MATERIAL_NAME": "Matériau",
+      "LEGALITY": {
+        "LABEL": "Légalité",
+        "LEGAL": "Légal",
+        "ILLEGAL": "Illégal"
+      },
+      "DEFAULT_CONSUMABLE_NAME": "Consommable",
+      "DEFAULT_CONCOCTION_NAME": "Concoction",
+      "DEFAULT_BAG_NAME": "Sac",
+      "DEFAULT_PROFESSION_NAME": "Nouveau métier",
+      "DEFAULT_TECHNIQUE_NAME": "Nouvelle technique",
+      "DEFAULT_INVOCATION_NAME": "Nouvelle invocation",
+      "DEFAULT_ITEM_NAME": "Objet",
+      "DEFAULT_ANCESTRAL_HERITAGE_NAME": "Nouvel héritage ancestral",
+      "DEFAULT_CULTURAL_HERITAGE_NAME": "Nouvel héritage culturel",
+      "DEFAULT_ANCESTRAL_PASSIVE_HERITAGE_NAME": "Nouveau passif ancestral",
+      "DEFAULT_ANCESTRAL_TECHNIQUE_HERITAGE_NAME": "Nouvelle technique ancestrale",
+      "DEFAULT_CULTURAL_PASSIVE_HERITAGE_NAME": "Nouveau passif culturel",
+      "DEFAULT_CULTURAL_TECHNIQUE_HERITAGE_NAME": "Nouvelle technique culturelle"
+    },
+    "MAGIC": {
+      "TITLE": "Magie",
+      "ADD": "+ Ajouter",
+      "EMPTY": "Aucun type de magie ajouté.",
+      "NO_MORE_TYPES": "Tous les types sont déjà ajoutés",
+      "RECOVERY_PER_ACTION": "Récup/action :",
+      "TYPE": {
+        "CANALISATION": "Canalisation",
+        "FASCINATION": "Fascination",
+        "SERMENT": "Serment"
+      }
+    },
+    "MOVEMENT": {
+      "TITLE": "Vitesse",
+      "ADD": "Ajouter",
+      "WALK": "Marche",
+      "SIZE_BASE": "Base taille :",
+      "ARMOR_PENALTY": "Malus armure :",
+      "EMPTY": "Aucune vitesse supplémentaire.",
+      "DEFAULT_NAME": "Nouvelle vitesse",
+      "NAME_PLACEHOLDER": "Nom de la vitesse"
+    },
+    "OVERDOSE": {
+      "TITLE": "Overdose",
+      "ROLL": "Jet",
+      "ROLL_READY": "jet prêt",
+      "SUCCESS": "Réussite",
+      "FAIL": "Échec",
+      "REQUIRED": "Réussites requises : <strong>{value}</strong>",
+      "REQUIRED_LABEL": "Réussites requises",
+      "OUTCOME_LABEL": "Résultat"
+    },
+    "ACCUSTOMANCE": {
+      "TITLE": "Accoutumance",
+      "DISABLED": "Cases désactivées",
+      "UNLOCKED": "Paliers accessibles"
+    },
+    "ROLL": {
+      "MODE": {
+        "NORMAL": "Aucun",
+        "ADVANTAGE": "Avantage",
+        "DISADVANTAGE": "Désavantage"
+      },
+      "DIALOG": {
+        "TITLE": "Jet d’attribut — {attribute}",
+        "ATTRIBUTE": "Attribut",
+        "DICE": "Dés lancés",
+        "TICKS": "Ticks",
+        "BASE_TARGET": "Réussite de base",
+        "MODE": "Situation",
+        "HINT": "Avantage améliore le seuil de réussite de 1. Désavantage l’empire de 1.",
+        "ROLL": "Lancer",
+        "CANCEL": "Annuler"
+      },
+      "CHAT": {
+        "ATTRIBUTE_TEST": "Test d’attribut",
+        "FORMULA": "Jet",
+        "TICKS": "Ticks",
+        "MODE": "Situation",
+        "BASE_TARGET": "Seuil de base",
+        "SUCCESS_COUNT": "Réussites :"
+      }
+    },
+    "ATTACKS": {
+      "TITLE": "Attaques",
+      "VALUES": "Valeurs",
+      "NAME": "Nom",
+      "RANGE": "Portée",
+      "DAMAGE": "DM",
+      "TYPE": "Type",
+      "ACTIONS": "Actions",
+      "ADD": "+ Ajouter une attaque",
+      "EMPTY": "Aucune attaque enregistrée.",
+      "DEFAULT_NAME": "Nouvelle attaque",
+      "ROLL": "Lancer l’attaque",
+      "DELETE": "Supprimer l’attaque",
+      "ROLL_READY": "Jet d’attaque à brancher",
+      "ROLL_DIALOG": {
+        "TITLE": "Jet d’attaque",
+        "ATTACK": "Attaque",
+        "ATTRIBUTE": "Caractéristique",
+        "DICE": "Dés lancés",
+        "PRECISION": "Précision",
+        "DEFENSE": "DEF de la cible",
+        "INTERMEDIATE": "Seuil après situation"
+      },
+      "DEF": {
+        "HIGHER": "Supérieure",
+        "EQUAL": "Égale",
+        "LOWER": "Inférieure"
+      }
+    },
+    "SAVES": {
+      "TITLE": "Sauvegardes"
+    },
+    "PROGRESSION": {
+      "TITLE": "Pistes de progression",
+      "ADD": "+ Ajouter une piste",
+      "NAME": "Nom de la piste",
+      "OBJECTIVES_PLACEHOLDER": "Objectifs (ex : 2,4,6,8)"
+    },
+    "INVENTORY": {
+      "BACKPACK": {
+        "TITLE": "Sac à dos"
+      },
+      "BELT": {
+        "TITLE": "Ceinture"
+      },
+      "COLUMNS": {
+        "NAME": "Nom",
+        "QUANTITY": "Qté",
+        "WEIGHT": "Poids"
+      },
+      "ACTIONS": {
+        "MOVE": "Déplacer",
+        "DELETE": "Supprimer",
+        "EDIT": "Éditer",
+        "USE": "Utiliser"
+      },
+      "EMPTY": "Dépose un objet ici ou ajoute-en un.",
+      "DEFAULT_ITEM_NAME": "Nouvel objet",
+      "DIALOG": {
+        "CREATE_TITLE": "Ajouter un objet",
+        "EDIT_TITLE": "Modifier l'objet",
+        "CREATE": "Créer",
+        "SAVE": "Enregistrer",
+        "CANCEL": "Annuler",
+        "LOCATION": "Emplacement",
+        "DESCRIPTION": "Description",
+        "ITEM_TYPE": "Type d’objet"
+      },
+      "WEIGHT": {
+        "SMALL": "0.3 · Petit objet",
+        "STANDARD": "1 · Objet standard",
+        "BULKY": "2 · Objet encombrant"
+      },
+      "CURRENCY": {
+        "PP": "Platine (PP)",
+        "RC": "Rubis (RC)",
+        "PO": "Or (PO)",
+        "PA": "Argent (PA)",
+        "PC": "Cuivre (PC)"
+      },
+      "WEALTH": {
+        "TITLE": "Richesse",
+        "CONVERT": "Convertir",
+        "LIFESTYLE": "Niveau de vie",
+        "LIFESTYLE_PLACEHOLDER": "ex: Modeste, Riche, Survie...",
+        "CONVERT_RESULT": "{fromAmount} {fromLabel} → {toAmount} {toLabel}",
+        "ERROR_SAME_CURRENCY": "Choisis deux richesses différentes.",
+        "ERROR_INVALID_AMOUNT": "Montant invalide.",
+        "ERROR_ZERO_RESULT": "Cette conversion ne donne rien avec ce montant.",
+        "DIALOG": {
+          "TITLE": "Convertir la richesse",
+          "GIVE": "Je donne",
+          "AMOUNT": "Montant",
+          "RECEIVE": "Je reçois"
+        }
+      },
+      "RENOWN": {
+        "TITLE": "Renommée",
+        "POSITIVE": "Positive",
+        "NEGATIVE": "Négative",
+        "SCOPE": "Portée (positive + négative)"
+      },
+      "NOTES": {
+        "TITLE": "Notes d'inventaire"
+      },
+      "ERROR_INVALID_DROP_TYPE": "Type d'objet non autorisé ici."
+    },
+    "STATES": {
+      "TITLE": "États",
+      "SUBTITLE": "Active les états suivis sur le personnage et déclenche leurs actions.",
+      "ACTIVE_TITLE": "États actifs",
+      "ACTIVE_EMPTY": "Aucun état actif pour le moment.",
+      "RESISTANCE_ATTRIBUTE": "Caractéristique de résistance",
+      "CATEGORY": "Catégorie",
+      "NAME": "État",
+      "ACTIVE": "Actif",
+      "VALUE_DURATION": "Valeur / durée",
+      "ACTIONS": "Actions",
+      "BURN": "Brûlure",
+      "BURN_SUCCESS": "Brûlure : état actif.",
+      "BURN_FAIL": "Brûlure : l'état prend fin.",
+      "BURN_TICK_END": "la brûlure prend fin.",
+      "BURN_TICK_3": "le personnage subit 3 DM de feu.",
+      "BURN_TICK_6": "le personnage subit 6 DM de feu.",
+      "FROZEN_SUCCESS": "Gelée : +1 valeur de gel.",
+      "FROZEN_FAIL": "Gelée : échec du test.",
+      "MANA_LEAK": "Fuite de mana",
+      "MANA_LEAK_MESSAGE": "perd <strong>{value}</strong> PM ou obtient 1 emplacement de sort.",
+      "MADNESS": "Folie",
+      "MADNESS_1_2": "déplacement aléatoire.",
+      "MADNESS_3_4": "reste immobile.",
+      "MADNESS_5_6": "attaque la créature la plus proche.",
+      "RESISTANCE_ROLL": "Test de résistance",
+      "CATEGORY_GENERAL": "État",
+      "CATEGORY_PHYSICAL": "État physique",
+      "CATEGORY_MAGICAL": "État magique",
+      "BUTTONS": {
+        "DURATION_1D6": "Durée 1d6",
+        "TEST_5_PLUS": "Test 5+",
+        "TURN_1D6": "Tour 1d6",
+        "LOSS_1D6": "Perte 1d6",
+        "ACTION_1D6": "Action 1d6"
+      },
+      "LIST": {
+        "SURPRISED": {
+          "NAME": "Surpris",
+          "DESCRIPTION": "Au début d’un combat, une créature peut tendre une embuscade à une autre. Si la créature est surprise, elle ne peut pas agir au premier tour du combat."
+        },
+        "STUNNED": {
+          "NAME": "Étourdi",
+          "DESCRIPTION": "Une créature étourdie, peut être inconsciente, sonnée, désorientée. Dans tous les cas elle est incapable d’agir et devient une cible plus facile pour ces adversaires obtienne un Avantage sur leurs tests d’attaques."
+        },
+        "DESTABILIZED": {
+          "NAME": "Déstabiliser",
+          "DESCRIPTION": "Une créature déstabilisée subit un Désavantage pour ses tests d’attaques."
+        },
+        "SLOWED": {
+          "NAME": "Ralenti",
+          "DESCRIPTION": "Une créature ralentie perd la moitié de sa vitesse de déplacement, mais son maximum reste le même. Par exemple, si vous avez 12m de vitesse de déplacement, vous perdez 6m. Cela veut aussi dire qu’il vous fera toujours 6m pour vous relever si vous êtes à terre et non pas 3m."
+        },
+        "PRONE": {
+          "NAME": "Renversé",
+          "DESCRIPTION": "Une créature renversée obtient un malus de -3 en précision et -3 en DEF tant qu’elle ne s'est pas relevée."
+        },
+        "WEAKENED": {
+          "NAME": "Affaibli",
+          "DESCRIPTION": "Une créature affaiblie subit un désavantage pour tous ses tests."
+        },
+        "FEAR": {
+          "NAME": "Peur",
+          "DESCRIPTION": "La première action de la créature est d’effectuer un déplacement pour s’éloigner de la source de la peur. De plus, elle devra réussir un test de caractéristique INS difficulté complexe si elle souhaite attaquer la source de la peur."
+        },
+        "BLINDED": {
+          "NAME": "Aveuglé",
+          "DESCRIPTION": "Une créature aveuglée subit un désavantage sur ses tests de caractéristique PER, un malus de -3 en DEF et suivra la règle attaquer en aveugle pour ses tests d’attaque."
+        },
+        "DEAF": {
+          "NAME": "Sourd",
+          "DESCRIPTION": "Une créature sourd ne peux plus entendre et effectuer des test de PER liée à l'audition."
+        },
+        "BLEEDING": {
+          "NAME": "Saignement",
+          "DESCRIPTION": "La créature saigne pendant 1d6 tours. Au début de son tour elle subit 2 DM."
+        },
+        "PAIN": {
+          "NAME": "Douleur",
+          "DESCRIPTION": "Une créature dans l’état de douleur peut soit se déplacer soit utiliser son action dans son tour."
+        },
+        "IMMOBILIZED": {
+          "NAME": "Immobilisé",
+          "DESCRIPTION": "Une créature immobilisée voit sa vitesse de déplacement réduite à 0."
+        },
+        "GRAVE_WOUND": {
+          "NAME": "Blessure grave",
+          "DESCRIPTION": "Une créature qui subit une blessure grave vois ses PV maximum réduit de 3, en partant de 12. Exemple : 1 blessure grave les PV maximum possible sont 9. Cet état peut être cumulés et ne disparaît pas à la fin du combat, il ne peut être soigné que par un Test de caractéristique SAV ou par une compétence qui indique spécifiquement cet état."
+        },
+        "NECROSIS": {
+          "NAME": "Nécrose",
+          "DESCRIPTION": "Les compétences qui devraient soigner la créature sont réduites de moitié."
+        },
+        "BURN": {
+          "NAME": "Brûlure",
+          "DESCRIPTION": "Une créature qui subit l’état brûlure lance 1d6, sur 5+ elle s'enflamme puis subit lance 1D6 au début de chaque tour. 1-2 : La brûlure prend fin. 3-5 : La créature subit 3 DM de feu. 6 : La créature subit 6 DM de feu."
+        },
+        "FROZEN": {
+          "NAME": "Gelée",
+          "DESCRIPTION": "Une créature qui subit l’état gel lance 1D6, sur 5+ elle obtient 1 de valeur de gel. Une créature avec au moins 1 de valeur de gel est incapable d’agir sauf pour essayer de se libérer. Pour une action, elle effectue un test de caractéristique FOR et perd 1 de valeur de gel pour chaque réussite."
+        },
+        "SHOCK": {
+          "NAME": "Choc",
+          "DESCRIPTION": "Une créature dans l’état de choc voit ses sauvegardes empirer de 1."
+        },
+        "POISONED": {
+          "NAME": "Empoisonnée",
+          "DESCRIPTION": "Une créature empoisonnée subit 1d6 DM d’acide au début de son tour tant que l’effet perdure. Cet effet est cumulable."
+        },
+        "MANA_LEAK": {
+          "NAME": "Fuite de mana",
+          "DESCRIPTION": "Une créature dans l’état fuite de mana perd 1d6 PM ou obtient 1 emplacement de sort au début de son tour."
+        },
+        "SILENCED": {
+          "NAME": "Silence",
+          "DESCRIPTION": "Une créature sous silence ne peut plus parler, ni lancer de sort."
+        },
+        "MADNESS": {
+          "NAME": "Folie",
+          "DESCRIPTION": "Une créature dans l’état de folie lance 1d6 pour déterminer sa première action dans le tour. 1 ou 2 - la créature effectue un Déplacement aléatoire. 3 ou 4 - la créature reste immobile et saute son tour. 5 ou 6 - la créature attaque la créature la plus proche."
+        },
+        "CHARMED": {
+          "NAME": "Charmer",
+          "DESCRIPTION": "La créature charmer agira de son mieux pour plaire au lanceur. En combat, elle le défend en priorité contre toute créature qui l'attaque."
+        }
+      }
+    },
+    "BONUSES": {
+      "TITLE": "Bonus",
+      "SUBTITLE": "Bonus manuels cumulables avec les futurs bonus d’objets.",
+      "ATTRIBUTES_TITLE": "Caractéristiques",
+      "ATTRIBUTE": "Caractéristique",
+      "VALUE_BONUS": "Bonus valeur",
+      "INDEX_BONUS": "Bonus indice",
+      "DICE_BONUS": "Bonus dé",
+      "GENERAL_TITLE": "Bonus généraux",
+      "HP_MAX": "PV max",
+      "INITIATIVE": "Initiative",
+      "DESTINY_DICE": "Dés de destin",
+      "FATIGUE_MAX": "Fatigue max",
+      "EXPLORATION": "Exploration passive",
+      "MAGIC_MAX": "Magie max",
+      "POWER": "Puissance",
+      "COMBAT_TITLE": "Combat",
+      "SAVES_TITLE": "Sauvegardes",
+      "SPELL_SLOTS_MAX": "Emplacements de sort max",
+      "PS_MAX": "PS max"
+    },
+    "WEAPON": {
+      "TITLE": "Arme",
+      "NAME": "Nom",
+      "BASE": "Base",
+      "RANGE": "Portée",
+      "DAMAGE": "Dégâts (DM)",
+      "DAMAGE_TYPE": "Type de dégâts",
+      "PRECISION_BASE": "Précision de base",
+      "PRECISION_BONUS": "Bonus de précision",
+      "WEIGHT": "Poids",
+      "EQUIPPED": "Équipée",
+      "DESCRIPTION": "Description",
+      "TABS": {
+        "GENERAL": "Général",
+        "SKILLS": "Compétences",
+        "ENCHANTMENT": "Enchantement"
+      },
+      "CATEGORY": {
+        "LABEL": "Catégorie",
+        "NATURELLE": "Naturelle",
+        "POIGNET": "Poignet",
+        "BOIS": "Bois",
+        "MECANIQUE": "Mécanique",
+        "NATURAL": "Naturelle",
+        "SIDEARM": "Poignet",
+        "WOODEN": "Bois",
+        "MECHANICAL": "Mécanique"
+      },
+      "SKILL": {
+        "LEARNED": "Apprise",
+        "NAME": "Nom",
+        "DESCRIPTION": "Description"
+      },
+      "ENCHANTMENT": {
+        "LABEL": "Enchantement",
+        "PLACEHOLDER": "À venir..."
+      },
+      "TAGS": {
+        "LABEL": "Tags",
+        "ONE_HAND": "1 main",
+        "TWO_HANDS": "2 mains",
+        "VERSATILE": "Polyvalente",
+        "FINESSE": "Finesse",
+        "LIGHT": "Légère",
+        "HEAVY": "Lourde",
+        "SHORT": "Courte",
+        "REACH": "Allonge",
+        "THROW": "Lancer",
+        "POWERFUL": "Puissante",
+        "RANGE": "Portée",
+        "AMMO": "Munition",
+        "POWDER": "Poudre",
+        "TEMPORARY": "Temporaire",
+        "MOUNT": "Monture",
+        "BOOMERANG": "Boomerang",
+        "RELOAD": "Rechargement",
+        "CONCEALED": "Dissimulé"
+      },
+      "PRESETS": {
+        "unarmed": {
+          "NAME": "Main nue",
+          "DESCRIPTION": "Les mains nues obtiennent le tag finesse.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Finesse",
+              "DESCRIPTION": "Les mains nues obtiennent le tag finesse."
+            },
+            "2": {
+              "NAME": "Auto-défense",
+              "DESCRIPTION": "Vous obtenez un bonus de +2 en DEF quand vous combattez à main nue."
+            },
+            "3": {
+              "NAME": "Surpuissant",
+              "DESCRIPTION": "Désormais vous infligez FOR/2 d6 DM à main nue."
+            }
+          }
+        },
+        "fang": {
+          "NAME": "Croc",
+          "DESCRIPTION": "Quand vous effectuez une ATC avec vos crocs et que vous infligez au moins la moitié de sa ROB en DM, alors la créature doit effectuer un test de Résistance (ROB) ou subir l’état saignement.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Mortel",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec vos crocs et que vous infligez au moins la moitié de sa ROB en DM, alors la créature doit effectuer un test de Résistance (ROB) ou subir l’état saignement."
+            },
+            "2": {
+              "NAME": "Saisit",
+              "DESCRIPTION": "Cette compétence utilise une piste de progression de difficulté égale aux DM infligé par l’attaque. Lorsque vous effectuez une ATC avec vos crocs et que vous infligez au moins 2 DM, vous pouvez choisir de bloquer la cible dans votre mâchoire et lui infliger l’état immobilisé. À son tour, la créature peut utiliser une action pour effectuer un test de caractéristique FOR pour se libérer. S’il atteint l’objectif de la piste de progression il se libère."
+            },
+            "3": {
+              "NAME": "Attaque naturelle",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec une autre arme vous pouvez utiliser votre action de réaction, pour effectuer une attaque de morsure."
+            }
+          }
+        },
+        "claw_or_talon": {
+          "NAME": "Griffe ou serre",
+          "DESCRIPTION": "Vous obtenez un bonus de +2 en DEF quand vous combattez avec des griffes ou des serres.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Auto-défense",
+              "DESCRIPTION": "Vous obtenez un bonus de +2 en DEF quand vous combattez avec des griffes ou des serres."
+            },
+            "2": {
+              "NAME": "Tranchant",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec des Griffes ou des serres sur une créature de chair sans armure, vous obtenez un bonus de +1 en attaque et +1d6 au DM."
+            },
+            "3": {
+              "NAME": "Mortel",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec des Griffes ou des serres et que vous infligez au moins la moitié de sa ROB en DM, alors la créature doit effectuer un test de Résistance (ROB) ou subir l’état saignement."
+            }
+          }
+        },
+        "horn": {
+          "NAME": "Corne",
+          "DESCRIPTION": "Si vous effectuez une ATC qui vous permet de vous déplacer. Avant la résolution de l’attaque, vous pouvez effectuer une ATC avec vos cornes en action gratuite. La cible doit effectuer un test de Résistance (FOR) ou subir l’état renversé.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Attaque chargée",
+              "DESCRIPTION": "Si vous effectuez une ATC qui vous permet de vous déplacer. Avant la résolution de l’attaque, vous pouvez effectuer une ATC avec vos cornes en action gratuite. La cible doit effectuer un test de Résistance (FOR) ou subir l’état renversé."
+            },
+            "2": {
+              "NAME": "Douleur",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec vos cornes et que vous infligez au moins la moitié de sa ROB en DM, alors la créature doit effectuer un test de Résistance (ROB) ou subir l'état douleur."
+            },
+            "3": {
+              "NAME": "Précise",
+              "DESCRIPTION": "Vous obtenez un bonus de +2 en ATC avec une corne."
+            }
+          }
+        },
+        "tail": {
+          "NAME": "Queue",
+          "DESCRIPTION": "Votre zone de contrôle augmente de 1.5 m quand vous combattez avec votre queue.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Allonge",
+              "DESCRIPTION": "Votre zone de contrôle augmente de 1.5 m quand vous combattez avec votre queue."
+            },
+            "2": {
+              "NAME": "Finesse",
+              "DESCRIPTION": "Les queues obtiennent le tag finesse."
+            },
+            "3": {
+              "NAME": "Contre-attaque",
+              "DESCRIPTION": "Quand une créature vous attaque, vous pouvez utiliser une action de réaction pour lui infliger une attaque d’opportunité avec votre queue."
+            }
+          }
+        },
+        "stinger": {
+          "NAME": "Dard",
+          "DESCRIPTION": "Vous obtenez un bonus de +1 en DEF avec un dard.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Auto-défense",
+              "DESCRIPTION": "Vous obtenez un bonus de +1 en DEF avec un dard."
+            },
+            "2": {
+              "NAME": "Contre-attaque",
+              "DESCRIPTION": "Quand une créature obtient un échec supérieur sur une attaque contre vous, vous pouvez utiliser une action de réaction pour lui infliger une attaque d’opportunité avec un dard."
+            },
+            "3": {
+              "NAME": "Ponction",
+              "DESCRIPTION": "Lorsque vous effectuez une attaque avec votre dard et que vous infligez au moins la moitié de sa ROB en DM, alors la cible doit effectuer un test de Résistance (ROB) ou subir un malus de -1 en DEF cumulable 3 fois."
+            }
+          }
+        },
+        "tentacle": {
+          "NAME": "Tentacule",
+          "DESCRIPTION": "Vous obtenez un bonus de +2 en DEF quand vous combattez avec des tentacules.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Auto-défense",
+              "DESCRIPTION": "Vous obtenez un bonus de +2 en DEF quand vous combattez avec des tentacules."
+            },
+            "2": {
+              "NAME": "Finesse",
+              "DESCRIPTION": "Les tentacules obtiennent le tag finesse."
+            },
+            "3": {
+              "NAME": "Saisit",
+              "DESCRIPTION": "Cette compétence utilise une piste de progression de difficulté égale aux DM infligé par l’attaque. Lorsque vous effectuez une ATC avec vos crocs et que vous infligez au moins 2 DM, vous pouvez choisir de bloquer la cible dans votre mâchoire et lui infliger l’état immobilisé. À son tour, la créature peut utiliser une action pour effectuer un test de caractéristique FOR pour se libérer. S’il atteint l’objectif de la piste de progression il se libère."
+            }
+          }
+        },
+        "dagger": {
+          "NAME": "Dague",
+          "DESCRIPTION": "Votre sauvegarde de parade est améliorée de 1 quand vous maniez une dague.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Parade",
+              "DESCRIPTION": "Votre sauvegarde de parade est améliorée de 1 quand vous maniez une dague."
+            },
+            "2": {
+              "NAME": "Allonge",
+              "DESCRIPTION": "Les dagues perdent le tag Courte."
+            },
+            "3": {
+              "NAME": "Sournoise",
+              "DESCRIPTION": "Quand vous effectuez une attaque surprise avec une dague, les DM deviennent Sans limite."
+            }
+          }
+        },
+        "short_sword": {
+          "NAME": "Épée courte",
+          "DESCRIPTION": "Vous obtenez un bonus de +2 en attaque avec une épée courte si vous êtes équipé d’un bouclier.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Bouclier",
+              "DESCRIPTION": "Vous obtenez un bonus de +2 en attaque avec une épée courte si vous êtes équipé d’un bouclier."
+            },
+            "2": {
+              "NAME": "Ambidextre",
+              "DESCRIPTION": "Vous n’avez plus de malus pour effectuer une attaque ambidextre avec une épée courte."
+            },
+            "3": {
+              "NAME": "Finesse",
+              "DESCRIPTION": "Les épées courtes obtiennent le tag Finesse."
+            }
+          }
+        },
+        "longsword": {
+          "NAME": "Épée longue",
+          "DESCRIPTION": "Quand vous effectuez une ATC avec une épée longue sur une créature de chair sans armure, vous obtenez un bonus de +1 en attaque et +1d6 au DM.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Tranchant",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec une épée longue sur une créature de chair sans armure, vous obtenez un bonus de +1 en attaque et +1d6 au DM."
+            },
+            "2": {
+              "NAME": "Estoque",
+              "DESCRIPTION": "Vous obtenez un bonus de +3 en ATC avec une épée longue."
+            },
+            "3": {
+              "NAME": "Guidance",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec une épée longue, vous pouvez utiliser votre action de réaction après avoir pris connaissance du résultat pour relancer 2 dés."
+            }
+          }
+        },
+        "bastard_sword": {
+          "NAME": "Épée bâtarde",
+          "DESCRIPTION": "Vous obtenez un bonus de +1d6 au DM avec une épée bâtarde si vous êtes équipé d’un bouclier",
+          "SKILLS": {
+            "1": {
+              "NAME": "Bouclier",
+              "DESCRIPTION": "Vous obtenez un bonus de +1d6 au DM avec une épée bâtarde si vous êtes équipé d’un bouclier"
+            },
+            "2": {
+              "NAME": "Puissante",
+              "DESCRIPTION": "Les épées bâtardes obtiennent le tag Puissante."
+            },
+            "3": {
+              "NAME": "Pénétration",
+              "DESCRIPTION": "Vous obtenez un bonus de +1d6 DM quand vous effectuez une ATC à deux mains sur une créature armurée."
+            }
+          }
+        },
+        "claymore": {
+          "NAME": "Claymore",
+          "DESCRIPTION": "Avec une claymore, vous pouvez effectuer une ATC avec un désavantage pour frapper une créature supplémentaire dans votre zone de contrôle.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Frappe multiple",
+              "DESCRIPTION": "Avec une claymore, vous pouvez effectuer une ATC avec un désavantage pour frapper une créature supplémentaire dans votre zone de contrôle."
+            },
+            "2": {
+              "NAME": "Pénétration",
+              "DESCRIPTION": "Vous obtenez un bonus de +1d6 DM quand vous effectuez un ATC sur une créature armurée avec une claymore."
+            },
+            "3": {
+              "NAME": "Surpuissant",
+              "DESCRIPTION": "Désormais vous infligez FOR d6 DM avec une claymore."
+            }
+          }
+        },
+        "mace": {
+          "NAME": "Masse d’arme",
+          "DESCRIPTION": "Les masses d’armes obtiennent le tag Temporaire.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Temporaire",
+              "DESCRIPTION": "Les masses d’armes obtiennent le tag Temporaire."
+            },
+            "2": {
+              "NAME": "Briser",
+              "DESCRIPTION": "Quand vous effectuez une ATC sur une créature armurée avec une masse d’arme et que vous infligez au moins la moitié de la valeur de DEF de l’armure en DM, la créature subit un malus de -2 en DEF non cumulable jusqu'à la fin du combat."
+            },
+            "3": {
+              "NAME": "Blessure grave",
+              "DESCRIPTION": "Quand vous effectuez une ATC sur une créature non armurée avec une masse d’arme et que vous infligez au moins la moitié de sa ROB en DM, alors la créature doit effectuer un test de Résistance (ROB) ou subir l’état blessure grave."
+            }
+          }
+        },
+        "battle_axe": {
+          "NAME": "Hache d’arme",
+          "DESCRIPTION": "Vous pouvez lancer la hache d’arme (ATD) à 6m.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Lancer",
+              "DESCRIPTION": "Vous pouvez lancer la hache d’arme (ATD) à 6m."
+            },
+            "2": {
+              "NAME": "Légère",
+              "DESCRIPTION": "Les haches d’arme perdent le tag Lourde pour être remplacé par léger."
+            },
+            "3": {
+              "NAME": "Tranchant",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec une hache d’arme sur une créature de chair sans armure, vous obtenez un bonus de +1 en attaque et +1d6 au DM."
+            }
+          }
+        },
+        "warhammer": {
+          "NAME": "Marteau de guerre",
+          "DESCRIPTION": "Quand vous effectuez une ATC sur une créature armurée avec un marteau de guerre et que vous infligez au moins la moitié de la valeur de DEF de l’armure en DM, la créature subit un malus de -3 en DEF non cumulable jusqu'à la fin du combat.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Briser",
+              "DESCRIPTION": "Quand vous effectuez une ATC sur une créature armurée avec un marteau de guerre et que vous infligez au moins la moitié de la valeur de DEF de l’armure en DM, la créature subit un malus de -3 en DEF non cumulable jusqu'à la fin du combat."
+            },
+            "2": {
+              "NAME": "Surpuissant",
+              "DESCRIPTION": "Désormais vous infligez FOR d6 DM avec un marteau de guerre."
+            },
+            "3": {
+              "NAME": "Blessure grave",
+              "DESCRIPTION": "Quand vous effectuez une ATC sur une créature non armurée avec un marteau de guerre et que vous infligez au moins la moitié de sa ROB en DM, alors la créature doit effectuer un test de Résistance (ROB) ou subir l’état blessure grave."
+            }
+          }
+        },
+        "rapier": {
+          "NAME": "Rapière",
+          "DESCRIPTION": "Vous infligez 2d6 DM supplémentaire avec une rapière.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Précise",
+              "DESCRIPTION": "Vous infligez 2d6 DM supplémentaire avec une rapière."
+            },
+            "2": {
+              "NAME": "Affûté",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec une rapière, les 6 infligent 2 DM au lieu d’un."
+            },
+            "3": {
+              "NAME": "Arme de Duel",
+              "DESCRIPTION": "Vous obtenez un bonus de +2 en DEF contre les ATC quand vous êtes équipé d’une rapière."
+            }
+          }
+        },
+        "great_axe": {
+          "NAME": "Hache de guerre",
+          "DESCRIPTION": "Quand vous effectuez une ATC avec une hache de guerre sur une créature de chair sans armure, vous obtenez un bonus de +1 en attaque et +1d6 au DM.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Tranchant",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec une hache de guerre sur une créature de chair sans armure, vous obtenez un bonus de +1 en attaque et +1d6 au DM."
+            },
+            "2": {
+              "NAME": "Mortel",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec une hache de guerre et que vous infligez au moins la moitié de sa ROB en DM, alors la créature doit effectuer un test de Résistance (ROB) ou subir l’état saignement."
+            },
+            "3": {
+              "NAME": "Surpuissant",
+              "DESCRIPTION": "Désormais vous infligez FOR d6 DM avec une hache de guerre."
+            }
+          }
+        },
+        "spear": {
+          "NAME": "Lance",
+          "DESCRIPTION": "Les lances obtiennent le tag Monture.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Monture",
+              "DESCRIPTION": "Les lances obtiennent le tag Monture."
+            },
+            "2": {
+              "NAME": "Lancé",
+              "DESCRIPTION": "Vous pouvez lancer la lance (ATD) à 18m."
+            },
+            "3": {
+              "NAME": "Épieux",
+              "DESCRIPTION": "Les lances que vous maniés obtiennent le tag Polyvalent (2d6)"
+            }
+          }
+        },
+        "whip": {
+          "NAME": "Fouet",
+          "DESCRIPTION": "Quand vous effectuez une ATC avec un fouet et que vous infligez au moins la moitié de son HAB en DM, alors vous pouvez effectuer un test en opposition (FOR vs FOR) pour désarmer votre cible. Dans ce cas, vous ne lui infligez aucun DM.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Désarmer",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec un fouet et que vous infligez au moins la moitié de son HAB en DM, alors vous pouvez effectuer un test en opposition (FOR vs FOR) pour désarmer votre cible. Dans ce cas, vous ne lui infligez aucun DM."
+            },
+            "2": {
+              "NAME": "Finesse",
+              "DESCRIPTION": "Les fouets obtiennent le tag finesse."
+            },
+            "3": {
+              "NAME": "Douleur",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec un fouet et que vous infligez au moins la moitié de sa ROB en DM, alors la créature doit effectuer un test de Résistance (ROB) ou subir l'état douleur."
+            }
+          }
+        },
+        "katana": {
+          "NAME": "Katana",
+          "DESCRIPTION": "Les katanas obtiennent le tag finesse.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Finesse",
+              "DESCRIPTION": "Les katanas obtiennent le tag finesse."
+            },
+            "2": {
+              "NAME": "Surpuissant",
+              "DESCRIPTION": "Vous obtenez un bonus de FOR/2 DM avec un katanas."
+            },
+            "3": {
+              "NAME": "Affûté",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec un katanas et que vous obtenez une réussite critique, vous ajoutez 2 réussites au DM."
+            }
+          }
+        },
+        "chakram": {
+          "NAME": "Chakram",
+          "DESCRIPTION": "Les chakram obtiennent le tag boomerang.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Boomerang",
+              "DESCRIPTION": "Les chakram obtiennent le tag boomerang."
+            },
+            "2": {
+              "NAME": "Ricochet",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec un chakram, l’arme peut ricocher sur une autre créature à 3m de la cible."
+            },
+            "3": {
+              "NAME": "Mortel",
+              "DESCRIPTION": "Quand vous effectuez une ATC ou ATD) avec un chakram et que vous infligez au moins la moitié de sa ROB en DM, alors la créature doit effectuer un test de Résistance (ROB) ou subir l’état saignement."
+            }
+          }
+        },
+        "halberd": {
+          "NAME": "Hallebarde",
+          "DESCRIPTION": "Quand vous maniez une hallebarde, votre zone de contrôle augmente de 1.5m.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Allonge",
+              "DESCRIPTION": "Quand vous maniez une hallebarde, votre zone de contrôle augmente de 1.5m."
+            },
+            "2": {
+              "NAME": "Anti-cavalerie",
+              "DESCRIPTION": "Quand vous effectuez une ATC, les créatures montées doivent effectuer un test de Résistance (ROB) ou subir l’état Renversé."
+            },
+            "3": {
+              "NAME": "Surpuissant",
+              "DESCRIPTION": "Désormais vous infligez FOR d6 DM avec une hallebarde."
+            }
+          }
+        },
+        "scythe": {
+          "NAME": "Faux",
+          "DESCRIPTION": "Vous pouvez effectuer une ATC avec un désavantage pour frapper une créature supplémentaire dans votre zone de contrôle.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Frappe multiple",
+              "DESCRIPTION": "Vous pouvez effectuer une ATC avec un désavantage pour frapper une créature supplémentaire dans votre zone de contrôle."
+            },
+            "2": {
+              "NAME": "Monture",
+              "DESCRIPTION": "Les faux obtiennent le tag monture."
+            },
+            "3": {
+              "NAME": "Retour",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec une faux, vous pouvez relancer jusqu'à 3 dés."
+            }
+          }
+        },
+        "throwing_knife": {
+          "NAME": "Couteau de lancer",
+          "DESCRIPTION": "Désormais les couteaux de lancer inflige HAB/2 DM.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Précise",
+              "DESCRIPTION": "Désormais les couteaux de lancer inflige HAB/2 DM."
+            },
+            "2": {
+              "NAME": "Grand Lancer",
+              "DESCRIPTION": "La portée de lancer est de 12m."
+            },
+            "3": {
+              "NAME": "Précision chirurgicale",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec des couteaux de lancer, vous obtenez un bonus de +2 en ATD."
+            }
+          }
+        },
+        "needles": {
+          "NAME": "Aiguilles",
+          "DESCRIPTION": "Si l’aiguille est empoisonnée, la cible subit un désavantage pour résister au poison.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Injection",
+              "DESCRIPTION": "Si l’aiguille est empoisonnée, la cible subit un désavantage pour résister au poison."
+            },
+            "2": {
+              "NAME": "Sournoise",
+              "DESCRIPTION": "Quand vous effectuez une attaque surprise avec une dague, les DM deviennent Sans limite."
+            },
+            "3": {
+              "NAME": "Précision chirurgicale",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec des couteaux de lancer, vous obtenez un bonus de +6 en ATD."
+            }
+          }
+        },
+        "chain_sickle": {
+          "NAME": "Faucille et chaîne",
+          "DESCRIPTION": "Quand vous effectuez une ATC avec la lame et que vous infligez au moins la moitié de sa ROB en DM, alors la créature doit effectuer un test de Résistance (ROB) ou subir l’état saignement.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Mortel",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec la lame et que vous infligez au moins la moitié de sa ROB en DM, alors la créature doit effectuer un test de Résistance (ROB) ou subir l’état saignement."
+            },
+            "2": {
+              "NAME": "Emprise",
+              "DESCRIPTION": "Au lieu d’attaquer, vous pouvez choisir d’effectuer un test en opposition (HAB vs FOR), en cas de réussite, vous pouvez tirer la cible a votre contact et/ou la renversé ou la désarmer."
+            },
+            "3": {
+              "NAME": "Arme de parade",
+              "DESCRIPTION": "Votre sauvegarde de parade est améliorée de 2 tant que vous maniez cette arme."
+            }
+          }
+        },
+        "scepter": {
+          "NAME": "Sceptre",
+          "DESCRIPTION": "Vous obtenez un bonus de 1 dé supplémentaire quand vous effectuez une Frappe non léthal avec un boomerang.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Assommeur",
+              "DESCRIPTION": "Vous obtenez un bonus de 1 dé supplémentaire quand vous effectuez une Frappe non léthal avec un boomerang."
+            },
+            "2": {
+              "NAME": "Catalyseur",
+              "DESCRIPTION": "Vous obtenez 1 de puissance pour lancer un sort avec un sceptre."
+            },
+            "3": {
+              "NAME": "Bénédiction",
+              "DESCRIPTION": "Augmente de 1 la valeur de vos soin magique avec un sceptre."
+            }
+          }
+        },
+        "staff": {
+          "NAME": "Bâton",
+          "DESCRIPTION": "Les bâtons que vous maniés obtiennent le tag polyvalent (2d6)",
+          "SKILLS": {
+            "1": {
+              "NAME": "Polyvalent",
+              "DESCRIPTION": "Les bâtons que vous maniés obtiennent le tag polyvalent (2d6)"
+            },
+            "2": {
+              "NAME": "Position défensive",
+              "DESCRIPTION": "Quand vous maniez un bâton et que vous êtes en Position défensive (C), vous obtenez un bonus de +2 en DEF supplémentaire."
+            },
+            "3": {
+              "NAME": "Arme de réaction",
+              "DESCRIPTION": "Quand vous maniez un bâton, votre sauvegarde de parade est améliorée de 2."
+            }
+          }
+        },
+        "mage_staff": {
+          "NAME": "Bâton de mage",
+          "DESCRIPTION": "Vous obtenez un bonus de +3 en DEF quand vous combattez avec un bâton de mage.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Auto-défense",
+              "DESCRIPTION": "Vous obtenez un bonus de +3 en DEF quand vous combattez avec un bâton de mage."
+            },
+            "2": {
+              "NAME": "Arme de mage",
+              "DESCRIPTION": "Vos sorts infligent 2d6 DM supplémentaire avec une baguette."
+            },
+            "3": {
+              "NAME": "Arme de réaction",
+              "DESCRIPTION": "Quand vous maniez un bâton, votre sauvegarde de parade est améliorée de 2."
+            }
+          }
+        },
+        "javelin": {
+          "NAME": "Javeline",
+          "DESCRIPTION": "Quand vous effectuez une ATC ou ATD avec une javeline, vous ajoutez votre 1d6 par tranche de 2 de HAB aux DM.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Habile",
+              "DESCRIPTION": "Quand vous effectuez une ATC ou ATD avec une javeline, vous ajoutez votre 1d6 par tranche de 2 de HAB aux DM."
+            },
+            "2": {
+              "NAME": "Grand lancer",
+              "DESCRIPTION": "La portée de lancer est de 36 m."
+            },
+            "3": {
+              "NAME": "À découvert",
+              "DESCRIPTION": "Quand vous effectuez une ATC avec une javeline, vous annulez le bonus de DEF du bouclier de la cible."
+            }
+          }
+        },
+        "shortbow": {
+          "NAME": "Arc court",
+          "DESCRIPTION": "Quand vous effectuez une ATD avec un arc court, vous obtenez un bonus de +1 en attaque.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Précision",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec un arc court, vous obtenez un bonus de +1 en attaque."
+            },
+            "2": {
+              "NAME": "Courte portée",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec un arc court et que vous ciblez une créature à la moitié de sa portée maximale, vous obtenez un bonus de 2d6 au DM."
+            },
+            "3": {
+              "NAME": "Dans le mille",
+              "DESCRIPTION": "Vous n’êtes pas affecté par le malus pour une action Attaquer à distance dans la mêlée quand vous effectuez une ATD avec un arc court."
+            }
+          }
+        },
+        "longbow": {
+          "NAME": "Arc long",
+          "DESCRIPTION": "Quand vous effectuez une ATD avec un arc long, vous obtenez un bonus de +3 en attaque.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Précision",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec un arc long, vous obtenez un bonus de +3 en attaque."
+            },
+            "2": {
+              "NAME": "Tir lointain",
+              "DESCRIPTION": "Vous n'êtes pas affecté par le malus quand vous effectuez une action Tir lointain avec un arc long."
+            },
+            "3": {
+              "NAME": "Tir critique",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec un arc long, les 6 infligent 2 DM au lieu d’un."
+            }
+          }
+        },
+        "war_bow": {
+          "NAME": "Arc de Guerre",
+          "DESCRIPTION": "Quand vous effectuez une ATD avec un arc de guerre contre une créature volante, vous obtenez un bonus de 1d6 DM et si vous infligez au moins la moitié de sa ROB en DM, alors la créature effectue un test de Résistance (ROB) et perd sa vitesse de vol jusqu'à la fin de son tour.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Anti aérien",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec un arc de guerre contre une créature volante, vous obtenez un bonus de 1d6 DM et si vous infligez au moins la moitié de sa ROB en DM, alors la créature effectue un test de Résistance (ROB) et perd sa vitesse de vol jusqu'à la fin de son tour."
+            },
+            "2": {
+              "NAME": "Percé",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec un arc de guerre, vous empirez de 1 les sauvegarde de la créature pour cette attaque."
+            },
+            "3": {
+              "NAME": "Surpuissant",
+              "DESCRIPTION": "Désormais vous infligez FOR d6 DM avec un arc de guerre."
+            }
+          }
+        },
+        "wand": {
+          "NAME": "Baguette",
+          "DESCRIPTION": "Vous obtenez un bonus de +3 en PRM avec une baguette.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Précision",
+              "DESCRIPTION": "Vous obtenez un bonus de +3 en PRM avec une baguette."
+            },
+            "2": {
+              "NAME": "Catalyseur",
+              "DESCRIPTION": "Vous obtenez 1 de puissance pour lancer un sort avec un sceptre."
+            },
+            "3": {
+              "NAME": "Arme de mage",
+              "DESCRIPTION": "Vos sorts infligent 1d6 DM supplémentaire avec une baguette."
+            }
+          }
+        },
+        "blowgun": {
+          "NAME": "Sarbacane",
+          "DESCRIPTION": "La portée de tir est de 24m.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Portée",
+              "DESCRIPTION": "La portée de tir est de 24m."
+            },
+            "2": {
+              "NAME": "Courte portée",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec une sarbacane et que vous ciblez une créature à la moitié de sa portée maximale, vous obtenez un bonus de 2d6 au DM."
+            },
+            "3": {
+              "NAME": "Dans le mille",
+              "DESCRIPTION": "Vous n’êtes pas affecté par le malus pour une action Attaquer à distance dans la mêlée quand vous effectuez une ATD avec une sarbacane."
+            }
+          }
+        },
+        "sling": {
+          "NAME": "Fronde",
+          "DESCRIPTION": "Vous obtenez un bonus de 1 dé supplémentaire quand vous effectuez une Frappe non léthal avec une fronde.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Assommeur",
+              "DESCRIPTION": "Vous obtenez un bonus de 1 dé supplémentaire quand vous effectuez une Frappe non léthal avec une fronde."
+            },
+            "2": {
+              "NAME": "Portée",
+              "DESCRIPTION": "La portée de tir est de 30m."
+            },
+            "3": {
+              "NAME": "Courbe",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec une fronde, vous pouvez donner un effet de courbe à votre tir."
+            }
+          }
+        },
+        "boomerang": {
+          "NAME": "Boomerang",
+          "DESCRIPTION": "Vous obtenez un bonus de 1 dé supplémentaire quand vous effectuez une Frappe non léthal avec un boomerang.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Assommeur",
+              "DESCRIPTION": "Vous obtenez un bonus de 1 dé supplémentaire quand vous effectuez une Frappe non léthal avec un boomerang."
+            },
+            "2": {
+              "NAME": "Double touche",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec un boomerang, vous pouvez toucher une seconde cible qui est dans la trajectoire du boomerang."
+            },
+            "3": {
+              "NAME": "Retour",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec un Boomerang, vous pouvez relancer jusqu'à 2 dés."
+            }
+          }
+        },
+        "hand_crossbow": {
+          "NAME": "Arbalète de poing",
+          "DESCRIPTION": "Vous utilisez une action gratuite pour recharger une arbalète de poing.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Recharge rapide",
+              "DESCRIPTION": "Vous utilisez une action gratuite pour recharger une arbalète de poing."
+            },
+            "2": {
+              "NAME": "Ambidextre",
+              "DESCRIPTION": "Vous pouvez effectuer une attaque ambidextre avec une arbalète de poing sans malus."
+            },
+            "3": {
+              "NAME": "Contre-attaque",
+              "DESCRIPTION": "Quand vous utilisez une sauvegarde d’esquive, vous pouvez effectuer une ATD sur l’attaquant en action gratuite."
+            }
+          }
+        },
+        "light_crossbow": {
+          "NAME": "Arbalète légère",
+          "DESCRIPTION": "Vous utilisez une action ou l’action utiliser un objet pour recharger une arbalète légère.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Recharge rapide",
+              "DESCRIPTION": "Vous utilisez une action ou l’action utiliser un objet pour recharger une arbalète légère."
+            },
+            "2": {
+              "NAME": "Tir Critique",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec une arbalète légère, les 6 inflige 2 DM au lieu d’un."
+            },
+            "3": {
+              "NAME": "Précision",
+              "DESCRIPTION": "Vous obtenez un bonus de +2 en ATD avec une arbalète légère."
+            }
+          }
+        },
+        "heavy_crossbow": {
+          "NAME": "Arbalète lourde",
+          "DESCRIPTION": "Vous utilisez une action ou l’action utiliser un objet pour recharger une arbalète lourde.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Recharge rapide",
+              "DESCRIPTION": "Vous utilisez une action ou l’action utiliser un objet pour recharger une arbalète lourde."
+            },
+            "2": {
+              "NAME": "Impact",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec une arbalète lourde et que vous infligez au moins la moitié de sa ROB en DM, alors la créature doit effectuer un test de Résistance (ROB) ou être poussée de 3m."
+            },
+            "3": {
+              "NAME": "Anti-aérien",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec une arbalète lourde contre une créature volante, vous obtenez un bonus de 3d6 DM et si vous infligez au moins la moitié de sa ROB en DM, alors la créature effectue un test de Résistance (ROB) et perd sa vitesse de vol jusqu'à la fin de son tour."
+            }
+          }
+        },
+        "pistol": {
+          "NAME": "Pétoire",
+          "DESCRIPTION": "Vous utilisez l’action utiliser un objet pour recharger une pétoire. De plus, vous ne lancez plus de jet de poudre pour utiliser cette arme.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Maîtrise technique",
+              "DESCRIPTION": "Vous utilisez l’action utiliser un objet pour recharger une pétoire. De plus, vous ne lancez plus de jet de poudre pour utiliser cette arme."
+            },
+            "2": {
+              "NAME": "Ambidextre",
+              "DESCRIPTION": "Vous pouvez effectuer une attaque ambidextre avec une pétoire sans malus."
+            },
+            "3": {
+              "NAME": "Contact",
+              "DESCRIPTION": "Vous n’avez plus de malus pour effectuer une action Attaquer à distance dans la mêlée avec une pétoire."
+            }
+          }
+        },
+        "arquebus": {
+          "NAME": "Arquebuse",
+          "DESCRIPTION": "Vous utilisez une action pour recharger une arquebuse. De plus, vous ne lancez plus de jet de poudre pour utiliser cette arme.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Maîtrise technique",
+              "DESCRIPTION": "Vous utilisez une action pour recharger une arquebuse. De plus, vous ne lancez plus de jet de poudre pour utiliser cette arme."
+            },
+            "2": {
+              "NAME": "Tir lointain",
+              "DESCRIPTION": "Vous n'êtes pas affecté par le malus de Tir lointain quand vous effectuez une ATD avec une arquebuse."
+            },
+            "3": {
+              "NAME": "Tir perçant",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec une arquebuse, les  6 ignore la sauvegarde d’armure et de parade de la cible."
+            }
+          }
+        },
+        "culverin_c": {
+          "NAME": "Couleuvrine (C)",
+          "DESCRIPTION": "Vous ne lancez plus de jet de poudre pour utiliser une couleuvrine.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Maîtrise technique",
+              "DESCRIPTION": "Vous ne lancez plus de jet de poudre pour utiliser une couleuvrine."
+            },
+            "2": {
+              "NAME": "Mortier",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec une couleuvrine contre une Structures, doublez des DM infligés."
+            },
+            "3": {
+              "NAME": "Impact",
+              "DESCRIPTION": "Quand vous effectuez une ATD avec une couleuvrine et que vous infligez au moins la moitié de sa ROB en DM, alors la créature doit effectuer un test de Résistance (ROB) ou être poussée de 3m et subir l’état renversé."
+            }
+          }
+        }
+      }
+    },
+    "ARMOR": {
+      "TITLE": "Armure",
+      "NAME": "Nom",
+      "BASE": "Base",
+      "WEIGHT": "Poids",
+      "DESCRIPTION": "Description",
+      "DEF_FORMULA": "DEF",
+      "DEF_BONUS": "Bonus DEF",
+      "EQUIPPED": "Équipée",
+      "CATEGORY": {
+        "LABEL": "Catégorie",
+        "NATURELLE": "Naturelle",
+        "LEGERE": "Légère",
+        "INTERMEDIAIRE": "Intermédiaire",
+        "LOURDE": "Lourde",
+        "NATURAL": "Naturelle",
+        "LIGHT": "Légère",
+        "MEDIUM": "Intermédiaire",
+        "HEAVY": "Lourde"
+      },
+      "TABS": {
+        "GENERAL": "Général",
+        "SAVES": "Sauvegardes",
+        "SKILL": "Compétence",
+        "ENCHANTMENT": "Enchantement"
+      },
+      "SAVES": {
+        "LABEL": "Sauvegardes de l’armure",
+        "EMPTY": "Aucune sauvegarde."
+      },
+      "SAVE": {
+        "ARMOR": "Armure",
+        "DODGE": "Esquive",
+        "PARRY": "Parade",
+        "ICE": "Glace"
+      },
+      "SKILL": {
+        "NAME": "Nom",
+        "DESCRIPTION": "Description",
+        "PRESETS": {
+          "light": {
+            "NAME": "Maîtrise des armures légères",
+            "DESCRIPTION": "Lorsque vous êtes équipé d’une armure légère et que vous utilisez une sauvegarde d’esquive, vous pouvez effectuer une action de dégagement suivit d’un sprint en utilisant votre réaction.\nDe plus, vous n’êtes pas affecté par le malus d’armure quand vous effectuez une action, lancer un sort."
+          },
+          "medium": {
+            "NAME": "Maîtrise des armures intermédiaires",
+            "DESCRIPTION": "Lorsque vous êtes équipé d’une armure intermédiaire, vous n’êtes pas affecté par le malus d’armure quand vous effectuez une action, lancer un sort et votre Vitesse de déplacement n'est plus réduite."
+          },
+          "heavy": {
+            "NAME": "Maîtrise des armures lourdes",
+            "DESCRIPTION": "Lorsque vous êtes équipé d’une armure lourde, vous ne subissez plus les malus pour une action Lancer un sort."
+          },
+          "natural": {
+            "NAME": "",
+            "DESCRIPTION": ""
+          }
+        }
+      },
+      "ENCHANTMENT": {
+        "LABEL": "Enchantement",
+        "PLACEHOLDER": "À venir..."
+      },
+      "PRESETS": {
+        "padded_armor": {
+          "NAME": "Armure matelassée",
+          "DESCRIPTION": ""
+        },
+        "leather_armor": {
+          "NAME": "Armure de cuir",
+          "DESCRIPTION": ""
+        },
+        "studded_leather_armor": {
+          "NAME": "Armure de cuir clouté",
+          "DESCRIPTION": ""
+        },
+        "feather_armor": {
+          "NAME": "Armure de plume",
+          "DESCRIPTION": ""
+        },
+        "hide_armor": {
+          "NAME": "Armure de peau",
+          "DESCRIPTION": "1 dé supplémentaire pour tous les tests de caractéristique ROB liée aux températures froides."
+        },
+        "mail_shirt": {
+          "NAME": "Chemise de maille",
+          "DESCRIPTION": ""
+        },
+        "scale_armor": {
+          "NAME": "Armure d’écaille",
+          "DESCRIPTION": "Vous pouvez nager avec cette armure.\nVous ne subissez aucun malus en combat aquatique."
+        },
+        "shell_armor": {
+          "NAME": "Armure de carapace",
+          "DESCRIPTION": "1 dé supplémentaire pour vos tests de caractéristique AUR."
+        },
+        "half_plate_armor": {
+          "NAME": "Armure demi-plate",
+          "DESCRIPTION": ""
+        },
+        "furred_hauberk": {
+          "NAME": "Haubert fourré",
+          "DESCRIPTION": "2 dé supplémentaire pour tous les tests de caractéristique ROB liée aux températures froides."
+        },
+        "chainmail": {
+          "NAME": "Cotte de maille",
+          "DESCRIPTION": ""
+        },
+        "full_plate": {
+          "NAME": "Harnois",
+          "DESCRIPTION": ""
+        },
+        "feathers": {
+          "NAME": "Plumes",
+          "DESCRIPTION": ""
+        },
+        "scales": {
+          "NAME": "Écailles",
+          "DESCRIPTION": "Vous ignorez tous les malus liés au combat aquatique."
+        },
+        "hides_and_furs": {
+          "NAME": "Peaux et Fourrures",
+          "DESCRIPTION": "1 dé supplémentaire pour tous les tests de caractéristique ROB liée aux températures froides."
+        },
+        "carapace": {
+          "NAME": "Carapace",
+          "DESCRIPTION": ""
+        }
+      }
+    },
+    "SHIELD": {
+      "TITLE": "Bouclier",
+      "NAME": "Nom",
+      "BASE": "Base",
+      "WEIGHT": "Poids",
+      "DESCRIPTION": "Description",
+      "DEF_BONUS": "Bonus DEF",
+      "EQUIPPED": "Équipé",
+      "CATEGORY": {
+        "LABEL": "Catégorie",
+        "LEGERE": "Légère",
+        "INTERMEDIAIRE": "Intermédiaire",
+        "LOURDE": "Lourde",
+        "LIGHT": "Légère",
+        "MEDIUM": "Intermédiaire",
+        "HEAVY": "Lourde"
+      },
+      "TABS": {
+        "GENERAL": "Général",
+        "SAVES": "Sauvegardes",
+        "SKILL": "Compétence",
+        "ENCHANTMENT": "Enchantement"
+      },
+      "SAVES": {
+        "LABEL": "Sauvegardes du bouclier",
+        "EMPTY": "Aucune sauvegarde."
+      },
+      "SKILL": {
+        "NAME": "Nom",
+        "DESCRIPTION": "Description"
+      },
+      "ENCHANTMENT": {
+        "LABEL": "Enchantement",
+        "PLACEHOLDER": "À venir..."
+      },
+      "PRESETS": {
+        "buckler": {
+          "NAME": "Petit bouclier",
+          "DESCRIPTION": "Si vous équipez le petit bouclier avec des sangles, vous pourrez manier une arme à deux mains et profiter de ses bonus.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Maîtrise des armures légères",
+              "DESCRIPTION": "Lorsque vous êtes équipé d’une armure légère et que vous utilisez une sauvegarde d’esquive, vous pouvez effectuer une action de dégagement suivit d’un sprint en utilisant votre réaction.\nDe plus, vous n’êtes pas affecté par le malus d’armure quand vous effectuez une action, lancer un sort."
+            }
+          }
+        },
+        "large_shield": {
+          "NAME": "Grand bouclier",
+          "DESCRIPTION": "Vous pouvez accrochez votre grand bouclier dans votre dos, dans ce cas vous bénéficier de son bonus de DEF uniquement si vous êtes attaqué dans le dos.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Maîtrise des armures intermédiaires",
+              "DESCRIPTION": "Lorsque vous êtes équipé d’une armure intermédiaire, vous n’êtes pas affecté par le malus d’armure quand vous effectuez une action, lancer un sort et votre Vitesse de déplacement n'est plus réduite."
+            }
+          }
+        },
+        "pavise": {
+          "NAME": "Pavois",
+          "DESCRIPTION": "Si vous êtes équipé d’un pavois et que vous êtes en position défensive, vous obtenez un couvert moyen pour toutes les attaques qui vous font face.",
+          "SKILLS": {
+            "1": {
+              "NAME": "Maîtrise des armures lourdes",
+              "DESCRIPTION": "Lorsque vous êtes équipé d’une armure lourde, vous ne subissez plus les malus pour une action Lancer un sort."
+            }
+          }
+        }
+      }
+    },
+    "UI": {
+      "CORE_STATS": "Statistiques principales",
+      "REAPPLY_PRESET": "Réappliquer le preset",
+      "ADD_ROW": "Ajouter une ligne",
+      "ADD": "Ajouter",
+      "DELETE": "Supprimer",
+      "NAME": "Nom",
+      "DUPLICATE": "Dupliquer",
+      "MOVE_UP": "Monter",
+      "MOVE_DOWN": "Descendre",
+      "COPY_OF": "Copie de {name}",
+      "DESCRIPTION": "Description",
+      "NOTES": "Notes",
+      "OPEN": "Ouvrir",
+      "TARGET": "Cible",
+      "ITEM": "Objet",
+      "YES": "Oui",
+      "NO": "Non",
+      "QUANTITY": "Quantité"
+    },
+    "COMMON": {
+      "RANGE": {
+        "MELEE": "Corps à corps"
+      },
+      "DAMAGE_TYPE": {
+        "BLUDGEONING": "Contondant",
+        "PIERCING": "Perçant",
+        "SLASHING": "Tranchant",
+        "FIRE": "Feu",
+        "ICE": "Glace",
+        "LIGHTNING": "Foudre",
+        "EARTH": "Terre",
+        "WIND": "Vent",
+        "ACID": "Acide",
+        "MAGIC": "Magique",
+        "MENTAL": "Mentale"
+      }
+    },
+    "SAVE": {
+      "DODGE": "Esquive",
+      "PARRY": "Parade",
+      "PAIN": "Insensible à la douleur",
+      "COVER": "Couvert",
+      "ARMOR": "Armure",
+      "FIRE": "Feu",
+      "ICE": "Glace",
+      "LIGHTNING": "Foudre",
+      "EARTH": "Terre",
+      "WIND": "Vent",
+      "MENTAL": "Mentale",
+      "ACID": "Acide",
+      "MAGIC": "Magique"
+    },
+    "MATERIAL": {
+      "NAME": "Matériau",
+      "DESCRIPTION": "Description",
+      "WEIGHT": "Poids",
+      "DIFFICULTY": "Difficulté",
+      "FORGING_PROPERTY": "Propriété de forgeage",
+      "TABS": {
+        "GENERAL": "Général",
+        "DESCRIPTION": "Description"
+      },
+      "CATEGORY": {
+        "LABEL": "Catégorie",
+        "ALCHEMICAL": "Matériau alchimique",
+        "FORGING": "Matériau de forgeage"
+      },
+      "ALCHEMICAL": {
+        "TAG": "Tag",
+        "USAGE": "Utilisation",
+        "ALIGNED": "Aligné",
+        "OPPOSED": "Opposé",
+        "TAGS": {
+          "BODY": "Corps",
+          "EARTH": "Terre",
+          "ROOT": "Racine",
+          "FIRE": "Feu",
+          "ICE": "Glace",
+          "LIGHTNING": "Foudre",
+          "WIND": "Vent",
+          "CHAOS": "Chaos",
+          "SPIRIT": "Esprit"
+        },
+        "USES": {
+          "BODY": "Vitalité, chair, guérison, renforcement physique",
+          "EARTH": "Solidité, stabilité, protection, matière dense",
+          "ROOT": "Nature, croissance, plantes, régénération",
+          "FIRE": "Chaleur, énergie, impulsion, destruction",
+          "ICE": "Froid, immobilisation, préservation",
+          "LIGHTNING": "Puissance brute, choc, vitesse",
+          "WIND": "Agilité, mouvement, légèreté",
+          "CHAOS": "Imprévu, mutation, instabilité",
+          "SPIRIT": "Perception, magie"
+        }
+      }
+    },
+    "CONSUMABLE": {
+      "NAME": "Consommable",
+      "DESCRIPTION": "Description",
+      "WEIGHT": "Poids",
+      "TABS": {
+        "GENERAL": "Général",
+        "DESCRIPTION": "Description"
+      },
+      "CATEGORY": {
+        "LABEL": "Catégorie",
+        "CONCOCTION": "Concoction",
+        "ENCHANTMENT_CATALYST": "Catalyseur d'enchantement",
+        "MISC": "Autre consommable"
+      },
+      "CONCOCTION": {
+        "TYPE": "Type de concoction",
+        "TYPES": {
+          "HEALING_POTION": "Potion de guérison",
+          "ALTERATION_POTION": "Potion d'altération"
+        }
+      },
+      "CATALYST": {
+        "BASE": "Catalyseur",
+        "EFFECT": "Effet",
+        "ESSENCE_QUALITY": {
+          "LABEL": "Qualité d'essence",
+          "NONE": "Aucune",
+          "COMMON": "Commune",
+          "SUPERIOR": "Supérieure",
+          "MAJOR": "Majeure",
+          "PERFECT": "Parfaite"
+        },
+        "BASES": {
+          "BRUTAL_SHARD": {
+            "NAME": "Éclat brutal",
+            "DESCRIPTION": "Ajoute un préfixe ou un suffixe aléatoire."
+          },
+          "OBLIVION_CRYSTAL": {
+            "NAME": "Cristal d'oubli",
+            "DESCRIPTION": "Supprime tous les enchantements."
+          },
+          "SHIFTING_STONE": {
+            "NAME": "Pierre changeante",
+            "DESCRIPTION": "Supprime un enchantement aléatoire et en ajoute un nouveau du même tag que celui supprimé."
+          },
+          "INFLEXIBLE_INKWELL": {
+            "NAME": "Encrier inflexible",
+            "DESCRIPTION": "Verrouille un enchantement aléatoire. Il ne peut plus être modifié ou supprimé."
+          },
+          "PRIMORDIAL_ORB": {
+            "NAME": "Orbe primordial",
+            "DESCRIPTION": "Ajoute 1 préfixe ou 1 suffixe du tag de l'essence liée."
+          },
+          "MASTER_FRAGMENT": {
+            "NAME": "Fragment de maître",
+            "DESCRIPTION": "Ajoute 1 préfixe ou 1 suffixe d'un tag similaire à ceux déjà présents sur l'objet. Ajoute une malédiction si un 1 apparaît lors du test d'enchantement."
+          },
+          "DARK_OATH": {
+            "NAME": "Serment obscur",
+            "DESCRIPTION": "Ajoute 1 préfixe ou 1 suffixe aléatoire avec un bonus de +2 réussites lors du test d'enchantement. Ajoute une malédiction à l'objet."
+          },
+          "ETERNITY_ORB": {
+            "NAME": "Orbe d'éternité",
+            "DESCRIPTION": "Améliore 1 préfixe ou 1 suffixe aléatoirement."
+          },
+          "UNSTABLE_POWDER": {
+            "NAME": "Poudre inconstante",
+            "DESCRIPTION": "Supprime un préfixe ou un suffixe aléatoire non verrouillé."
+          }
+        }
+      },
+      "NO_TYPE_FOR_CATEGORY": "Il n'y a pas de type de consommable pour cette catégorie."
+    },
+    "BAG": {
+      "NAME": "Sac",
+      "DESCRIPTION": "Description",
+      "WEIGHT": "Poids",
+      "CAPACITY_WEIGHT": "Capacité de poids",
+      "STORED_WEIGHT": "Poids stocké",
+      "CONTENT_TITLE": "Contenu du sac",
+      "CONTENT_HELP": "Le poids stocké dans le sac ne s'ajoute pas à l'encombrement de l'inventaire principal.",
+      "STATUS": "État",
+      "OVER_CAPACITY": "Capacité dépassée",
+      "WITHIN_CAPACITY": "Capacité respectée",
+      "STORED_ITEMS": "Objets rangés",
+      "AVAILABLE_ITEMS": "Objets disponibles",
+      "NO_STORED_ITEMS": "Aucun objet dans ce sac.",
+      "NO_AVAILABLE_ITEMS": "Aucun objet disponible à ranger.",
+      "STORE_IN_BAG": "Ranger",
+      "REMOVE_FROM_BAG": "Retirer",
+      "LOAD_SHORT": "Charge",
+      "TABS": {
+        "GENERAL": "Général",
+        "DESCRIPTION": "Description"
+      },
+      "ERROR_OVER_CAPACITY": "Le sac n'a pas assez de capacité pour cet objet."
+    },
+    "ACTOR": {
+      "TYPES": {
+        "CHARACTER": "Personnage",
+        "MERCHANT": "Marchand",
+        "INVOCATION": "Invocation"
+      }
+    },
+    "MERCHANT": {
+      "NAME": "Marchand",
+      "SUBTITLE": "Stock marchand et transactions",
+      "DESCRIPTION": "Description",
+      "CONFIGURATION": "Configuration",
+      "MONEY_STOCK": "Stock d'argent",
+      "ACCEPTED_ITEM_TYPES": "Types d'objets acceptés",
+      "LEGALITY_POLICY": "Politique de légalité",
+      "ACCEPTS_LEGAL": "Achète les objets légaux",
+      "ACCEPTS_ILLEGAL": "Achète les objets illégaux",
+      "WARNING_PERMISSION_LIMIT": "Cet utilisateur peut voir le marchand, mais ne peut pas modifier son stock sans droit propriétaire ou relais MJ.",
+      "STOCK": {
+        "TITLE": "Stock",
+        "HELP": "Les joueurs peuvent acheter dans ce stock. Le MJ peut déposer des objets ici pour les ajouter au marchand.",
+        "DROP_HINT": "Dépose un objet ici pour l'ajouter au stock du marchand.",
+        "EMPTY": "Aucun objet en stock."
+      },
+      "SELL_ZONE": {
+        "TITLE": "Vendre au marchand",
+        "HELP": "Dépose ici un objet de ton inventaire. Tu choisis le prix de vente et le marchand l'ajoute à son stock avec une marge de 50 %.",
+        "DROP_HINT": "Dépose ici un objet de {actor}."
+      },
+      "NEGOTIATION": {
+        "TITLE": "Négocier",
+        "HELP": "Entre un pourcentage de réduction temporaire appliqué uniquement tant que cette fiche de marchand reste ouverte.",
+        "APPLY": "Appliquer",
+        "RESET": "Réinitialiser",
+        "ACTIVE": "Réduction active"
+      },
+      "COLUMNS": {
+        "ITEM": "Objet",
+        "TYPE": "Type",
+        "LEGALITY": "Légalité",
+        "QUANTITY": "Qté",
+        "PRICE": "Prix",
+        "ACTIONS": "Actions"
+      },
+      "ACTIONS": {
+        "BUY": "Acheter",
+        "SET_PRICE": "Définir le prix"
+      },
+      "DIALOG": {
+        "PRICE_TITLE": "Définir le prix de l'objet",
+        "SELL_TITLE": "Choisir le prix de vente",
+        "SAVE_PRICE": "Enregistrer le prix",
+        "ITEM": "Objet",
+        "CURRENT_PRICE": "Prix actuel"
+      },
+      "ERROR_PERMISSION": "Tu as besoin des droits propriétaire sur ce marchand pour finaliser les transactions. Pour un accès observateur seul, il faudra plus tard un relais MJ.",
+      "ERROR_NO_CHARACTER": "Assigne un personnage joueur à cet utilisateur, ou contrôle-en un, avant de commercer.",
+      "ERROR_NOT_ENOUGH_MONEY": "Pas assez d'argent pour acheter cet objet.",
+      "ERROR_MERCHANT_NOT_ENOUGH_MONEY": "Le marchand n'a pas assez d'argent pour acheter cet objet.",
+      "ERROR_ITEM_NOT_ACCEPTED": "Ce marchand refuse ce type d'objet ou cette légalité.",
+      "ERROR_SELL_SOURCE": "Tu ne peux vendre qu'un objet venant de l'inventaire de ton personnage.",
+      "ERROR_UNSUPPORTED_ITEM": "Ce type d'objet ne peut pas être échangé ici.",
+      "INFO_PURCHASED": "{actor} a acheté {item} pour {price}.",
+      "INFO_SOLD": "{actor} a vendu {item} pour {price}.",
+      "TABS": {
+        "STOCK": "Stock",
+        "CONFIGURATION": "Configuration"
+      },
+      "TRADE_RULES": "Règles de commerce"
+    },
+    "PROFESSION": {
+      "NAME": "Métier",
+      "DESCRIPTION": "Description du métier",
+      "PASSIVE_ACTIVE": "Passive active",
+      "TABS": {
+        "GENERAL": "Général",
+        "DESCRIPTION": "Description"
+      },
+      "SECTION": {
+        "PASSIVES": "Passives",
+        "KEYS": "Clés",
+        "CONDITIONS": "Conditions",
+        "MECHANICS": "Mécaniques",
+        "STATES": "États"
+      },
+      "EMPTY": {
+        "PASSIVES": "Aucune passive pour le moment.",
+        "KEYS": "Aucune clé pour le moment.",
+        "CONDITIONS": "Aucune condition pour le moment.",
+        "MECHANICS": "Aucune mécanique pour le moment.",
+        "STATES": "Aucun état pour le moment."
+      },
+      "UNIVERSAL": "Universel",
+      "REFERENCE_KEY": "Clé de référence",
+      "REFERENCE_AUTO": "Générer la référence",
+      "STATE_SYNC": "Réappliquer l’état intégré",
+      "ACTIVE_ON": "Actif",
+      "ACTIVE_OFF": "Inactif"
+    },
+    "TECHNIQUE": {
+      "NAME": "Technique",
+      "DESCRIPTION": "Description de la technique",
+      "LIST_TITLE": "Techniques du personnage",
+      "PROFESSION_LIST_TITLE": "Métiers connus",
+      "PROFESSION_SOURCE": "Métiers source",
+      "NO_PROFESSION_AVAILABLE": "Aucun métier disponible sur cet acteur.",
+      "NO_PROFESSION_ON_ACTOR": "Aucun métier créé pour le moment.",
+      "NO_TECHNIQUE_ON_ACTOR": "Aucune technique créée pour le moment.",
+      "EMPTY_DESCRIPTION": "Aucune description pour le moment.",
+      "PROFESSION_EMPTY_DESCRIPTION": "Aucune description pour le moment.",
+      "ACTION": {
+        "CREATE_PROFESSION": "Créer un métier",
+        "CREATE_TECHNIQUE": "Créer une technique",
+        "ADD_FROM_PROFESSION": "Ajouter depuis le métier",
+        "ALREADY_ADDED": "Déjà ajouté",
+        "SYNC_SOURCE": "Synchroniser",
+        "SYNC_SECTION": "Synchroniser les imports",
+        "CREATE_FROM_PROFESSION": "Créer une technique liée",
+        "PREPARE": "Préparer",
+        "UNPREPARE": "Retirer de l'accès rapide",
+        "USE": "Utiliser",
+        "ADD_BASE_COMPONENT": "Ajouter cette base"
+      },
+      "PROFESSION_SLOT": {
+        "TITLE": "Deux métiers équipés",
+        "FIRST": "Métier 1",
+        "SECOND": "Métier 2",
+        "EMPTY": "Aucun métier",
+        "EMPTY_HELP": "Sélectionne un métier créé sur la fiche."
+      },
+      "TABS": {
+        "GENERAL": "Général",
+        "COMPONENTS": "Modules",
+        "DESCRIPTION": "Description",
+        "PRINT": "Impression",
+        "POWER": "Puissance & stats"
+      },
+      "SECTION": {
+        "KEYS": "Clés",
+        "CONDITIONS": "Conditions",
+        "MECHANICS": "Mécaniques",
+        "STATES": "États"
+      },
+      "EMPTY": {
+        "KEYS": "Aucune clé ajoutée.",
+        "CONDITIONS": "Aucune condition ajoutée.",
+        "MECHANICS": "Aucune mécanique ajoutée.",
+        "STATES": "Aucun état ajouté."
+      },
+      "POWER": {
+        "TITLE": "Puissance",
+        "LEVEL": "Puissance",
+        "THRESHOLD_LABEL": "Palier {threshold}",
+        "NO_BONUS_STATISTIC": "Aucune statistique bonus",
+        "BONUS_SLOTS": "Emplacements bonus débloqués",
+        "REMAINING_SLOTS": "Emplacements bonus restants",
+        "STEP": "Puissance {power}",
+        "MAIN_BADGE": "Statistique principale",
+        "THRESHOLD_BONUS_BADGE": "+{ranks} palier(s)",
+        "NO_DIRECT_SCALING": "Pas de montée directe"
+      },
+      "MAIN_STATISTIC": "Statistique principale",
+      "MAIN_STATISTIC_EMPTY": "Aucune statistique principale",
+      "STATISTICS": "Statistiques",
+      "XP_COST": "Coût XP",
+      "XP_CREATION": "XP création",
+      "XP_POWER": "XP puissance",
+      "XP_TOTAL": "XP total",
+      "STAT": {
+        "CATALOG": "Catalogue des statistiques",
+        "EMPTY": "Aucune statistique sélectionnée.",
+        "BASE_VALUE": "Valeur de base",
+        "DAMAGE": "DM",
+        "HEALING": "Soin",
+        "PRC": "PRC",
+        "PRD": "PRD",
+        "PRM": "PRM",
+        "DEFENSE": "DEF",
+        "INITIATIVE": "Initiative",
+        "RANGE": "Portée",
+        "SPEED": "Vitesse",
+        "DURATION": "Durée",
+        "DICE_BONUS": "Bonus de dé",
+        "IMPROVE_INDEX": "Améliorer un indice",
+        "APPLY_STATE": "Appliquer un état",
+        "ADD_WEIGHT": "Ajouter un poids",
+        "ADD_UNIT": "Ajouter une unité",
+        "ADD_TARGET": "Ajouter une cible",
+        "ADD_VOLUME": "Ajouter un volume",
+        "GRANT_SAVE": "Octroyer une sauvegarde",
+        "IMPROVE_SAVE_INDEX": "Améliorer une sauvegarde",
+        "ZONE_CONTROL": "Zone de contrôle",
+        "ZONE_RADIUS": "Zone : rayon",
+        "ZONE_LINE": "Zone : ligne",
+        "ZONE_CONE": "Zone : souffle",
+        "FINAL_VALUE": "Valeur finale",
+        "BONUS_RANKS": "Rangs bonus"
+      },
+      "PROFESSION_SOURCE_HELP": "Sélectionne jusqu’à deux métiers source. Les modules de ces métiers apparaissent ensuite dans l’onglet Modules.",
+      "PROFESSION_SOURCE_EQUIPPED": "Équipé",
+      "BUILDER_STATUS": "État de la construction",
+      "SOURCE_SECTION_TITLE": "Modules de base et modules des métiers sélectionnés",
+      "VALIDATION": {
+        "ERROR_TITLE": "Points à corriger",
+        "WARNING_TITLE": "Points d’attention",
+        "SUCCESS_TITLE": "La structure de la technique est cohérente pour le moment.",
+        "NO_SOURCE_PROFESSION": "Aucun métier source sélectionné.",
+        "MAX_SOURCE_PROFESSIONS": "Une technique ne peut pas avoir plus de deux métiers source.",
+        "NO_KEY": "Une technique devrait généralement avoir au moins une clé.",
+        "MAX_CONDITIONS": "Une technique ne peut pas avoir plus de deux conditions.",
+        "MAX_MECHANICS": "Une technique ne peut pas avoir plus de trois mécaniques.",
+        "DUPLICATE_MECHANICS": "Les mécaniques doivent être toutes différentes : {names}.",
+        "NO_STATISTICS": "Aucune statistique sélectionnée.",
+        "MISSING_MAIN_STATISTIC": "Choisis une statistique principale pour gérer la puissance.",
+        "MAX_STATE_APPLICATIONS": "Une technique ne peut appliquer qu’un seul état à la fois.",
+        "EMPTY_UNLOCKED_THRESHOLD": "Le palier de puissance {threshold} n’a pas encore de statistique bonus choisie.",
+        "SOURCE_NOT_EQUIPPED": "Certains métiers source ne sont pas équipés sur le personnage : {names}.",
+        "INVALID_MAIN_STATISTIC": "La statistique principale sélectionnée n’existe plus dans la technique.",
+        "INVALID_THRESHOLD_STATISTIC": "Le palier {threshold} cible une statistique qui n’existe plus.",
+        "LOCKED_THRESHOLD_SELECTED": "Le palier {threshold} a une statistique choisie alors qu’il n’est pas encore débloqué.",
+        "NON_SCALING_MAIN_STATISTIC": "La statistique principale choisie ne monte pas directement avec la puissance.",
+        "TOO_MANY_STATISTICS": "Trop de statistiques sélectionnées ({used}/{available}).",
+        "MISSING_IMPORTED_SOURCE": "La source de « {name} » est introuvable.",
+        "OUTDATED_IMPORTED_SOURCE": "La source de « {name} » a changé.",
+        "SOURCE_NOT_SELECTED": "La source de « {name} » n’est plus dans les métiers sélectionnés.",
+        "MISSING_LINKED_ATTRIBUTE": "Un rituel doit définir une caractéristique liée.",
+        "STATISTICS_DO_NOT_FIT_SLOTS": "Les statistiques choisies ne rentrent pas dans les emplacements disponibles ({freeUsed}/{freeAvailable} emplacement(s) libre(s) utilisé(s))."
+      },
+      "SUMMARY": {
+        "TITLE": "Résumé rapide"
+      },
+      "SLOTS": {
+        "TITLE": "Emplacements de statistiques",
+        "BASE": "Emplacements de base",
+        "EXTRA": "Emplacements bonus",
+        "USED": "Utilisés",
+        "REMAINING": "Restants",
+        "RANGE_COUNT": "Portée : {count}/{max}",
+        "DURATION_COUNT": "Durée : {count}/{max}",
+        "EFFECT_COUNT": "Effet : {count}",
+        "EXTRA_STATISTIC_SLOTS": "Bonus d’emplacements",
+        "EXTRA_SOURCE_BADGE": "+{count} emplacement(s)",
+        "PASSIVES": "Passifs",
+        "BASE_PATTERN": "Base : 1 emplacement portée, 1 emplacement durée, 1 emplacement libre. Ces emplacements sont optionnels.",
+        "FREE": "Emplacements libres",
+        "FREE_COUNT": "Libres : {used}/{available}",
+        "BREAKDOWN_TITLE": "Origine des emplacements bonus",
+        "BREAKDOWN_EMPTY": "Aucun emplacement bonus ne vient actuellement des passifs, conditions ou mécaniques.",
+        "BADGE": {
+          "FREE": "{count} libre(s)",
+          "RANGE": "{count} portée",
+          "DURATION": "{count} durée"
+        }
+      },
+      "SOURCE_STATUS": {
+        "CUSTOM": "Personnalisé",
+        "LINKED": "Lié",
+        "OUTDATED": "À synchroniser",
+        "MISSING": "Source manquante"
+      },
+      "ACTOR": {
+        "SEARCH": "Recherche",
+        "SEARCH_PLACEHOLDER": "Rechercher une technique…",
+        "SHOW_PREPARED_ONLY": "Préparées seulement",
+        "PREPARED": "Préparée",
+        "PREPARED_TITLE": "Accès rapide",
+        "PREPARED_HELP": "Garde cette technique dans le bloc d'accès rapide de la fiche.",
+        "READY": "Prête",
+        "WARNING": "À vérifier",
+        "INVALID": "Invalide",
+        "NO_MATCH": "Aucune technique ne correspond aux filtres actuels.",
+        "SORT": "Tri",
+        "SORT_NAME_ASC": "Nom A → Z",
+        "SORT_NAME_DESC": "Nom Z → A",
+        "SORT_POWER_DESC": "Puissance décroissante",
+        "SORT_XP_DESC": "XP décroissant",
+        "SORT_STATUS": "État de validation"
+      },
+      "PREPARED_TITLE": "Techniques préparées",
+      "NO_PREPARED_ON_ACTOR": "Aucune technique préparée en accès rapide.",
+      "PRINT": {
+        "TITLE": "Résumé imprimable",
+        "ACTION": "Imprimer",
+        "ACTOR": "Personnage",
+        "SOURCE": "Source",
+        "POPUP_BLOCKED": "La fenêtre d'impression a été bloquée."
+      },
+      "DRAG_HINT": "Glisser vers une technique",
+      "DROP_HINT_SECTION": "Dépose ici un module du métier correspondant.",
+      "DROP": {
+        "MAX_PROFESSIONS": "Cette technique a déjà deux métiers source."
+      },
+      "USAGE": {
+        "TITLE": "Usage en jeu",
+        "TYPE_LABEL": "Type d'utilisation",
+        "LINKED_ATTRIBUTE": "Caractéristique liée",
+        "LINKED_ATTRIBUTE_HELP": "Le rituel utilisera cette caractéristique pour ouvrir la fenêtre de jet.",
+        "LINKED_ATTRIBUTE_ATTACK_HINT": "Non utilisé pour une technique d'attaque.",
+        "TYPE": {
+          "ATTACK": "Attaque",
+          "RITUAL": "Rituel"
+        }
+      },
+      "MODULES": {
+        "QUICK_ACCESS": "Accès rapide",
+        "STAT_SLOTS": "Emplacements de statistique",
+        "EMBEDDED_STATISTICS": "Statistiques intégrées",
+        "COUNTER": "Compteur",
+        "IMPROVEMENTS": "Améliorations",
+        "ACTOR_BONUSES": "Bonus de fiche",
+        "PROGRESS_TRACK_LABEL": "Barre de progression",
+        "PROGRESS_REWARDS_LABEL": "Récompenses de progression",
+        "COUNTER_CURRENT": "Actuel",
+        "COUNTER_MAX": "Maximum",
+        "COUNTER_RESET": "Réinitialisation",
+        "IMPROVEMENT_STEP_XP": "XP par palier",
+        "IMPROVEMENT_RANK": "Rang",
+        "IMPROVEMENT_CUMULATIVE": "Cumulé",
+        "IMPROVEMENT_NEXT": "Prochain palier",
+        "BONUS_VALUE": "Valeur",
+        "STATE_LABEL": "État de référence",
+        "SLOT_TYPE": {
+          "LABEL": "Type de slot",
+          "FREE": "Libre",
+          "RANGE": "Portée",
+          "DURATION": "Durée"
+        },
+        "BONUS_TARGET": {
+          "LABEL": "Bonus",
+          "EMPTY": "Aucun bonus",
+          "VALUE": "Valeur",
+          "INDEX": "Indice",
+          "DICE": "Dés"
+        },
+        "PROGRESS_TRACK": {
+          "NO_TEST": "Pas de test lié",
+          "CURRENT": "Progression actuelle",
+          "ATTRIBUTE": "Caractéristique liée",
+          "THRESHOLD": "Objectif",
+          "ROLL_TEST": "Lancer {attribute}"
+        },
+        "STATE": {
+          "EMPTY": "Aucun état"
+        },
+        "PROGRESS_TRACK_CURRENT": "Progression actuelle",
+        "PROGRESS_TRACK_ATTRIBUTE": "Caractéristique liée",
+        "PROGRESS_TRACK_THRESHOLD": "Objectif",
+        "REFERENCE_PREVIEW": "Résolue : {reference}",
+        "REFERENCE_STATUS": {
+          "MISSING": "Référence manquante",
+          "CUSTOM": "Référence personnalisée",
+          "AUTO": "Référence auto",
+          "DUPLICATE": "Référence en double",
+          "BUILTIN_STATE": "État intégré"
+        },
+        "REFERENCE_EMPTY": "Aucune référence",
+        "PROGRESS_TRACK_OBJECTIVES": "Objectifs",
+        "PROGRESS_TRACK_COMPLETED_OBJECTIVES": "Objectifs atteints",
+        "PROGRESS_REWARDS_HELP": "Chaque ligne applique le bonus quand la case objectif indiquée est cochée sur la barre de progression.",
+        "PROGRESS_REWARD_REACHED": "Atteint",
+        "PROGRESS_REWARD_LOCKED": "Non atteint"
+      },
+      "PROFESSION_QUICK_ACCESS_TITLE": "Accès rapide",
+      "NO_PROFESSION_QUICK_ACCESS": "Aucun module marqué en accès rapide.",
+      "BASE_COMPONENTS": {
+        "SOURCE_LABEL": "Base commune",
+        "KEYS": {
+          "REACTION": {
+            "NAME": "Réaction",
+            "DESCRIPTION": "Une réaction est une technique déclenchée à tout moment du tour, en dépensant une action de réaction. Elle vient en supplément d'une autre clé."
+          },
+          "OPPOSITION": {
+            "NAME": "Opposition",
+            "DESCRIPTION": "Une opposition remplace un test classique par une piste de progression qui oppose les personnages. Le premier qui atteint l'objectif réussit l'opposition. L'objectif peut être fixe, par exemple difficulté 3, ou dépendre de la durée, par exemple au bout de 3 tours celui qui a le plus de réussites gagne. Cette clé vient en supplément d'une autre clé. Lors d'une opposition d'attaque, après chaque test, celui qui est le plus loin dans la progression inflige ses DM à l'autre."
+          }
+        },
+        "CONDITIONS": {
+          "RECHARGE": {
+            "NAME": "Recharge",
+            "DESCRIPTION": "Recharge, 1 utilisation. La technique ne peut être utilisée qu'une seule fois, puis se recharge uniquement lorsque la condition choisie et validée par le MJ est remplie. Le coût indiqué commence à -1 XP : ajuste-le entre -1 et -4 XP selon la contrainte validée. Exemples : courte pause, manger ou boire, concentration 1 minute, fin de combat (-1) ; 1 fois par jour, nuit, dormir au moins 1 heure, test approprié réussi (-2) ; émotion forte, déclencheur narratif, adversaire significatif vaincu, action risquée définie par le MJ (-3) ; fin d'arc ou chapitre, blessure grave, lieu particulier, sacrifice matériel ou narratif (-4)."
+          },
+          "CHANNELING": {
+            "NAME": "Canalisation",
+            "DESCRIPTION": "Une technique canalisée utilise une piste de progression de difficulté 5, 7 et 9. Tant que vous consacrez vos actions à cette technique, effectuez les tests habituels et complétez la progression selon les réussites. Chaque objectif atteint augmente la puissance de la technique de 2. Au bout de 3 tours, ou si vous vous déplacez ou utilisez une réaction dans un autre but, la canalisation se termine."
+          }
+        }
+      }
+    },
+    "INVOCATION": {
+      "LIST_TITLE": "Invocations",
+      "EMPTY_LIST": "Aucune invocation sur ce personnage.",
+      "EMPTY_DESCRIPTION": "Aucune description d’invocation.",
+      "ACTION": {
+        "CREATE": "Créer une invocation"
+      },
+      "NAME": "Nom de l’invocation",
+      "CONFIGURATION": "Configuration",
+      "SIZE_LABEL": "Taille",
+      "BASE_CREATION_XP": "XP de création de base",
+      "LINKED_TECHNIQUE": "Technique liée",
+      "NO_LINKED_TECHNIQUE": "Aucune technique liée",
+      "POINTS": "Points de caractéristiques",
+      "MAX_ATTRIBUTE": "Maximum par caractéristique",
+      "XP_MULTIPLIER": "Multiplicateur de taille",
+      "SCALED_CREATION_XP": "XP après taille",
+      "ATTRIBUTES": "Caractéristiques",
+      "TABS": {
+        "ATTRIBUTES": "Caractéristiques",
+        "PROGRESSION": "Progression"
+      },
+      "SUMMARY": {
+        "TITLE": "Résumé d’invocation"
+      },
+      "POWER_BONUS": {
+        "TITLE": "Bonus de puissance",
+        "HELP": "Chaque point de puissance peut octroyer un bonus à l’invocation.",
+        "TYPE": "Type de bonus",
+        "EMPTY": "Aucun bonus de puissance ajouté.",
+        "HP": "Améliore les PV de 1",
+        "ATTRIBUTE": "Augmente une caractéristique de 1",
+        "DAMAGE": "+1d6 DM sur toutes les attaques",
+        "DEFENSE": "+1 DEF",
+        "ATTACK": "+1 en ATC, ATD ou ATM",
+        "SAVE": "Améliore une sauvegarde de 1",
+        "MAGIC": "Permet d’utiliser la magie",
+        "APPLIED": "Appliqué",
+        "TARGET": {
+          "ATTACK": {
+            "PRC": "PRC",
+            "PRD": "PRD",
+            "PRM": "PRM"
+          },
+          "MAGIC": {
+            "CANALISATION": "Canalisation",
+            "FASCINATION": "Fascination"
+          }
+        }
+      },
+      "THRESHOLDS": {
+        "TITLE": "Techniques aux paliers 3 / 6 / 9 / 10",
+        "HELP": "À ces paliers, l’invocation peut recevoir une nouvelle technique payée séparément.",
+        "UNLOCKED": "Palier débloqué"
+      },
+      "THRESHOLD_TECHNIQUE": "Technique accordée",
+      "NO_THRESHOLD_TECHNIQUE": "Aucune technique accordée",
+      "SIZE": {
+        "TINY": "Très petite",
+        "SMALL": "Petite",
+        "MEDIUM": "Moyenne",
+        "LARGE": "Grande",
+        "HUGE": "Très grande",
+        "COLOSSAL": "Colossale"
+      },
+      "VALIDATION": {
+        "OVER_BUDGET": "Répartition de caractéristiques dépassée : {used} / {budget}.",
+        "OVER_CAP": "Une caractéristique dépasse le maximum autorisé ({max}).",
+        "MISSING_TECHNIQUE": "La technique liée est introuvable.",
+        "POWER_BONUS_TARGET_REQUIRED": "Un bonus de puissance de type {type} doit cibler un élément.",
+        "POWER_BONUS_OVERFLOW": "{count} bonus de puissance sont définis, mais seulement {applied} s’appliquent avec la puissance actuelle."
+      },
+      "ACTOR": {
+        "TITLE": "Acteur généré",
+        "CREATE": "Générer l’acteur",
+        "SYNC": "Synchroniser l’acteur",
+        "OPEN": "Ouvrir l’acteur",
+        "LINKED": "Acteur lié",
+        "NO_LINKED": "Aucun acteur généré pour ce profil.",
+        "MISSING": "L’acteur lié est introuvable.",
+        "SUMMARY_TITLE": "Résumé de l’invocation active",
+        "SOURCE_ACTOR": "Invocateur source",
+        "SOURCE_PROFILE": "Profil d’invocation",
+        "ACTIVE_BONUSES": "Bonus actifs",
+        "NO_ACTIVE_BONUSES": "Aucun bonus actif sur cette invocation.",
+        "GRANTED_TECHNIQUES": "Techniques accordées",
+        "NO_GRANTED_TECHNIQUES": "Aucune technique accordée active.",
+        "GRANTED_BADGE": "Accordée",
+        "BONUS_LABEL": {
+          "HP": "+1 PV max",
+          "ATTRIBUTE": "+1 {target}",
+          "DAMAGE": "+1d6 dégâts sur toutes les attaques",
+          "DEFENSE": "+1 DEF",
+          "ATTACK": "+1 {target}",
+          "SAVE": "+1 sauvegarde {target}",
+          "MAGIC": "Magie : {target}"
+        }
+      },
+      "THRESHOLD_UNLOCKED": "Seuil débloqué"
+    },
+    "ENCHANTING": {
+      "OVERVIEW": "Socle d’enchantement",
+      "BASE_QUALITY": {
+        "LABEL": "Base d’enchantement",
+        "BASE": "Objet de base",
+        "SILVER": "Objet en argent",
+        "GOLD": "Objet en or",
+        "PLATINUM": "Objet en platine",
+        "CUSTOM": "Personnalisé"
+      },
+      "CUSTOM_PREFIX_MAX": "Préfixes max",
+      "CUSTOM_SUFFIX_MAX": "Suffixes max",
+      "NOTES": "Notes d’enchantement",
+      "EQUIPPED": "Équipé",
+      "PHASE1_HELP": "Phase 1 : structure, slots, poids magique et enchantements personnalisés. Les catalyseurs et les tirages aléatoires viendront ensuite.",
+      "PREFIXES": "Préfixes",
+      "SUFFIXES": "Suffixes",
+      "CURSES": "Malédictions",
+      "ADD_PREFIX": "Ajouter un préfixe",
+      "ADD_SUFFIX": "Ajouter un suffixe",
+      "ADD_CURSE": "Ajouter une malédiction",
+      "EMPTY_PREFIXES": "Aucun préfixe personnalisé pour le moment.",
+      "EMPTY_SUFFIXES": "Aucun suffixe personnalisé pour le moment.",
+      "EMPTY_CURSES": "Aucune malédiction personnalisée pour le moment.",
+      "SUMMARY": {
+        "PREFIXES": "Préfixes",
+        "SUFFIXES": "Suffixes",
+        "WEIGHT": "Poids magique",
+        "DAMAGE_DICE_BONUS": "Bonus DM",
+        "RANGE_BONUS": "Bonus portée",
+        "ZONE_RANGE_BONUS": "Bonus zone",
+        "ADDED_TAGS": "Tags ajoutés",
+        "REQUIREMENT_REDUCTION": "Pré requis réduits",
+        "CONSUMABLE_EFFECT_MULTIPLIER": "Effet du consommable",
+        "CONSUMABLE_DURATION_MULTIPLIER": "Durée du consommable",
+        "SPECIALS": "Effets spéciaux"
+      },
+      "ENTRY": {
+        "RANK": "Rang",
+        "MAGIC_WEIGHT": "Poids magique",
+        "LOCKED": "Verrouillé",
+        "TAGS": "Étiquettes",
+        "TAGS_PLACEHOLDER": "attaque, feu, défense…",
+        "BADGE_PREFIX": "Préfixe",
+        "BADGE_SUFFIX": "Suffixe",
+        "BADGE_AFFIX": "Affixe",
+        "BADGE_CURSE": "Malédiction",
+        "BADGE_CUSTOM": "Custom",
+        "BADGE_REGISTERED": "Registre",
+        "SOURCE": "Origine",
+        "DESCRIPTIVE_ONLY": "Cet enchantement reste descriptif : aucun bonus numérique automatique n’est appliqué par le système pour cette entrée.",
+        "NO_TAGS": "Aucune étiquette."
+      },
+      "ACTOR_BONUSES": "Bonus appliqués au porteur",
+      "ITEM_BONUSES": "Bonus appliqués à l’objet",
+      "ADD_ACTOR_BONUS": "Ajouter un bonus porteur",
+      "ADD_ITEM_BONUS": "Ajouter un bonus objet",
+      "NO_ACTOR_BONUSES": "Aucun bonus porteur.",
+      "NO_ITEM_BONUSES": "Aucun bonus objet.",
+      "ITEM_TARGET": {
+        "EMPTY": "Aucun bonus objet",
+        "WEIGHT": "Poids de l’objet",
+        "PRECISION_BONUS": "Bonus de précision",
+        "DEF_BONUS": "Bonus de défense",
+        "DAMAGE_DICE_BONUS": "Bonus DM en d6",
+        "RANGE_METERS": "Bonus de portée (m)",
+        "ZONE_RANGE_METERS": "Bonus de zone (m)",
+        "TAG_LIGHT": "Ajouter le tag Léger",
+        "REQUIREMENT_REDUCTION": "Réduction de prérequis",
+        "CONSUMABLE_REPEAT": "Répéter l’effet le tour suivant",
+        "CONSUMABLE_EFFECT_MULTIPLIER": "Multiplicateur d’effet",
+        "CONSUMABLE_DURATION_MULTIPLIER": "Multiplicateur de durée",
+        "CONSUMABLE_CONTROL_ZONE": "Appliquer dans la zone de contrôle"
+      },
+      "USE_CATALYST": "Utiliser un catalyseur",
+      "PHASE2_HELP": "Phase 3 : le registre inclut maintenant les affixes communs et spécialisés (armes, boucliers, armures, objets). Les effets complexes restent éditables via les bonus personnalisés.",
+      "DIALOG": {
+        "TITLE": "Enchanter {item}",
+        "APPLY": "Enchanter",
+        "RESULT": "Enchantement appliqué avec {catalyst} · rang {rank} · malédiction : {curse}",
+        "CATALYST_SOURCE": "Catalyseurs sur le porteur",
+        "CATALYST_ITEM": "Catalyseur embarqué",
+        "NO_CATALYST_ITEM": "Aucun, saisie manuelle",
+        "CATALYST_BASE": "Base du catalyseur",
+        "ESSENCE_QUALITY": "Qualité d’essence",
+        "ESSENCE_TAG": "Tag d’essence",
+        "ESSENCE_TAG_PLACEHOLDER": "attaque, feu, défense…",
+        "SUCCESS_COUNT": "Réussites",
+        "FAILURE_MARGIN": "Écart d’échecs au-dessus des réussites",
+        "PREFERRED_SIDE": "Préfixe / suffixe visé",
+        "RANDOM_SIDE": "Aléatoire",
+        "NATURAL_ONE": "Le test a obtenu un 1 naturel",
+        "HELP": "Choisis un catalyseur, une essence et les résultats du test avant d’enchanter.",
+        "EXTRA_SUCCESSES": "Réussites bonus",
+        "MINIMUM_ENTRIES": "Enchantements requis",
+        "REQUIRES_ESSENCE_TAG": "Tag d’essence requis",
+        "FORCED_CURSE": "Malédiction forcée",
+        "CURSE_ON_NATURAL_ONE": "Malédiction sur 1 naturel",
+        "OPERATION": {
+          "ADDRANDOMAFFIX": "Ajoute un affixe aléatoire",
+          "REMOVERANDOMAFFIX": "Retire un affixe aléatoire",
+          "CLEARUNLOCKEDENTRIES": "Efface les entrées non verrouillées",
+          "REROLLSAMETAG": "Transforme un affixe du même tag",
+          "LOCKRANDOMENTRY": "Verrouille une entrée aléatoire",
+          "ADDFORCEDTAGAFFIX": "Ajoute un affixe du tag d’essence",
+          "ADDEXISTINGTAGAFFIX": "Ajoute un affixe d’un tag existant",
+          "UPGRADERANDOMAFFIX": "Améliore un affixe aléatoire"
+        },
+        "SUCCESS_PREVIEW_NO_CHA": "Réussites {successes} + qualité {quality} + catalyseur {catalyst} = {total} · rang {rank}"
+      },
+      "ERROR": {
+        "NO_FREE_SLOT": "Aucun emplacement libre pour ajouter un nouvel affixe.",
+        "NO_PREFIX_SLOT": "Aucun emplacement de préfixe libre.",
+        "NO_SUFFIX_SLOT": "Aucun emplacement de suffixe libre.",
+        "NO_AFFIX_AVAILABLE": "Aucun affixe compatible n’est disponible.",
+        "NO_CURSE_AVAILABLE": "Aucune malédiction compatible n’est disponible.",
+        "NO_REMOVABLE_AFFIX": "Aucun affixe amovible n’est disponible.",
+        "NO_CLEARABLE_ENTRY": "Aucun enchantement non verrouillé à effacer.",
+        "NO_REROLL_TARGET": "Aucun enchantement compatible à transformer.",
+        "NO_LOCK_TARGET": "Aucun enchantement non verrouillé à verrouiller.",
+        "NO_MATCHING_TAG": "Aucun tag exploitable n’est déjà présent sur cet objet.",
+        "NO_UPGRADE_TARGET": "Aucun affixe à améliorer.",
+        "ESSENCE_TAG_REQUIRED": "Ce catalyseur nécessite un tag d’essence.",
+        "MINIMUM_ENTRIES": "Il faut au moins {count} enchantements ou malédictions sur l’objet.",
+        "UNSUPPORTED_CATALYST": "Ce catalyseur n’est pas pris en charge.",
+        "NOT_ENCHANTABLE": "Cet objet ne peut pas être enchanté."
+      },
+      "PHASE4_HELP": "Les affixes complexes de phase 4 ajoutent maintenant les bonus de dégâts en dés, de portée, de zone et certains tags d’objet. Les effets plus narratifs restent décrits dans la fiche.",
+      "PHASE5_HELP": "Utilisez les catalyseurs pour générer les enchantements officiels. Les bonus automatiques gérés par le système restent limités aux bonus numériques simples du porteur ou de l’objet.",
+      "ACTOR_TARGET": {
+        "COMBAT_PRC": "PRC",
+        "COMBAT_PRD": "PRD",
+        "COMBAT_PRM": "PRM",
+        "COMBAT_DEF": "DEF",
+        "SUMMON": {
+          "PREFIX": "Invocation",
+          "HP_MAX": "Invocation · PV",
+          "DAMAGE_DICE": "Invocation · Bonus DM en d6",
+          "PRC": "Invocation · PRC",
+          "PRD": "Invocation · PRD",
+          "PRM": "Invocation · PRM",
+          "DEF": "Invocation · DEF"
+        },
+        "SPECIAL": {
+          "INVISIBLE": "Effet spécial · Invisible",
+          "SILENT": "Effet spécial · Silencieux",
+          "UNDETECTABLE": "Effet spécial · Indétectable",
+          "EXTRA_ACTION": "Effet spécial · Action supplémentaire",
+          "EXTRA_REACTION": "Effet spécial · Réaction supplémentaire",
+          "LIFE_ON_HIT": "Effet spécial · Soin à l’impact",
+          "SPELL_DAMAGE_DICE": "Effet spécial · Bonus DM des sorts en d6",
+          "UNLIMITED_DAMAGE": "Effet spécial · DM sans limite",
+          "EXTRA_SAVE_BOX": "Effet spécial · Case de sauvegarde supplémentaire",
+          "BLEEDING_EXTRA": "Effet spécial · Saignement supplémentaire",
+          "BURN_EXTRA": "Effet spécial · Brûlure supplémentaire",
+          "FROZEN_EXTRA": "Effet spécial · Gel supplémentaire",
+          "POISON_EXTRA": "Effet spécial · Poison supplémentaire",
+          "CONVERT_FIRE": "Effet spécial · Conversion dégâts Feu",
+          "CONVERT_LIGHTNING": "Effet spécial · Conversion dégâts Foudre",
+          "CONVERT_EARTH": "Effet spécial · Conversion dégâts Terre",
+          "CONVERT_ICE": "Effet spécial · Conversion dégâts Glace",
+          "CONVERT_WIND": "Effet spécial · Conversion dégâts Vent",
+          "CONVERT_ACID": "Effet spécial · Conversion dégâts Acide",
+          "SUMMON_TRANSFER": "Effet spécial · Transfert vers invocation"
+        }
+      },
+      "HELP_SIMPLE": "Utilisez les catalyseurs pour générer les enchantements officiels. Les bonus automatiques gérés par le système restent limités aux bonus numériques simples du porteur ou de l’objet.",
+      "TAGS": {
+        "ACID": "Acide",
+        "ATTACK": "Attaque",
+        "ATTRIBUTE": "Caractéristique",
+        "COMBAT": "Combat",
+        "CONSUMABLE": "Consommable",
+        "DAMAGE": "Dégâts",
+        "DEFENSE": "Défense",
+        "EARTH": "Terre",
+        "ENEMY": "Ennemi",
+        "ENVIRONMENT": "Environnement",
+        "FIRE": "Feu",
+        "ICE": "Glace",
+        "LIFE": "Vie",
+        "LIGHTNING": "Foudre",
+        "MAGIC": "Magie",
+        "META": "Méta",
+        "MOBILITY": "Mobilité",
+        "SAVE": "Sauvegarde",
+        "SEASON": "Saison",
+        "SPELL": "Sort",
+        "STATE": "État",
+        "STEALTH": "Discrétion",
+        "SUMMON": "Invocation",
+        "WEATHER": "Météo",
+        "WIND": "Vent",
+        "ZONE": "Zone"
+      }
+    },
+    "IMAGE": "Image",
+    "HERITAGE": {
+      "NAME": "Héritage",
+      "IDENTITY": "Identité de l’héritage",
+      "STATE": "État",
+      "STATE_HINT": "Un héritage passif peut être activé ou désactivé. Un héritage technique peut être marqué comme préparé.",
+      "DESCRIPTION": "Description",
+      "EMPTY_DESCRIPTION": "Aucune description.",
+      "TYPE_LABEL": "Origine",
+      "FEATURE_TYPE_LABEL": "Forme",
+      "ACTIVE": "Passif actif",
+      "PREPARED": "Technique préparée",
+      "STATE_ACTIVE": "Actif",
+      "STATE_INACTIVE": "Inactif",
+      "STATE_PREPARED": "Préparé",
+      "STATE_UNPREPARED": "Non préparé",
+      "TYPE": {
+        "ANCESTRAL": "Ancestral",
+        "CULTURAL": "Culturel"
+      },
+      "FEATURE_TYPE": {
+        "PASSIVE": "Passif",
+        "TECHNIQUE": "Technique"
+      },
+      "TABS": {
+        "GENERAL": "Général",
+        "DESCRIPTION": "Description"
+      },
+      "ACTION": {
+        "CREATE_ANCESTRAL": "+ Ancestral",
+        "CREATE_CULTURAL": "+ Culturel",
+        "ACTIVATE": "Activer",
+        "DEACTIVATE": "Désactiver",
+        "PREPARE": "Préparer",
+        "UNPREPARE": "Dépréparer",
+        "USE": "Utiliser",
+        "CREATE_ANCESTRAL_PASSIVE": "+ Passif ancestral",
+        "CREATE_ANCESTRAL_TECHNIQUE": "+ Technique ancestrale",
+        "CREATE_CULTURAL_PASSIVE": "+ Passif culturel",
+        "CREATE_CULTURAL_TECHNIQUE": "+ Technique culturelle"
+      },
+      "ACTOR": {
+        "TITLE": "Héritages ancestraux et culturels",
+        "ANCESTRAL_TITLE": "Héritages ancestraux",
+        "CULTURAL_TITLE": "Héritages culturels",
+        "NO_ANCESTRAL": "Aucun héritage ancestral.",
+        "NO_CULTURAL": "Aucun héritage culturel."
+      }
+    }
+  },
+  "ETERN.HERITAGE.PASSIVE_EFFECTS": "Effets passifs",
+  "ETERN.HERITAGE.EMPTY_PASSIVES": "Aucun effet passif défini."
+}

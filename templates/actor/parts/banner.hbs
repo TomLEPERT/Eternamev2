@@ -1,0 +1,121 @@
+<header class="etername-banner">
+
+  <div class="banner-brand">
+    <div class="brand-logo">
+      <img src="systems/eternamev2/assets/logo.svg" alt="Etername logo">
+    </div>
+
+    <div class="brand-qrcode">
+      <img src="systems/eternamev2/assets/qr.svg" alt="Etername QR code">
+    </div>
+  </div>
+
+  <div class="banner-main">
+
+    <div class="banner-grid">
+      <div class="field-card">
+        <div class="field-icon">
+          <img src="systems/eternamev2/assets/icons/name.svg" alt="">
+        </div>
+        <div class="field-body">
+          <label>{{localize "ETERN.NAME"}}</label>
+          <input type="text" name="name" value="{{document.name}}">
+        </div>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">
+          <img src="systems/eternamev2/assets/icons/gender.svg" alt="">
+        </div>
+        <div class="field-body">
+          <label>{{localize "ETERN.GENDER"}}</label>
+          <input type="text" name="system.identity.gender" value="{{system.identity.gender}}">
+        </div>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">
+          <img src="systems/eternamev2/assets/icons/species.svg" alt="">
+        </div>
+        <div class="field-body">
+          <label>{{localize "ETERN.SPECIES.LABEL"}}</label>
+          <select name="system.identity.species">
+            {{selectOptions selects.species selected=system.identity.species}}
+          </select>
+        </div>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">
+          <img src="systems/eternamev2/assets/icons/knowledge.svg" alt="">
+        </div>
+        <div class="field-body">
+          <label>{{localize "ETERN.KNOWLEDGE.LABEL"}}</label>
+          <select name="system.identity.knowledge">
+            {{selectOptions selects.knowledges selected=system.identity.knowledge}}
+          </select>
+        </div>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">
+          <img src="systems/eternamev2/assets/icons/profile.svg" alt="">
+        </div>
+        <div class="field-body">
+          <label>{{localize "ETERN.PROFILE.LABEL"}}</label>
+          <select name="system.identity.profile">
+            {{selectOptions selects.profiles selected=system.identity.profile}}
+          </select>
+        </div>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">
+          <img src="systems/eternamev2/assets/icons/size.svg" alt="">
+        </div>
+        <div class="field-body">
+          <label>{{localize "ETERN.SIZE.LABEL"}}</label>
+          <select name="system.identity.size">
+            {{selectOptions selects.sizes selected=system.identity.size}}
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="xp-card">
+      <div class="xp-main-line">
+        <div class="field-icon xp-icon">
+          <img src="systems/eternamev2/assets/icons/xp.svg" alt="">
+        </div>
+
+        <div class="xp-main-field">
+          <label>{{localize "ETERN.XP"}}</label>
+          <input
+            type="number"
+            name="system.identity.xp.total"
+            value="{{system.identity.xp.total}}"
+            min="0"
+          >
+        </div>
+      </div>
+
+      <div class="xp-sub-block">
+        <input
+          type="number"
+          name="system.identity.xp.used"
+          value="{{system.identity.xp.used}}"
+          min="0"
+        >
+        <span>{{localize "ETERN.XP_USED"}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-portrait-card">
+    <div class="portrait-title">{{localize "ETERN.IMAGE"}}</div>
+    <div class="portrait-frame">
+      <img class="portrait-img" src="{{document.img}}" alt="{{document.name}}">
+    </div>
+  </div>
+
+</header>

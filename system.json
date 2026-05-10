@@ -1,0 +1,56 @@
+{
+  "id": "eternamev2",
+  "title": "Etername v2",
+  "description": "Etername system for Foundry VTT v14",
+  "version": "0.20.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "authors": [
+    {
+      "name": "Tom LEPERT"
+    }
+  ],
+  "esmodules": [
+    "module/etername.js"
+  ],
+  "styles": [
+    "styles/etername.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    }
+  ],
+  "packs": [],
+  "documentTypes": {
+    "Actor": {
+      "character": {},
+      "merchant": {},
+      "invocation": {}
+    },
+    "Item": {
+      "armor": {},
+      "gear": {},
+      "object": {},
+      "shield": {},
+      "tool": {},
+      "weapon": {},
+      "material": {},
+      "consumable": {},
+      "bag": {},
+      "profession": {},
+      "technique": {},
+      "invocation": {},
+      "heritage": {}
+    }
+  }
+}

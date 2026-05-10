@@ -1,0 +1,149 @@
+<article class="enchantment-entry-card">
+  <div class="sheet-card-head sheet-card-head--split">
+    <div class="enchantment-entry-headline">
+      <div class="form-group">
+        <label>{{localize 'ETERN.UI.NAME'}}</label>
+        <input type="text" name="system.enchanting.entries.{{entry.index}}.label" value="{{entry.label}}" placeholder="{{localize 'ETERN.UI.NAME'}}"/>
+      </div>
+      <div class="sheet-badge-row">
+        {{#each entry.badges as |badge|}}
+          <span class="sheet-badge">{{badge}}</span>
+        {{/each}}
+      </div>
+      {{#if entry.sourceLabel}}
+        <p class="sheet-muted-copy enchantment-entry-copy">{{localize 'ETERN.ENCHANTING.ENTRY.SOURCE'}}: {{entry.sourceLabel}}</p>
+      {{/if}}
+    </div>
+    {{#if editable}}
+      <button type="button" class="sheet-action-button sheet-action-button--danger" data-action="enchantment-remove-entry" data-entry-index="{{entry.index}}">{{localize 'ETERN.UI.DELETE'}}</button>
+    {{/if}}
+  </div>
+
+  <div class="sheet-fields-grid sheet-fields-grid--three enchantment-entry-grid">
+    <div class="form-group">
+      <label>{{localize 'ETERN.ENCHANTING.ENTRY.RANK'}}</label>
+      <input type="number" name="system.enchanting.entries.{{entry.index}}.rank" value="{{entry.rank}}" min="1" max="7" step="1"/>
+    </div>
+    <div class="form-group">
+      <label>{{localize 'ETERN.ENCHANTING.ENTRY.MAGIC_WEIGHT'}}</label>
+      <input type="number" name="system.enchanting.entries.{{entry.index}}.magicWeight" value="{{entry.magicWeight}}" step="0.1"/>
+    </div>
+    <label class="sheet-checkbox-card">
+      <span>{{localize 'ETERN.ENCHANTING.ENTRY.LOCKED'}}</span>
+      <input type="checkbox" name="system.enchanting.entries.{{entry.index}}.locked" {{checked entry.locked}}/>
+    </label>
+    <div class="form-group sheet-fields-grid--full">
+      <label>{{localize 'ETERN.ENCHANTING.ENTRY.TAGS'}}</label>
+      {{#if entry.isRegisteredEntry}}
+        <input type="hidden" name="system.enchanting.entries.{{entry.index}}.tagsText" value="{{entry.tagsText}}"/>
+        {{#if entry.tagPills.length}}
+          <div class="enchantment-tag-pills">
+            {{#each entry.tagPills as |tag|}}
+              <span class="enchantment-tag-pill" data-tag="{{tag.key}}">{{tag.label}}</span>
+            {{/each}}
+          </div>
+        {{else}}
+          <p class="sheet-muted-copy">{{localize 'ETERN.ENCHANTING.ENTRY.NO_TAGS'}}</p>
+        {{/if}}
+      {{else}}
+        <input type="text" name="system.enchanting.entries.{{entry.index}}.tagsText" value="{{entry.tagsText}}" placeholder="{{localize 'ETERN.ENCHANTING.ENTRY.TAGS_PLACEHOLDER'}}"/>
+        {{#if entry.tagPills.length}}
+          <div class="enchantment-tag-pills enchantment-tag-pills--preview">
+            {{#each entry.tagPills as |tag|}}
+              <span class="enchantment-tag-pill" data-tag="{{tag.key}}">{{tag.label}}</span>
+            {{/each}}
+          </div>
+        {{/if}}
+      {{/if}}
+    </div>
+  </div>
+
+
+  {{#if entry.isCustomEntry}}
+    <div class="sheet-fields-grid sheet-fields-grid--two enchantment-entry-grid">
+      <div class="form-group">
+        <label>{{localize 'ETERN.ENCHANTING.ENTRY.BADGE_AFFIX'}}</label>
+        <select name="system.enchanting.entries.{{entry.index}}.family">
+          {{#each entry.familyChoices}}
+            <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label>{{localize 'ETERN.ENCHANTING.ENTRY.BADGE_PREFIX'}}</label>
+        <select name="system.enchanting.entries.{{entry.index}}.side">
+          {{#each entry.sideChoices}}
+            <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+  {{/if}}
+
+  <div class="form-group form-group-stacked">
+    <label>{{localize 'ETERN.UI.DESCRIPTION'}}</label>
+    <textarea name="system.enchanting.entries.{{entry.index}}.description" rows="3">{{entry.description}}</textarea>
+  </div>
+
+  {{#unless entry.hasNumericBonuses}}
+    <p class="sheet-muted-copy enchantment-entry-copy">{{localize 'ETERN.ENCHANTING.ENTRY.DESCRIPTIVE_ONLY'}}</p>
+  {{/unless}}
+
+  <section class="enchantment-bonus-panel">
+    <div class="sheet-card-head sheet-card-head--split">
+      <h4>{{localize 'ETERN.ENCHANTING.ACTOR_BONUSES'}}</h4>
+      {{#if editable}}
+        <button type="button" class="sheet-action-button" data-action="enchantment-add-actor-bonus" data-entry-index="{{entry.index}}">{{localize 'ETERN.ENCHANTING.ADD_ACTOR_BONUS'}}</button>
+      {{/if}}
+    </div>
+    {{#if entry.actorBonuses.length}}
+      <div class="enchantment-bonus-rows">
+        {{#each entry.actorBonuses as |bonus|}}
+          <div class="enchantment-bonus-row">
+            <select name="system.enchanting.entries.{{../entry.index}}.actorBonuses.{{bonus.index}}.targetKey">
+              {{#each bonus.targetChoices}}
+                <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+              {{/each}}
+            </select>
+            <input type="number" name="system.enchanting.entries.{{../entry.index}}.actorBonuses.{{bonus.index}}.value" value="{{bonus.value}}" step="1"/>
+            <input type="text" name="system.enchanting.entries.{{../entry.index}}.actorBonuses.{{bonus.index}}.notes" value="{{bonus.notes}}" placeholder="{{localize 'ETERN.UI.NOTES'}}"/>
+            {{#if ../editable}}
+              <button type="button" class="sheet-icon-button sheet-icon-button--danger" data-action="enchantment-remove-actor-bonus" data-entry-index="{{../entry.index}}" data-bonus-index="{{bonus.index}}">×</button>
+            {{/if}}
+          </div>
+        {{/each}}
+      </div>
+    {{else}}
+      <p class="sheet-muted-copy">{{localize 'ETERN.ENCHANTING.NO_ACTOR_BONUSES'}}</p>
+    {{/if}}
+  </section>
+
+  <section class="enchantment-bonus-panel">
+    <div class="sheet-card-head sheet-card-head--split">
+      <h4>{{localize 'ETERN.ENCHANTING.ITEM_BONUSES'}}</h4>
+      {{#if editable}}
+        <button type="button" class="sheet-action-button" data-action="enchantment-add-item-bonus" data-entry-index="{{entry.index}}">{{localize 'ETERN.ENCHANTING.ADD_ITEM_BONUS'}}</button>
+      {{/if}}
+    </div>
+    {{#if entry.itemBonuses.length}}
+      <div class="enchantment-bonus-rows">
+        {{#each entry.itemBonuses as |bonus|}}
+          <div class="enchantment-bonus-row">
+            <select name="system.enchanting.entries.{{../entry.index}}.itemBonuses.{{bonus.index}}.targetKey">
+              {{#each bonus.targetChoices}}
+                <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+              {{/each}}
+            </select>
+            <input type="number" name="system.enchanting.entries.{{../entry.index}}.itemBonuses.{{bonus.index}}.value" value="{{bonus.value}}" step="0.1"/>
+            <input type="text" name="system.enchanting.entries.{{../entry.index}}.itemBonuses.{{bonus.index}}.notes" value="{{bonus.notes}}" placeholder="{{localize 'ETERN.UI.NOTES'}}"/>
+            {{#if ../editable}}
+              <button type="button" class="sheet-icon-button sheet-icon-button--danger" data-action="enchantment-remove-item-bonus" data-entry-index="{{../entry.index}}" data-bonus-index="{{bonus.index}}">×</button>
+            {{/if}}
+          </div>
+        {{/each}}
+      </div>
+    {{else}}
+      <p class="sheet-muted-copy">{{localize 'ETERN.ENCHANTING.NO_ITEM_BONUSES'}}</p>
+    {{/if}}
+  </section>
+</article>

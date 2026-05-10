@@ -1,0 +1,85 @@
+<header class="sheet-header item-sheet-header-card">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="72" width="72"/>
+    <div class="header-fields item-header-fields">
+      <div class="item-title-row">
+        <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'ETERN.WEAPON.NAME'}}"/></h1>
+        {{#if sheetHeader.showPresetReset}}
+          <button type="button" class="sheet-action-button" data-action="preset-reset">{{localize 'ETERN.UI.REAPPLY_PRESET'}}</button>
+        {{/if}}
+      </div>
+      {{#if sheetHeader.badges.length}}
+        <div class="sheet-badge-row">
+          {{#each sheetHeader.badges as |badge|}}
+            <span class="sheet-badge">{{badge}}</span>
+          {{/each}}
+        </div>
+      {{/if}}
+      {{#if sheetHeader.statBadges.length}}
+        <div class="sheet-stat-row">
+          {{#each sheetHeader.statBadges as |badge|}}
+            <div class="sheet-stat-pill"><span>{{badge.label}}</span><strong>{{badge.value}}</strong></div>
+          {{/each}}
+        </div>
+      {{/if}}
+      <div class="sheet-fields-grid sheet-fields-grid--three">
+        <div class="form-group"><label>{{localize 'ETERN.WEAPON.BASE'}}</label><select name="system.base">{{#each weaponBases}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
+        <div class="form-group"><label>{{localize 'ETERN.WEAPON.CATEGORY.LABEL'}}</label><input type="text" value="{{weaponCategoryLabel}}" disabled></div>
+        <div class="form-group"><label>{{localize 'ETERN.WEAPON.WEIGHT'}}</label><select name="system.weight">{{#each weightChoices}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
+        <div class="form-group"><label>{{localize 'ETERN.ITEM.LEGALITY.LABEL'}}</label><select name="system.legality">{{#each legalityChoices}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sheet-tabs tabs item-sheet-tabs" data-group="primary">
+    <a class="item" data-tab="general">{{localize 'ETERN.WEAPON.TABS.GENERAL'}}</a>
+    <a class="item" data-tab="skills">{{localize 'ETERN.WEAPON.TABS.SKILLS'}}</a>
+    <a class="item" data-tab="enchantment">{{localize 'ETERN.WEAPON.TABS.ENCHANTMENT'}}</a>
+  </nav>
+
+  <section class="sheet-body">
+    <section class="tab" data-group="primary" data-tab="general">
+      <div class="sheet-two-column">
+        <section class="sheet-card">
+          <div class="sheet-card-head"><h3>{{localize 'ETERN.UI.CORE_STATS'}}</h3></div>
+          <div class="sheet-fields-grid sheet-fields-grid--three">
+            <div class="form-group"><label>{{localize 'ETERN.WEAPON.RANGE'}}</label><input type="text" name="system.range" value="{{system.range}}"/></div>
+            <div class="form-group"><label>{{localize 'ETERN.WEAPON.DAMAGE'}}</label><input type="text" name="system.damage" value="{{system.damage}}"/></div>
+            <div class="form-group"><label>{{localize 'ETERN.WEAPON.DAMAGE_TYPE'}}</label><input type="text" name="system.damageType" value="{{system.damageType}}"/></div>
+            <div class="form-group"><label>{{localize 'ETERN.WEAPON.PRECISION_BASE'}}</label><select name="system.precisionBase">{{#each precisionChoices}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{value}}</option>{{/each}}</select></div>
+            <div class="form-group"><label>{{localize 'ETERN.WEAPON.PRECISION_BONUS'}}</label><input type="number" name="system.precisionBonus" value="{{system.precisionBonus}}" step="1"/></div>
+            <label class="sheet-checkbox-card">
+              <span>{{localize 'ETERN.WEAPON.EQUIPPED'}}</span>
+              <input type="checkbox" name="system.equipped" {{checked system.equipped}}/>
+            </label>
+          </div>
+        </section>
+
+        <section class="sheet-card">
+          <div class="sheet-card-head"><h3>{{localize 'ETERN.WEAPON.TAGS.LABEL'}}</h3></div>
+          <div class="weapon-tag-grid">{{#each tagChoices}}<label class="weapon-tag-choice"><input class="weapon-tag-checkbox" type="checkbox" value="{{key}}" {{checked checked}}/> <span>{{label}}</span></label>{{/each}}</div>
+        </section>
+      </div>
+
+      <section class="sheet-card sheet-card-spacious">
+        <div class="sheet-card-head"><h3>{{localize 'ETERN.WEAPON.DESCRIPTION'}}</h3></div>
+        <div class="form-group form-group-stacked"><textarea name="system.description" rows="8">{{system.description}}</textarea></div>
+      </section>
+    </section>
+
+    <section class="tab" data-group="primary" data-tab="skills">
+      <div class="weapon-skills-list">{{#each skillRows as |skill|}}
+        <section class="weapon-skill-card sheet-card">
+          <div class="sheet-card-head sheet-card-head--split">
+            <h3>{{localize 'ETERN.WEAPON.SKILL.NAME'}}</h3>
+            <label class="sheet-inline-toggle"><input type="checkbox" name="system.skills.{{skill.index}}.learned" {{checked skill.learned}}/> <span>{{localize 'ETERN.WEAPON.SKILL.LEARNED'}}</span></label>
+          </div>
+          <div class="form-group"><label>{{localize 'ETERN.WEAPON.SKILL.NAME'}}</label><input type="text" name="system.skills.{{skill.index}}.name" value="{{skill.name}}"/></div>
+          <div class="form-group form-group-stacked"><label>{{localize 'ETERN.WEAPON.SKILL.DESCRIPTION'}}</label><textarea name="system.skills.{{skill.index}}.description" rows="4">{{skill.description}}</textarea></div>
+        </section>{{/each}}
+      </div>
+    </section>
+
+    <section class="tab" data-group="primary" data-tab="enchantment">
+      {{> "systems/eternamev2/templates/item/partials/enchantment-panel.hbs"}}
+    </section>
+  </section>

@@ -1,0 +1,170 @@
+<section class="tab" data-group="primary" data-tab="components">
+    {{#each techniqueSections as |section|}}
+      <section class="sheet-card technique-drop-zone" data-technique-drop-array-key="{{section.key}}">
+        <div class="sheet-card-head sheet-card-head--split">
+          <div>
+            <h3>{{section.title}}</h3>
+            <p class="sheet-muted-copy technique-drop-hint">{{localize 'ETERN.TECHNIQUE.DROP_HINT_SECTION'}}</p>
+          </div>
+          {{#if owner}}
+            <div class="builder-action-group">
+              <button type="button" class="sheet-action-button" data-action="builder-add-entry" data-array-key="{{section.key}}">{{localize 'ETERN.UI.ADD'}}</button>
+              <button type="button" class="sheet-action-button" data-action="technique-sync-source-section" data-array-key="{{section.key}}">{{localize 'ETERN.TECHNIQUE.ACTION.SYNC_SECTION'}}</button>
+            </div>
+          {{/if}}
+        </div>
+
+        <div class="builder-list">
+          {{#each section.entries as |entry|}}
+            <article class="builder-row">
+              <div class="builder-grid builder-grid--profession-entry">
+                <div class="builder-row-note builder-grid-full">
+                  {{#if entry.sourceLabel}}
+                    <span class="builder-inline-badge">{{entry.sourceLabel}}</span>
+                  {{/if}}
+                  {{#if entry.sourceStatus.badgeLabel}}
+                    <span class="builder-inline-badge {{entry.sourceStatus.badgeClass}}">{{entry.sourceStatus.badgeLabel}}</span>
+                  {{/if}}
+                  {{#if entry.isUniversal}}
+                    <span class="builder-inline-badge">{{localize 'ETERN.PROFESSION.UNIVERSAL'}}</span>
+                  {{/if}}
+                  <span class="builder-inline-badge">{{entry.signedXpLabel}}</span>
+                  {{#if entry.stateLabel}}
+                    <span class="builder-inline-badge">{{entry.stateLabel}}</span>
+                  {{/if}}
+                  <span class="builder-inline-badge {{entry.referenceStatusClass}}">{{entry.referenceStatusLabel}}</span>
+                  {{#if entry.slotBonusLabel}}
+                    <span class="builder-inline-badge">{{entry.slotBonusLabel}}</span>
+                  {{/if}}
+                  {{#each entry.slotBadges as |badge|}}
+                    <span class="builder-inline-badge">{{badge}}</span>
+                  {{/each}}
+                </div>
+                {{#if entry.sourceStatus.message}}
+                  <p class="sheet-muted-copy builder-grid-full">{{entry.sourceStatus.message}}</p>
+                {{/if}}
+                <div class="form-group">
+                  <label>{{localize 'ETERN.UI.NAME'}}</label>
+                  <input type="text" value="{{entry.name}}" data-builder-field="1" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-entry-field="name"/>
+                </div>
+                <div class="form-group builder-xp-field">
+                  <label>{{localize 'ETERN.TECHNIQUE.XP_COST'}}</label>
+                  <input type="number" value="{{entry.xpCost}}" step="1" data-builder-field="1" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-entry-field="xpCost"/>
+                </div>
+                <div class="form-group builder-reference-field">
+                  <label>{{localize 'ETERN.PROFESSION.REFERENCE_KEY'}}</label>
+                  <input type="text" value="{{entry.referenceKey}}" data-builder-field="1" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-entry-field="referenceKey"/>
+                  <div class="builder-row-note">
+                    <span class="builder-inline-badge {{entry.referenceStatusClass}}">{{entry.referenceStatusLabel}}</span>
+                    <span class="builder-inline-badge builder-inline-badge--muted">{{entry.referencePreviewLabel}}</span>
+                  </div>
+                </div>
+                {{#if section.withExtraStatisticSlots}}
+                  <div class="form-group builder-xp-field">
+                    <label>{{localize 'ETERN.TECHNIQUE.SLOTS.EXTRA_STATISTIC_SLOTS'}}</label>
+                    <input type="number" value="{{entry.extraStatisticSlots}}" min="0" step="1" data-builder-field="1" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-entry-field="extraStatisticSlots"/>
+                  </div>
+                {{/if}}
+                <div class="form-group form-group-stacked builder-grid-full">
+                  <label>{{localize 'ETERN.ITEM.DESCRIPTION'}}</label>
+                  <textarea rows="3" data-builder-field="1" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-entry-field="description">{{entry.description}}</textarea>
+                </div>
+              </div>
+              {{#if ../../owner}}
+                <div class="builder-row-actions builder-row-actions--stacked">
+                  {{#if entry.canMoveUp}}
+                    <button type="button" class="sheet-action-button" data-action="builder-move-entry" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-direction="-1">{{localize 'ETERN.UI.MOVE_UP'}}</button>
+                  {{/if}}
+                  {{#if entry.canMoveDown}}
+                    <button type="button" class="sheet-action-button" data-action="builder-move-entry" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}" data-direction="1">{{localize 'ETERN.UI.MOVE_DOWN'}}</button>
+                  {{/if}}
+                  {{#if entry.sourceStatus.canSync}}
+                    <button type="button" class="sheet-action-button" data-action="technique-sync-source-entry" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}">{{localize 'ETERN.TECHNIQUE.ACTION.SYNC_SOURCE'}}</button>
+                  {{/if}}
+                  {{#if entry.sourceProfessionId}}
+                    <button type="button" class="sheet-action-button" data-action="technique-open-source-profession" data-profession-id="{{entry.sourceProfessionId}}">{{localize 'ETERN.UI.OPEN'}}</button>
+                  {{/if}}
+                  <button type="button" class="sheet-action-button" data-action="builder-duplicate-entry" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}">{{localize 'ETERN.UI.DUPLICATE'}}</button>
+                  <button type="button" class="sheet-action-button" data-action="builder-remove-entry" data-array-key="{{section.key}}" data-entry-index="{{entry.index}}">{{localize 'ETERN.UI.DELETE'}}</button>
+                </div>
+              {{/if}}
+            </article>
+          {{else}}
+            <p class="sheet-muted-copy">{{section.emptyLabel}}</p>
+          {{/each}}
+        </div>
+
+        {{#if section.availableEntries.length}}
+          <div class="builder-source-section">
+            <h4>{{localize 'ETERN.TECHNIQUE.SOURCE_SECTION_TITLE'}}</h4>
+            <div class="builder-list builder-list--compact">
+              {{#each section.availableEntries as |entry|}}
+                <article class="builder-row builder-row--compact {{#if entry.canDrag}}builder-row--draggable{{/if}}" {{#if entry.canDrag}}data-technique-source-draggable="1"{{/if}} data-profession-id="{{entry.professionId}}" data-array-key="{{section.key}}" data-source-entry-id="{{entry.id}}" data-source-kind="{{entry.sourceKind}}">
+                  <div class="builder-grid builder-grid--profession-entry">
+                    <div class="builder-row-note builder-grid-full">
+                      {{#if entry.isBaseComponent}}
+                        <span class="builder-inline-badge">{{entry.baseComponentLabel}}</span>
+                      {{else}}
+                        <span class="builder-inline-badge">{{entry.professionName}}</span>
+                      {{/if}}
+                      {{#if entry.universalLabel}}
+                        <span class="builder-inline-badge">{{entry.universalLabel}}</span>
+                      {{/if}}
+                      <span class="builder-inline-badge">{{entry.signedXpLabel}}</span>
+                      {{#if entry.stateLabel}}
+                        <span class="builder-inline-badge">{{entry.stateLabel}}</span>
+                      {{/if}}
+                      <span class="builder-inline-badge {{entry.referenceStatusClass}}">{{entry.referenceStatusLabel}}</span>
+                      {{#if entry.slotBonusLabel}}
+                        <span class="builder-inline-badge">{{entry.slotBonusLabel}}</span>
+                      {{/if}}
+                      {{#each entry.slotBadges as |badge|}}
+                        <span class="builder-inline-badge">{{badge}}</span>
+                      {{/each}}
+                      {{#if entry.dragLabel}}
+                        <span class="builder-inline-badge builder-inline-badge--drag">{{entry.dragLabel}}</span>
+                      {{/if}}
+                    </div>
+                    <div class="form-group">
+                      <label>{{localize 'ETERN.UI.NAME'}}</label>
+                      <input type="text" value="{{entry.name}}" disabled/>
+                    </div>
+                    <div class="form-group builder-xp-field">
+                      <label>{{localize 'ETERN.TECHNIQUE.XP_COST'}}</label>
+                      <input type="text" value="{{entry.signedXpLabel}}" disabled/>
+                    </div>
+                    <div class="form-group builder-reference-field">
+                      <label>{{localize 'ETERN.PROFESSION.REFERENCE_KEY'}}</label>
+                      <input type="text" value="{{entry.referenceLabel}}" disabled/>
+                    </div>
+                    {{#if section.withExtraStatisticSlots}}
+                      <div class="form-group builder-xp-field">
+                        <label>{{localize 'ETERN.TECHNIQUE.SLOTS.EXTRA_STATISTIC_SLOTS'}}</label>
+                        <input type="text" value="{{entry.extraStatisticSlots}}" disabled/>
+                      </div>
+                    {{/if}}
+                    <div class="form-group form-group-stacked builder-grid-full">
+                      <label>{{localize 'ETERN.ITEM.DESCRIPTION'}}</label>
+                      <textarea rows="2" disabled>{{entry.description}}</textarea>
+                    </div>
+                  </div>
+                  {{#if ../../owner}}
+                    <div class="builder-row-actions">
+                      {{#if entry.isBaseComponent}}
+                        <button type="button" class="sheet-action-button" data-action="technique-import-base-entry" data-array-key="{{section.key}}" data-base-entry-id="{{entry.id}}" {{#if entry.alreadyAdded}}disabled{{/if}}>{{entry.addLabel}}</button>
+                      {{else}}
+                        <button type="button" class="sheet-action-button" data-action="technique-import-source-entry" data-array-key="{{section.key}}" data-profession-id="{{entry.professionId}}" data-source-entry-id="{{entry.id}}" {{#if entry.alreadyAdded}}disabled{{/if}}>{{entry.addLabel}}</button>
+                        {{#if entry.canOpenSource}}
+                          <button type="button" class="sheet-action-button" data-action="technique-open-source-profession" data-profession-id="{{entry.professionId}}">{{localize 'ETERN.UI.OPEN'}}</button>
+                        {{/if}}
+                      {{/if}}
+                    </div>
+                  {{/if}}
+                </article>
+              {{/each}}
+            </div>
+          </div>
+        {{/if}}
+      </section>
+    {{/each}}
+  </section>

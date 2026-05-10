@@ -1,0 +1,54 @@
+<header class="sheet-header item-sheet-header-card">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="72" width="72"/>
+    <div class="header-fields item-header-fields">
+      <div class="item-title-row">
+        <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{genericItemTypeLabel}}"/></h1>
+      </div>
+      {{#if sheetHeader.badges.length}}
+        <div class="sheet-badge-row">
+          {{#each sheetHeader.badges as |badge|}}
+            <span class="sheet-badge">{{badge}}</span>
+          {{/each}}
+        </div>
+      {{/if}}
+    </div>
+  </header>
+
+  <section class="sheet-body item-sheet-single-column">
+    <section class="sheet-card sheet-card-spacious">
+      <div class="sheet-card-head">
+        <h3>{{localize 'ETERN.UI.CORE_STATS'}}</h3>
+      </div>
+      <div class="sheet-fields-grid sheet-fields-grid--two">
+        <div class="form-group">
+          <label>{{localize 'ETERN.ITEM.WEIGHT'}}</label>
+          <select name="system.weight">
+            {{#each weightChoices}}
+              <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="form-group">
+          <label>{{localize 'ETERN.ITEM.LEGALITY.LABEL'}}</label>
+          <select name="system.legality">
+            {{#each legalityChoices}}
+              <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="sheet-card sheet-card-spacious">
+      <div class="sheet-card-head">
+        <h3>{{localize 'ETERN.ITEM.DESCRIPTION'}}</h3>
+      </div>
+      <div class="form-group form-group-stacked">
+        <textarea name="system.description" rows="14">{{system.description}}</textarea>
+      </div>
+    </section>
+
+    {{#if isEnchantableItem}}
+      {{> "systems/eternamev2/templates/item/partials/enchantment-panel.hbs"}}
+    {{/if}}
+  </section>

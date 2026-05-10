@@ -1,0 +1,31 @@
+<form class="attribute-roll-dialog">
+  <div class="attribute-roll-dialog__summary">
+    <div class="attribute-roll-dialog__line">
+      <span class="attribute-roll-dialog__label">{{localize "ETERN.ROLL.DIALOG.ATTRIBUTE"}}</span>
+      <strong>{{attribute.label}} ({{attribute.abbr}})</strong>
+    </div>
+    <div class="attribute-roll-dialog__line">
+      <span class="attribute-roll-dialog__label">{{localize "ETERN.ROLL.DIALOG.DICE"}}</span>
+      <strong>{{diceCount}}d6</strong>
+    </div>
+    <div class="attribute-roll-dialog__line">
+      <span class="attribute-roll-dialog__label">{{localize "ETERN.ROLL.DIALOG.TICKS"}}</span>
+      <strong>{{attribute.ticks}}</strong>
+    </div>
+    <div class="attribute-roll-dialog__line">
+      <span class="attribute-roll-dialog__label">{{localize "ETERN.ROLL.DIALOG.BASE_TARGET"}}</span>
+      <strong>{{baseTargetLabel}}</strong>
+    </div>
+  </div>
+
+  <div class="attribute-roll-dialog__field">
+    <label for="attribute-roll-mode">{{localize "ETERN.ROLL.DIALOG.MODE"}}</label>
+    <select id="attribute-roll-mode" name="mode">
+      {{#each modeChoices}}
+        <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <p class="attribute-roll-dialog__hint">{{localize "ETERN.ROLL.DIALOG.HINT"}}</p>
+</form>

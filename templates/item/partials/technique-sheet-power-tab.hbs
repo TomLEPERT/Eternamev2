@@ -1,0 +1,231 @@
+<section class="tab" data-group="primary" data-tab="power">
+    <section class="sheet-card">
+      <div class="sheet-card-head"><h3>{{localize 'ETERN.TECHNIQUE.SLOTS.TITLE'}}</h3></div>
+      <div class="builder-summary-grid builder-summary-grid--power">
+        <div class="builder-summary-card">
+          <strong>{{localize 'ETERN.TECHNIQUE.SLOTS.BASE'}}</strong>
+          <span>{{techniqueSlotBudget.baseStatisticSlots}}</span>
+        </div>
+        <div class="builder-summary-card">
+          <strong>{{localize 'ETERN.TECHNIQUE.SLOTS.EXTRA'}}</strong>
+          <span>{{techniqueSlotBudget.extraStatisticSlots}}</span>
+        </div>
+        <div class="builder-summary-card">
+          <strong>{{localize 'ETERN.TECHNIQUE.SLOTS.PASSIVES'}}</strong>
+          <span>{{techniqueSlotBudget.passiveExtraStatisticSlots}}</span>
+        </div>
+        <div class="builder-summary-card">
+          <strong>{{localize 'ETERN.TECHNIQUE.SLOTS.USED'}}</strong>
+          <span>{{techniqueSlotBudget.usedStatisticSlots}} / {{techniqueSlotBudget.availableStatisticSlots}}</span>
+        </div>
+        <div class="builder-summary-card">
+          <strong>{{localize 'ETERN.TECHNIQUE.SLOTS.FREE'}}</strong>
+          <span>{{techniqueSlotBudget.usedFreeSlots}} / {{techniqueSlotBudget.freeSlots}}</span>
+        </div>
+      </div>
+      <div class="builder-row-note builder-row-note--spaced">
+        <span class="builder-inline-badge">{{localize 'ETERN.TECHNIQUE.SLOTS.RANGE_COUNT' count=techniqueSlotBudget.counts.range max=techniqueSlotBudget.baseSlots.range}}</span>
+        <span class="builder-inline-badge">{{localize 'ETERN.TECHNIQUE.SLOTS.DURATION_COUNT' count=techniqueSlotBudget.counts.duration max=techniqueSlotBudget.baseSlots.duration}}</span>
+        <span class="builder-inline-badge">{{localize 'ETERN.TECHNIQUE.SLOTS.EFFECT_COUNT' count=techniqueSlotBudget.counts.effect}}</span>
+        <span class="builder-inline-badge">{{localize 'ETERN.TECHNIQUE.SLOTS.FREE_COUNT' used=techniqueSlotBudget.usedFreeSlots available=techniqueSlotBudget.freeSlots}}</span>
+        <span class="builder-inline-badge">{{localize 'ETERN.TECHNIQUE.SLOTS.BASE_PATTERN'}}</span>
+      </div>
+      <div class="builder-slot-breakdown">
+        <h4>{{localize 'ETERN.TECHNIQUE.SLOTS.BREAKDOWN_TITLE'}}</h4>
+        {{#if techniqueSlotBudget.hasBreakdownSections}}
+          <div class="builder-slot-breakdown-grid">
+            {{#each techniqueSlotBudget.breakdownSections as |section|}}
+              <article class="builder-summary-card">
+                <div class="builder-slot-breakdown-head">
+                  <strong>{{section.label}}</strong>
+                  <span>{{section.totalLabel}}</span>
+                </div>
+                {{#if section.totalBadges.length}}
+                  <div class="builder-row-note">
+                    {{#each section.totalBadges as |badge|}}
+                      <span class="builder-inline-badge">{{badge}}</span>
+                    {{/each}}
+                  </div>
+                {{/if}}
+                <div class="builder-list builder-list--compact">
+                  {{#each section.entries as |entry|}}
+                    <div class="builder-slot-breakdown-row">
+                      <div>
+                        <strong>{{entry.label}}</strong>
+                        {{#if entry.sourceLabel}}
+                          <p class="sheet-muted-copy">{{entry.sourceLabel}}</p>
+                        {{/if}}
+                      </div>
+                      <div class="builder-row-note">
+                        {{#each entry.badges as |badge|}}
+                          <span class="builder-inline-badge">{{badge}}</span>
+                        {{/each}}
+                      </div>
+                    </div>
+                  {{/each}}
+                </div>
+              </article>
+            {{/each}}
+          </div>
+        {{else}}
+          <p class="sheet-muted-copy">{{localize 'ETERN.TECHNIQUE.SLOTS.BREAKDOWN_EMPTY'}}</p>
+        {{/if}}
+      </div>
+    </section>
+
+    <section class="sheet-card">
+      <div class="sheet-card-head"><h3>{{localize 'ETERN.TECHNIQUE.POWER.TITLE'}}</h3></div>
+      <div class="sheet-fields-grid sheet-fields-grid--two">
+        <div class="form-group">
+          <label>{{localize 'ETERN.TECHNIQUE.POWER.LEVEL'}}</label>
+          <input type="number" name="system.power" value="{{system.power}}" min="0" max="10" step="1"/>
+        </div>
+        <div class="form-group">
+          <label>{{localize 'ETERN.TECHNIQUE.MAIN_STATISTIC'}}</label>
+          <select name="system.mainStatisticId">
+            {{#each mainStatisticChoices}}
+              <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+      <div class="sheet-stat-row builder-summary-row">
+        <div class="sheet-stat-pill"><span>{{localize 'ETERN.TECHNIQUE.XP_CREATION'}}</span><strong>{{techniqueSummary.creationXp}}</strong></div>
+        <div class="sheet-stat-pill"><span>{{localize 'ETERN.TECHNIQUE.XP_POWER'}}</span><strong>{{techniqueSummary.powerXp}}</strong></div>
+        <div class="sheet-stat-pill"><span>{{localize 'ETERN.TECHNIQUE.XP_TOTAL'}}</span><strong>{{techniqueSummary.totalXp}}</strong></div>
+      </div>
+      <div class="builder-summary-grid builder-summary-grid--xp">
+        <div class="builder-summary-card">
+          <strong>{{localize 'ETERN.TECHNIQUE.SECTION.KEYS'}}</strong>
+          <span>{{techniqueSummary.breakdown.keys}} XP</span>
+        </div>
+        <div class="builder-summary-card">
+          <strong>{{localize 'ETERN.TECHNIQUE.SECTION.CONDITIONS'}}</strong>
+          <span>{{techniqueSummary.breakdown.conditions}} XP</span>
+        </div>
+        <div class="builder-summary-card">
+          <strong>{{localize 'ETERN.TECHNIQUE.SECTION.MECHANICS'}}</strong>
+          <span>{{techniqueSummary.breakdown.mechanics}} XP</span>
+        </div>
+        <div class="builder-summary-card">
+          <strong>{{localize 'ETERN.TECHNIQUE.SECTION.STATES'}}</strong>
+          <span>{{techniqueSummary.breakdown.states}} XP</span>
+        </div>
+        <div class="builder-summary-card">
+          <strong>{{localize 'ETERN.TECHNIQUE.STATISTICS'}}</strong>
+          <span>{{techniqueSummary.breakdown.statistics}} XP</span>
+        </div>
+      </div>
+      <div class="builder-summary-grid builder-summary-grid--power">
+        <div class="builder-summary-card">
+          <strong>{{localize 'ETERN.TECHNIQUE.POWER.BONUS_SLOTS'}}</strong>
+          <span>{{techniquePowerSummary.assignedBonusRanks}} / {{techniquePowerSummary.availableBonusRanks}}</span>
+        </div>
+        <div class="builder-summary-card">
+          <strong>{{localize 'ETERN.TECHNIQUE.POWER.REMAINING_SLOTS'}}</strong>
+          <span>{{techniquePowerSummary.missingBonusRanks}}</span>
+        </div>
+      </div>
+      <div class="builder-list builder-list--compact">
+        {{#each powerEnhancementChoices as |entry|}}
+          <div class="builder-inline-row">
+            <label>{{localize 'ETERN.TECHNIQUE.POWER.THRESHOLD_LABEL' threshold=entry.threshold}}</label>
+            <select data-technique-power-threshold="{{entry.threshold}}" data-enhancement-index="{{entry.index}}">
+              {{#each entry.choices as |choice|}}
+                <option value="{{choice.value}}" {{#if choice.selected}}selected{{/if}}>{{choice.label}}</option>
+              {{/each}}
+            </select>
+          </div>
+        {{/each}}
+      </div>
+      <div class="builder-step-grid">
+        {{#each techniquePowerSummary.stepCosts as |step|}}
+          <div class="builder-step-pill {{#if step.unlocked}}builder-step-pill--active{{/if}}">
+            <span>{{localize 'ETERN.TECHNIQUE.POWER.STEP' power=step.power}}</span>
+            <strong>{{step.xpCost}} XP</strong>
+          </div>
+        {{/each}}
+      </div>
+    </section>
+
+    <section class="sheet-card">
+      <div class="sheet-card-head sheet-card-head--split">
+        <h3>{{localize 'ETERN.TECHNIQUE.STATISTICS'}}</h3>
+      </div>
+      <div class="builder-list">
+        {{#each selectedTechniqueStatistics as |stat|}}
+          <article class="builder-row builder-row--compact">
+            <div class="builder-grid builder-grid--stat-entry builder-grid--stat-entry-expanded">
+              <div class="form-group">
+                <label>{{localize 'ETERN.UI.NAME'}}</label>
+                <input type="text" value="{{stat.label}}" disabled/>
+              </div>
+              <div class="form-group builder-xp-field">
+                <label>{{localize 'ETERN.TECHNIQUE.STAT.BASE_VALUE'}}</label>
+                <input type="text" value="{{stat.baseValue}}" disabled/>
+              </div>
+              <div class="form-group builder-xp-field">
+                <label>{{localize 'ETERN.TECHNIQUE.STAT.FINAL_VALUE'}}</label>
+                <input type="text" value="{{stat.finalValue}}" disabled/>
+              </div>
+              <div class="form-group builder-xp-field">
+                <label>{{localize 'ETERN.TECHNIQUE.STAT.BONUS_RANKS'}}</label>
+                <input type="text" value="{{stat.bonusRanks}}" disabled/>
+              </div>
+              <div class="form-group builder-xp-field">
+                <label>{{localize 'ETERN.TECHNIQUE.XP_COST'}}</label>
+                <input type="text" value="{{stat.xpCost}}" disabled/>
+              </div>
+              <div class="builder-row-note builder-grid-full">
+                {{#if stat.isMain}}
+                  <span class="builder-inline-badge">{{localize 'ETERN.TECHNIQUE.POWER.MAIN_BADGE'}}</span>
+                {{/if}}
+                {{#if stat.thresholdBonusRanks}}
+                  <span class="builder-inline-badge">{{localize 'ETERN.TECHNIQUE.POWER.THRESHOLD_BONUS_BADGE' ranks=stat.thresholdBonusRanks}}</span>
+                {{/if}}
+                {{#unless stat.scalesWithPower}}
+                  <span class="builder-inline-badge">{{localize 'ETERN.TECHNIQUE.POWER.NO_DIRECT_SCALING'}}</span>
+                {{/unless}}
+              </div>
+            </div>
+            {{#if ../owner}}
+              <div class="builder-row-actions">
+                <button type="button" class="sheet-action-button" data-action="technique-remove-stat" data-stat-entry-id="{{stat.id}}">{{localize 'ETERN.UI.DELETE'}}</button>
+              </div>
+            {{/if}}
+          </article>
+        {{else}}
+          <p class="sheet-muted-copy">{{localize 'ETERN.TECHNIQUE.STAT.EMPTY'}}</p>
+        {{/each}}
+      </div>
+    </section>
+
+    <section class="sheet-card">
+      <div class="sheet-card-head"><h3>{{localize 'ETERN.TECHNIQUE.STAT.CATALOG'}}</h3></div>
+      <div class="builder-list">
+        {{#each techniqueStatCatalog as |stat|}}
+          <article class="builder-row builder-row--compact">
+            <div class="builder-grid builder-grid--stat-catalog">
+              <div class="form-group">
+                <label>{{localize 'ETERN.UI.NAME'}}</label>
+                <input type="text" value="{{stat.label}}" disabled/>
+              </div>
+              <div class="form-group builder-xp-field">
+                <label>{{localize 'ETERN.TECHNIQUE.STAT.BASE_VALUE'}}</label>
+                <input type="text" value="{{stat.baseValue}}" disabled/>
+              </div>
+              <div class="form-group builder-xp-field">
+                <label>{{localize 'ETERN.TECHNIQUE.XP_COST'}}</label>
+                <input type="text" value="{{stat.xpCost}}" disabled/>
+              </div>
+            </div>
+            {{#if ../owner}}
+              <div class="builder-row-actions">
+                <button type="button" class="sheet-action-button" data-action="technique-add-stat" data-stat-id="{{stat.id}}">{{localize 'ETERN.UI.ADD'}}</button>
+              </div>
+            {{/if}}
+          </article>
+        {{/each}}
+      </div>
+    </section>
+</section>

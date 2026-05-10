@@ -1,0 +1,38 @@
+.stats-section-title {
+  min-height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--etern-radius-xl);
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.stats-section-title {
+  color: var(--etern-color-white);
+  background: linear-gradient(90deg, #2d2d2d, #202020);
+}
+
+.misc-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--etern-space-2xl);
+}
+
+.misc-card {
+  padding: var(--etern-space-lg);
+  border: var(--etern-panel-border);
+  border-radius: var(--etern-panel-radius);
+  background: var(--etern-panel-bg);
+}
+
+.misc-card h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--etern-text-dark);
+}
+
+.misc-placeholder {
+  color: var(--etern-text-muted);
+}

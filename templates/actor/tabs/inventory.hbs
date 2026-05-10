@@ -1,0 +1,151 @@
+<section class="inventory-layout">
+  <div class="inv-col">
+    <section class="inv-panel inv-storage-panel">
+      <header class="inv-header">
+        <h2>{{localize "ETERN.INVENTORY.BACKPACK.TITLE"}}</h2>
+        <div class="inv-meta">
+          <span class="inv-cap">{{system.derived.inventory.backpack.used}} / {{system.derived.inventory.backpack.capacity}}</span>
+          <button type="button" class="inv-add" data-action="inventory-create" data-location="backpack">+</button>
+        </div>
+      </header>
+
+      <div class="inv-list inventory-dropzone" data-location="backpack">
+        <div class="inv-row inv-row-head">
+          <div class="inv-name">{{localize "ETERN.INVENTORY.COLUMNS.NAME"}}</div>
+          <div class="inv-qty">{{localize "ETERN.INVENTORY.COLUMNS.QUANTITY"}}</div>
+          <div class="inv-weight">{{localize "ETERN.INVENTORY.COLUMNS.WEIGHT"}}</div>
+          <div class="inv-actions"></div>
+        </div>
+
+        {{#each inventory.backpack as |item|}}
+          <div class="inv-row" data-item-id="{{item.id}}">
+            <div class="inv-name">
+              <button type="button" class="inv-name-button" draggable="true" data-action="inventory-edit" data-item-id="{{item.id}}" title="{{item.description}}">{{item.name}}{{#if item.typeLabel}} · {{item.typeLabel}}{{/if}}{{#if item.isBag}} · {{localize "ETERN.BAG.LOAD_SHORT"}} {{item.bagLoadLabel}}/{{item.bagCapacityLabel}}{{/if}}</button>
+            </div>
+
+            <div class="inv-qty">
+              <button type="button" data-action="inventory-qty" data-item-id="{{item.id}}" data-delta="-1">-</button>
+              <span>{{item.quantity}}</span>
+              <button type="button" data-action="inventory-qty" data-item-id="{{item.id}}" data-delta="1">+</button>
+            </div>
+
+            <div class="inv-weight">{{item.weightLabel}}</div>
+
+            <div class="inv-actions">
+              {{#if item.isWeapon}}<button type="button" data-action="owned-item-toggle-equip" data-item-id="{{item.id}}" title="{{localize "ETERN.WEAPON.EQUIPPED"}}">{{#if item.equipped}}✓{{else}}○{{/if}}</button>{{else if item.isArmor}}<button type="button" data-action="owned-item-toggle-equip" data-item-id="{{item.id}}" title="{{localize "ETERN.ARMOR.EQUIPPED"}}">{{#if item.equipped}}✓{{else}}○{{/if}}</button>{{else if item.isShield}}<button type="button" data-action="owned-item-toggle-equip" data-item-id="{{item.id}}" title="{{localize "ETERN.SHIELD.EQUIPPED"}}">{{#if item.equipped}}✓{{else}}○{{/if}}</button>{{else if item.isBag}}<span class="sheet-muted-copy">{{item.bagLoadLabel}} / {{item.bagCapacityLabel}}</span>{{/if}}
+              <button type="button" data-action="inventory-move" data-item-id="{{item.id}}" title="{{localize "ETERN.INVENTORY.ACTIONS.MOVE"}}">⇄</button>
+              <button type="button" data-action="inventory-delete" data-item-id="{{item.id}}" title="{{localize "ETERN.INVENTORY.ACTIONS.DELETE"}}">🗑</button>
+            </div>
+          </div>
+        {{else}}
+          <div class="inv-empty">{{localize "ETERN.INVENTORY.EMPTY"}}</div>
+        {{/each}}
+      </div>
+    </section>
+
+    <section class="inv-panel inv-storage-panel">
+      <header class="inv-header">
+        <h2>{{localize "ETERN.INVENTORY.BELT.TITLE"}}</h2>
+        <div class="inv-meta">
+          <span class="inv-cap">{{system.derived.inventory.belt.used}} / {{system.derived.inventory.belt.capacity}}</span>
+          <button type="button" class="inv-add" data-action="inventory-create" data-location="belt">+</button>
+        </div>
+      </header>
+
+      <div class="inv-list inventory-dropzone" data-location="belt">
+        <div class="inv-row inv-row-head">
+          <div class="inv-name">{{localize "ETERN.INVENTORY.COLUMNS.NAME"}}</div>
+          <div class="inv-qty">{{localize "ETERN.INVENTORY.COLUMNS.QUANTITY"}}</div>
+          <div class="inv-weight">{{localize "ETERN.INVENTORY.COLUMNS.WEIGHT"}}</div>
+          <div class="inv-actions"></div>
+        </div>
+
+        {{#each inventory.belt as |item|}}
+          <div class="inv-row" data-item-id="{{item.id}}">
+            <div class="inv-name">
+              <button type="button" class="inv-name-button" draggable="true" data-action="inventory-edit" data-item-id="{{item.id}}" title="{{item.description}}">{{item.name}}{{#if item.typeLabel}} · {{item.typeLabel}}{{/if}}{{#if item.isBag}} · {{localize "ETERN.BAG.LOAD_SHORT"}} {{item.bagLoadLabel}}/{{item.bagCapacityLabel}}{{/if}}</button>
+            </div>
+
+            <div class="inv-qty">
+              <button type="button" data-action="inventory-qty" data-item-id="{{item.id}}" data-delta="-1">-</button>
+              <span>{{item.quantity}}</span>
+              <button type="button" data-action="inventory-qty" data-item-id="{{item.id}}" data-delta="1">+</button>
+            </div>
+
+            <div class="inv-weight">{{item.weightLabel}}</div>
+
+            <div class="inv-actions">
+              {{#if item.isWeapon}}<button type="button" data-action="owned-item-toggle-equip" data-item-id="{{item.id}}" title="{{localize "ETERN.WEAPON.EQUIPPED"}}">{{#if item.equipped}}✓{{else}}○{{/if}}</button>{{else if item.isArmor}}<button type="button" data-action="owned-item-toggle-equip" data-item-id="{{item.id}}" title="{{localize "ETERN.ARMOR.EQUIPPED"}}">{{#if item.equipped}}✓{{else}}○{{/if}}</button>{{else if item.isShield}}<button type="button" data-action="owned-item-toggle-equip" data-item-id="{{item.id}}" title="{{localize "ETERN.SHIELD.EQUIPPED"}}">{{#if item.equipped}}✓{{else}}○{{/if}}</button>{{else if item.isBag}}<span class="sheet-muted-copy">{{item.bagLoadLabel}} / {{item.bagCapacityLabel}}</span>{{/if}}
+              <button type="button" data-action="inventory-move" data-item-id="{{item.id}}" title="{{localize "ETERN.INVENTORY.ACTIONS.MOVE"}}">⇄</button>
+              <button type="button" data-action="inventory-delete" data-item-id="{{item.id}}" title="{{localize "ETERN.INVENTORY.ACTIONS.DELETE"}}">🗑</button>
+            </div>
+          </div>
+        {{else}}
+          <div class="inv-empty">{{localize "ETERN.INVENTORY.EMPTY"}}</div>
+        {{/each}}
+      </div>
+    </section>
+  </div>
+
+  <aside class="inv-side">
+    <section class="wealth">
+      <header class="wealth-header">
+        <h2>{{localize "ETERN.INVENTORY.WEALTH.TITLE"}}</h2>
+        <button type="button" class="wealth-convert-btn" data-action="wealth-convert">{{localize "ETERN.INVENTORY.WEALTH.CONVERT"}}</button>
+      </header>
+
+      <div class="wealth-grid">
+        <div class="wealth-col">
+          <label>{{localize "ETERN.INVENTORY.CURRENCY.PP"}}</label>
+          <input type="number" name="system.wealth.pp" value="{{system.wealth.pp}}" min="0" step="1">
+        </div>
+        <div class="wealth-col">
+          <label>{{localize "ETERN.INVENTORY.CURRENCY.RC"}}</label>
+          <input type="number" name="system.wealth.rc" value="{{system.wealth.rc}}" min="0" step="1">
+        </div>
+        <div class="wealth-col">
+          <label>{{localize "ETERN.INVENTORY.CURRENCY.PO"}}</label>
+          <input type="number" name="system.wealth.po" value="{{system.wealth.po}}" min="0" step="1">
+        </div>
+        <div class="wealth-col">
+          <label>{{localize "ETERN.INVENTORY.CURRENCY.PA"}}</label>
+          <input type="number" name="system.wealth.pa" value="{{system.wealth.pa}}" min="0" step="1">
+        </div>
+        <div class="wealth-col wealth-col--full">
+          <label>{{localize "ETERN.INVENTORY.CURRENCY.PC"}}</label>
+          <input type="number" name="system.wealth.pc" value="{{system.wealth.pc}}" min="0" step="1">
+        </div>
+      </div>
+
+      <div class="wealth-lifestyle">
+        <label>{{localize "ETERN.INVENTORY.WEALTH.LIFESTYLE"}}</label>
+        <input type="text" name="system.wealth.lifeStyle" value="{{system.wealth.lifeStyle}}" placeholder="{{localize "ETERN.INVENTORY.WEALTH.LIFESTYLE_PLACEHOLDER"}}">
+      </div>
+    </section>
+
+    <section class="inv-panel inv-side-panel">
+      <h2>{{localize "ETERN.INVENTORY.RENOWN.TITLE"}}</h2>
+      <div class="two-col">
+        <div>
+          <label>{{localize "ETERN.INVENTORY.RENOWN.POSITIVE"}}</label>
+          <input type="number" name="system.renown.positive" value="{{system.renown.positive}}" min="0" step="1">
+        </div>
+        <div>
+          <label>{{localize "ETERN.INVENTORY.RENOWN.NEGATIVE"}}</label>
+          <input type="number" name="system.renown.negative" value="{{system.renown.negative}}" min="0" step="1">
+        </div>
+        <div class="two-col-full">
+          <label>{{localize "ETERN.INVENTORY.RENOWN.SCOPE"}}</label>
+          <input type="text" value="{{system.derived.renown.scope}}" disabled data-derived="renown-scope">
+        </div>
+      </div>
+    </section>
+
+    <section class="inv-panel inv-side-panel">
+      <h2>{{localize "ETERN.INVENTORY.NOTES.TITLE"}}</h2>
+      <div class="inventory-notes-wrap">
+        <textarea name="system.inventory.notes" rows="8">{{system.inventory.notes}}</textarea>
+      </div>
+    </section>
+  </aside>
+</section>

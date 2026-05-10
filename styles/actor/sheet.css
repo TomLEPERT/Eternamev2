@@ -1,0 +1,30 @@
+.eternamev2.sheet.actor.character {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.etername-sheet {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #e8e5dc;
+  color: #2c2a28;
+}
+
+.etername-sheet .tab-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding: var(--etern-space-md) 14px 14px;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}

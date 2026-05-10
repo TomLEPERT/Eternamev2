@@ -1,0 +1,114 @@
+<header class="sheet-header item-sheet-header-card">
+  <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="72" width="72"/>
+  <div class="header-fields item-header-fields">
+    <div class="item-title-row">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'ETERN.HERITAGE.NAME'}}"/></h1>
+    </div>
+    {{#if sheetHeader.badges.length}}
+      <div class="sheet-badge-row">
+        {{#each sheetHeader.badges as |badge|}}
+          <span class="sheet-badge">{{badge}}</span>
+        {{/each}}
+      </div>
+    {{/if}}
+    {{#if sheetHeader.statBadges.length}}
+      <div class="sheet-stat-row">
+        {{#each sheetHeader.statBadges as |badge|}}
+          <div class="sheet-stat-pill"><span>{{badge.label}}</span><strong>{{badge.value}}</strong></div>
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
+</header>
+
+<nav class="sheet-tabs tabs item-sheet-tabs" data-group="primary">
+  <a class="item" data-tab="general">{{localize 'ETERN.HERITAGE.TABS.GENERAL'}}</a>
+  {{#if isTechniqueHeritage}}
+    <a class="item" data-tab="power">{{localize 'ETERN.TECHNIQUE.TABS.POWER'}}</a>
+    <a class="item" data-tab="components">{{localize 'ETERN.TECHNIQUE.TABS.COMPONENTS'}}</a>
+  {{/if}}
+  <a class="item" data-tab="description">{{localize 'ETERN.HERITAGE.TABS.DESCRIPTION'}}</a>
+</nav>
+
+<section class="sheet-body">
+  <section class="tab" data-group="primary" data-tab="general">
+    <section class="sheet-card sheet-card-spacious">
+      <div class="sheet-card-head"><h3>{{localize 'ETERN.HERITAGE.IDENTITY'}}</h3></div>
+      <div class="sheet-fields-grid sheet-fields-grid--two">
+        <div class="form-group">
+          <label>{{localize 'ETERN.HERITAGE.TYPE_LABEL'}}</label>
+          <select name="system.heritageType">
+            {{#each heritageTypeChoices}}
+              <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="form-group">
+          <label>{{localize 'ETERN.HERITAGE.FEATURE_TYPE_LABEL'}}</label>
+          <select name="system.featureType">
+            {{#each heritageFeatureTypeChoices}}
+              <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="sheet-card sheet-card-spacious">
+      <div class="sheet-card-head"><h3>{{localize 'ETERN.HERITAGE.STATE'}}</h3></div>
+      <div class="sheet-fields-grid sheet-fields-grid--two">
+        {{#if isPassiveHeritage}}
+          <label class="sheet-inline-toggle">
+            <input type="checkbox" name="system.active" {{#if system.active}}checked{{/if}}/>
+            <span>{{localize 'ETERN.HERITAGE.ACTIVE'}}</span>
+          </label>
+        {{/if}}
+        {{#if isTechniqueHeritage}}
+          <label class="sheet-inline-toggle">
+            <input type="checkbox" name="system.prepared" {{#if system.prepared}}checked{{/if}}/>
+            <span>{{localize 'ETERN.HERITAGE.PREPARED'}}</span>
+          </label>
+        {{/if}}
+      </div>
+      <p class="sheet-muted-copy">{{localize 'ETERN.HERITAGE.STATE_HINT'}}</p>
+    </section>
+
+    {{#if isPassiveHeritage}}
+      {{#each heritagePassiveSections as |section|}}
+        <section class="sheet-card">
+          <div class="sheet-card-head sheet-card-head--split">
+            <h3>{{section.title}}</h3>
+            {{#if ../owner}}
+              <button type="button" class="sheet-action-button" data-action="builder-add-entry" data-array-key="{{section.key}}" data-entry-kind="passive">{{localize 'ETERN.UI.ADD'}}</button>
+            {{/if}}
+          </div>
+          <div class="builder-list">
+            {{#each section.entries as |entry|}}
+              {{> "systems/eternamev2/templates/item/partials/profession-module-entry.hbs" section=section entry=entry item=../../item owner=../../owner}}
+            {{else}}
+              <p class="sheet-muted-copy">{{section.emptyLabel}}</p>
+            {{/each}}
+          </div>
+        </section>
+      {{/each}}
+    {{/if}}
+
+    {{#if isTechniqueHeritage}}
+      {{> "systems/eternamev2/templates/item/partials/heritage-technique-general-panel.hbs"}}
+    {{/if}}
+  </section>
+
+  {{#if isTechniqueHeritage}}
+    {{> "systems/eternamev2/templates/item/partials/technique-sheet-power-tab.hbs"}}
+    {{> "systems/eternamev2/templates/item/partials/technique-sheet-components-tab.hbs"}}
+  {{/if}}
+
+  <section class="tab" data-group="primary" data-tab="description">
+    <section class="sheet-card sheet-card-spacious">
+      <div class="sheet-card-head"><h3>{{localize 'ETERN.HERITAGE.DESCRIPTION'}}</h3></div>
+      <div class="form-group form-group-stacked">
+        <textarea name="system.description" rows="12">{{system.description}}</textarea>
+      </div>
+    </section>
+  </section>
+</section>

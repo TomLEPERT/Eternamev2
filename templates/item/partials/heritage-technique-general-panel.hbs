@@ -1,0 +1,74 @@
+<section class="sheet-card">
+  <div class="sheet-card-head"><h3>{{localize 'ETERN.TECHNIQUE.USAGE.TITLE'}}</h3></div>
+  <div class="sheet-fields-grid sheet-fields-grid--two">
+    <div class="form-group">
+      <label>{{localize 'ETERN.TECHNIQUE.USAGE.TYPE_LABEL'}}</label>
+      <select name="system.usageType">
+        {{#each techniqueUsage.usageChoices}}
+          <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label>{{localize 'ETERN.TECHNIQUE.USAGE.LINKED_ATTRIBUTE'}}</label>
+      <select name="system.linkedAttributeKey" {{#unless techniqueUsage.isRitual}}disabled{{/unless}}>
+        {{#each techniqueUsage.linkedAttributeChoices}}
+          <option value="{{value}}" {{#if selected}}selected{{/if}}>{{abbr}} — {{label}}</option>
+        {{/each}}
+      </select>
+      <p class="sheet-muted-copy">{{#if techniqueUsage.isRitual}}{{localize 'ETERN.TECHNIQUE.USAGE.LINKED_ATTRIBUTE_HELP'}}{{else}}{{localize 'ETERN.TECHNIQUE.USAGE.LINKED_ATTRIBUTE_ATTACK_HINT'}}{{/if}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="sheet-card">
+  <div class="sheet-card-head"><h3>{{localize 'ETERN.TECHNIQUE.BUILDER_STATUS'}}</h3></div>
+  {{#if techniqueValidation.errors.length}}
+    <div class="builder-validation-panel builder-validation-panel--error">
+      <strong>{{localize 'ETERN.TECHNIQUE.VALIDATION.ERROR_TITLE'}}</strong>
+      <ul class="builder-validation-list">
+        {{#each techniqueValidation.errors as |message|}}
+          <li>{{message}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/if}}
+  {{#if techniqueValidation.warnings.length}}
+    <div class="builder-validation-panel builder-validation-panel--warning">
+      <strong>{{localize 'ETERN.TECHNIQUE.VALIDATION.WARNING_TITLE'}}</strong>
+      <ul class="builder-validation-list">
+        {{#each techniqueValidation.warnings as |message|}}
+          <li>{{message}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/if}}
+  {{#unless techniqueValidation.hasMessages}}
+    <div class="builder-validation-panel builder-validation-panel--success">
+      <strong>{{localize 'ETERN.TECHNIQUE.VALIDATION.SUCCESS_TITLE'}}</strong>
+    </div>
+  {{/unless}}
+</section>
+
+<section class="sheet-card">
+  <div class="sheet-card-head"><h3>{{localize 'ETERN.TECHNIQUE.SUMMARY.TITLE'}}</h3></div>
+  {{#if techniqueReadableSummary.headline}}
+    <p class="sheet-muted-copy builder-summary-copy">{{techniqueReadableSummary.headline}}</p>
+  {{/if}}
+  <div class="builder-summary-grid">
+    {{#each techniqueReadableSummary.componentSections as |section|}}
+      <div class="builder-summary-card">
+        <strong>{{section.label}}</strong>
+        {{#if section.entries.length}}
+          <div class="builder-row-note">
+            {{#each section.entries as |entry|}}
+              <span class="builder-inline-badge">{{entry.name}}</span>
+            {{/each}}
+          </div>
+        {{else}}
+          <p class="sheet-muted-copy">—</p>
+        {{/if}}
+      </div>
+    {{/each}}
+  </div>
+</section>

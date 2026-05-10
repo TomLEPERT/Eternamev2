@@ -1,0 +1,106 @@
+.stats-section-title-attacks {
+  color: var(--etern-color-white);
+  background: linear-gradient(90deg, #e04646, #d93a3a);
+}
+
+.stats-combat-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
+  gap: var(--etern-gap-md);
+  align-items: start;
+}
+
+.attacks-panel-v2 {
+  padding: 14px;
+  border: 2px solid #e04646;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: var(--etern-space-lg);
+}
+
+.attacks-top-v2 {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: var(--etern-space-lg);
+  align-items: center;
+  padding: var(--etern-space-md) 12px;
+  border-radius: var(--etern-radius-2xl);
+  background: rgba(224, 70, 70, 0.82);
+  color: var(--etern-color-white);
+}
+
+.attacks-top-label-v2 {
+  font-weight: 900;
+}
+
+.attacks-top-stats-v2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--etern-space-xl);
+  justify-content: center;
+  font-weight: 800;
+}
+
+.attacks-table-v2 {
+  border: 2px solid rgba(224, 70, 70, 0.7);
+  border-radius: var(--etern-radius-3xl);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.attacks-head-v2,
+.attack-row-v2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) 88px 88px minmax(0, 1fr) 92px;
+  gap: var(--etern-space-md);
+  align-items: center;
+  padding: var(--etern-space-md) 12px;
+}
+
+.attacks-head-v2 {
+  background: rgba(224, 70, 70, 0.82);
+  color: var(--etern-color-white);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.attack-row-v2 + .attack-row-v2 {
+  border-top: 1px solid rgba(224, 70, 70, 0.35);
+}
+
+.attack-actions-v2 {
+  display: inline-flex;
+  gap: var(--etern-space-sm);
+  justify-content: flex-end;
+}
+
+.attack-action-button,
+.attacks-add-button-v2 {
+  border: 1px solid var(--etern-button-border);
+  border-radius: var(--etern-radius-lg);
+  background: var(--etern-soft-bg-strong);
+  cursor: pointer;
+}
+
+.attack-action-button {
+  width: 36px;
+  height: 36px;
+}
+
+.attacks-add-button-v2 {
+  min-height: 48px;
+  padding: 0 16px;
+  border: 2px dashed var(--etern-button-border);
+  background: var(--etern-soft-bg-strong);
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.attacks-empty-v2 {
+  margin: 0;
+  padding: 14px 12px;
+  color: var(--etern-text-muted);
+  font-style: italic;
+}

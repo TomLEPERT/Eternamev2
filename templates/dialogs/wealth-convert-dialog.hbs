@@ -1,0 +1,26 @@
+<form class="wealth-convert-dialog">
+  <div class="inventory-dialog-grid">
+    <div class="inventory-dialog-field">
+      <label>{{localize "ETERN.INVENTORY.WEALTH.DIALOG.GIVE"}}</label>
+      <select name="from">
+        {{#each giveChoices}}
+          <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="inventory-dialog-field">
+      <label>{{localize "ETERN.INVENTORY.WEALTH.DIALOG.AMOUNT"}}</label>
+      <input type="number" name="amount" value="1" min="1" step="1">
+    </div>
+
+    <div class="inventory-dialog-field inventory-dialog-field--full">
+      <label>{{localize "ETERN.INVENTORY.WEALTH.DIALOG.RECEIVE"}}</label>
+      <select name="to">
+        {{#each receiveChoices}}
+          <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+</form>
