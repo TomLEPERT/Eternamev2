@@ -2,16 +2,19 @@
   "id": "eternamev2",
   "title": "Etername v2",
   "description": "Etername system for Foundry VTT v14",
-  "version": "0.20.0",
-  "url": "https://github.com/TomLEPERT/Etern-AmeFoundry",
-  "manifest": "https://raw.githubusercontent.com/TomLEPERT/Etern-AmeFoundry/main/system.json",
+  "version": "0.1.1",
+  "url": "https://github.com/TomLEPERT/Eternamev2.git",
+  "manifest": "https://raw.githubusercontent.com/TomLEPERT/Eternamev2/main/system.json",
+  "download": "https://github.com/TomLEPERT/Eternamevy/releases/download/v0.1.1/etern-ame-v0.1.1.zip",
   "compatibility": {
     "minimum": "14",
     "verified": "14"
   },
   "authors": [
     {
-      "name": "Tom LEPERT"
+      "name": "Tom LEPERT",
+      "discord": "Le Façonneur",
+      "url": "https://discord.gg/Tjk2gXQBbk"
     }
   ],
   "esmodules": [
