@@ -112,7 +112,6 @@ export function prepareCharacterDerivedData(actor) {
   const magic = buildDerivedMagic(system, derivedAttributes, totalBonuses);
   const movement = buildDerivedMovement(system, equippedArmorItem, stateEffects);
   const inventory = deriveInventoryUsage(actor, derivedAttributes);
-  const renown = buildRenownDerivedData(system);
 
   Object.assign(system.derived, {
     hp: hpState,
@@ -130,8 +129,7 @@ export function prepareCharacterDerivedData(actor) {
     progressTracks,
     magic,
     movement,
-    inventory,
-    renown
+    inventory
   });
 
   normalizeCharacterSourceData(system, { hpState, accustomance, destinyBase, fatigueMax });
@@ -156,7 +154,6 @@ function buildEmptyDerivedData({ totalBonuses, itemBonuses, enchantingBonuses, p
     magic: [],
     movement: {},
     inventory: {},
-    renown: {},
     bonuses: totalBonuses,
     itemBonuses,
     enchantingBonuses,
@@ -222,13 +219,6 @@ function buildDerivedMovement(system, equippedArmorItem, stateEffects) {
   }));
   return movement;
 }
-
-function buildRenownDerivedData(system) {
-  const positive = Math.max(0, Math.floor(Number(system.renown?.positive ?? 0) || 0));
-  const negative = Math.max(0, Math.floor(Number(system.renown?.negative ?? 0) || 0));
-  return { positive, negative, scope: positive + negative };
-}
-
 /**
  * Normalise uniquement les champs persistants qui restent éditables par l’utilisateur.
  *

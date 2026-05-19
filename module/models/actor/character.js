@@ -15,7 +15,6 @@ import { createArmorTrainingSchema, createAttacksSchema, createDefenseSchema } f
 import { createIdentitySchema } from './character/identity-schema.js';
 import {
   createInventorySchema,
-  createRenownSchema,
   createTechniqueSlotsSchema,
   createWealthSchema
 } from './character/inventory-social-schema.js';
@@ -45,7 +44,6 @@ export class CharacterModel extends foundry.abstract.TypeDataModel {
       inventory: createInventorySchema(),
       techniques: createTechniqueSlotsSchema(),
       wealth: createWealthSchema(),
-      renown: createRenownSchema(),
       stateResistance: createStateResistanceSchema(),
       states: createStatesSchema(),
       bonuses: createBonusesSchema(),

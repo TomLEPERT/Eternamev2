@@ -41,7 +41,6 @@ export function initializeCharacterSystemData(system, actorType = 'character') {
   }
 
   system.wealth ??= { pp: 0, rc: 0, po: 0, pa: 0, pc: 0, lifeStyle: '' };
-  system.renown ??= { positive: 0, negative: 0 };
   system.stateResistance ??= { attr: 'robustness' };
   system.states ??= {};
   system.bonuses ??= {

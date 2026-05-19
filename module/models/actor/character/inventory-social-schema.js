@@ -37,13 +37,6 @@ export function createWealthSchema() {
   });
 }
 
-export function createRenownSchema() {
-  return new fields.SchemaField({
-    positive: coinField(),
-    negative: coinField()
-  });
-}
-
 function coinField() {
   return new fields.NumberField({ required: true, integer: true, min: 0, initial: 0 });
 }

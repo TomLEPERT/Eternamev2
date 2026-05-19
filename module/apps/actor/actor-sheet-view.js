@@ -48,7 +48,6 @@ export function registerActorSheetView(ActorSheetClass) {
     const attacks = derived.attacks ?? {};
     const saves = derived.saves ?? {};
     const progressTracks = derived.progressTracks ?? [];
-    const renown = derived.renown ?? {};
 
     this._refreshAttributeIndexes(root, attributes);
     this._refreshResourceSummary(root, {
@@ -69,7 +68,6 @@ export function registerActorSheetView(ActorSheetClass) {
     this._refreshAttackSummary(root, attacks);
     this._refreshSaves(root, saves);
     this._refreshProgressTracks(root, progressTracks);
-    this._refreshInventorySummary(root, { renown });
     this._refreshStatePanels();
 
     this._setFieldValue(
@@ -189,17 +187,6 @@ export function registerActorSheetView(ActorSheetClass) {
     this._activateTab(root, this._activeTab || "identity");
   };
 
-
-  ActorSheetClass.prototype._refreshInventorySummary = function(root, { renown = {} } = {}) {
-    if (!root) return;
-
-    const system = this.document?.system ?? {};
-    const positive = Math.max(0, Math.floor(Number(system.renown?.positive ?? 0) || 0));
-    const negative = Math.max(0, Math.floor(Number(system.renown?.negative ?? 0) || 0));
-    const scope = Math.max(0, Math.floor(Number(renown.scope ?? positive + negative) || 0));
-
-    this._setFieldValue(root, '[data-derived="renown-scope"]', scope);
-  };
 
   ActorSheetClass.prototype._refreshAttackSummary = function(root, attacks = {}) {
     if (!root) return;

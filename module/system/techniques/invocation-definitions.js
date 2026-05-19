@@ -68,19 +68,19 @@ export const INVOCATION_SIZE_DEFINITIONS = {
   },
   large: {
     labelKey: "ETERN.INVOCATION.SIZE.LARGE",
-    pointBudget: 40,
+    pointBudget: 42,
     maxAttribute: 8,
     xpMultiplier: 2
   },
   huge: {
     labelKey: "ETERN.INVOCATION.SIZE.HUGE",
-    pointBudget: 44,
+    pointBudget: 48,
     maxAttribute: 10,
     xpMultiplier: 3
   },
   colossal: {
     labelKey: "ETERN.INVOCATION.SIZE.COLOSSAL",
-    pointBudget: 50,
+    pointBudget: 54,
     maxAttribute: 12,
     xpMultiplier: 4
   }
